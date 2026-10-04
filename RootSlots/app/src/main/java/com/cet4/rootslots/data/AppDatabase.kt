@@ -13,7 +13,7 @@ import org.json.JSONObject
 
 @Database(
     entities = [WordEntity::class, MorphEntity::class, FamilyEntity::class, ComboEntity::class, FavoriteEntity::class, SpinEntity::class, SrsEntity::class],
-    version = 4,
+    version = 5,
     exportSchema = false,
 )
 abstract class AppDatabase : RoomDatabase() {
@@ -64,6 +64,7 @@ abstract class AppDatabase : RoomDatabase() {
                     WordEntity(
                         w = o.getString("w"),
                         g = if (o.isNull("g")) null else o.getString("g"),
+                        ipa = if (o.isNull("i")) null else o.optString("i").ifBlank { null },
                     )
                 }
             )

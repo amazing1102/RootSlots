@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -112,7 +113,13 @@ fun FavoritesScreen(
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
                     Column(Modifier.weight(1f)) {
-                        Text(r.w, color = c.suffix, fontSize = 16.sp, fontWeight = FontWeight.Bold)
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Text(r.w, color = c.suffix, fontSize = 16.sp, fontWeight = FontWeight.Bold)
+                            r.ipa?.let {
+                                Spacer(Modifier.width(6.dp))
+                                Text("/$it/", color = c.textFaint, fontSize = 11.sp)
+                            }
+                        }
                         Text(r.g ?: "(释义待补)", color = c.textDim, fontSize = 12.sp, maxLines = 1)
                     }
                     Column(horizontalAlignment = Alignment.End) {
@@ -202,6 +209,10 @@ fun ReviewScreen(
         val w = queue[idx]
         Spacer(Modifier.height(48.dp))
         Text(w, color = c.suffix, fontSize = 40.sp, fontWeight = FontWeight.Black)
+        vm.ipaOf(w)?.let {
+            Spacer(Modifier.height(4.dp))
+            Text("/$it/", color = c.textDim, fontSize = 15.sp)
+        }
         Spacer(Modifier.height(8.dp))
         Text("🔊", fontSize = 26.sp, modifier = Modifier
             .clip(RoundedCornerShape(10.dp))

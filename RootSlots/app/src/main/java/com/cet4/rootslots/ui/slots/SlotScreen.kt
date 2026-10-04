@@ -167,6 +167,10 @@ private fun GamePane(
                     fontSize = if (vm.segs.sumOf { it.s.length } > 10) 30.sp else 36.sp,
                     textAlign = TextAlign.Center,
                 )
+                vm.current?.w?.let { w -> vm.ipaOf(w) }?.let { ipa ->
+                    Spacer(Modifier.height(2.dp))
+                    Text("/$ipa/", color = c.textDim, fontSize = 13.sp)
+                }
                 if (!vm.spinning) {
                     val fam = vm.current?.family
                     if (fam != null) {

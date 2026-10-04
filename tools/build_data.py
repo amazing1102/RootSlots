@@ -641,16 +641,23 @@ def main():
     for k in sorted(used_r - rkeys):
         all_roots.append({"key": k, "surfaces": [k], "meaning": fam_mean.get(k, "词根"), "examples": ""})
 
-    # 合并释义批文件 assets/glosses/*.json
+    # 合并释义批文件 assets/glosses/*.json + 音标 assets/ipa.json(build_ipa.py 产物)
     import glob as _glob
     gloss_dir = os.path.join(ASSETS, "glosses")
     gmap = {}
     for f in sorted(_glob.glob(os.path.join(gloss_dir, "*.json"))):
         gmap.update(json.load(open(f, encoding="utf-8")))
-    words_out = [{"w": w, "g": gmap.get(w)} for w in words]
+    ipa_map = {}
+    ipa_path = os.path.join(ASSETS, "ipa.json")
+    if os.path.exists(ipa_path):
+        ipa_map = json.load(open(ipa_path, encoding="utf-8"))
+    else:
+        print("(提示) 无 assets/ipa.json —— 先跑 tools/build_ipa.py 生成音标")
+    words_out = [{"w": w, "g": gmap.get(w), "i": ipa_map.get(w) or ipa_map.get(w.lower())} for w in words]
     n_g = sum(1 for x in words_out if x["g"])
+    n_i = sum(1 for x in words_out if x["i"])
     n_gc = sum(1 for c in combos_d if gmap.get(c["w"]))
-    print(f"释义: 词表 {n_g}/{len(words_out)} | 组合词 {n_gc}/{len(combos_d)}")
+    print(f"释义: 词表 {n_g}/{len(words_out)} | 组合词 {n_gc}/{len(combos_d)} | 音标 {n_i}/{len(words_out)}")
     json.dump(words_out, open(os.path.join(ASSETS, "words.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=0)
     json.dump({"prefixes": prefixes + EXTRA_PREFIX_ENTRIES, "suffixes": suffixes,
                "roots": all_roots},

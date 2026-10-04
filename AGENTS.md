@@ -43,8 +43,8 @@ D:\CET4\
 ## 常用命令
 
 ```bash
-# 数据管线(改了 md 源表或 glosses 批文件后)
-cd /d/CET4 && python tools/build_data.py && python tools/verify_assets.py
+# 数据管线(改了 md 源表或 glosses 批文件后;ipa.json 缺失或词表变更时先跑 build_ipa.py)
+cd /d/CET4 && python tools/build_ipa.py && python tools/build_data.py && python tools/verify_assets.py
 cp assets/{words,morphs,families,combos}.json RootSlots/app/src/main/assets/
 
 # 构建 + 安装

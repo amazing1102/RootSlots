@@ -130,6 +130,7 @@ class Repository private constructor(context: Context) {
 
     fun word(w: String): WordEntity? = words[w]
     fun glossedWords(): List<WordEntity> = words.values.filter { !it.g.isNullOrBlank() }
+    fun ipaOf(w: String): String? = words[w]?.ipa?.takeIf { it.isNotBlank() }
     fun family(key: String): FamilyEntity? = families[key]
 
     /** 某段的词法释义(P/R/S + key) */
@@ -157,13 +158,13 @@ class Repository private constructor(context: Context) {
 
     suspend fun recordSpin(w: String) = db.spinsDao().insert(SpinEntity(w = w, at = System.currentTimeMillis()))
 
-    /** 生词本条目:收藏 + 释义 + SRS 档案 */
-    data class FavRow(val w: String, val g: String?, val srs: SrsEntity?)
+    /** 生词本条目:收藏 + 释义 + 音标 + SRS 档案 */
+    data class FavRow(val w: String, val g: String?, val ipa: String?, val srs: SrsEntity?)
 
     suspend fun favorites(): List<FavRow> {
         val now = System.currentTimeMillis()
         return db.favoritesDao().all().map { f ->
-            FavRow(f.w, words[f.w]?.g, db.srsDao().byWord(f.w))
+            FavRow(f.w, words[f.w]?.g, ipaOf(f.w), db.srsDao().byWord(f.w))
         }
     }
 

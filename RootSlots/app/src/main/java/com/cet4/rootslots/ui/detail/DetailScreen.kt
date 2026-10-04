@@ -115,6 +115,10 @@ fun DetailScreen(
         if (combo == null) {
             // ---- 整词模式(无构词拆解) ----
             Text(word, color = c.text, fontSize = 34.sp, fontWeight = FontWeight.Black)
+            vm.ipaOf(word)?.let {
+                Spacer(Modifier.height(2.dp))
+                Text("/$it/", color = c.textDim, fontSize = 15.sp)
+            }
             Spacer(Modifier.height(6.dp))
             Text(vm.glossOf(word) ?: "", color = c.textMid, fontSize = 16.sp)
             Text("(该词暂无构词拆解)", color = c.textDim, fontSize = 13.sp)
@@ -129,6 +133,10 @@ fun DetailScreen(
                         fontWeight = FontWeight.Black,
                     )
                 }
+            }
+            vm.ipaOf(word)?.let {
+                Spacer(Modifier.height(2.dp))
+                Text("/$it/", color = c.textDim, fontSize = 15.sp)
             }
             Spacer(Modifier.height(6.dp))
             Text(vm.glossOf(word) ?: "", color = c.textMid, fontSize = 16.sp)

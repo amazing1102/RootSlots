@@ -15,23 +15,25 @@
 | M7b | 图鉴搜索框 + 单行紧凑卡 + 详情页/图鉴 chips FlowRow 换行 + `per ?` 兜底 |
 | M8 | 动态段轴(轴数=段数 2~4)+ 拆分治理(族键回退/后缀优先/收紧验收,2278 词 0 错误,19 词退整词)+ 结果卡完整词逐段点亮 |
 | M11 | 艾宾浩斯 9 节点(5分/30分/12时/1/2/4/7/15/30天)+ 毕业态 + 详情页保持率曲线 |
+| M9 | 美式 IPA:CMUdict 0.7b→ARPAbet→IPA(98.2% 覆盖,缺词 113 导出)→ words.json "i" → DB v5 → 五处展示 |
 
-**v1 时的四大用户反馈(P1~P4)已全部闭环:** 布局(M7)、发音/音标(音标=M9 待做)、构词展示(M8)、配色+明暗主题(M6)。
+**v1 时的四大用户反馈(P1~P4)已全部闭环:** 布局(M7)、发音/音标(音标 M9 ✅、自然发音 M10 待做)、构词展示(M8)、配色+明暗主题(M6)。
 滚动条胶囊:新构建未复现,判定为模拟器瞬时浮层(见 AGENTS.md 已知坑 #8 同类),关闭。
 
 ## 剩余工作(按优先级)
 
-1. **M9 美式音标 IPA**:
-   - 新增 `tools/build_ipa.py`:CMUdict(cmusphinx, BSD 许可)→ ARPAbet→IPA 映射 → `assets/ipa.json`;
-   - build_data.py 把音标合进 words.json `"i"` 字段;Room 升 **v5**(words 加 ipa 列,破坏性迁移 + ensurePrefilled 自愈);
-   - 展示五处:详情页大词下方、老虎机结果卡、生词本列表、复习卡、测验答后解析;缺词清单导出人工补录;
-   - 覆盖率目标 ≥98%;缺失时界面隐藏音标行而非显示错误音标。
-2. **M10 自然美式发音**(风险最高,**第一步先 spike**):sherpa-onnx(Apache-2.0)+ Piper en_US 音色
+1. **M10 自然美式发音**(风险最高,**第一步先 spike**):sherpa-onnx(Apache-2.0)+ Piper en_US 音色
    (默认 medium ~63MB,备选 low ~20MB)模型进 assets 真离线;失败回退方案 B 系统 TTS 调优;
-   TtsHelper 重构为 `SpeechEngine` 抽象(BuiltinPiperEngine/SystemTtsEngine);设置页(我的页)试听/语速/引擎状态。
-   APK +20~70MB 已向用户声明,默认 medium。
-3. **并行数据任务**:剩余 3989 个非组合词中文释义,约 12 批×350 词,批文件放 `D:\CET4\assets\glosses\`
-   (c08 起续编号)→ 跑管线自动合并 → 拷贝 App assets → pm clear 重灌。测验/生词本覆盖面随之扩大。
+   TtsHelper 重构为 `SpeechEngine` 抽象(BuiltinPiperEngine/SystemTtsEngine);我的页试听/语速/引擎状态。
+   APK +20~70MB 已向用户声明,默认 medium。语速设置已就位(GamePrefs.SPEECH_RATE + TtsHelper.setRate)。
+2. **并行数据任务**:剩余 3989 个非组合词中文释义,约 12 批×350 词,批文件放 `D:\CET4\assets\glosses\`
+   (c08 起续编号)→ 跑管线自动合并(音标已就位,词表不变时可跳过 build_ipa)→ 拷贝 App assets → pm clear 重灌。
+   测验/生词本覆盖面随之扩大。
+
+**M9 实施要点(改音标相关时看):** tools/build_ipa.py 读 tools/cmudict.dict.cache(0.7b,**Latin-1** 编码;
+urllib 下载 GitHub 会失败,需 curl 手动下载,镜像清单在 SOURCES);音标按词原样大小写存(April 为 key),
+查找时 lower();重音符按音节 onset 回退插入;AH0→ə、ER0→ər;连字符词分段查后直接拼;
+缺词界面隐藏音标行。DB v5 = words 表加 ipa 列。
 
 ## 新会话恢复步骤
 

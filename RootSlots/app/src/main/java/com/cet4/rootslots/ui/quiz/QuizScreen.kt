@@ -114,8 +114,9 @@ fun QuizScreen(vm: SlotViewModel) {
                     .weight(1f, fill = false)
             ) {
                 qs.forEach { q ->
+                    val ipa = vm.ipaOf(q.word)
                     Text(
-                        "${q.word}  ${q.aux}",
+                        "${q.word}" + (ipa?.let { "  /$it/" } ?: "") + "  ${q.aux}",
                         color = c.textDim, fontSize = 13.sp,
                         modifier = Modifier.padding(vertical = 2.dp),
                     )
