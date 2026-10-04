@@ -17,6 +17,7 @@
 | M11 | 艾宾浩斯 9 节点(5分/30分/12时/1/2/4/7/15/30天)+ 毕业态 + 详情页保持率曲线 |
 | M9 | 美式 IPA:CMUdict 0.7b→ARPAbet→IPA(98.2% 覆盖,缺词 113 导出)→ words.json "i" → DB v5 → 五处展示 |
 | M10 | 内置神经语音:sherpa-onnx AAR 1.13.8 + Piper en_US-amy fp32(63MB);SpeechEngine 抽象(系统TTS先顶/Piper就绪自动切换);espeak-ng-data 拷 filesDir;APK 175MB |
+| 数据 | **释义 6286/6286 全覆盖**(glosses/c01–c19 共 19 批)+ 音标 6173 词;组合词 2278(校验 0 错误) |
 
 **v1 时的四大用户反馈(P1~P4)已全部闭环:** 布局(M7)、发音/音标(M9+M10)、构词展示(M8)、配色+明暗主题(M6)。
 滚动条胶囊:新构建未复现,判定为模拟器瞬时浮层(见 AGENTS.md 已知坑 #8 同类),关闭。
