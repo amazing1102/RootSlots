@@ -108,6 +108,15 @@ fun MineScreen(vm: SlotViewModel) {
         Spacer(Modifier.height(8.dp))
         Card {
             Row(
+                Modifier.fillMaxWidth().padding(14.dp),
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                Text("引擎", color = c.text, fontSize = 14.sp, fontWeight = FontWeight.Bold)
+                Spacer(Modifier.weight(1f))
+                Text(vm.engineStatus, color = c.textDim, fontSize = 12.sp)
+            }
+            Divider()
+            Row(
                 Modifier.fillMaxWidth().clickable { vm.pronounce("reduction") }.padding(14.dp),
                 verticalAlignment = Alignment.CenterVertically,
             ) {

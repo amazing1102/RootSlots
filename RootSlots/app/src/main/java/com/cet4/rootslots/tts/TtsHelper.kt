@@ -1,38 +1,43 @@
 package com.cet4.rootslots.tts
 
 import android.content.Context
-import android.speech.tts.TextToSpeech
-import java.util.Locale
 
-/** 单词发音(美音);TTS 引擎异步初始化,未就绪时静默跳过;语速可在设置中调 */
-class TtsHelper(context: Context) : TextToSpeech.OnInitListener {
-    private var tts: TextToSpeech? = TextToSpeech(context.applicationContext, this)
-    @Volatile private var ready = false
-    @Volatile private var rate: Float = 0.85f
+/**
+ * 发音门面:先用系统 TTS 立即可用,后台加载内置 Piper;
+ * Piper 就绪后自动切换(更自然的美式读音),失败则留在系统 TTS。
+ * 对外 API 与旧 TtsHelper 一致(speak/setRate/shutdown),调用方无感。
+ */
+class TtsHelper(context: Context) {
+    @Volatile private var engine: SpeechEngine? = null
+    var lastStatus: String = "发音引擎初始化中…"; private set
+    var onStatus: ((String) -> Unit)? = null
 
-    override fun onInit(status: Int) {
-        if (status == TextToSpeech.SUCCESS) {
-            tts?.language = Locale.US
-            tts?.setSpeechRate(rate)
-            ready = true
+    init {
+        val sys = SystemTtsEngine(context)
+        engine = sys
+        setStatus("系统 TTS · ${sys.name}(内置语音加载中)")
+
+        val piper = PiperEngine(context)
+        piper.onReady = { ok, msg ->
+            if (ok) {
+                engine = piper
+                sys.shutdown()
+                setStatus(piper.name)
+            } else {
+                piper.shutdown()
+                setStatus("系统 TTS(Piper 不可用:$msg)")
+            }
         }
     }
 
-    fun setRate(r: Float) {
-        rate = r.coerceIn(0.5f, 1.5f)
-        if (ready) tts?.setSpeechRate(rate)
+    private fun setStatus(s: String) {
+        lastStatus = s
+        onStatus?.invoke(s)
     }
 
-    fun speak(text: String) {
-        if (!ready) return
-        tts?.setSpeechRate(rate)
-        tts?.speak(text, TextToSpeech.QUEUE_FLUSH, null, "rootslots")
-    }
+    fun speak(text: String) = engine?.speak(text)
 
-    fun shutdown() {
-        tts?.stop()
-        tts?.shutdown()
-        tts = null
-        ready = false
-    }
+    fun setRate(rate: Float) = engine?.setRate(rate)
+
+    fun shutdown() = engine?.shutdown()
 }

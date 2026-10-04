@@ -16,19 +16,22 @@
 | M8 | 动态段轴(轴数=段数 2~4)+ 拆分治理(族键回退/后缀优先/收紧验收,2278 词 0 错误,19 词退整词)+ 结果卡完整词逐段点亮 |
 | M11 | 艾宾浩斯 9 节点(5分/30分/12时/1/2/4/7/15/30天)+ 毕业态 + 详情页保持率曲线 |
 | M9 | 美式 IPA:CMUdict 0.7b→ARPAbet→IPA(98.2% 覆盖,缺词 113 导出)→ words.json "i" → DB v5 → 五处展示 |
+| M10 | 内置神经语音:sherpa-onnx AAR 1.13.8 + Piper en_US-amy fp32(63MB);SpeechEngine 抽象(系统TTS先顶/Piper就绪自动切换);espeak-ng-data 拷 filesDir;APK 175MB |
 
-**v1 时的四大用户反馈(P1~P4)已全部闭环:** 布局(M7)、发音/音标(音标 M9 ✅、自然发音 M10 待做)、构词展示(M8)、配色+明暗主题(M6)。
+**v1 时的四大用户反馈(P1~P4)已全部闭环:** 布局(M7)、发音/音标(M9+M10)、构词展示(M8)、配色+明暗主题(M6)。
 滚动条胶囊:新构建未复现,判定为模拟器瞬时浮层(见 AGENTS.md 已知坑 #8 同类),关闭。
 
 ## 剩余工作(按优先级)
 
-1. **M10 自然美式发音**(风险最高,**第一步先 spike**):sherpa-onnx(Apache-2.0)+ Piper en_US 音色
-   (默认 medium ~63MB,备选 low ~20MB)模型进 assets 真离线;失败回退方案 B 系统 TTS 调优;
-   TtsHelper 重构为 `SpeechEngine` 抽象(BuiltinPiperEngine/SystemTtsEngine);我的页试听/语速/引擎状态。
-   APK +20~70MB 已向用户声明,默认 medium。语速设置已就位(GamePrefs.SPEECH_RATE + TtsHelper.setRate)。
+1. **真机验收**:装 APK 到真机——听 Piper amy 自然度、IPA 显示、音标/复习/测验回归。
 2. **并行数据任务**:剩余 3989 个非组合词中文释义,约 12 批×350 词,批文件放 `D:\CET4\assets\glosses\`
    (c08 起续编号)→ 跑管线自动合并(音标已就位,词表不变时可跳过 build_ipa)→ 拷贝 App assets → pm clear 重灌。
    测验/生词本覆盖面随之扩大。
+
+**M10 实施要点(改发音相关时看):** AAR 在 app/libs/(files() 依赖);模型 assets/tts/
+(onnx 63MB fp32——**fp16 与内置 CPU onnxruntime 类型不兼容会原生 abort,勿用**);
+espeak-ng-data 首启拷 filesDir(PiperEngine.copyEspeakData,幂等);generation 计数打断旧播报;
+语速换算 piper speed=rate/0.85;ABI 只留 arm64-v8a+x86_64;GitHub 大文件下载必须 curl 重试+校验尺寸。
 
 **M9 实施要点(改音标相关时看):** tools/build_ipa.py 读 tools/cmudict.dict.cache(0.7b,**Latin-1** 编码;
 urllib 下载 GitHub 会失败,需 curl 手动下载,镜像清单在 SOURCES);音标按词原样大小写存(April 为 key),

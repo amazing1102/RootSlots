@@ -31,6 +31,7 @@ class SlotViewModel(app: Application) : AndroidViewModel(app) {
     private val tts = TtsHelper(app)
 
     var ready by mutableStateOf(false); private set
+    var engineStatus by mutableStateOf("发音引擎初始化中…"); private set
 
     // HUD
     var coins by mutableStateOf(GamePrefs.COINS_START); private set
@@ -62,6 +63,8 @@ class SlotViewModel(app: Application) : AndroidViewModel(app) {
     private var pendingSpeak = false
 
     init {
+        engineStatus = tts.lastStatus
+        tts.onStatus = { engineStatus = it }
         viewModelScope.launch {
             repo.awaitReady()
             ready = true
