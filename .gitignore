@@ -1,0 +1,19 @@
+# Android 构建产物
+RootSlots/.gradle/
+RootSlots/.kotlin/
+RootSlots/app/build/
+RootSlots/build/
+RootSlots/local.properties
+RootSlots/.idea/
+*.apk
+
+# Python
+__pycache__/
+*.pyc
+
+# 验收截图(可由模拟器重新截取)
+tools/shots/
+
+# IDE
+.idea/
+*.iml

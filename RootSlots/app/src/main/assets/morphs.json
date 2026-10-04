@@ -1,0 +1,5114 @@
+{
+ "prefixes": [
+  {
+   "key": "un",
+   "surfaces": [
+    "un"
+   ],
+   "meaning": "不、相反",
+   "examples": "uncertain, uncover, unemployed, undo, undoubtedly, uneasy"
+  },
+  {
+   "key": "in",
+   "surfaces": [
+    "in",
+    "im"
+   ],
+   "meaning": "不;进入(内)",
+   "examples": "invisible, insane, inevitable, infinite, innocent,import,immigrant,impose,impress,impulse"
+  },
+  {
+   "key": "im",
+   "surfaces": [
+    "im"
+   ],
+   "meaning": "不(在 b/m/p 前)",
+   "examples": "impossible, impatient, immense"
+  },
+  {
+   "key": "il",
+   "surfaces": [
+    "il"
+   ],
+   "meaning": "不(在 l 前)",
+   "examples": "illegal"
+  },
+  {
+   "key": "ir",
+   "surfaces": [
+    "ir"
+   ],
+   "meaning": "不(在 r 前)",
+   "examples": "irregular, irrational"
+  },
+  {
+   "key": "dis",
+   "surfaces": [
+    "dis",
+    "dif",
+    "di"
+   ],
+   "meaning": "不、相反、分离",
+   "examples": "disagree, disappear, dislike, disorder, dismiss"
+  },
+  {
+   "key": "non",
+   "surfaces": [
+    "non"
+   ],
+   "meaning": "非",
+   "examples": "nonsense"
+  },
+  {
+   "key": "mis",
+   "surfaces": [
+    "mis"
+   ],
+   "meaning": "错误",
+   "examples": "mistake, misunderstand, mislead, misfortune"
+  },
+  {
+   "key": "counter",
+   "surfaces": [
+    "counter"
+   ],
+   "meaning": "反、对抗",
+   "examples": "counter, counterpart"
+  },
+  {
+   "key": "de",
+   "surfaces": [
+    "de"
+   ],
+   "meaning": "去除、降低、相反",
+   "examples": "decrease, decline, descend, depress, destroy"
+  },
+  {
+   "key": "under",
+   "surfaces": [
+    "under"
+   ],
+   "meaning": "低于、不足",
+   "examples": "underestimate, underdeveloped, underground, undergo"
+  },
+  {
+   "key": "with",
+   "surfaces": [
+    "with"
+   ],
+   "meaning": "向回、对抗",
+   "examples": "withdraw, withstand"
+  },
+  {
+   "key": "a",
+   "surfaces": [
+    "a"
+   ],
+   "meaning": "处于、朝、离开",
+   "examples": "aboard, abroad, aside, asleep, awake, alive, alone, ahead, ashamed"
+  },
+  {
+   "key": "ab",
+   "surfaces": [
+    "ab"
+   ],
+   "meaning": "离开",
+   "examples": "abandon, absorb, abstract, abuse, abolish"
+  },
+  {
+   "key": "ad",
+   "surfaces": [
+    "ad",
+    "ac",
+    "af",
+    "ag",
+    "ap",
+    "ar",
+    "as",
+    "at",
+    "al",
+    "an"
+   ],
+   "meaning": "朝、向、加强",
+   "examples": "accept, achieve, acquire, adapt, advance, afford, approach, attend, attract, associate, appreciate"
+  },
+  {
+   "key": "be",
+   "surfaces": [
+    "be"
+   ],
+   "meaning": "使、在、周围",
+   "examples": "become, belong, behave, beside, behind, below, beneath"
+  },
+  {
+   "key": "circum",
+   "surfaces": [
+    "circum"
+   ],
+   "meaning": "环绕",
+   "examples": "circumstance"
+  },
+  {
+   "key": "com",
+   "surfaces": [
+    "com",
+    "con",
+    "col",
+    "cor"
+   ],
+   "meaning": "共同、一起、加强",
+   "examples": "combine, common, compare, complete, concentrate, connect, contain, continue, contrast, contribute, control, collect, college, correct, correspond"
+  },
+  {
+   "key": "contra",
+   "surfaces": [
+    "contra",
+    "contro"
+   ],
+   "meaning": "相反",
+   "examples": "contradict, contrary, contrast, controversial"
+  },
+  {
+   "key": "dia",
+   "surfaces": [
+    "dia"
+   ],
+   "meaning": "穿过、两者之间",
+   "examples": "diameter, dialogue, dialect, diagnosis, diagram"
+  },
+  {
+   "key": "ex",
+   "surfaces": [
+    "ex",
+    "e",
+    "ef"
+   ],
+   "meaning": "向外、先前",
+   "examples": "export, express, extend, external, exit, expand, expose, extreme;emit, emerge, emotion, eliminate"
+  },
+  {
+   "key": "en",
+   "surfaces": [
+    "en",
+    "em"
+   ],
+   "meaning": "使进入、使…化",
+   "examples": "enable, encourage, endanger, enforce, engage, enlarge, enrich, ensure, entertain, entitle, embrace, employ"
+  },
+  {
+   "key": "fore",
+   "surfaces": [
+    "fore"
+   ],
+   "meaning": "前、预先",
+   "examples": "forecast, foresee, foresight, forehead, foremost"
+  },
+  {
+   "key": "inter",
+   "surfaces": [
+    "inter"
+   ],
+   "meaning": "在…之间、相互",
+   "examples": "international, interview, interact, interfere, interrupt, interval, interpret"
+  },
+  {
+   "key": "mid",
+   "surfaces": [
+    "mid"
+   ],
+   "meaning": "中间",
+   "examples": "midday, midnight, middle"
+  },
+  {
+   "key": "ob",
+   "surfaces": [
+    "ob",
+    "op",
+    "oc",
+    "of"
+   ],
+   "meaning": "逆、对、加强",
+   "examples": "object, observe, obtain, obvious;oppose, opposite, opportunity;occur, occupy;offer, office"
+  },
+  {
+   "key": "out",
+   "surfaces": [
+    "out"
+   ],
+   "meaning": "超过、外",
+   "examples": "outcome, outdoor, outlet, outline, output, outside, outstanding, outbreak, outdated"
+  },
+  {
+   "key": "over",
+   "surfaces": [
+    "over"
+   ],
+   "meaning": "过度、在上、翻转",
+   "examples": "overcome, overhear, overseas, overlook, overnight, overtime, overwhelm"
+  },
+  {
+   "key": "para",
+   "surfaces": [
+    "para"
+   ],
+   "meaning": "旁、类似、防",
+   "examples": "paragraph, parallel, paradox"
+  },
+  {
+   "key": "per",
+   "surfaces": [
+    "per"
+   ],
+   "meaning": "贯穿、完全、每",
+   "examples": "perfect, perform, permanent, persist, percent"
+  },
+  {
+   "key": "peri",
+   "surfaces": [
+    "peri"
+   ],
+   "meaning": "周围",
+   "examples": "period, periodic, periodical"
+  },
+  {
+   "key": "post",
+   "surfaces": [
+    "post"
+   ],
+   "meaning": "后",
+   "examples": "postpone, postponement"
+  },
+  {
+   "key": "pre",
+   "surfaces": [
+    "pre"
+   ],
+   "meaning": "前、预先",
+   "examples": "predict, prepare, prevent, previous, prefer, preliminary, prescribe, preserve, president, pretend, preview, prejudice"
+  },
+  {
+   "key": "pro",
+   "surfaces": [
+    "pro"
+   ],
+   "meaning": "向前、支持",
+   "examples": "progress, promote, proceed, produce, program, protect, provide, protest, pronounce, propose, prospect, professor"
+  },
+  {
+   "key": "re",
+   "surfaces": [
+    "re"
+   ],
+   "meaning": "回、再",
+   "examples": "return, recall, recycle, reduce, reflect, reform, refresh, refuse, repeat, replace, review, revise"
+  },
+  {
+   "key": "sub",
+   "surfaces": [
+    "sub",
+    "suc",
+    "suf",
+    "sup",
+    "sus"
+   ],
+   "meaning": "下、次、接近",
+   "examples": "subway, subsequent, substance, substitute, subtract, suburb, suspend;succeed, success;suffer, sufficient;support, suppose, supplement"
+  },
+  {
+   "key": "sur",
+   "surfaces": [
+    "sur"
+   ],
+   "meaning": "上、超",
+   "examples": "surface, surname, surplus, survey, survive, surrender, surround"
+  },
+  {
+   "key": "super",
+   "surfaces": [
+    "super",
+    "out",
+    "over",
+    "extra"
+   ],
+   "meaning": "超、在上;超越",
+   "examples": "supermarket, superior, supervise, superb, superficial,extraordinary,outstanding,overcome"
+  },
+  {
+   "key": "sym",
+   "surfaces": [
+    "sym",
+    "syn"
+   ],
+   "meaning": "共同、相同",
+   "examples": "sympathy, sympathetic, symbol, symptom"
+  },
+  {
+   "key": "trans",
+   "surfaces": [
+    "trans"
+   ],
+   "meaning": "横穿、转移",
+   "examples": "transport, translate, transfer, transform, transmit, transparent, transplant"
+  },
+  {
+   "key": "up",
+   "surfaces": [
+    "up"
+   ],
+   "meaning": "向上",
+   "examples": "update, upgrade, upload, upon, upper, upset, upstairs"
+  },
+  {
+   "key": "down",
+   "surfaces": [
+    "down"
+   ],
+   "meaning": "向下",
+   "examples": "download, downstairs, downtown, downward"
+  },
+  {
+   "key": "by",
+   "surfaces": [
+    "by"
+   ],
+   "meaning": "旁、副",
+   "examples": "bypass, bystander"
+  },
+  {
+   "key": "self",
+   "surfaces": [
+    "self"
+   ],
+   "meaning": "自我",
+   "examples": "self, selfish, selfless"
+  },
+  {
+   "key": "auto",
+   "surfaces": [
+    "auto"
+   ],
+   "meaning": "自己、自动",
+   "examples": "automatic, automobile, automate"
+  },
+  {
+   "key": "ante",
+   "surfaces": [
+    "ante"
+   ],
+   "meaning": "先、前",
+   "examples": "anticipate"
+  },
+  {
+   "key": "uni",
+   "surfaces": [
+    "uni"
+   ],
+   "meaning": "一、单",
+   "examples": "uniform, unite, unity, universal, university, unique"
+  },
+  {
+   "key": "bi",
+   "surfaces": [
+    "bi"
+   ],
+   "meaning": "二、双",
+   "examples": "bicycle"
+  },
+  {
+   "key": "di",
+   "surfaces": [
+    "di"
+   ],
+   "meaning": "二、分开",
+   "examples": "dioxide, dilemma"
+  },
+  {
+   "key": "tri",
+   "surfaces": [
+    "tri"
+   ],
+   "meaning": "三",
+   "examples": "triangle, triangular, triple"
+  },
+  {
+   "key": "multi",
+   "surfaces": [
+    "multi"
+   ],
+   "meaning": "多",
+   "examples": "multiple, multiply, multiplication"
+  },
+  {
+   "key": "semi",
+   "surfaces": [
+    "semi"
+   ],
+   "meaning": "半",
+   "examples": "semi-colon"
+  },
+  {
+   "key": "kilo",
+   "surfaces": [
+    "kilo"
+   ],
+   "meaning": "千",
+   "examples": "kilogram, kilometer"
+  },
+  {
+   "key": "milli",
+   "surfaces": [
+    "milli"
+   ],
+   "meaning": "毫、千",
+   "examples": "millimeter"
+  },
+  {
+   "key": "micro",
+   "surfaces": [
+    "micro"
+   ],
+   "meaning": "微小",
+   "examples": "microscope, microphone, microwave"
+  },
+  {
+   "key": "grand",
+   "surfaces": [
+    "grand"
+   ],
+   "meaning": "(辈分)隔一代",
+   "examples": "grandfather, grandchild, grandson"
+  },
+  {
+   "key": "bene",
+   "surfaces": [
+    "bene"
+   ],
+   "meaning": "好、善",
+   "examples": "benefit, beneficial, beneficiary"
+  },
+  {
+   "key": "homo",
+   "surfaces": [
+    "homo"
+   ],
+   "meaning": "同",
+   "examples": "homosexual, homo"
+  },
+  {
+   "key": "tele",
+   "surfaces": [
+    "tele"
+   ],
+   "meaning": "远",
+   "examples": "telephone, telescope, television, telecommunications"
+  },
+  {
+   "key": "hydro",
+   "surfaces": [
+    "hydro"
+   ],
+   "meaning": "水",
+   "examples": "hydrogen"
+  },
+  {
+   "key": "bio",
+   "surfaces": [
+    "bio"
+   ],
+   "meaning": "生命",
+   "examples": "biology, biography, biochemistry, biotechnology"
+  },
+  {
+   "key": "co",
+   "surfaces": [
+    "co"
+   ],
+   "meaning": "共同",
+   "examples": "cooperate, coordinate"
+  },
+  {
+   "key": "well",
+   "surfaces": [
+    "well"
+   ],
+   "meaning": "好(构词成分)",
+   "examples": "well-being, well-known, well-off"
+  },
+  {
+   "key": "half",
+   "surfaces": [
+    "half"
+   ],
+   "meaning": "半(构词成分)",
+   "examples": "halfway"
+  },
+  {
+   "key": "co",
+   "surfaces": [
+    "co"
+   ],
+   "meaning": "共同(与 com- 同源)",
+   "examples": "cost, coincide"
+  },
+  {
+   "key": "se",
+   "surfaces": [
+    "se"
+   ],
+   "meaning": "分开、离开",
+   "examples": "separate, select, persevere"
+  },
+  {
+   "key": "intel",
+   "surfaces": [
+    "intel"
+   ],
+   "meaning": "(inter- 变体)在…之间",
+   "examples": "intelligence, intellectual"
+  },
+  {
+   "key": "ana",
+   "surfaces": [
+    "ana"
+   ],
+   "meaning": "向上、再、分析",
+   "examples": "analyst, analytic, analysis"
+  },
+  {
+   "key": "intro",
+   "surfaces": [
+    "intro"
+   ],
+   "meaning": "向内、引入",
+   "examples": "introduce, introduction"
+  },
+  {
+   "key": "infra",
+   "surfaces": [
+    "infra"
+   ],
+   "meaning": "在下、下部",
+   "examples": "infrastructure"
+  },
+  {
+   "key": "amb",
+   "surfaces": [
+    "amb",
+    "ambi"
+   ],
+   "meaning": "两边、周围",
+   "examples": "ambition, ambiguous"
+  },
+  {
+   "key": "apo",
+   "surfaces": [
+    "apo"
+   ],
+   "meaning": "离开",
+   "examples": "apology, apologise"
+  },
+  {
+   "key": "extra",
+   "surfaces": [
+    "extra"
+   ],
+   "meaning": "以外、超出",
+   "examples": "extraordinary, extracurricular"
+  },
+  {
+   "key": "contra",
+   "surfaces": [
+    "contra"
+   ],
+   "meaning": "相反、相对",
+   "examples": "contrary, contrast"
+  },
+  {
+   "key": "i",
+   "surfaces": [
+    "i"
+   ],
+   "meaning": "(in- 变体)进入、使",
+   "examples": "isolate, ignite"
+  }
+ ],
+ "suffixes": [
+  {
+   "key": "er",
+   "surfaces": [
+    "er",
+    "or",
+    "ar"
+   ],
+   "meaning": "人或物",
+   "examples": "teacher, worker, driver, computer, actor, visitor, calculator, professor, editor, liar, beggar"
+  },
+  {
+   "key": "ee",
+   "surfaces": [
+    "ee"
+   ],
+   "meaning": "受动者",
+   "examples": "employee, trainee, interviewee, examinee, trustee"
+  },
+  {
+   "key": "eer",
+   "surfaces": [
+    "eer"
+   ],
+   "meaning": "从事者",
+   "examples": "engineer, pioneer, volunteer"
+  },
+  {
+   "key": "ess",
+   "surfaces": [
+    "ess"
+   ],
+   "meaning": "女性",
+   "examples": "actress, waitress, hostess, princess, lioness"
+  },
+  {
+   "key": "ist",
+   "surfaces": [
+    "ist"
+   ],
+   "meaning": "从事者/信仰者",
+   "examples": "scientist, artist, journalist, tourist, socialist, capitalist, cyclist"
+  },
+  {
+   "key": "ian",
+   "surfaces": [
+    "ian",
+    "ician"
+   ],
+   "meaning": "职业者",
+   "examples": "musician, politician, physician, technician, electrician, historian, librarian, civilian, guardian"
+  },
+  {
+   "key": "ant",
+   "surfaces": [
+    "ant",
+    "ent"
+   ],
+   "meaning": "人",
+   "examples": "assistant, accountant, applicant, servant, consultant, contestant, participant;student, president, agent"
+  },
+  {
+   "key": "ster",
+   "surfaces": [
+    "ster"
+   ],
+   "meaning": "人",
+   "examples": "youngster, gangster, pollster"
+  },
+  {
+   "key": "ard",
+   "surfaces": [
+    "ard"
+   ],
+   "meaning": "贬义人",
+   "examples": "coward, drunkard"
+  },
+  {
+   "key": "man",
+   "surfaces": [
+    "man"
+   ],
+   "meaning": "复合,人",
+   "examples": "fireman, postman, policeman, salesman, businessman, spokesman, statesman"
+  },
+  {
+   "key": "ion",
+   "surfaces": [
+    "ion",
+    "tion",
+    "sion",
+    "ation",
+    "ition"
+   ],
+   "meaning": "行为 / 结果 / 状态",
+   "examples": "action, decision, discussion, education, information, production, expression, transmission"
+  },
+  {
+   "key": "ment",
+   "surfaces": [
+    "ment"
+   ],
+   "meaning": "行为 / 结果 / 状态",
+   "examples": "development, government, agreement, movement, judgment, treatment"
+  },
+  {
+   "key": "ance",
+   "surfaces": [
+    "ance",
+    "ence",
+    "ancy",
+    "ency"
+   ],
+   "meaning": "行为 / 结果 / 状态",
+   "examples": "importance, difference, acceptance, existence, conference, independence;frequency, urgency, agency, efficiency, emergency"
+  },
+  {
+   "key": "age",
+   "surfaces": [
+    "age"
+   ],
+   "meaning": "行为/集合/费用",
+   "examples": "marriage, baggage, storage, postage, shortage, language, village, percentage"
+  },
+  {
+   "key": "al",
+   "surfaces": [
+    "al",
+    "ial",
+    "ual"
+   ],
+   "meaning": "行为;...的",
+   "examples": "arrival, refusal, approval, removal, survival, denial, burial, proposal, betrayal,natural,national,central,cultural;commercial,official,financial,artificial,beneficial,essential,substantial,potential;actual,annual,gradual,individual,usual,mutual,visual"
+  },
+  {
+   "key": "ure",
+   "surfaces": [
+    "ure"
+   ],
+   "meaning": "行为/结果",
+   "examples": "failure, pressure, pleasure, culture, nature, measure, seizure"
+  },
+  {
+   "key": "th",
+   "surfaces": [
+    "th"
+   ],
+   "meaning": "性质",
+   "examples": "length, strength, warmth, truth, youth, health, wealth, growth, depth, width"
+  },
+  {
+   "key": "dom",
+   "surfaces": [
+    "dom"
+   ],
+   "meaning": "状态/领域",
+   "examples": "freedom, kingdom, wisdom"
+  },
+  {
+   "key": "hood",
+   "surfaces": [
+    "hood"
+   ],
+   "meaning": "身份/时期",
+   "examples": "adulthood, neighborhood, likelihood, manhood, falsehood"
+  },
+  {
+   "key": "ship",
+   "surfaces": [
+    "ship"
+   ],
+   "meaning": "关系/身份",
+   "examples": "friendship, leadership, membership, relationship, scholarship, hardship, ownership"
+  },
+  {
+   "key": "cy",
+   "surfaces": [
+    "cy",
+    "acy"
+   ],
+   "meaning": "性质",
+   "examples": "accuracy, privacy, literacy, intimacy, bankruptcy, advocacy, currency"
+  },
+  {
+   "key": "ity",
+   "surfaces": [
+    "ity",
+    "ty"
+   ],
+   "meaning": "性质",
+   "examples": "ability, possibility, reality, activity, quality, university, security;cruelty, loyalty, penalty, modesty, poverty, novelty"
+  },
+  {
+   "key": "ness",
+   "surfaces": [
+    "ness"
+   ],
+   "meaning": "状态",
+   "examples": "happiness, kindness, illness, darkness, awareness, weakness, business, wilderness"
+  },
+  {
+   "key": "y",
+   "surfaces": [
+    "y"
+   ],
+   "meaning": "性质/集合;多…的",
+   "examples": "modesty, jealousy, discovery, inquiry,rainy,sunny,windy,cloudy,lucky,easy,busy,dirty,healthy,angry,hungry,worthy"
+  },
+  {
+   "key": "ery",
+   "surfaces": [
+    "ery",
+    "ry"
+   ],
+   "meaning": "场所/集合",
+   "examples": "bakery, grocery, nursery, machinery, jewellery(jewelery), bravery, slavery, surgery, refinery, robbery"
+  },
+  {
+   "key": "itude",
+   "surfaces": [
+    "itude"
+   ],
+   "meaning": "状态",
+   "examples": "attitude, altitude, gratitude"
+  },
+  {
+   "key": "ics",
+   "surfaces": [
+    "ics"
+   ],
+   "meaning": "学科后缀",
+   "examples": "physics, economics, politics, mathematics, statistic, mechanics, ethics"
+  },
+  {
+   "key": "logy",
+   "surfaces": [
+    "logy"
+   ],
+   "meaning": "学科后缀",
+   "examples": "biology, psychology, technology, geology, sociology, zoology, ecology, methodology, mythology"
+  },
+  {
+   "key": "able",
+   "surfaces": [
+    "able",
+    "ible"
+   ],
+   "meaning": "可…的",
+   "examples": "acceptable, available, comfortable, reasonable, terrible, possible, visible, flexible, horrible, incredible, sensible"
+  },
+  {
+   "key": "ic",
+   "surfaces": [
+    "ic",
+    "ical"
+   ],
+   "meaning": "...的",
+   "examples": "economic, atomic, historic, heroic, scientific, sympathetic;political, musical, physical, typical, logical, magical, historical"
+  },
+  {
+   "key": "ive",
+   "surfaces": [
+    "ive",
+    "ative"
+   ],
+   "meaning": "有…性质",
+   "examples": "active, creative, effective, attractive, positive, expensive, impressive, protective;talkative, imaginative, conservative, decorative"
+  },
+  {
+   "key": "ous",
+   "surfaces": [
+    "ous",
+    "ious"
+   ],
+   "meaning": "多…的",
+   "examples": "famous, dangerous, nervous, serious, various, anxious, obvious, religious, generous, curious, previous, ambitious, delicious, precious, suspicious"
+  },
+  {
+   "key": "ful",
+   "surfaces": [
+    "ful"
+   ],
+   "meaning": "充满…",
+   "examples": "careful, useful, beautiful, helpful, wonderful, successful, painful, powerful"
+  },
+  {
+   "key": "less",
+   "surfaces": [
+    "less"
+   ],
+   "meaning": "无…",
+   "examples": "careless, endless, useless, hopeless, homeless, priceless, harmless"
+  },
+  {
+   "key": "ly",
+   "surfaces": [
+    "ly"
+   ],
+   "meaning": "如…的;学科后缀",
+   "examples": "friendly, lovely, lonely, daily, weekly, monthly, yearly, likely, lively, deadly, elderly, costly,really,finally,usually,especially,suddenly,nearly,hardly,barely,clearly"
+  },
+  {
+   "key": "en",
+   "surfaces": [
+    "en"
+   ],
+   "meaning": "材料;使变得",
+   "examples": "golden, wooden, woolen,weaken,widen,strengthen,sharpen,fasten,harden,frighten,threaten,brighten,darken"
+  },
+  {
+   "key": "ish",
+   "surfaces": [
+    "ish"
+   ],
+   "meaning": "略…的",
+   "examples": "childish, foolish, selfish"
+  },
+  {
+   "key": "ary",
+   "surfaces": [
+    "ary"
+   ],
+   "meaning": "...的",
+   "examples": "necessary, ordinary, temporary, contemporary, imaginary, voluntary, customary"
+  },
+  {
+   "key": "ory",
+   "surfaces": [
+    "ory"
+   ],
+   "meaning": "...的",
+   "examples": "satisfactory, advisory, introductory, obligatory, preparatory"
+  },
+  {
+   "key": "ent",
+   "surfaces": [
+    "ent",
+    "ant"
+   ],
+   "meaning": "...的",
+   "examples": "different, important, excellent, significant, independent, patient, constant, frequent, distant, abundant, pleasant"
+  },
+  {
+   "key": "ile",
+   "surfaces": [
+    "ile"
+   ],
+   "meaning": "...的",
+   "examples": "mobile, hostile, textile"
+  },
+  {
+   "key": "ite",
+   "surfaces": [
+    "ite"
+   ],
+   "meaning": "...的",
+   "examples": "favorite, opposite, definite, infinite"
+  },
+  {
+   "key": "istic",
+   "surfaces": [
+    "istic"
+   ],
+   "meaning": "...主义的",
+   "examples": "realistic, optimistic, pessimistic, idealistic"
+  },
+  {
+   "key": "esque",
+   "surfaces": [
+    "esque"
+   ],
+   "meaning": "如…的",
+   "examples": "picturesque"
+  },
+  {
+   "key": "ize",
+   "surfaces": [
+    "ize",
+    "ise"
+   ],
+   "meaning": "使…化",
+   "examples": "realize, organize, modernize, apologize, criticize, emphasize, recognize, memorize, summarize"
+  },
+  {
+   "key": "ify",
+   "surfaces": [
+    "ify",
+    "fy"
+   ],
+   "meaning": "使…化",
+   "examples": "simplify, satisfy, classify, identify, qualify, justify, purify, notify, terrify, verify"
+  },
+  {
+   "key": "ate",
+   "surfaces": [
+    "ate"
+   ],
+   "meaning": "做、使",
+   "examples": "celebrate, educate, graduate, communicate, translate, indicate, participate, appreciate, accommodate"
+  },
+  {
+   "key": "ward",
+   "surfaces": [
+    "ward",
+    "wards"
+   ],
+   "meaning": "学科后缀",
+   "examples": "forward, backward, toward, upward, downward, afterward, inward, onward"
+  },
+  {
+   "key": "wise",
+   "surfaces": [
+    "wise"
+   ],
+   "meaning": "学科后缀",
+   "examples": "clockwise, likewise, otherwise"
+  },
+  {
+   "key": "acy",
+   "surfaces": [
+    "acy"
+   ],
+   "meaning": "性质",
+   "examples": ""
+  },
+  {
+   "key": "an",
+   "surfaces": [
+    "an"
+   ],
+   "meaning": "…的、…之人",
+   "examples": ""
+  },
+  {
+   "key": "ancy",
+   "surfaces": [
+    "ancy"
+   ],
+   "meaning": "行为 / 结果 / 状态",
+   "examples": ""
+  },
+  {
+   "key": "aneous",
+   "surfaces": [
+    "aneous"
+   ],
+   "meaning": "…的",
+   "examples": ""
+  },
+  {
+   "key": "ar",
+   "surfaces": [
+    "ar"
+   ],
+   "meaning": "人或物",
+   "examples": ""
+  },
+  {
+   "key": "ation",
+   "surfaces": [
+    "ation"
+   ],
+   "meaning": "行为 / 结果 / 状态",
+   "examples": ""
+  },
+  {
+   "key": "ative",
+   "surfaces": [
+    "ative"
+   ],
+   "meaning": "有…性质",
+   "examples": ""
+  },
+  {
+   "key": "atory",
+   "surfaces": [
+    "atory"
+   ],
+   "meaning": "…的",
+   "examples": ""
+  },
+  {
+   "key": "atus",
+   "surfaces": [
+    "atus"
+   ],
+   "meaning": "词尾(拉丁完成分词)",
+   "examples": ""
+  },
+  {
+   "key": "ce",
+   "surfaces": [
+    "ce"
+   ],
+   "meaning": "词尾(行为/结果)",
+   "examples": ""
+  },
+  {
+   "key": "cel",
+   "surfaces": [
+    "cel"
+   ],
+   "meaning": "小(爱称/缩小)",
+   "examples": ""
+  },
+  {
+   "key": "el",
+   "surfaces": [
+    "el"
+   ],
+   "meaning": "小(名词尾)",
+   "examples": ""
+  },
+  {
+   "key": "ence",
+   "surfaces": [
+    "ence"
+   ],
+   "meaning": "行为 / 结果 / 状态",
+   "examples": ""
+  },
+  {
+   "key": "ency",
+   "surfaces": [
+    "ency"
+   ],
+   "meaning": "行为 / 结果 / 状态",
+   "examples": ""
+  },
+  {
+   "key": "enza",
+   "surfaces": [
+    "enza"
+   ],
+   "meaning": "词尾",
+   "examples": ""
+  },
+  {
+   "key": "etic",
+   "surfaces": [
+    "etic"
+   ],
+   "meaning": "…的",
+   "examples": ""
+  },
+  {
+   "key": "ety",
+   "surfaces": [
+    "ety"
+   ],
+   "meaning": "性质(名词尾)",
+   "examples": ""
+  },
+  {
+   "key": "ey",
+   "surfaces": [
+    "ey"
+   ],
+   "meaning": "词尾",
+   "examples": ""
+  },
+  {
+   "key": "fy",
+   "surfaces": [
+    "fy"
+   ],
+   "meaning": "使…化",
+   "examples": ""
+  },
+  {
+   "key": "ial",
+   "surfaces": [
+    "ial"
+   ],
+   "meaning": "行为;...的",
+   "examples": ""
+  },
+  {
+   "key": "ibility",
+   "surfaces": [
+    "ibility"
+   ],
+   "meaning": "可…的性质",
+   "examples": ""
+  },
+  {
+   "key": "ible",
+   "surfaces": [
+    "ible"
+   ],
+   "meaning": "可…的",
+   "examples": ""
+  },
+  {
+   "key": "ical",
+   "surfaces": [
+    "ical"
+   ],
+   "meaning": "...的",
+   "examples": ""
+  },
+  {
+   "key": "ice",
+   "surfaces": [
+    "ice"
+   ],
+   "meaning": "行为/状态(名词尾)",
+   "examples": ""
+  },
+  {
+   "key": "ician",
+   "surfaces": [
+    "ician"
+   ],
+   "meaning": "职业者",
+   "examples": ""
+  },
+  {
+   "key": "id",
+   "surfaces": [
+    "id"
+   ],
+   "meaning": "多…的、…的",
+   "examples": ""
+  },
+  {
+   "key": "ier",
+   "surfaces": [
+    "ier"
+   ],
+   "meaning": "…的人/物",
+   "examples": ""
+  },
+  {
+   "key": "ies",
+   "surfaces": [
+    "ies"
+   ],
+   "meaning": "复数词尾/性质",
+   "examples": ""
+  },
+  {
+   "key": "ility",
+   "surfaces": [
+    "ility"
+   ],
+   "meaning": "…的性质",
+   "examples": ""
+  },
+  {
+   "key": "ily",
+   "surfaces": [
+    "ily"
+   ],
+   "meaning": "…地(副词尾)",
+   "examples": ""
+  },
+  {
+   "key": "ine",
+   "surfaces": [
+    "ine"
+   ],
+   "meaning": "…的、属于…的",
+   "examples": ""
+  },
+  {
+   "key": "ing",
+   "surfaces": [
+    "ing"
+   ],
+   "meaning": "现在分词/动名词(…中、…的)",
+   "examples": ""
+  },
+  {
+   "key": "ior",
+   "surfaces": [
+    "ior"
+   ],
+   "meaning": "…的(比较级词尾)",
+   "examples": ""
+  },
+  {
+   "key": "ious",
+   "surfaces": [
+    "ious"
+   ],
+   "meaning": "多…的",
+   "examples": ""
+  },
+  {
+   "key": "isation",
+   "surfaces": [
+    "isation"
+   ],
+   "meaning": "…化(名词,英式)",
+   "examples": ""
+  },
+  {
+   "key": "ise",
+   "surfaces": [
+    "ise"
+   ],
+   "meaning": "使…化",
+   "examples": ""
+  },
+  {
+   "key": "ism",
+   "surfaces": [
+    "ism"
+   ],
+   "meaning": "…主义、…学说",
+   "examples": ""
+  },
+  {
+   "key": "ition",
+   "surfaces": [
+    "ition"
+   ],
+   "meaning": "行为 / 结果 / 状态",
+   "examples": ""
+  },
+  {
+   "key": "ium",
+   "surfaces": [
+    "ium"
+   ],
+   "meaning": "场所、集合(名词尾)",
+   "examples": ""
+  },
+  {
+   "key": "ivate",
+   "surfaces": [
+    "ivate"
+   ],
+   "meaning": "动词尾(使…)",
+   "examples": ""
+  },
+  {
+   "key": "ivity",
+   "surfaces": [
+    "ivity"
+   ],
+   "meaning": "…的性质",
+   "examples": ""
+  },
+  {
+   "key": "ization",
+   "surfaces": [
+    "ization"
+   ],
+   "meaning": "…化(名词)",
+   "examples": ""
+  },
+  {
+   "key": "nomy",
+   "surfaces": [
+    "nomy"
+   ],
+   "meaning": "法则、学科",
+   "examples": ""
+  },
+  {
+   "key": "on",
+   "surfaces": [
+    "on"
+   ],
+   "meaning": "词尾(名词)",
+   "examples": ""
+  },
+  {
+   "key": "or",
+   "surfaces": [
+    "or"
+   ],
+   "meaning": "人或物",
+   "examples": ""
+  },
+  {
+   "key": "osity",
+   "surfaces": [
+    "osity"
+   ],
+   "meaning": "…的性质",
+   "examples": ""
+  },
+  {
+   "key": "re",
+   "surfaces": [
+    "re"
+   ],
+   "meaning": "词尾(英式拼法)",
+   "examples": ""
+  },
+  {
+   "key": "ry",
+   "surfaces": [
+    "ry"
+   ],
+   "meaning": "场所/集合",
+   "examples": ""
+  },
+  {
+   "key": "sion",
+   "surfaces": [
+    "sion"
+   ],
+   "meaning": "行为 / 结果 / 状态",
+   "examples": ""
+  },
+  {
+   "key": "tion",
+   "surfaces": [
+    "tion"
+   ],
+   "meaning": "行为 / 结果 / 状态",
+   "examples": ""
+  },
+  {
+   "key": "ty",
+   "surfaces": [
+    "ty"
+   ],
+   "meaning": "性质",
+   "examples": ""
+  },
+  {
+   "key": "ual",
+   "surfaces": [
+    "ual"
+   ],
+   "meaning": "行为;...的",
+   "examples": ""
+  },
+  {
+   "key": "ular",
+   "surfaces": [
+    "ular"
+   ],
+   "meaning": "…的",
+   "examples": ""
+  },
+  {
+   "key": "ult",
+   "surfaces": [
+    "ult"
+   ],
+   "meaning": "词尾(结果)",
+   "examples": ""
+  },
+  {
+   "key": "um",
+   "surfaces": [
+    "um"
+   ],
+   "meaning": "词尾(名词)",
+   "examples": ""
+  },
+  {
+   "key": "ume",
+   "surfaces": [
+    "ume"
+   ],
+   "meaning": "词尾(名词)",
+   "examples": ""
+  },
+  {
+   "key": "us",
+   "surfaces": [
+    "us"
+   ],
+   "meaning": "词尾(拉丁名词)",
+   "examples": ""
+  },
+  {
+   "key": "wards",
+   "surfaces": [
+    "wards"
+   ],
+   "meaning": "学科后缀",
+   "examples": ""
+  }
+ ],
+ "roots": [
+  {
+   "key": "ag",
+   "surfaces": [
+    "ag"
+   ],
+   "meaning": "做、驱动",
+   "examples": "agent, agency, agenda"
+  },
+  {
+   "key": "alter",
+   "surfaces": [
+    "alter"
+   ],
+   "meaning": "其他、改变",
+   "examples": "alter, alteration, alternative"
+  },
+  {
+   "key": "angul",
+   "surfaces": [
+    "angul",
+    "angl"
+   ],
+   "meaning": "角",
+   "examples": "angle, triangle, triangular"
+  },
+  {
+   "key": "ann",
+   "surfaces": [
+    "ann",
+    "enn"
+   ],
+   "meaning": "年",
+   "examples": "annual, anniversary"
+  },
+  {
+   "key": "ante",
+   "surfaces": [
+    "ante",
+    "anti"
+   ],
+   "meaning": "前、先",
+   "examples": "anticipate, antique"
+  },
+  {
+   "key": "apt",
+   "surfaces": [
+    "apt"
+   ],
+   "meaning": "适合、能力",
+   "examples": "aptitude, adapt, adaptation, adaptive"
+  },
+  {
+   "key": "art",
+   "surfaces": [
+    "art"
+   ],
+   "meaning": "技艺",
+   "examples": "art, artist, artistic, article, artificial"
+  },
+  {
+   "key": "astr",
+   "surfaces": [
+    "astr",
+    "astro"
+   ],
+   "meaning": "星",
+   "examples": "astronaut, astronomy, astronomical, disaster"
+  },
+  {
+   "key": "audi",
+   "surfaces": [
+    "audi"
+   ],
+   "meaning": "听",
+   "examples": "audience, audio, auditorium"
+  },
+  {
+   "key": "aug",
+   "surfaces": [
+    "aug",
+    "author"
+   ],
+   "meaning": "增加、创造",
+   "examples": "author, authority, authorize"
+  },
+  {
+   "key": "bat",
+   "surfaces": [
+    "bat"
+   ],
+   "meaning": "打",
+   "examples": "battle, combat, debate, battery, battalion"
+  },
+  {
+   "key": "bio",
+   "surfaces": [
+    "bio"
+   ],
+   "meaning": "生命",
+   "examples": "biology, biography, biotechnology"
+  },
+  {
+   "key": "brev",
+   "surfaces": [
+    "brev"
+   ],
+   "meaning": "短",
+   "examples": "brief, briefing"
+  },
+  {
+   "key": "cap",
+   "surfaces": [
+    "cap",
+    "cept",
+    "ceive",
+    "cip",
+    "cup"
+   ],
+   "meaning": "拿、抓、取",
+   "examples": "capable, capacity, capture, accept, concept, except, deceive, perceive, receive, principal, anticipate, occupy, occupation"
+  },
+  {
+   "key": "capit",
+   "surfaces": [
+    "capit"
+   ],
+   "meaning": "头",
+   "examples": "capital, captain, chapter, cattle"
+  },
+  {
+   "key": "cede",
+   "surfaces": [
+    "cede",
+    "ceed",
+    "cess"
+   ],
+   "meaning": "走、让步",
+   "examples": "proceed, process, exceed, succeed, access, recession"
+  },
+  {
+   "key": "cent",
+   "surfaces": [
+    "cent"
+   ],
+   "meaning": "百",
+   "examples": "century, percent, centigrade, centimeter"
+  },
+  {
+   "key": "centr",
+   "surfaces": [
+    "centr"
+   ],
+   "meaning": "中心",
+   "examples": "center, central, centralize"
+  },
+  {
+   "key": "cert",
+   "surfaces": [
+    "cert"
+   ],
+   "meaning": "确定",
+   "examples": "certain, certainty, certificate"
+  },
+  {
+   "key": "circ",
+   "surfaces": [
+    "circ"
+   ],
+   "meaning": "圆、环",
+   "examples": "circle, circuit, circulate, circus"
+  },
+  {
+   "key": "cite",
+   "surfaces": [
+    "cite"
+   ],
+   "meaning": "引用、唤起",
+   "examples": "cite, citation, recite, recitation"
+  },
+  {
+   "key": "civ",
+   "surfaces": [
+    "civ"
+   ],
+   "meaning": "公民",
+   "examples": "civil, civilian, civilize, civilization"
+  },
+  {
+   "key": "claim",
+   "surfaces": [
+    "claim",
+    "clam"
+   ],
+   "meaning": "喊叫",
+   "examples": "claim, exclaim, proclaim, exclamation, proclamation"
+  },
+  {
+   "key": "clar",
+   "surfaces": [
+    "clar"
+   ],
+   "meaning": "清楚",
+   "examples": "clear, clarify, clarity, clarification"
+  },
+  {
+   "key": "cogn",
+   "surfaces": [
+    "cogn"
+   ],
+   "meaning": "知道",
+   "examples": "recognize, recognition"
+  },
+  {
+   "key": "cord",
+   "surfaces": [
+    "cord"
+   ],
+   "meaning": "心",
+   "examples": "accord, accordance, accordingly"
+  },
+  {
+   "key": "corp",
+   "surfaces": [
+    "corp"
+   ],
+   "meaning": "身体",
+   "examples": "corporate, corporation, corps"
+  },
+  {
+   "key": "cosm",
+   "surfaces": [
+    "cosm"
+   ],
+   "meaning": "宇宙",
+   "examples": "cosmos, cosmic"
+  },
+  {
+   "key": "crat",
+   "surfaces": [
+    "crat",
+    "cracy"
+   ],
+   "meaning": "统治",
+   "examples": "democracy, democratic, democrat"
+  },
+  {
+   "key": "cred",
+   "surfaces": [
+    "cred"
+   ],
+   "meaning": "相信",
+   "examples": "credit, creditable, incredible"
+  },
+  {
+   "key": "cruc",
+   "surfaces": [
+    "cruc"
+   ],
+   "meaning": "十字",
+   "examples": "crucial, cross, crossing"
+  },
+  {
+   "key": "cult",
+   "surfaces": [
+    "cult"
+   ],
+   "meaning": "耕种、培养",
+   "examples": "culture, cultivate, agriculture"
+  },
+  {
+   "key": "curs",
+   "surfaces": [
+    "curs",
+    "cours"
+   ],
+   "meaning": "跑",
+   "examples": "occur, current, currency, excursion, curriculum, course"
+  },
+  {
+   "key": "dem",
+   "surfaces": [
+    "dem"
+   ],
+   "meaning": "人民",
+   "examples": "democracy, democratic, democrat"
+  },
+  {
+   "key": "dent",
+   "surfaces": [
+    "dent"
+   ],
+   "meaning": "牙",
+   "examples": "dental, dentist"
+  },
+  {
+   "key": "dic",
+   "surfaces": [
+    "dic",
+    "dict"
+   ],
+   "meaning": "说、指示",
+   "examples": "dictate, dictionary, predict, contradict, indicate"
+  },
+  {
+   "key": "doc",
+   "surfaces": [
+    "doc"
+   ],
+   "meaning": "教",
+   "examples": "doctor, document, documentary, doctorate"
+  },
+  {
+   "key": "domin",
+   "surfaces": [
+    "domin"
+   ],
+   "meaning": "统治",
+   "examples": "dominate, dominant, dominance"
+  },
+  {
+   "key": "don",
+   "surfaces": [
+    "don"
+   ],
+   "meaning": "给予",
+   "examples": "donate, donation, donor"
+  },
+  {
+   "key": "duc",
+   "surfaces": [
+    "duc",
+    "duct"
+   ],
+   "meaning": "引导",
+   "examples": "produce, reduce, conduct, educate, introduce, reproduce"
+  },
+  {
+   "key": "dur",
+   "surfaces": [
+    "dur"
+   ],
+   "meaning": "持续、坚硬",
+   "examples": "durable, duration, endure, endurance, during"
+  },
+  {
+   "key": "equ",
+   "surfaces": [
+    "equ"
+   ],
+   "meaning": "相等",
+   "examples": "equal, equality, adequate, equivalent"
+  },
+  {
+   "key": "err",
+   "surfaces": [
+    "err"
+   ],
+   "meaning": "犯错、漫游",
+   "examples": "err, error, erroneous"
+  },
+  {
+   "key": "fact",
+   "surfaces": [
+    "fact",
+    "fect",
+    "fic",
+    "fict"
+   ],
+   "meaning": "做、制作",
+   "examples": "fact, factory, manufacture, affect, effect, efficient, sufficient, perfect, infect, artificial, beneficial, sacrifice, fiction"
+  },
+  {
+   "key": "feder",
+   "surfaces": [
+    "feder"
+   ],
+   "meaning": "联盟",
+   "examples": "federal, federation"
+  },
+  {
+   "key": "fend",
+   "surfaces": [
+    "fend",
+    "fens"
+   ],
+   "meaning": "打击",
+   "examples": "defend, defense, offense, offensive"
+  },
+  {
+   "key": "fer",
+   "surfaces": [
+    "fer"
+   ],
+   "meaning": "带来、承受",
+   "examples": "transfer, refer, prefer, differ, conference, offer, suffer, interfere, ferry"
+  },
+  {
+   "key": "fess",
+   "surfaces": [
+    "fess"
+   ],
+   "meaning": "说",
+   "examples": "confess, confession, professor, profession"
+  },
+  {
+   "key": "fin",
+   "surfaces": [
+    "fin"
+   ],
+   "meaning": "界限、结束",
+   "examples": "final, define, infinite, confine, refine, finance"
+  },
+  {
+   "key": "firm",
+   "surfaces": [
+    "firm"
+   ],
+   "meaning": "坚固",
+   "examples": "firm, confirm, confirmation"
+  },
+  {
+   "key": "fix",
+   "surfaces": [
+    "fix"
+   ],
+   "meaning": "固定",
+   "examples": "fix, fixed, fixture, fixation"
+  },
+  {
+   "key": "flex",
+   "surfaces": [
+    "flex",
+    "flect"
+   ],
+   "meaning": "弯曲",
+   "examples": "flexible, reflect, reflection"
+  },
+  {
+   "key": "form",
+   "surfaces": [
+    "form"
+   ],
+   "meaning": "形状",
+   "examples": "form, formal, formula, transform, uniform, reform, perform, conform"
+  },
+  {
+   "key": "fort",
+   "surfaces": [
+    "fort"
+   ],
+   "meaning": "强",
+   "examples": "force, enforce, effort, comfort"
+  },
+  {
+   "key": "found",
+   "surfaces": [
+    "found",
+    "fund"
+   ],
+   "meaning": "底、基础",
+   "examples": "found, foundation, fund, fundamental, profound"
+  },
+  {
+   "key": "frag",
+   "surfaces": [
+    "frag",
+    "fract"
+   ],
+   "meaning": "破碎",
+   "examples": "fragment, fraction, fragmentation"
+  },
+  {
+   "key": "fus",
+   "surfaces": [
+    "fus"
+   ],
+   "meaning": "倒、流",
+   "examples": "confuse, refuse, refusal"
+  },
+  {
+   "key": "geo",
+   "surfaces": [
+    "geo"
+   ],
+   "meaning": "地",
+   "examples": "geography, geology, geometry, geometric"
+  },
+  {
+   "key": "gen",
+   "surfaces": [
+    "gen"
+   ],
+   "meaning": "出生、产生",
+   "examples": "gene, generate, generation, generous, genius, genetic, genuine"
+  },
+  {
+   "key": "gest",
+   "surfaces": [
+    "gest"
+   ],
+   "meaning": "带来、运送",
+   "examples": "gesture, digest, suggest"
+  },
+  {
+   "key": "grad",
+   "surfaces": [
+    "grad",
+    "gress"
+   ],
+   "meaning": "步、走",
+   "examples": "graduate, gradual, progress, congress, aggressive, aggression"
+  },
+  {
+   "key": "gram",
+   "surfaces": [
+    "gram"
+   ],
+   "meaning": "写、字母",
+   "examples": "grammar, diagram, program, kilogram"
+  },
+  {
+   "key": "graph",
+   "surfaces": [
+    "graph"
+   ],
+   "meaning": "写、画",
+   "examples": "graph, graphic, paragraph, photograph, geography"
+  },
+  {
+   "key": "grat",
+   "surfaces": [
+    "grat"
+   ],
+   "meaning": "高兴、感谢",
+   "examples": "grateful, gratitude, congratulate, congratulation"
+  },
+  {
+   "key": "grav",
+   "surfaces": [
+    "grav"
+   ],
+   "meaning": "重",
+   "examples": "gravity, gravitation, grave"
+  },
+  {
+   "key": "hab",
+   "surfaces": [
+    "hab",
+    "hibit"
+   ],
+   "meaning": "拥有、持",
+   "examples": "habit, inhabit, inhabitant, exhibit, prohibit"
+  },
+  {
+   "key": "her",
+   "surfaces": [
+    "her",
+    "hes"
+   ],
+   "meaning": "继承",
+   "examples": "inherit, inheritance, heritage, heir, heiress"
+  },
+  {
+   "key": "hor",
+   "surfaces": [
+    "hor"
+   ],
+   "meaning": "害怕",
+   "examples": "horror, horrible, horrify"
+  },
+  {
+   "key": "integr",
+   "surfaces": [
+    "integr"
+   ],
+   "meaning": "完整",
+   "examples": "integrate, integration, integrity"
+  },
+  {
+   "key": "ject",
+   "surfaces": [
+    "ject"
+   ],
+   "meaning": "投掷",
+   "examples": "object, reject, subject, adjective"
+  },
+  {
+   "key": "jud",
+   "surfaces": [
+    "jud",
+    "jur",
+    "jus"
+   ],
+   "meaning": "法律、判断",
+   "examples": "judge, judgment, prejudice, jury, justice, justify, injury"
+  },
+  {
+   "key": "labor",
+   "surfaces": [
+    "labor"
+   ],
+   "meaning": "劳动",
+   "examples": "labor, laboratory, collaborate, laborious"
+  },
+  {
+   "key": "lat",
+   "surfaces": [
+    "lat"
+   ],
+   "meaning": "携带",
+   "examples": "translate, relate, relative, relativity"
+  },
+  {
+   "key": "lect",
+   "surfaces": [
+    "lect",
+    "leg"
+   ],
+   "meaning": "收集、选择、读",
+   "examples": "collect, select, elect, lecture, neglect, intellectual, elegant, delegate, legal, legislation, privilege, diligent, intelligence"
+  },
+  {
+   "key": "lev",
+   "surfaces": [
+    "lev"
+   ],
+   "meaning": "举、轻",
+   "examples": "elevate, elevator, relevant, relieve, relief"
+  },
+  {
+   "key": "liber",
+   "surfaces": [
+    "liber"
+   ],
+   "meaning": "自由",
+   "examples": "liberate, liberty, liberal"
+  },
+  {
+   "key": "lim",
+   "surfaces": [
+    "lim"
+   ],
+   "meaning": "界限",
+   "examples": "limit, limitation, eliminate, preliminary"
+  },
+  {
+   "key": "liter",
+   "surfaces": [
+    "liter"
+   ],
+   "meaning": "文字",
+   "examples": "literature, literary, literate, literacy, literal"
+  },
+  {
+   "key": "loc",
+   "surfaces": [
+    "loc"
+   ],
+   "meaning": "地方",
+   "examples": "local, locate, location, locality"
+  },
+  {
+   "key": "log",
+   "surfaces": [
+    "log"
+   ],
+   "meaning": "说、理性、学科",
+   "examples": "logic, dialogue, apology, biology, geology, psychology, technology"
+  },
+  {
+   "key": "man",
+   "surfaces": [
+    "man",
+    "manu"
+   ],
+   "meaning": "手",
+   "examples": "manual, manufacture, manipulate, management"
+  },
+  {
+   "key": "mand",
+   "surfaces": [
+    "mand"
+   ],
+   "meaning": "命令、托付",
+   "examples": "command, demand, commander,recommend,recommendation"
+  },
+  {
+   "key": "med",
+   "surfaces": [
+    "med"
+   ],
+   "meaning": "治愈",
+   "examples": "medical, medicine, remedy, Medicare"
+  },
+  {
+   "key": "medi",
+   "surfaces": [
+    "medi"
+   ],
+   "meaning": "中间",
+   "examples": "medium, media, immediate"
+  },
+  {
+   "key": "memor",
+   "surfaces": [
+    "memor"
+   ],
+   "meaning": "记忆",
+   "examples": "memory, memorial, memorize, remember, memorandum"
+  },
+  {
+   "key": "ment",
+   "surfaces": [
+    "ment"
+   ],
+   "meaning": "心智",
+   "examples": "mental, mentality, mention, comment"
+  },
+  {
+   "key": "merc",
+   "surfaces": [
+    "merc"
+   ],
+   "meaning": "交易",
+   "examples": "merchant, commerce, commercial, mercy"
+  },
+  {
+   "key": "merg",
+   "surfaces": [
+    "merg"
+   ],
+   "meaning": "沉",
+   "examples": "emerge, emergence, emergency"
+  },
+  {
+   "key": "migr",
+   "surfaces": [
+    "migr"
+   ],
+   "meaning": "迁移",
+   "examples": "migrate, immigrant, immigrate, migrant"
+  },
+  {
+   "key": "min",
+   "surfaces": [
+    "min"
+   ],
+   "meaning": "小",
+   "examples": "minor, minority, minimum, minister, administer, administration"
+  },
+  {
+   "key": "mir",
+   "surfaces": [
+    "mir"
+   ],
+   "meaning": "惊奇、奇迹",
+   "examples": "admire, miracle, marvel, marvelous"
+  },
+  {
+   "key": "mit",
+   "surfaces": [
+    "mit",
+    "miss"
+   ],
+   "meaning": "送、放",
+   "examples": "mission, missile, transmit, submit, dismiss, permit, emit, promise, compromise"
+  },
+  {
+   "key": "mob",
+   "surfaces": [
+    "mob",
+    "mot",
+    "mov"
+   ],
+   "meaning": "动",
+   "examples": "mobile, motion, motivate, promote, emotion, remove, motor, remote"
+  },
+  {
+   "key": "mod",
+   "surfaces": [
+    "mod"
+   ],
+   "meaning": "方式、适度",
+   "examples": "mode, model, modern, modest, modify, accommodate, commodity"
+  },
+  {
+   "key": "mon",
+   "surfaces": [
+    "mon"
+   ],
+   "meaning": "警告",
+   "examples": "monitor, monument, monetary"
+  },
+  {
+   "key": "narr",
+   "surfaces": [
+    "narr"
+   ],
+   "meaning": "讲述",
+   "examples": "narrate, narrative, narrator, narration"
+  },
+  {
+   "key": "nat",
+   "surfaces": [
+    "nat"
+   ],
+   "meaning": "出生",
+   "examples": "nation, native, nature, natural"
+  },
+  {
+   "key": "nav",
+   "surfaces": [
+    "nav",
+    "naut"
+   ],
+   "meaning": "船",
+   "examples": "navy, naval, astronaut"
+  },
+  {
+   "key": "neg",
+   "surfaces": [
+    "neg"
+   ],
+   "meaning": "否定",
+   "examples": "negative, neglect, negotiate"
+  },
+  {
+   "key": "nerv",
+   "surfaces": [
+    "nerv"
+   ],
+   "meaning": "神经",
+   "examples": "nerve, nervous"
+  },
+  {
+   "key": "neutr",
+   "surfaces": [
+    "neutr"
+   ],
+   "meaning": "两者都不",
+   "examples": "neutral, neutrality, neutralize"
+  },
+  {
+   "key": "nom",
+   "surfaces": [
+    "nom",
+    "not"
+   ],
+   "meaning": "名字、标记",
+   "examples": "noun, pronoun;note, notice, notify, notable, notation"
+  },
+  {
+   "key": "norm",
+   "surfaces": [
+    "norm"
+   ],
+   "meaning": "规范",
+   "examples": "norm, normal, normalize, enormous"
+  },
+  {
+   "key": "nov",
+   "surfaces": [
+    "nov"
+   ],
+   "meaning": "新",
+   "examples": "novel, novelty, innovate, renovate"
+  },
+  {
+   "key": "numer",
+   "surfaces": [
+    "numer"
+   ],
+   "meaning": "数",
+   "examples": "number, numerous"
+  },
+  {
+   "key": "oper",
+   "surfaces": [
+    "oper"
+   ],
+   "meaning": "工作",
+   "examples": "operate, cooperate, operation"
+  },
+  {
+   "key": "opt",
+   "surfaces": [
+    "opt"
+   ],
+   "meaning": "选择、希望",
+   "examples": "option, optional, optimism, optimistic"
+  },
+  {
+   "key": "orb",
+   "surfaces": [
+    "orb"
+   ],
+   "meaning": "圆、轨",
+   "examples": "orbit, orbital"
+  },
+  {
+   "key": "ord",
+   "surfaces": [
+    "ord"
+   ],
+   "meaning": "秩序",
+   "examples": "order, ordinary, coordinate, extraordinary, disorder"
+  },
+  {
+   "key": "organ",
+   "surfaces": [
+    "organ"
+   ],
+   "meaning": "器官、工具",
+   "examples": "organ, organism, organize, organization"
+  },
+  {
+   "key": "ori",
+   "surfaces": [
+    "ori"
+   ],
+   "meaning": "升起、源头",
+   "examples": "origin, original, originate, orient, orientation"
+  },
+  {
+   "key": "par",
+   "surfaces": [
+    "par"
+   ],
+   "meaning": "准备",
+   "examples": "prepare, preparation, apparatus, repair"
+  },
+  {
+   "key": "part",
+   "surfaces": [
+    "part"
+   ],
+   "meaning": "部分",
+   "examples": "part, partial, particle, participate, particular, department, apartment"
+  },
+  {
+   "key": "path",
+   "surfaces": [
+    "path"
+   ],
+   "meaning": "感受",
+   "examples": "sympathy, sympathetic, sympathize"
+  },
+  {
+   "key": "ped",
+   "surfaces": [
+    "ped"
+   ],
+   "meaning": "足",
+   "examples": "pedestrian"
+  },
+  {
+   "key": "pel",
+   "surfaces": [
+    "pel",
+    "puls"
+   ],
+   "meaning": "推、驱",
+   "examples": "compel, expel, impulse, impulsive"
+  },
+  {
+   "key": "pend",
+   "surfaces": [
+    "pend",
+    "pens"
+   ],
+   "meaning": "悬挂、衡量、支付",
+   "examples": "depend, expense, expensive, compensate, pension, suspend, spend, indispensable"
+  },
+  {
+   "key": "pet",
+   "surfaces": [
+    "pet"
+   ],
+   "meaning": "追求",
+   "examples": "compete, competitive, competent, appetite"
+  },
+  {
+   "key": "phon",
+   "surfaces": [
+    "phon"
+   ],
+   "meaning": "声音",
+   "examples": "telephone, microphone"
+  },
+  {
+   "key": "photo",
+   "surfaces": [
+    "photo"
+   ],
+   "meaning": "光",
+   "examples": "photo, photograph, photographer, photography"
+  },
+  {
+   "key": "phys",
+   "surfaces": [
+    "phys"
+   ],
+   "meaning": "自然、身体",
+   "examples": "physics, physical, physician, physicist"
+  },
+  {
+   "key": "polit",
+   "surfaces": [
+    "polit"
+   ],
+   "meaning": "城市、国家",
+   "examples": "politics, political, politician, policy, police"
+  },
+  {
+   "key": "pon",
+   "surfaces": [
+    "pon",
+    "pose"
+   ],
+   "meaning": "放置",
+   "examples": "position, compose, dispose, deposit, oppose, purpose, postpone, suppose, expose, propose, component"
+  },
+  {
+   "key": "popul",
+   "surfaces": [
+    "popul"
+   ],
+   "meaning": "人民",
+   "examples": "popular, population, populate, populous"
+  },
+  {
+   "key": "port",
+   "surfaces": [
+    "port"
+   ],
+   "meaning": "搬运",
+   "examples": "transport, import, export, report, support, portable, porter, passport, opportunity"
+  },
+  {
+   "key": "prehens",
+   "surfaces": [
+    "prehens"
+   ],
+   "meaning": "抓取",
+   "examples": "comprehend, comprehension, comprehensive"
+  },
+  {
+   "key": "press",
+   "surfaces": [
+    "press"
+   ],
+   "meaning": "压",
+   "examples": "press, pressure, impress, express, depress, impression, expression"
+  },
+  {
+   "key": "prim",
+   "surfaces": [
+    "prim"
+   ],
+   "meaning": "第一",
+   "examples": "primary, prime, primitive, prince, principal, principle, premier"
+  },
+  {
+   "key": "priv",
+   "surfaces": [
+    "priv"
+   ],
+   "meaning": "个人、剥夺",
+   "examples": "private, privacy, privilege, deprive, privatize"
+  },
+  {
+   "key": "prox",
+   "surfaces": [
+    "prox"
+   ],
+   "meaning": "接近",
+   "examples": "approach, approximate, approximation"
+  },
+  {
+   "key": "psych",
+   "surfaces": [
+    "psych"
+   ],
+   "meaning": "心灵",
+   "examples": "psychology, psychological, psychologist"
+  },
+  {
+   "key": "punct",
+   "surfaces": [
+    "punct"
+   ],
+   "meaning": "尖、点",
+   "examples": "point, punctual, punch"
+  },
+  {
+   "key": "pur",
+   "surfaces": [
+    "pur"
+   ],
+   "meaning": "纯",
+   "examples": "pure, purity, purify"
+  },
+  {
+   "key": "quer",
+   "surfaces": [
+    "quer",
+    "quir",
+    "quis"
+   ],
+   "meaning": "寻求",
+   "examples": "question, request, require, inquire, acquire, conquer, conquest"
+  },
+  {
+   "key": "rect",
+   "surfaces": [
+    "rect"
+   ],
+   "meaning": "直、正",
+   "examples": "correct, direct, direction, director"
+  },
+  {
+   "key": "reg",
+   "surfaces": [
+    "reg"
+   ],
+   "meaning": "治理、规则",
+   "examples": "region, regular, regulate, regulation"
+  },
+  {
+   "key": "rid",
+   "surfaces": [
+    "rid",
+    "ris"
+   ],
+   "meaning": "笑",
+   "examples": "ridicule, ridiculous"
+  },
+  {
+   "key": "rupt",
+   "surfaces": [
+    "rupt"
+   ],
+   "meaning": "破裂",
+   "examples": "corrupt, disrupt, interrupt, bankrupt"
+  },
+  {
+   "key": "sacr",
+   "surfaces": [
+    "sacr"
+   ],
+   "meaning": "神圣",
+   "examples": "sacrifice, sacrificial"
+  },
+  {
+   "key": "sal",
+   "surfaces": [
+    "sal"
+   ],
+   "meaning": "盐",
+   "examples": "salt, salary, salad, sauce, sausage"
+  },
+  {
+   "key": "sci",
+   "surfaces": [
+    "sci"
+   ],
+   "meaning": "知道",
+   "examples": "science, scientific, scientist, conscious, conscience, conscientious"
+  },
+  {
+   "key": "scend",
+   "surfaces": [
+    "scend"
+   ],
+   "meaning": "攀爬",
+   "examples": "descend, descent, descendant"
+  },
+  {
+   "key": "scop",
+   "surfaces": [
+    "scop"
+   ],
+   "meaning": "看、镜",
+   "examples": "microscope, telescope, microscopic, telescopic"
+  },
+  {
+   "key": "scrib",
+   "surfaces": [
+    "scrib",
+    "script"
+   ],
+   "meaning": "写",
+   "examples": "describe, prescription, script, transcript, scripture"
+  },
+  {
+   "key": "sec",
+   "surfaces": [
+    "sec",
+    "sect"
+   ],
+   "meaning": "切、分",
+   "examples": "section, sector, insect, segment"
+  },
+  {
+   "key": "sens",
+   "surfaces": [
+    "sens",
+    "sent"
+   ],
+   "meaning": "感觉",
+   "examples": "sense, sensible, sensitive, consent, consensus, resent, sentence, nonsense"
+  },
+  {
+   "key": "sequ",
+   "surfaces": [
+    "sequ"
+   ],
+   "meaning": "跟随",
+   "examples": "sequence, consequence, subsequent"
+  },
+  {
+   "key": "sert",
+   "surfaces": [
+    "sert"
+   ],
+   "meaning": "放置、结合",
+   "examples": "desert, insert, insertion"
+  },
+  {
+   "key": "serv",
+   "surfaces": [
+    "serv"
+   ],
+   "meaning": "服务、保持",
+   "examples": "serve, service, deserve, reserve, preserve, observe"
+  },
+  {
+   "key": "sign",
+   "surfaces": [
+    "sign"
+   ],
+   "meaning": "记号",
+   "examples": "sign, signal, signature, significant, design, assign"
+  },
+  {
+   "key": "simil",
+   "surfaces": [
+    "simil"
+   ],
+   "meaning": "相似",
+   "examples": "similar, similarity"
+  },
+  {
+   "key": "sist",
+   "surfaces": [
+    "sist"
+   ],
+   "meaning": "站立",
+   "examples": "assist, consist, insist, persist, resist, exist, constitute, constitution"
+  },
+  {
+   "key": "soci",
+   "surfaces": [
+    "soci"
+   ],
+   "meaning": "同伴",
+   "examples": "society, social, socialism, associate, sociable"
+  },
+  {
+   "key": "sol",
+   "surfaces": [
+    "sol"
+   ],
+   "meaning": "单一 / 完整",
+   "examples": "sole, solely;solid, consolidate"
+  },
+  {
+   "key": "solv",
+   "surfaces": [
+    "solv"
+   ],
+   "meaning": "解开、溶解",
+   "examples": "solve, solution, resolve, dissolve, soluble, solvent"
+  },
+  {
+   "key": "soph",
+   "surfaces": [
+    "soph"
+   ],
+   "meaning": "智慧",
+   "examples": "sophisticated, sophistication"
+  },
+  {
+   "key": "spect",
+   "surfaces": [
+    "spect"
+   ],
+   "meaning": "看",
+   "examples": "aspect, inspect, respect, prospect, suspect, perspective, expect"
+  },
+  {
+   "key": "spher",
+   "surfaces": [
+    "spher"
+   ],
+   "meaning": "球",
+   "examples": "sphere, spherical, atmosphere"
+  },
+  {
+   "key": "spir",
+   "surfaces": [
+    "spir"
+   ],
+   "meaning": "呼吸",
+   "examples": "inspire, spirit, spiritual, inspirational"
+  },
+  {
+   "key": "spond",
+   "surfaces": [
+    "spond",
+    "spons"
+   ],
+   "meaning": "承诺、回答",
+   "examples": "respond, response, responsible, sponsor, correspondent, spontaneous"
+  },
+  {
+   "key": "st",
+   "surfaces": [
+    "st"
+   ],
+   "meaning": "站立",
+   "examples": "stand, state, statue, status, stay, stable, distance, distant, instant, substance, constant, obstacle, stationary, circumstance, rest"
+  },
+  {
+   "key": "strain",
+   "surfaces": [
+    "strain",
+    "strict"
+   ],
+   "meaning": "拉紧",
+   "examples": "strict, restrict, restrain, strain, stress, distress, string"
+  },
+  {
+   "key": "struct",
+   "surfaces": [
+    "struct"
+   ],
+   "meaning": "建造",
+   "examples": "structure, construct, instruct, instrument, destroy, destruction, industry, industrial"
+  },
+  {
+   "key": "sum",
+   "surfaces": [
+    "sum",
+    "sumpt"
+   ],
+   "meaning": "拿、总",
+   "examples": "assume, consume, resume, summary, summarize, summit"
+  },
+  {
+   "key": "tact",
+   "surfaces": [
+    "tact",
+    "tang"
+   ],
+   "meaning": "接触",
+   "examples": "contact, intact, tangible, attach"
+  },
+  {
+   "key": "tain",
+   "surfaces": [
+    "tain",
+    "ten",
+    "tin"
+   ],
+   "meaning": "握、保持",
+   "examples": "contain, maintain, obtain, retain, sustain, continue, content, continent, entertain"
+  },
+  {
+   "key": "tect",
+   "surfaces": [
+    "tect"
+   ],
+   "meaning": "覆盖",
+   "examples": "detect, protect, architect, architecture"
+  },
+  {
+   "key": "temper",
+   "surfaces": [
+    "temper",
+    "tempor"
+   ],
+   "meaning": "时间、调和",
+   "examples": "temporary, contemporary, temper, temperature"
+  },
+  {
+   "key": "tend",
+   "surfaces": [
+    "tend",
+    "tent",
+    "tens"
+   ],
+   "meaning": "伸展",
+   "examples": "tend, extend, attend, attention, intend, intense, tension, pretend, contend"
+  },
+  {
+   "key": "termin",
+   "surfaces": [
+    "termin"
+   ],
+   "meaning": "界限",
+   "examples": "term, terminal, determine"
+  },
+  {
+   "key": "test",
+   "surfaces": [
+    "test"
+   ],
+   "meaning": "见证",
+   "examples": "test, contest, contestant, protest"
+  },
+  {
+   "key": "text",
+   "surfaces": [
+    "text"
+   ],
+   "meaning": "编织",
+   "examples": "text, textbook, textile, context"
+  },
+  {
+   "key": "therm",
+   "surfaces": [
+    "therm"
+   ],
+   "meaning": "热",
+   "examples": "thermometer"
+  },
+  {
+   "key": "tract",
+   "surfaces": [
+    "tract"
+   ],
+   "meaning": "拉、拖",
+   "examples": "attract, contract, distract, tractor, subtract, abstract, trace"
+  },
+  {
+   "key": "tribut",
+   "surfaces": [
+    "tribut"
+   ],
+   "meaning": "给予、分派",
+   "examples": "contribute, distribute, attribute"
+  },
+  {
+   "key": "trud",
+   "surfaces": [
+    "trud",
+    "trus"
+   ],
+   "meaning": "推、冲",
+   "examples": "intrude, intrusion, intruder"
+  },
+  {
+   "key": "urb",
+   "surfaces": [
+    "urb"
+   ],
+   "meaning": "城市",
+   "examples": "urban, suburb, suburban, urbanization"
+  },
+  {
+   "key": "ut",
+   "surfaces": [
+    "ut",
+    "us"
+   ],
+   "meaning": "用",
+   "examples": "use, useful, utility, utilize, abuse, usual"
+  },
+  {
+   "key": "vac",
+   "surfaces": [
+    "vac"
+   ],
+   "meaning": "空",
+   "examples": "vacant, vacancy, vacation, vacuum"
+  },
+  {
+   "key": "vad",
+   "surfaces": [
+    "vad",
+    "vas"
+   ],
+   "meaning": "走、入侵",
+   "examples": "invade, invasion, invader, invasive"
+  },
+  {
+   "key": "val",
+   "surfaces": [
+    "val"
+   ],
+   "meaning": "价值、强",
+   "examples": "value, valid, evaluate, available, prevail, equivalent"
+  },
+  {
+   "key": "var",
+   "surfaces": [
+    "var"
+   ],
+   "meaning": "变化",
+   "examples": "vary, various, variety, variation, variable"
+  },
+  {
+   "key": "veal",
+   "surfaces": [
+    "veal",
+    "vel"
+   ],
+   "meaning": "盖、揭",
+   "examples": "veil, reveal, revelation"
+  },
+  {
+   "key": "ven",
+   "surfaces": [
+    "ven"
+   ],
+   "meaning": "来",
+   "examples": "adventure, event, prevent, invent, convenient, convention, avenue, revenue, venture, souvenir"
+  },
+  {
+   "key": "verb",
+   "surfaces": [
+    "verb"
+   ],
+   "meaning": "词语",
+   "examples": "verb, verbal, adverb, proverb"
+  },
+  {
+   "key": "ver",
+   "surfaces": [
+    "ver",
+    "veri"
+   ],
+   "meaning": "真实",
+   "examples": "verify, verification"
+  },
+  {
+   "key": "vers",
+   "surfaces": [
+    "vers",
+    "vert"
+   ],
+   "meaning": "转",
+   "examples": "convert, reverse, diverse, universe, advertise, anniversary, university, conversation"
+  },
+  {
+   "key": "via",
+   "surfaces": [
+    "via",
+    "vect",
+    "vey"
+   ],
+   "meaning": "道路、运送",
+   "examples": "via, vehicle, voyage, convey, conveyance"
+  },
+  {
+   "key": "vict",
+   "surfaces": [
+    "vict",
+    "vinc"
+   ],
+   "meaning": "征服",
+   "examples": "victory, victim, convince, province"
+  },
+  {
+   "key": "vid",
+   "surfaces": [
+    "vid",
+    "vis"
+   ],
+   "meaning": "看",
+   "examples": "visible, vision, visual, visit, revise, evident, provide, video, view, interview, supervise, television, evidence"
+  },
+  {
+   "key": "vig",
+   "surfaces": [
+    "vig"
+   ],
+   "meaning": "活力",
+   "examples": "vigor, vigorous"
+  },
+  {
+   "key": "vit",
+   "surfaces": [
+    "vit",
+    "viv",
+    "void"
+   ],
+   "meaning": "生命;空、避",
+   "examples": "vital, vitamin, vivid, survive, survival, survivor,avoid,avoidance,inevitable"
+  },
+  {
+   "key": "voc",
+   "surfaces": [
+    "voc",
+    "vok"
+   ],
+   "meaning": "声音、呼唤",
+   "examples": "vocabulary, vocation, advocate, provoke"
+  },
+  {
+   "key": "vol",
+   "surfaces": [
+    "vol"
+   ],
+   "meaning": "意愿",
+   "examples": "volunteer, voluntary"
+  },
+  {
+   "key": "volv",
+   "surfaces": [
+    "volv",
+    "olut"
+   ],
+   "meaning": "转、卷",
+   "examples": "involve, evolve, revolve, revolution, resolve, dissolve, volume"
+  },
+  {
+   "key": "zo",
+   "surfaces": [
+    "zo"
+   ],
+   "meaning": "动物",
+   "examples": "zoo, zoology, zoological"
+  },
+  {
+   "key": "bin",
+   "surfaces": [
+    "bin"
+   ],
+   "meaning": "二、双",
+   "examples": "combine, combination"
+  },
+  {
+   "key": "cuss",
+   "surfaces": [
+    "cuss"
+   ],
+   "meaning": "摇、击",
+   "examples": "discuss, discussion"
+  },
+  {
+   "key": "damn",
+   "surfaces": [
+    "damn"
+   ],
+   "meaning": "损、罚",
+   "examples": "condemn, damn, damage"
+  },
+  {
+   "key": "dens",
+   "surfaces": [
+    "dens"
+   ],
+   "meaning": "浓",
+   "examples": "dense, density, condense"
+  },
+  {
+   "key": "dign",
+   "surfaces": [
+    "dign"
+   ],
+   "meaning": "值得",
+   "examples": "dignity, dignify"
+  },
+  {
+   "key": "digit",
+   "surfaces": [
+    "digit"
+   ],
+   "meaning": "指、数",
+   "examples": "digit, digital"
+  },
+  {
+   "key": "diplo",
+   "surfaces": [
+    "diplo"
+   ],
+   "meaning": "双重",
+   "examples": "diploma, diplomat, diplomacy"
+  },
+  {
+   "key": "es",
+   "surfaces": [
+    "es",
+    "ent"
+   ],
+   "meaning": "存在",
+   "examples": "present, presence, absence, essence, essential, interest"
+  },
+  {
+   "key": "estim",
+   "surfaces": [
+    "estim"
+   ],
+   "meaning": "估价",
+   "examples": "estimate, estimation, underestimate"
+  },
+  {
+   "key": "flu",
+   "surfaces": [
+    "flu"
+   ],
+   "meaning": "流",
+   "examples": "fluent, fluid, influence, influenza, flu"
+  },
+  {
+   "key": "frig",
+   "surfaces": [
+    "frig"
+   ],
+   "meaning": "冷",
+   "examples": "refrigerator, refrigeration"
+  },
+  {
+   "key": "front",
+   "surfaces": [
+    "front"
+   ],
+   "meaning": "前额、前",
+   "examples": "front, frontier, confront, confrontation"
+  },
+  {
+   "key": "gage",
+   "surfaces": [
+    "gage"
+   ],
+   "meaning": "担保、抵押",
+   "examples": "engage, engagement, mortgage"
+  },
+  {
+   "key": "glob",
+   "surfaces": [
+    "glob"
+   ],
+   "meaning": "球",
+   "examples": "globe, global, globalize"
+  },
+  {
+   "key": "gnos",
+   "surfaces": [
+    "gnos",
+    "gnor"
+   ],
+   "meaning": "知道",
+   "examples": "ignore, ignorant, recognize, diagnosis"
+  },
+  {
+   "key": "it",
+   "surfaces": [
+    "it"
+   ],
+   "meaning": "走",
+   "examples": "exit, initial, ambition, transit, circuit, initiative"
+  },
+  {
+   "key": "just",
+   "surfaces": [
+    "just"
+   ],
+   "meaning": "正义",
+   "examples": "just, justice, justify, adjust, adjustment"
+  },
+  {
+   "key": "larg",
+   "surfaces": [
+    "larg"
+   ],
+   "meaning": "大",
+   "examples": "large, enlarge"
+  },
+  {
+   "key": "lax",
+   "surfaces": [
+    "lax"
+   ],
+   "meaning": "松",
+   "examples": "relax, relaxation, release"
+  },
+  {
+   "key": "mun",
+   "surfaces": [
+    "mun"
+   ],
+   "meaning": "公共",
+   "examples": "common, community, communicate, municipal"
+  },
+  {
+   "key": "nunc",
+   "surfaces": [
+    "nunc",
+    "nounc"
+   ],
+   "meaning": "报告",
+   "examples": "announce, pronounce, pronunciation"
+  },
+  {
+   "key": "pass",
+   "surfaces": [
+    "pass",
+    "pat"
+   ],
+   "meaning": "忍受",
+   "examples": "passion, passive, patient, impatient"
+  },
+  {
+   "key": "phan",
+   "surfaces": [
+    "phan",
+    "phen",
+    "fant"
+   ],
+   "meaning": "显示、显现",
+   "examples": "phase, phenomenon, emphasis, emphasize, fantastic, fancy, fantasy"
+  },
+  {
+   "key": "ply",
+   "surfaces": [
+    "ply",
+    "plic",
+    "ploy"
+   ],
+   "meaning": "折、叠",
+   "examples": "apply, complicate, explicit, implicit, reply, employ, implication"
+  },
+  {
+   "key": "preci",
+   "surfaces": [
+    "preci",
+    "pret"
+   ],
+   "meaning": "价值、价格",
+   "examples": "price, precious, praise, appreciate, interpret"
+  },
+  {
+   "key": "propri",
+   "surfaces": [
+    "propri"
+   ],
+   "meaning": "自己的",
+   "examples": "proper, property, appropriate"
+  },
+  {
+   "key": "put",
+   "surfaces": [
+    "put"
+   ],
+   "meaning": "计算、思考",
+   "examples": "compute, computer, dispute, deputy, reputation, count"
+  },
+  {
+   "key": "riv",
+   "surfaces": [
+    "riv"
+   ],
+   "meaning": "河、源",
+   "examples": "river, arrive, arrival, derive, rival"
+  },
+  {
+   "key": "satis",
+   "surfaces": [
+    "satis"
+   ],
+   "meaning": "满",
+   "examples": "satisfy, satisfaction, satisfactory"
+  },
+  {
+   "key": "secu",
+   "surfaces": [
+    "secu",
+    "cur"
+   ],
+   "meaning": "安全(省心)",
+   "examples": "secure, security, sure, insurance"
+  },
+  {
+   "key": "sembl",
+   "surfaces": [
+    "sembl"
+   ],
+   "meaning": "相似、相同",
+   "examples": "assemble, assembly, resemble, resemblance"
+  },
+  {
+   "key": "sess",
+   "surfaces": [
+    "sess"
+   ],
+   "meaning": "坐(续)",
+   "examples": "session, assess, assessment, possess"
+  },
+  {
+   "key": "sider",
+   "surfaces": [
+    "sider",
+    "sir"
+   ],
+   "meaning": "星、渴望",
+   "examples": "consider, considerable;desire"
+  },
+  {
+   "key": "stinct",
+   "surfaces": [
+    "stinct",
+    "sting"
+   ],
+   "meaning": "刺、区分",
+   "examples": "distinct, distinction, distinguish, instinct"
+  },
+  {
+   "key": "stall",
+   "surfaces": [
+    "stall"
+   ],
+   "meaning": "站立、摊位",
+   "examples": "stall, install, installation"
+  },
+  {
+   "key": "thea",
+   "surfaces": [
+    "thea",
+    "the"
+   ],
+   "meaning": "观、神、放",
+   "examples": "theater, theatrical;theme, thesis;enthusiasm"
+  },
+  {
+   "key": "ton",
+   "surfaces": [
+    "ton"
+   ],
+   "meaning": "雷",
+   "examples": "astonish, astonishment"
+  },
+  {
+   "key": "turb",
+   "surfaces": [
+    "turb"
+   ],
+   "meaning": "乱",
+   "examples": "disturb, trouble, troublesome"
+  },
+  {
+   "key": "und",
+   "surfaces": [
+    "und"
+   ],
+   "meaning": "波、溢",
+   "examples": "abundant, abundance"
+  },
+  {
+   "key": "carr",
+   "surfaces": [
+    "carr"
+   ],
+   "meaning": "车、装",
+   "examples": "car, carry, cargo, carriage, charge, discharge"
+  },
+  {
+   "key": "bar",
+   "surfaces": [
+    "bar"
+   ],
+   "meaning": "杆、栏",
+   "examples": "bar, barrel, barrier, embarrass"
+  },
+  {
+   "key": "chief",
+   "surfaces": [
+    "chief"
+   ],
+   "meaning": "头",
+   "examples": "chief, achieve, achievement"
+  },
+  {
+   "key": "cell",
+   "surfaces": [
+    "cell",
+    "cels"
+   ],
+   "meaning": "高、升",
+   "examples": "excel, excellent, excellence"
+  },
+  {
+   "key": "arch",
+   "surfaces": [
+    "arch",
+    "archi"
+   ],
+   "meaning": "首、主要",
+   "examples": "architect, architecture"
+  },
+  {
+   "key": "ambul",
+   "surfaces": [
+    "ambul"
+   ],
+   "meaning": "走、行",
+   "examples": "ambulance, ambition 类"
+  },
+  {
+   "key": "nutri",
+   "surfaces": [
+    "nutri",
+    "nur"
+   ],
+   "meaning": "滋养",
+   "examples": "nutrition, nutrient, nourish, nourishment"
+  },
+  {
+   "key": "imit",
+   "surfaces": [
+    "imit",
+    "imag"
+   ],
+   "meaning": "模仿、像",
+   "examples": "image, imagine, imagination, imitate, imitation"
+  },
+  {
+   "key": "hosp",
+   "surfaces": [
+    "hosp",
+    "host"
+   ],
+   "meaning": "客、敌",
+   "examples": "host, hospital, hospitality, hostile"
+  },
+  {
+   "key": "oxy",
+   "surfaces": [
+    "oxy"
+   ],
+   "meaning": "酸、氧",
+   "examples": "oxygen, dioxide"
+  },
+  {
+   "key": "sorb",
+   "surfaces": [
+    "sorb"
+   ],
+   "meaning": "吸收",
+   "examples": "absorb, absorption"
+  },
+  {
+   "key": "cumul",
+   "surfaces": [
+    "cumul"
+   ],
+   "meaning": "堆积",
+   "examples": "accumulate, accumulation, accumulative"
+  },
+  {
+   "key": "celer",
+   "surfaces": [
+    "celer"
+   ],
+   "meaning": "快",
+   "examples": "accelerate, acceleration"
+  },
+  {
+   "key": "bell",
+   "surfaces": [
+    "bell"
+   ],
+   "meaning": "战争",
+   "examples": "rebel, rebellion, rebellious"
+  },
+  {
+   "key": "haer",
+   "surfaces": [
+    "haer",
+    "hes"
+   ],
+   "meaning": "粘",
+   "examples": "coherent, coherence, cohesive, cohesion"
+  },
+  {
+   "key": "noc",
+   "surfaces": [
+    "noc"
+   ],
+   "meaning": "伤害",
+   "examples": "innocent, innocence"
+  },
+  {
+   "key": "ed",
+   "surfaces": [
+    "ed"
+   ],
+   "meaning": "吃",
+   "examples": "obese, obesity"
+  },
+  {
+   "key": "san",
+   "surfaces": [
+    "san"
+   ],
+   "meaning": "健康",
+   "examples": "insane, insanity"
+  },
+  {
+   "key": "tom",
+   "surfaces": [
+    "tom"
+   ],
+   "meaning": "切",
+   "examples": "atom(不可切分), atomic"
+  },
+  {
+   "key": "caut",
+   "surfaces": [
+    "caut"
+   ],
+   "meaning": "小心",
+   "examples": "caution, cautious, precaution"
+  },
+  {
+   "key": "sper",
+   "surfaces": [
+    "sper"
+   ],
+   "meaning": "希望",
+   "examples": "desperate;despair"
+  },
+  {
+   "key": "suad",
+   "surfaces": [
+    "suad",
+    "suas"
+   ],
+   "meaning": "劝",
+   "examples": "persuade, persuasion, persuasive"
+  },
+  {
+   "key": "pan",
+   "surfaces": [
+    "pan"
+   ],
+   "meaning": "面包",
+   "examples": "companion, company"
+  },
+  {
+   "key": "vest",
+   "surfaces": [
+    "vest"
+   ],
+   "meaning": "穿衣",
+   "examples": "invest, investment, investor"
+  },
+  {
+   "key": "vestig",
+   "surfaces": [
+    "vestig"
+   ],
+   "meaning": "脚印",
+   "examples": "investigate, investigation, investigator"
+  },
+  {
+   "key": "plod",
+   "surfaces": [
+    "plod",
+    "plos"
+   ],
+   "meaning": "爆、拍",
+   "examples": "explode, explosion, explosive"
+  },
+  {
+   "key": "ple",
+   "surfaces": [
+    "ple",
+    "plet"
+   ],
+   "meaning": "满",
+   "examples": "complete, supply, supplement, implement"
+  },
+  {
+   "key": "cas",
+   "surfaces": [
+    "cas"
+   ],
+   "meaning": "落",
+   "examples": "occasion, occasional;accident 类"
+  },
+  {
+   "key": "dit",
+   "surfaces": [
+    "dit"
+   ],
+   "meaning": "给",
+   "examples": "addition, additional, edition, editor"
+  },
+  {
+   "key": "nect",
+   "surfaces": [
+    "nect"
+   ],
+   "meaning": "绑",
+   "examples": "connect, connection"
+  },
+  {
+   "key": "dox",
+   "surfaces": [
+    "dox"
+   ],
+   "meaning": "观点",
+   "examples": "paradox, paradoxical"
+  },
+  {
+   "key": "od",
+   "surfaces": [
+    "od"
+   ],
+   "meaning": "路",
+   "examples": "period, periodic;method 类"
+  },
+  {
+   "key": "lud",
+   "surfaces": [
+    "lud",
+    "lus"
+   ],
+   "meaning": "玩",
+   "examples": "illusion, illusory"
+  },
+  {
+   "key": "libra",
+   "surfaces": [
+    "libra"
+   ],
+   "meaning": "天平",
+   "examples": "deliberate, deliberation"
+  },
+  {
+   "key": "hav",
+   "surfaces": [
+    "hav"
+   ],
+   "meaning": "持有",
+   "examples": "behave, behavior"
+  },
+  {
+   "key": "tempt",
+   "surfaces": [
+    "tempt"
+   ],
+   "meaning": "轻视、试",
+   "examples": "contempt, contemptible;attempt"
+  },
+  {
+   "key": "point",
+   "surfaces": [
+    "point",
+    "punct"
+   ],
+   "meaning": "点、刺",
+   "examples": "point, standpoint, viewpoint, punctual"
+  },
+  {
+   "key": "per",
+   "surfaces": [
+    "per",
+    "peri",
+    "pir",
+    "pert"
+   ],
+   "meaning": "贯穿、完全、每、试验(同前缀 per-)",
+   "examples": "experiment, experience, emperor"
+  },
+  {
+   "key": "abil",
+   "surfaces": [
+    "abil",
+    "abl"
+   ],
+   "meaning": "能、适合(able)",
+   "examples": "ability, able, enable"
+  },
+  {
+   "key": "son",
+   "surfaces": [
+    "son"
+   ],
+   "meaning": "声音",
+   "examples": "person, personality"
+  },
+  {
+   "key": "place",
+   "surfaces": [
+    "place"
+   ],
+   "meaning": "场所、放置",
+   "examples": "place, commonplace, replace"
+  },
+  {
+   "key": "teen",
+   "surfaces": [
+    "teen"
+   ],
+   "meaning": "十(十三~十九)",
+   "examples": "teenager, thirteen"
+  },
+  {
+   "key": "note",
+   "surfaces": [
+    "note"
+   ],
+   "meaning": "注意、笔记",
+   "examples": "note, banknote, notice"
+  },
+  {
+   "key": "rupt",
+   "surfaces": [
+    "rupt"
+   ],
+   "meaning": "破裂",
+   "examples": "bankrupt, interrupt, erupt"
+  },
+  {
+   "key": "ent",
+   "surfaces": [
+    "ent",
+    "ess",
+    "est"
+   ],
+   "meaning": "存在(esse)",
+   "examples": "absent, essence, interest"
+  },
+  {
+   "key": "kilo",
+   "surfaces": [
+    "kilo"
+   ],
+   "meaning": "千",
+   "examples": "kilometer, kilogram"
+  },
+  {
+   "key": "milli",
+   "surfaces": [
+    "milli"
+   ],
+   "meaning": "千分之一、毫",
+   "examples": "millimeter, millimetre"
+  },
+  {
+   "key": "rid",
+   "surfaces": [
+    "rid"
+   ],
+   "meaning": "跑(curr 变体)",
+   "examples": "corridor"
+  },
+  {
+   "key": "maj",
+   "surfaces": [
+    "maj",
+    "major"
+   ],
+   "meaning": "大",
+   "examples": "major, majority, mayor"
+  },
+  {
+   "key": "trem",
+   "surfaces": [
+    "trem"
+   ],
+   "meaning": "颤抖",
+   "examples": "tremble, tremendous, extreme"
+  },
+  {
+   "key": "end",
+   "surfaces": [
+    "end"
+   ],
+   "meaning": "末端、目的",
+   "examples": "end, tremendous, intend"
+  },
+  {
+   "key": "right",
+   "surfaces": [
+    "right"
+   ],
+   "meaning": "直、正、右",
+   "examples": "right, upright, copyright"
+  },
+  {
+   "key": "crim",
+   "surfaces": [
+    "crim",
+    "crimin"
+   ],
+   "meaning": "鉴别、裁决(crimen)",
+   "examples": "discriminate, crime"
+  },
+  {
+   "key": "act",
+   "surfaces": [
+    "act"
+   ],
+   "meaning": "做",
+   "examples": ""
+  },
+  {
+   "key": "agri",
+   "surfaces": [
+    "agri"
+   ],
+   "meaning": "田",
+   "examples": ""
+  },
+  {
+   "key": "alt",
+   "surfaces": [
+    "alt"
+   ],
+   "meaning": "高",
+   "examples": ""
+  },
+  {
+   "key": "avi",
+   "surfaces": [
+    "avi"
+   ],
+   "meaning": "鸟",
+   "examples": ""
+  },
+  {
+   "key": "bank2",
+   "surfaces": [
+    "bank2"
+   ],
+   "meaning": "凳",
+   "examples": ""
+  },
+  {
+   "key": "cad",
+   "surfaces": [
+    "cad"
+   ],
+   "meaning": "落",
+   "examples": ""
+  },
+  {
+   "key": "camp",
+   "surfaces": [
+    "camp"
+   ],
+   "meaning": "田、营",
+   "examples": ""
+  },
+  {
+   "key": "cand",
+   "surfaces": [
+    "cand"
+   ],
+   "meaning": "?",
+   "examples": ""
+  },
+  {
+   "key": "caus",
+   "surfaces": [
+    "caus"
+   ],
+   "meaning": "原因、诉",
+   "examples": ""
+  },
+  {
+   "key": "ced",
+   "surfaces": [
+    "ced"
+   ],
+   "meaning": "走",
+   "examples": ""
+  },
+  {
+   "key": "cel",
+   "surfaces": [
+    "cel"
+   ],
+   "meaning": "高、藏",
+   "examples": ""
+  },
+  {
+   "key": "celebr",
+   "surfaces": [
+    "celebr"
+   ],
+   "meaning": "庆贺",
+   "examples": ""
+  },
+  {
+   "key": "cern",
+   "surfaces": [
+    "cern"
+   ],
+   "meaning": "?",
+   "examples": ""
+  },
+  {
+   "key": "chiev",
+   "surfaces": [
+    "chiev"
+   ],
+   "meaning": "头",
+   "examples": ""
+  },
+  {
+   "key": "cid2",
+   "surfaces": [
+    "cid2"
+   ],
+   "meaning": "?",
+   "examples": ""
+  },
+  {
+   "key": "cis",
+   "surfaces": [
+    "cis"
+   ],
+   "meaning": "切",
+   "examples": ""
+  },
+  {
+   "key": "cit",
+   "surfaces": [
+    "cit"
+   ],
+   "meaning": "唤起、引",
+   "examples": ""
+  },
+  {
+   "key": "class",
+   "surfaces": [
+    "class"
+   ],
+   "meaning": "等级",
+   "examples": ""
+  },
+  {
+   "key": "clin",
+   "surfaces": [
+    "clin"
+   ],
+   "meaning": "倾",
+   "examples": ""
+  },
+  {
+   "key": "clud",
+   "surfaces": [
+    "clud"
+   ],
+   "meaning": "关",
+   "examples": ""
+  },
+  {
+   "key": "colon",
+   "surfaces": [
+    "colon"
+   ],
+   "meaning": "垦殖",
+   "examples": ""
+  },
+  {
+   "key": "commun",
+   "surfaces": [
+    "commun"
+   ],
+   "meaning": "公共",
+   "examples": ""
+  },
+  {
+   "key": "count",
+   "surfaces": [
+    "count"
+   ],
+   "meaning": "?",
+   "examples": ""
+  },
+  {
+   "key": "cre",
+   "surfaces": [
+    "cre"
+   ],
+   "meaning": "?",
+   "examples": ""
+  },
+  {
+   "key": "cret",
+   "surfaces": [
+    "cret"
+   ],
+   "meaning": "?",
+   "examples": ""
+  },
+  {
+   "key": "crit",
+   "surfaces": [
+    "crit"
+   ],
+   "meaning": "判断",
+   "examples": ""
+  },
+  {
+   "key": "cur",
+   "surfaces": [
+    "cur"
+   ],
+   "meaning": "关心",
+   "examples": ""
+  },
+  {
+   "key": "curr",
+   "surfaces": [
+    "curr"
+   ],
+   "meaning": "跑",
+   "examples": ""
+  },
+  {
+   "key": "decor",
+   "surfaces": [
+    "decor"
+   ],
+   "meaning": "雅、装饰",
+   "examples": ""
+  },
+  {
+   "key": "demn",
+   "surfaces": [
+    "demn"
+   ],
+   "meaning": "罚",
+   "examples": ""
+  },
+  {
+   "key": "dorm",
+   "surfaces": [
+    "dorm"
+   ],
+   "meaning": "眠",
+   "examples": ""
+  },
+  {
+   "key": "dynam",
+   "surfaces": [
+    "dynam"
+   ],
+   "meaning": "力",
+   "examples": ""
+  },
+  {
+   "key": "eco",
+   "surfaces": [
+    "eco"
+   ],
+   "meaning": "家、环境",
+   "examples": ""
+  },
+  {
+   "key": "electr",
+   "surfaces": [
+    "electr"
+   ],
+   "meaning": "电",
+   "examples": ""
+  },
+  {
+   "key": "ess",
+   "surfaces": [
+    "ess"
+   ],
+   "meaning": "存在",
+   "examples": ""
+  },
+  {
+   "key": "fac",
+   "surfaces": [
+    "fac"
+   ],
+   "meaning": "做、造",
+   "examples": ""
+  },
+  {
+   "key": "fam",
+   "surfaces": [
+    "fam"
+   ],
+   "meaning": "?",
+   "examples": ""
+  },
+  {
+   "key": "fat",
+   "surfaces": [
+    "fat"
+   ],
+   "meaning": "说、命运",
+   "examples": ""
+  },
+  {
+   "key": "fict",
+   "surfaces": [
+    "fict"
+   ],
+   "meaning": "?",
+   "examples": ""
+  },
+  {
+   "key": "fid",
+   "surfaces": [
+    "fid"
+   ],
+   "meaning": "信",
+   "examples": ""
+  },
+  {
+   "key": "fig",
+   "surfaces": [
+    "fig"
+   ],
+   "meaning": "?",
+   "examples": ""
+  },
+  {
+   "key": "flect",
+   "surfaces": [
+    "flect"
+   ],
+   "meaning": "弯曲",
+   "examples": ""
+  },
+  {
+   "key": "flor",
+   "surfaces": [
+    "flor"
+   ],
+   "meaning": "花",
+   "examples": ""
+  },
+  {
+   "key": "frequ",
+   "surfaces": [
+    "frequ"
+   ],
+   "meaning": "频繁",
+   "examples": ""
+  },
+  {
+   "key": "funct",
+   "surfaces": [
+    "funct"
+   ],
+   "meaning": "做、起作用",
+   "examples": ""
+  },
+  {
+   "key": "fund",
+   "surfaces": [
+    "fund"
+   ],
+   "meaning": "底、基础",
+   "examples": ""
+  },
+  {
+   "key": "fut",
+   "surfaces": [
+    "fut"
+   ],
+   "meaning": "?",
+   "examples": ""
+  },
+  {
+   "key": "herit",
+   "surfaces": [
+    "herit"
+   ],
+   "meaning": "继承",
+   "examples": ""
+  },
+  {
+   "key": "hon",
+   "surfaces": [
+    "hon"
+   ],
+   "meaning": "荣誉",
+   "examples": ""
+  },
+  {
+   "key": "horr",
+   "surfaces": [
+    "horr"
+   ],
+   "meaning": "害怕",
+   "examples": ""
+  },
+  {
+   "key": "hospit",
+   "surfaces": [
+    "hospit"
+   ],
+   "meaning": "客、敌",
+   "examples": ""
+  },
+  {
+   "key": "hum",
+   "surfaces": [
+    "hum"
+   ],
+   "meaning": "湿土",
+   "examples": ""
+  },
+  {
+   "key": "ide",
+   "surfaces": [
+    "ide"
+   ],
+   "meaning": "?",
+   "examples": ""
+  },
+  {
+   "key": "ident",
+   "surfaces": [
+    "ident"
+   ],
+   "meaning": "?",
+   "examples": ""
+  },
+  {
+   "key": "ign",
+   "surfaces": [
+    "ign"
+   ],
+   "meaning": "?",
+   "examples": ""
+  },
+  {
+   "key": "imag",
+   "surfaces": [
+    "imag"
+   ],
+   "meaning": "像、模仿",
+   "examples": ""
+  },
+  {
+   "key": "junct",
+   "surfaces": [
+    "junct"
+   ],
+   "meaning": "连接",
+   "examples": ""
+  },
+  {
+   "key": "jus",
+   "surfaces": [
+    "jus"
+   ],
+   "meaning": "法律、正",
+   "examples": ""
+  },
+  {
+   "key": "langu",
+   "surfaces": [
+    "langu"
+   ],
+   "meaning": "舌",
+   "examples": ""
+  },
+  {
+   "key": "leis",
+   "surfaces": [
+    "leis"
+   ],
+   "meaning": "许可、闲",
+   "examples": ""
+  },
+  {
+   "key": "lic",
+   "surfaces": [
+    "lic"
+   ],
+   "meaning": "允许",
+   "examples": ""
+  },
+  {
+   "key": "lig",
+   "surfaces": [
+    "lig"
+   ],
+   "meaning": "绑、选",
+   "examples": ""
+  },
+  {
+   "key": "long",
+   "surfaces": [
+    "long"
+   ],
+   "meaning": "长",
+   "examples": ""
+  },
+  {
+   "key": "lus",
+   "surfaces": [
+    "lus"
+   ],
+   "meaning": "玩",
+   "examples": ""
+  },
+  {
+   "key": "lustr",
+   "surfaces": [
+    "lustr"
+   ],
+   "meaning": "?",
+   "examples": ""
+  },
+  {
+   "key": "magn",
+   "surfaces": [
+    "magn"
+   ],
+   "meaning": "?",
+   "examples": ""
+  },
+  {
+   "key": "mar",
+   "surfaces": [
+    "mar"
+   ],
+   "meaning": "海、丈夫",
+   "examples": ""
+  },
+  {
+   "key": "mat",
+   "surfaces": [
+    "mat"
+   ],
+   "meaning": "母、熟",
+   "examples": ""
+  },
+  {
+   "key": "meas",
+   "surfaces": [
+    "meas"
+   ],
+   "meaning": "量",
+   "examples": ""
+  },
+  {
+   "key": "mer",
+   "surfaces": [
+    "mer"
+   ],
+   "meaning": "值得",
+   "examples": ""
+  },
+  {
+   "key": "metr",
+   "surfaces": [
+    "metr"
+   ],
+   "meaning": "测量",
+   "examples": ""
+  },
+  {
+   "key": "milit",
+   "surfaces": [
+    "milit"
+   ],
+   "meaning": "?",
+   "examples": ""
+  },
+  {
+   "key": "mix",
+   "surfaces": [
+    "mix"
+   ],
+   "meaning": "混合",
+   "examples": ""
+  },
+  {
+   "key": "mor",
+   "surfaces": [
+    "mor"
+   ],
+   "meaning": "习俗、道德",
+   "examples": ""
+  },
+  {
+   "key": "mot",
+   "surfaces": [
+    "mot"
+   ],
+   "meaning": "动",
+   "examples": ""
+  },
+  {
+   "key": "mut",
+   "surfaces": [
+    "mut"
+   ],
+   "meaning": "?",
+   "examples": ""
+  },
+  {
+   "key": "not",
+   "surfaces": [
+    "not"
+   ],
+   "meaning": "标记、名字",
+   "examples": ""
+  },
+  {
+   "key": "nutr",
+   "surfaces": [
+    "nutr"
+   ],
+   "meaning": "滋养",
+   "examples": ""
+  },
+  {
+   "key": "or",
+   "surfaces": [
+    "or"
+   ],
+   "meaning": "口、说",
+   "examples": ""
+  },
+  {
+   "key": "pac",
+   "surfaces": [
+    "pac"
+   ],
+   "meaning": "平、付",
+   "examples": ""
+  },
+  {
+   "key": "pact",
+   "surfaces": [
+    "pact"
+   ],
+   "meaning": "?",
+   "examples": ""
+  },
+  {
+   "key": "para",
+   "surfaces": [
+    "para"
+   ],
+   "meaning": "?",
+   "examples": ""
+  },
+  {
+   "key": "pati",
+   "surfaces": [
+    "pati"
+   ],
+   "meaning": "忍受",
+   "examples": ""
+  },
+  {
+   "key": "pect",
+   "surfaces": [
+    "pect"
+   ],
+   "meaning": "看",
+   "examples": ""
+  },
+  {
+   "key": "pen",
+   "surfaces": [
+    "pen"
+   ],
+   "meaning": "惩罚",
+   "examples": ""
+  },
+  {
+   "key": "phras",
+   "surfaces": [
+    "phras"
+   ],
+   "meaning": "?",
+   "examples": ""
+  },
+  {
+   "key": "pict",
+   "surfaces": [
+    "pict"
+   ],
+   "meaning": "?",
+   "examples": ""
+  },
+  {
+   "key": "pla",
+   "surfaces": [
+    "pla"
+   ],
+   "meaning": "平",
+   "examples": ""
+  },
+  {
+   "key": "plan",
+   "surfaces": [
+    "plan"
+   ],
+   "meaning": "?",
+   "examples": ""
+  },
+  {
+   "key": "plas",
+   "surfaces": [
+    "plas"
+   ],
+   "meaning": "?",
+   "examples": ""
+  },
+  {
+   "key": "plaud",
+   "surfaces": [
+    "plaud"
+   ],
+   "meaning": "?",
+   "examples": ""
+  },
+  {
+   "key": "pleas",
+   "surfaces": [
+    "pleas"
+   ],
+   "meaning": "高兴",
+   "examples": ""
+  },
+  {
+   "key": "plic",
+   "surfaces": [
+    "plic"
+   ],
+   "meaning": "折、叠",
+   "examples": ""
+  },
+  {
+   "key": "plor",
+   "surfaces": [
+    "plor"
+   ],
+   "meaning": "哭、喊",
+   "examples": ""
+  },
+  {
+   "key": "plur",
+   "surfaces": [
+    "plur"
+   ],
+   "meaning": "?",
+   "examples": ""
+  },
+  {
+   "key": "pol",
+   "surfaces": [
+    "pol"
+   ],
+   "meaning": "城",
+   "examples": ""
+  },
+  {
+   "key": "pot",
+   "surfaces": [
+    "pot"
+   ],
+   "meaning": "?",
+   "examples": ""
+  },
+  {
+   "key": "pract",
+   "surfaces": [
+    "pract"
+   ],
+   "meaning": "实践",
+   "examples": ""
+  },
+  {
+   "key": "pret",
+   "surfaces": [
+    "pret"
+   ],
+   "meaning": "?",
+   "examples": ""
+  },
+  {
+   "key": "pri",
+   "surfaces": [
+    "pri"
+   ],
+   "meaning": "在前",
+   "examples": ""
+  },
+  {
+   "key": "prov",
+   "surfaces": [
+    "prov"
+   ],
+   "meaning": "试验、证明",
+   "examples": ""
+  },
+  {
+   "key": "pun",
+   "surfaces": [
+    "pun"
+   ],
+   "meaning": "罚",
+   "examples": ""
+  },
+  {
+   "key": "quaint",
+   "surfaces": [
+    "quaint"
+   ],
+   "meaning": "?",
+   "examples": ""
+  },
+  {
+   "key": "qual",
+   "surfaces": [
+    "qual"
+   ],
+   "meaning": "种类、质",
+   "examples": ""
+  },
+  {
+   "key": "quant",
+   "surfaces": [
+    "quant"
+   ],
+   "meaning": "量",
+   "examples": ""
+  },
+  {
+   "key": "quart",
+   "surfaces": [
+    "quart"
+   ],
+   "meaning": "四",
+   "examples": ""
+  },
+  {
+   "key": "radic",
+   "surfaces": [
+    "radic"
+   ],
+   "meaning": "根",
+   "examples": ""
+  },
+  {
+   "key": "rap",
+   "surfaces": [
+    "rap"
+   ],
+   "meaning": "?",
+   "examples": ""
+  },
+  {
+   "key": "ras",
+   "surfaces": [
+    "ras"
+   ],
+   "meaning": "?",
+   "examples": ""
+  },
+  {
+   "key": "rat",
+   "surfaces": [
+    "rat"
+   ],
+   "meaning": "算、推定",
+   "examples": ""
+  },
+  {
+   "key": "real",
+   "surfaces": [
+    "real"
+   ],
+   "meaning": "?",
+   "examples": ""
+  },
+  {
+   "key": "rem",
+   "surfaces": [
+    "rem"
+   ],
+   "meaning": "?",
+   "examples": ""
+  },
+  {
+   "key": "rend",
+   "surfaces": [
+    "rend"
+   ],
+   "meaning": "给",
+   "examples": ""
+  },
+  {
+   "key": "reput",
+   "surfaces": [
+    "reput"
+   ],
+   "meaning": "?",
+   "examples": ""
+  },
+  {
+   "key": "roll",
+   "surfaces": [
+    "roll"
+   ],
+   "meaning": "轮、卷",
+   "examples": ""
+  },
+  {
+   "key": "sect",
+   "surfaces": [
+    "sect"
+   ],
+   "meaning": "切、分",
+   "examples": ""
+  },
+  {
+   "key": "sen",
+   "surfaces": [
+    "sen"
+   ],
+   "meaning": "老",
+   "examples": ""
+  },
+  {
+   "key": "sent",
+   "surfaces": [
+    "sent"
+   ],
+   "meaning": "感觉",
+   "examples": ""
+  },
+  {
+   "key": "sid",
+   "surfaces": [
+    "sid"
+   ],
+   "meaning": "坐",
+   "examples": ""
+  },
+  {
+   "key": "sil",
+   "surfaces": [
+    "sil"
+   ],
+   "meaning": "静",
+   "examples": ""
+  },
+  {
+   "key": "stud",
+   "surfaces": [
+    "stud"
+   ],
+   "meaning": "学习",
+   "examples": ""
+  },
+  {
+   "key": "sult",
+   "surfaces": [
+    "sult"
+   ],
+   "meaning": "?",
+   "examples": ""
+  },
+  {
+   "key": "sure",
+   "surfaces": [
+    "sure"
+   ],
+   "meaning": "省心、确信",
+   "examples": ""
+  },
+  {
+   "key": "tal",
+   "surfaces": [
+    "tal"
+   ],
+   "meaning": "?",
+   "examples": ""
+  },
+  {
+   "key": "techn",
+   "surfaces": [
+    "techn"
+   ],
+   "meaning": "技艺",
+   "examples": ""
+  },
+  {
+   "key": "tempor",
+   "surfaces": [
+    "tempor"
+   ],
+   "meaning": "时间、调和",
+   "examples": ""
+  },
+  {
+   "key": "terr",
+   "surfaces": [
+    "terr"
+   ],
+   "meaning": "地、怕",
+   "examples": ""
+  },
+  {
+   "key": "the",
+   "surfaces": [
+    "the"
+   ],
+   "meaning": "神、观、放",
+   "examples": ""
+  },
+  {
+   "key": "tir",
+   "surfaces": [
+    "tir"
+   ],
+   "meaning": "?",
+   "examples": ""
+  },
+  {
+   "key": "toler",
+   "surfaces": [
+    "toler"
+   ],
+   "meaning": "忍受",
+   "examples": ""
+  },
+  {
+   "key": "tort",
+   "surfaces": [
+    "tort"
+   ],
+   "meaning": "扭",
+   "examples": ""
+  },
+  {
+   "key": "tot",
+   "surfaces": [
+    "tot"
+   ],
+   "meaning": "?",
+   "examples": ""
+  },
+  {
+   "key": "tra",
+   "surfaces": [
+    "tra"
+   ],
+   "meaning": "?",
+   "examples": ""
+  },
+  {
+   "key": "tribu",
+   "surfaces": [
+    "tribu"
+   ],
+   "meaning": "?",
+   "examples": ""
+  },
+  {
+   "key": "turn",
+   "surfaces": [
+    "turn"
+   ],
+   "meaning": "?",
+   "examples": ""
+  },
+  {
+   "key": "typ",
+   "surfaces": [
+    "typ"
+   ],
+   "meaning": "模型",
+   "examples": ""
+  },
+  {
+   "key": "ultim",
+   "surfaces": [
+    "ultim"
+   ],
+   "meaning": "最后",
+   "examples": ""
+  },
+  {
+   "key": "urg",
+   "surfaces": [
+    "urg"
+   ],
+   "meaning": "?",
+   "examples": ""
+  },
+  {
+   "key": "us",
+   "surfaces": [
+    "us"
+   ],
+   "meaning": "用",
+   "examples": ""
+  },
+  {
+   "key": "van",
+   "surfaces": [
+    "van"
+   ],
+   "meaning": "前、空",
+   "examples": ""
+  },
+  {
+   "key": "veget",
+   "surfaces": [
+    "veget"
+   ],
+   "meaning": "?",
+   "examples": ""
+  },
+  {
+   "key": "vel",
+   "surfaces": [
+    "vel"
+   ],
+   "meaning": "盖、卷",
+   "examples": ""
+  },
+  {
+   "key": "vi",
+   "surfaces": [
+    "vi"
+   ],
+   "meaning": "道路",
+   "examples": ""
+  },
+  {
+   "key": "vinc",
+   "surfaces": [
+    "vinc"
+   ],
+   "meaning": "征服",
+   "examples": ""
+  },
+  {
+   "key": "viol",
+   "surfaces": [
+    "viol"
+   ],
+   "meaning": "?",
+   "examples": ""
+  },
+  {
+   "key": "vir",
+   "surfaces": [
+    "vir"
+   ],
+   "meaning": "词根",
+   "examples": ""
+  },
+  {
+   "key": "virt",
+   "surfaces": [
+    "virt"
+   ],
+   "meaning": "?",
+   "examples": ""
+  },
+  {
+   "key": "vis",
+   "surfaces": [
+    "vis"
+   ],
+   "meaning": "看",
+   "examples": ""
+  },
+  {
+   "key": "vot",
+   "surfaces": [
+    "vot"
+   ],
+   "meaning": "誓、愿",
+   "examples": ""
+  }
+ ]
+}

@@ -1,0 +1,4744 @@
+[
+ {
+  "key": "st",
+  "meaning": "站立",
+  "count": 55,
+  "words": [
+   "arrest",
+   "bystander",
+   "circumstance",
+   "constant",
+   "costly",
+   "destination",
+   "distance",
+   "distant",
+   "estate",
+   "exist",
+   "existence",
+   "existent",
+   "instal",
+   "install",
+   "installation",
+   "installment",
+   "instalment",
+   "instance",
+   "instant",
+   "instantaneous",
+   "interest",
+   "misunderstand",
+   "misunderstanding",
+   "outstanding",
+   "restoration",
+   "restore",
+   "stabilise",
+   "stability",
+   "stabilize",
+   "stable",
+   "stage",
+   "stale",
+   "standard",
+   "standardisation",
+   "standardise",
+   "standardization",
+   "standardize",
+   "standpoint",
+   "staple",
+   "state",
+   "statement",
+   "station",
+   "stationary",
+   "statistic",
+   "statistical",
+   "status",
+   "stay",
+   "storage",
+   "store",
+   "student",
+   "substance",
+   "substantial",
+   "understand",
+   "understanding",
+   "withstand"
+  ]
+ },
+ {
+  "key": "fac",
+  "meaning": "做、造",
+  "count": 44,
+  "words": [
+   "affair",
+   "affect",
+   "affection",
+   "affectionate",
+   "beneficial",
+   "beneficiary",
+   "benefit",
+   "defect",
+   "defection",
+   "defective",
+   "deficiency",
+   "deficient",
+   "deficit",
+   "difficulty",
+   "effect",
+   "effective",
+   "efficiency",
+   "efficient",
+   "facial",
+   "facility",
+   "factor",
+   "factory",
+   "factual",
+   "faculty",
+   "fairy",
+   "fashion",
+   "fashionable",
+   "feasibility",
+   "feasible",
+   "infect",
+   "infection",
+   "infectious",
+   "office",
+   "officer",
+   "official",
+   "preface",
+   "proficiency",
+   "proficient",
+   "profit",
+   "profitable",
+   "reunification",
+   "sufficient",
+   "superficial",
+   "surface"
+  ]
+ },
+ {
+  "key": "per",
+  "meaning": "?",
+  "count": 36,
+  "words": [
+   "emperor",
+   "experience",
+   "experiment",
+   "experimental",
+   "imperial",
+   "imperialism",
+   "imperialist",
+   "perceive",
+   "percent",
+   "percentage",
+   "perception",
+   "perceptive",
+   "perfect",
+   "perfection",
+   "perform",
+   "performance",
+   "performer",
+   "permanence",
+   "permanent",
+   "permissible",
+   "permission",
+   "permissive",
+   "permit",
+   "perseverance",
+   "persevere",
+   "persist",
+   "persistence",
+   "persistent",
+   "person",
+   "personal",
+   "personality",
+   "personally",
+   "perspective",
+   "persuade",
+   "persuasion",
+   "persuasive"
+  ]
+ },
+ {
+  "key": "vis",
+  "meaning": "看",
+  "count": 35,
+  "words": [
+   "advisable",
+   "advise",
+   "adviser",
+   "advisor",
+   "advisory",
+   "devise",
+   "divide",
+   "division",
+   "divisive",
+   "evidence",
+   "individual",
+   "individualism",
+   "interview",
+   "interviewee",
+   "interviewer",
+   "invisible",
+   "preview",
+   "review",
+   "reviewer",
+   "revise",
+   "revision",
+   "supervise",
+   "supervision",
+   "supervisor",
+   "television",
+   "viewpoint",
+   "visibility",
+   "visible",
+   "vision",
+   "visionary",
+   "visit",
+   "visitor",
+   "visual",
+   "visualise",
+   "visualize"
+  ]
+ },
+ {
+  "key": "par",
+  "meaning": "准备、出现、相等、生",
+  "count": 28,
+  "words": [
+   "apparatus",
+   "apparent",
+   "apparently",
+   "appear",
+   "appearance",
+   "comparable",
+   "comparative",
+   "compare",
+   "comparison",
+   "disappear",
+   "disappearance",
+   "parcel",
+   "pardon",
+   "parent",
+   "parental",
+   "parenting",
+   "particular",
+   "particularly",
+   "preparation",
+   "preparatory",
+   "prepare",
+   "repair",
+   "reparable",
+   "separate",
+   "separation",
+   "separatist",
+   "transparency",
+   "transparent"
+  ]
+ },
+ {
+  "key": "spect",
+  "meaning": "看",
+  "count": 28,
+  "words": [
+   "aspect",
+   "especially",
+   "inspect",
+   "inspection",
+   "inspector",
+   "prospect",
+   "prospective",
+   "respect",
+   "respectable",
+   "respectful",
+   "respective",
+   "respectively",
+   "special",
+   "specialisation",
+   "specialise",
+   "specialist",
+   "specialization",
+   "specialize",
+   "species",
+   "specific",
+   "specifically",
+   "specification",
+   "specify",
+   "speculate",
+   "speculation",
+   "speculative",
+   "suspicion",
+   "suspicious"
+  ]
+ },
+ {
+  "key": "pon",
+  "meaning": "放置",
+  "count": 27,
+  "words": [
+   "component",
+   "compose",
+   "composer",
+   "composition",
+   "compound",
+   "deposit",
+   "disposal",
+   "dispose",
+   "expose",
+   "exposure",
+   "impose",
+   "imposing",
+   "imposition",
+   "opponent",
+   "oppose",
+   "opposite",
+   "opposition",
+   "position",
+   "positive",
+   "postpone",
+   "postponement",
+   "preposition",
+   "proposal",
+   "propose",
+   "proposition",
+   "suppose",
+   "supposition"
+  ]
+ },
+ {
+  "key": "cap",
+  "meaning": "拿、抓",
+  "count": 26,
+  "words": [
+   "accept",
+   "acceptable",
+   "acceptance",
+   "anticipate",
+   "anticipation",
+   "capture",
+   "concept",
+   "conceptual",
+   "deceit",
+   "deceive",
+   "deception",
+   "deceptive",
+   "except",
+   "exception",
+   "exceptional",
+   "occupancy",
+   "occupant",
+   "occupation",
+   "occupational",
+   "occupy",
+   "receive",
+   "receiver",
+   "reception",
+   "receptionist",
+   "receptive",
+   "recipient"
+  ]
+ },
+ {
+  "key": "plic",
+  "meaning": "折、叠",
+  "count": 26,
+  "words": [
+   "appliance",
+   "applicable",
+   "applicant",
+   "application",
+   "apply",
+   "complex",
+   "complexity",
+   "compliance",
+   "complicate",
+   "complication",
+   "comply",
+   "employ",
+   "employee",
+   "employer",
+   "employment",
+   "exemplify",
+   "explicit",
+   "implication",
+   "implicit",
+   "imply",
+   "multiplication",
+   "multiply",
+   "reply",
+   "supplier",
+   "supply",
+   "unemployment"
+  ]
+ },
+ {
+  "key": "tend",
+  "meaning": "伸展",
+  "count": 26,
+  "words": [
+   "attend",
+   "attendance",
+   "attendant",
+   "attention",
+   "attentive",
+   "contend",
+   "content",
+   "contention",
+   "contentious",
+   "extend",
+   "extension",
+   "extensive",
+   "extent",
+   "intend",
+   "intense",
+   "intensify",
+   "intensity",
+   "intensive",
+   "intent",
+   "intention",
+   "intentional",
+   "pretend",
+   "pretense",
+   "retention",
+   "tendency",
+   "tension"
+  ]
+ },
+ {
+  "key": "fer",
+  "meaning": "带、承受",
+  "count": 25,
+  "words": [
+   "conference",
+   "differ",
+   "difference",
+   "different",
+   "ferry",
+   "indifference",
+   "indifferent",
+   "infer",
+   "inference",
+   "inferior",
+   "inferiority",
+   "interfere",
+   "interference",
+   "offer",
+   "offering",
+   "prefer",
+   "preferable",
+   "preference",
+   "preferential",
+   "refer",
+   "reference",
+   "suffer",
+   "suffering",
+   "transfer",
+   "transference"
+  ]
+ },
+ {
+  "key": "lig",
+  "meaning": "绑、选",
+  "count": 21,
+  "words": [
+   "alliance",
+   "analyst",
+   "analytic",
+   "analytical",
+   "deliver",
+   "delivery",
+   "diligence",
+   "diligent",
+   "intelligence",
+   "intelligent",
+   "liability",
+   "liable",
+   "livelihood",
+   "lively",
+   "liver",
+   "obligation",
+   "oblige",
+   "reliable",
+   "reliance",
+   "religion",
+   "religious"
+  ]
+ },
+ {
+  "key": "lect",
+  "meaning": "收集、选择、读",
+  "count": 23,
+  "words": [
+   "allegation",
+   "allege",
+   "collect",
+   "collection",
+   "collective",
+   "college",
+   "delegate",
+   "delegation",
+   "dialect",
+   "elect",
+   "election",
+   "elective",
+   "elegance",
+   "elegant",
+   "illegal",
+   "intellectual",
+   "lecture",
+   "legal",
+   "legalise",
+   "legalize",
+   "select",
+   "selection",
+   "selective"
+  ]
+ },
+ {
+  "key": "vers",
+  "meaning": "转",
+  "count": 22,
+  "words": [
+   "advertise",
+   "advertisement",
+   "controversial",
+   "controversy",
+   "conversation",
+   "converse",
+   "conversion",
+   "convert",
+   "convertible",
+   "diverse",
+   "diversify",
+   "diversity",
+   "divorce",
+   "reversal",
+   "reverse",
+   "reversible",
+   "universal",
+   "universe",
+   "university",
+   "version",
+   "versus",
+   "vertical"
+  ]
+ },
+ {
+  "key": "us",
+  "meaning": "用",
+  "count": 21,
+  "words": [
+   "abuse",
+   "abusive",
+   "acute",
+   "beautiful",
+   "beautify",
+   "beauty",
+   "execute",
+   "execution",
+   "executive",
+   "usage",
+   "useful",
+   "useless",
+   "user",
+   "usual",
+   "usually",
+   "utilisation",
+   "utilise",
+   "utility",
+   "utilization",
+   "utilize",
+   "virus"
+  ]
+ },
+ {
+  "key": "duc",
+  "meaning": "引导",
+  "count": 20,
+  "words": [
+   "conduct",
+   "conductor",
+   "educate",
+   "education",
+   "educational",
+   "induce",
+   "inducement",
+   "introduce",
+   "introduction",
+   "introductory",
+   "produce",
+   "product",
+   "production",
+   "productive",
+   "productivity",
+   "reduce",
+   "reduction",
+   "reproduce",
+   "reproduction",
+   "reproductive"
+  ]
+ },
+ {
+  "key": "sist",
+  "meaning": "站立",
+  "count": 20,
+  "words": [
+   "assist",
+   "assistance",
+   "assistant",
+   "consist",
+   "consistency",
+   "consistent",
+   "constitute",
+   "constitution",
+   "constitutional",
+   "insist",
+   "insistence",
+   "insistent",
+   "institute",
+   "institution",
+   "institutional",
+   "resist",
+   "resistance",
+   "resistant",
+   "substitute",
+   "substitution"
+  ]
+ },
+ {
+  "key": "ven",
+  "meaning": "来",
+  "count": 20,
+  "words": [
+   "adventure",
+   "avenue",
+   "convenience",
+   "convenient",
+   "convention",
+   "conventional",
+   "evening",
+   "event",
+   "eventful",
+   "eventual",
+   "eventuality",
+   "eventually",
+   "invent",
+   "invention",
+   "inventor",
+   "prevent",
+   "prevention",
+   "preventive",
+   "revenue",
+   "venture"
+  ]
+ },
+ {
+  "key": "ced",
+  "meaning": "走",
+  "count": 19,
+  "words": [
+   "access",
+   "accessible",
+   "ancestor",
+   "ancestry",
+   "exceed",
+   "exceedingly",
+   "excess",
+   "excessive",
+   "proceed",
+   "process",
+   "procession",
+   "processor",
+   "recession",
+   "succeed",
+   "success",
+   "successful",
+   "succession",
+   "successive",
+   "successor"
+  ]
+ },
+ {
+  "key": "form",
+  "meaning": "形状",
+  "count": 19,
+  "words": [
+   "conform",
+   "conformity",
+   "formal",
+   "formality",
+   "formation",
+   "former",
+   "formulate",
+   "formulation",
+   "inform",
+   "informant",
+   "information",
+   "informative",
+   "reform",
+   "reformation",
+   "reformist",
+   "transform",
+   "transformation",
+   "uniform",
+   "uniformity"
+  ]
+ },
+ {
+  "key": "mit",
+  "meaning": "送、放",
+  "count": 19,
+  "words": [
+   "admission",
+   "admit",
+   "admittance",
+   "commission",
+   "commit",
+   "commitment",
+   "committee",
+   "dismiss",
+   "dismissal",
+   "emission",
+   "emit",
+   "missing",
+   "mission",
+   "submission",
+   "submissive",
+   "submit",
+   "transmission",
+   "transmit",
+   "transmitter"
+  ]
+ },
+ {
+  "key": "sid",
+  "meaning": "坐",
+  "count": 19,
+  "words": [
+   "assess",
+   "assessment",
+   "beside",
+   "besides",
+   "consider",
+   "considerable",
+   "considerate",
+   "consideration",
+   "considering",
+   "inside",
+   "insider",
+   "outside",
+   "outsider",
+   "presidency",
+   "reside",
+   "residence",
+   "resident",
+   "residential",
+   "session"
+  ]
+ },
+ {
+  "key": "fin",
+  "meaning": "界限",
+  "count": 18,
+  "words": [
+   "confine",
+   "confinement",
+   "define",
+   "definite",
+   "definitely",
+   "definition",
+   "final",
+   "finalise",
+   "finalize",
+   "finally",
+   "finance",
+   "finish",
+   "infinite",
+   "infinitive",
+   "infinity",
+   "refine",
+   "refinement",
+   "refinery"
+  ]
+ },
+ {
+  "key": "port",
+  "meaning": "搬运",
+  "count": 18,
+  "words": [
+   "export",
+   "exportation",
+   "import",
+   "importance",
+   "important",
+   "importation",
+   "portable",
+   "porter",
+   "portion",
+   "proportion",
+   "proportional",
+   "report",
+   "reporter",
+   "support",
+   "supporter",
+   "supportive",
+   "transport",
+   "transportation"
+  ]
+ },
+ {
+  "key": "tain",
+  "meaning": "握、保持",
+  "count": 18,
+  "words": [
+   "attain",
+   "attainment",
+   "contain",
+   "container",
+   "containment",
+   "continent",
+   "continental",
+   "continual",
+   "continuation",
+   "continue",
+   "continuity",
+   "continuous",
+   "obtain",
+   "obtainment",
+   "retain",
+   "sustain",
+   "sustainability",
+   "sustainable"
+  ]
+ },
+ {
+  "key": "tract",
+  "meaning": "拉、拖",
+  "count": 18,
+  "words": [
+   "attract",
+   "attraction",
+   "attractive",
+   "contract",
+   "contraction",
+   "contractor",
+   "distract",
+   "distraction",
+   "retreat",
+   "subtract",
+   "subtraction",
+   "tractor",
+   "trailer",
+   "trainee",
+   "trainer",
+   "training",
+   "treatment",
+   "treaty"
+  ]
+ },
+ {
+  "key": "grad",
+  "meaning": "步、级",
+  "count": 17,
+  "words": [
+   "agree",
+   "agreeable",
+   "agreement",
+   "congress",
+   "congressional",
+   "degree",
+   "disagree",
+   "disagreement",
+   "gradual",
+   "gradually",
+   "graduate",
+   "graduation",
+   "progress",
+   "progression",
+   "progressive",
+   "undergraduate",
+   "upgrade"
+  ]
+ },
+ {
+  "key": "sent",
+  "meaning": "感觉",
+  "count": 17,
+  "words": [
+   "absent",
+   "consensus",
+   "consent",
+   "nonsense",
+   "present",
+   "presentation",
+   "presently",
+   "represent",
+   "representation",
+   "representative",
+   "resent",
+   "resentment",
+   "sensible",
+   "sensitive",
+   "sensitivity",
+   "sensor",
+   "sentence"
+  ]
+ },
+ {
+  "key": "press",
+  "meaning": "压",
+  "count": 16,
+  "words": [
+   "depress",
+   "depression",
+   "empress",
+   "express",
+   "expression",
+   "expressive",
+   "impress",
+   "impression",
+   "impressive",
+   "presence",
+   "president",
+   "presidential",
+   "pressing",
+   "pressure",
+   "printer",
+   "printing"
+  ]
+ },
+ {
+  "key": "act",
+  "meaning": "做",
+  "count": 15,
+  "words": [
+   "acting",
+   "action",
+   "active",
+   "activity",
+   "actor",
+   "actual",
+   "actually",
+   "exact",
+   "interact",
+   "interaction",
+   "interactive",
+   "react",
+   "reaction",
+   "reactionary",
+   "transaction"
+  ]
+ },
+ {
+  "key": "dic",
+  "meaning": "说、指示",
+  "count": 15,
+  "words": [
+   "addict",
+   "addiction",
+   "addictive",
+   "contradict",
+   "contradiction",
+   "contradictory",
+   "dictate",
+   "dictation",
+   "dictionary",
+   "indicate",
+   "indication",
+   "indicative",
+   "predict",
+   "predictable",
+   "prediction"
+  ]
+ },
+ {
+  "key": "min",
+  "meaning": "小、突出、仆",
+  "count": 15,
+  "words": [
+   "administer",
+   "administrate",
+   "administration",
+   "administrative",
+   "mineral",
+   "mining",
+   "minister",
+   "ministerial",
+   "ministry",
+   "minor",
+   "minority",
+   "minus",
+   "minute",
+   "prominence",
+   "prominent"
+  ]
+ },
+ {
+  "key": "reg",
+  "meaning": "统治、规则",
+  "count": 15,
+  "words": [
+   "irregular",
+   "irrigate",
+   "irrigation",
+   "regard",
+   "regarding",
+   "regardless",
+   "region",
+   "regional",
+   "register",
+   "regular",
+   "regularity",
+   "regulate",
+   "regulation",
+   "regulator",
+   "regulatory"
+  ]
+ },
+ {
+  "key": "pend",
+  "meaning": "悬挂、衡量、支付",
+  "count": 14,
+  "words": [
+   "compensate",
+   "compensation",
+   "depend",
+   "expend",
+   "expenditure",
+   "expense",
+   "expensive",
+   "independence",
+   "indispensable",
+   "pension",
+   "pensioner",
+   "suspend",
+   "suspense",
+   "suspension"
+  ]
+ },
+ {
+  "key": "quer",
+  "meaning": "寻求",
+  "count": 14,
+  "words": [
+   "acquire",
+   "acquisition",
+   "conquer",
+   "conqueror",
+   "conquest",
+   "enquire",
+   "enquiry",
+   "inquire",
+   "inquiry",
+   "inquisitive",
+   "question",
+   "request",
+   "require",
+   "requirement"
+  ]
+ },
+ {
+  "key": "serv",
+  "meaning": "服务、保持",
+  "count": 14,
+  "words": [
+   "conservative",
+   "deserve",
+   "observant",
+   "observation",
+   "observe",
+   "observer",
+   "preservation",
+   "preservative",
+   "preserve",
+   "reservation",
+   "reserve",
+   "servant",
+   "service",
+   "serving"
+  ]
+ },
+ {
+  "key": "val",
+  "meaning": "价值、强",
+  "count": 14,
+  "words": [
+   "availability",
+   "available",
+   "evaluate",
+   "evaluation",
+   "interval",
+   "invalid",
+   "invaluable",
+   "prevail",
+   "prevalence",
+   "prevalent",
+   "valid",
+   "validate",
+   "validity",
+   "valuable"
+  ]
+ },
+ {
+  "key": "cord",
+  "meaning": "心",
+  "count": 13,
+  "words": [
+   "accord",
+   "accordance",
+   "accordingly",
+   "courage",
+   "courageous",
+   "courtyard",
+   "discourage",
+   "encourage",
+   "encouragement",
+   "encouraging",
+   "record",
+   "recorder",
+   "recording"
+  ]
+ },
+ {
+  "key": "gen",
+  "meaning": "出生、产生",
+  "count": 13,
+  "words": [
+   "general",
+   "generalise",
+   "generalize",
+   "generally",
+   "generate",
+   "generation",
+   "generator",
+   "generosity",
+   "generous",
+   "genetic",
+   "genetically",
+   "genius",
+   "genuine"
+  ]
+ },
+ {
+  "key": "man",
+  "meaning": "手",
+  "count": 13,
+  "words": [
+   "maintain",
+   "maintenance",
+   "manage",
+   "management",
+   "manager",
+   "managerial",
+   "manhood",
+   "manly",
+   "manual",
+   "manufacture",
+   "many",
+   "postman",
+   "remain"
+  ]
+ },
+ {
+  "key": "mon",
+  "meaning": "警告",
+  "count": 13,
+  "words": [
+   "common",
+   "commonplace",
+   "demonstrate",
+   "demonstration",
+   "demonstrative",
+   "money",
+   "monitor",
+   "monster",
+   "monstrous",
+   "month",
+   "monthly",
+   "monument",
+   "monumental"
+  ]
+ },
+ {
+  "key": "not",
+  "meaning": "标记、名字",
+  "count": 13,
+  "words": [
+   "announce",
+   "announcement",
+   "notable",
+   "notation",
+   "notice",
+   "noticeable",
+   "notification",
+   "notify",
+   "notion",
+   "notional",
+   "pronoun",
+   "pronounce",
+   "pronunciation"
+  ]
+ },
+ {
+  "key": "part",
+  "meaning": "部分",
+  "count": 13,
+  "words": [
+   "apart",
+   "apartment",
+   "counterpart",
+   "depart",
+   "department",
+   "departure",
+   "partial",
+   "partially",
+   "participant",
+   "participate",
+   "participation",
+   "partly",
+   "party"
+  ]
+ },
+ {
+  "key": "spond",
+  "meaning": "承诺、回答",
+  "count": 13,
+  "words": [
+   "correspond",
+   "correspondence",
+   "correspondent",
+   "corresponding",
+   "respond",
+   "respondent",
+   "response",
+   "responsibility",
+   "responsible",
+   "responsive",
+   "sponsor",
+   "sponsorship",
+   "spontaneous"
+  ]
+ },
+ {
+  "key": "hab",
+  "meaning": "持有",
+  "count": 12,
+  "words": [
+   "behave",
+   "behavior",
+   "behavioral",
+   "exhibit",
+   "exhibition",
+   "habit",
+   "habitual",
+   "inhabit",
+   "inhabitant",
+   "prohibit",
+   "prohibition",
+   "prohibitive"
+  ]
+ },
+ {
+  "key": "mot",
+  "meaning": "动",
+  "count": 12,
+  "words": [
+   "automobile",
+   "emotion",
+   "emotional",
+   "mobile",
+   "motion",
+   "motive",
+   "motor",
+   "movement",
+   "promote",
+   "promotion",
+   "remote",
+   "remove"
+  ]
+ },
+ {
+  "key": "popul",
+  "meaning": "人民",
+  "count": 12,
+  "words": [
+   "populate",
+   "population",
+   "populous",
+   "public",
+   "publication",
+   "publicise",
+   "publicity",
+   "publicize",
+   "publicly",
+   "publish",
+   "republic",
+   "republican"
+  ]
+ },
+ {
+  "key": "struct",
+  "meaning": "建造",
+  "count": 12,
+  "words": [
+   "construct",
+   "construction",
+   "destruction",
+   "destructive",
+   "infrastructure",
+   "instruct",
+   "instruction",
+   "instructive",
+   "instructor",
+   "instrument",
+   "instrumental",
+   "structure"
+  ]
+ },
+ {
+  "key": "ver",
+  "meaning": "真实",
+  "count": 12,
+  "words": [
+   "cover",
+   "coverage",
+   "discover",
+   "discovery",
+   "recover",
+   "recovery",
+   "severe",
+   "severity",
+   "uncover",
+   "verification",
+   "verify",
+   "very"
+  ]
+ },
+ {
+  "key": "vit",
+  "meaning": "生命",
+  "count": 12,
+  "words": [
+   "inevitable",
+   "invitation",
+   "invite",
+   "inviting",
+   "survival",
+   "survive",
+   "survivor",
+   "vigor",
+   "vigorous",
+   "vital",
+   "vitality",
+   "vitamin"
+  ]
+ },
+ {
+  "key": "her",
+  "meaning": "粘",
+  "count": 11,
+  "words": [
+   "coherence",
+   "coherent",
+   "cohesion",
+   "cohesive",
+   "heroic",
+   "heroine",
+   "heroism",
+   "hesitant",
+   "hesitate",
+   "hesitation",
+   "preacher"
+  ]
+ },
+ {
+  "key": "jus",
+  "meaning": "法律、正",
+  "count": 11,
+  "words": [
+   "adjust",
+   "adjustment",
+   "injure",
+   "injurious",
+   "injury",
+   "juror",
+   "jury",
+   "justice",
+   "justification",
+   "justify",
+   "prejudice"
+  ]
+ },
+ {
+  "key": "prov",
+  "meaning": "试验、证明",
+  "count": 11,
+  "words": [
+   "approval",
+   "approve",
+   "disapproval",
+   "disapprove",
+   "improve",
+   "improvement",
+   "probability",
+   "probable",
+   "probably",
+   "provide",
+   "provision"
+  ]
+ },
+ {
+  "key": "soci",
+  "meaning": "同伴",
+  "count": 11,
+  "words": [
+   "associate",
+   "association",
+   "sociable",
+   "social",
+   "socialise",
+   "socialism",
+   "socialist",
+   "socialize",
+   "society",
+   "sociologist",
+   "sociology"
+  ]
+ },
+ {
+  "key": "clud",
+  "meaning": "关",
+  "count": 10,
+  "words": [
+   "conclude",
+   "conclusion",
+   "conclusive",
+   "exclude",
+   "exclusion",
+   "exclusive",
+   "include",
+   "including",
+   "inclusion",
+   "inclusive"
+  ]
+ },
+ {
+  "key": "cre",
+  "meaning": "?",
+  "count": 10,
+  "words": [
+   "create",
+   "creation",
+   "creative",
+   "decrease",
+   "increase",
+   "increasingly",
+   "recreation",
+   "recreational",
+   "recruit",
+   "recruitment"
+  ]
+ },
+ {
+  "key": "fend",
+  "meaning": "打击",
+  "count": 10,
+  "words": [
+   "defence",
+   "defend",
+   "defendant",
+   "defense",
+   "defensive",
+   "offence",
+   "offend",
+   "offender",
+   "offense",
+   "offensive"
+  ]
+ },
+ {
+  "key": "it",
+  "meaning": "走",
+  "count": 10,
+  "words": [
+   "ambition",
+   "ambitious",
+   "either",
+   "initial",
+   "initially",
+   "initiate",
+   "initiation",
+   "initiative",
+   "reunite",
+   "unity"
+  ]
+ },
+ {
+  "key": "mat",
+  "meaning": "母、熟",
+  "count": 10,
+  "words": [
+   "automate",
+   "automatic",
+   "automatically",
+   "automation",
+   "material",
+   "materialise",
+   "materialism",
+   "materialist",
+   "materialize",
+   "mature"
+  ]
+ },
+ {
+  "key": "mod",
+  "meaning": "方式、适度",
+  "count": 10,
+  "words": [
+   "accommodate",
+   "accommodation",
+   "commodity",
+   "moderate",
+   "moderation",
+   "moderator",
+   "modest",
+   "modesty",
+   "modification",
+   "modify"
+  ]
+ },
+ {
+  "key": "pet",
+  "meaning": "追求",
+  "count": 10,
+  "words": [
+   "appetite",
+   "compete",
+   "competence",
+   "competent",
+   "competition",
+   "competitive",
+   "competitor",
+   "petty",
+   "repetition",
+   "repetitive"
+  ]
+ },
+ {
+  "key": "ple",
+  "meaning": "满",
+  "count": 10,
+  "words": [
+   "complete",
+   "completion",
+   "implement",
+   "implementation",
+   "multiple",
+   "pleasure",
+   "plenty",
+   "supplement",
+   "supplementary",
+   "triple"
+  ]
+ },
+ {
+  "key": "pol",
+  "meaning": "城",
+  "count": 10,
+  "words": [
+   "police",
+   "policeman",
+   "policy",
+   "polish",
+   "polite",
+   "politeness",
+   "political",
+   "politician",
+   "politics",
+   "pollution"
+  ]
+ },
+ {
+  "key": "pot",
+  "meaning": "?",
+  "count": 10,
+  "words": [
+   "impossibility",
+   "impossible",
+   "possess",
+   "possession",
+   "possessive",
+   "possibility",
+   "possible",
+   "potential",
+   "power",
+   "powerful"
+  ]
+ },
+ {
+  "key": "put",
+  "meaning": "计算、思考",
+  "count": 10,
+  "words": [
+   "computation",
+   "compute",
+   "computer",
+   "computerise",
+   "computerize",
+   "deputy",
+   "disputable",
+   "dispute",
+   "input",
+   "output"
+  ]
+ },
+ {
+  "key": "sum",
+  "meaning": "拿、总",
+  "count": 10,
+  "words": [
+   "assume",
+   "assumption",
+   "consume",
+   "consumer",
+   "consumption",
+   "resume",
+   "resumption",
+   "summarize",
+   "summary",
+   "summit"
+  ]
+ },
+ {
+  "key": "vi",
+  "meaning": "道路",
+  "count": 10,
+  "words": [
+   "convey",
+   "conveyance",
+   "envious",
+   "evident",
+   "obvious",
+   "obviously",
+   "previous",
+   "survey",
+   "vivid",
+   "voyage"
+  ]
+ },
+ {
+  "key": "volv",
+  "meaning": "转、卷",
+  "count": 10,
+  "words": [
+   "evolution",
+   "evolutionary",
+   "evolve",
+   "involve",
+   "involvement",
+   "revolution",
+   "revolutionary",
+   "revolve",
+   "voltage",
+   "voluminous"
+  ]
+ },
+ {
+  "key": "ag",
+  "meaning": "做",
+  "count": 9,
+  "words": [
+   "ageing",
+   "agency",
+   "agent",
+   "aggression",
+   "aggressive",
+   "aging",
+   "coinage",
+   "image",
+   "teenager"
+  ]
+ },
+ {
+  "key": "count",
+  "meaning": "?",
+  "count": 9,
+  "words": [
+   "account",
+   "accountability",
+   "accountable",
+   "accountancy",
+   "accountant",
+   "accounting",
+   "counter",
+   "discount",
+   "encounter"
+  ]
+ },
+ {
+  "key": "dit",
+  "meaning": "给",
+  "count": 9,
+  "words": [
+   "addition",
+   "additional",
+   "condition",
+   "conditional",
+   "conditioner",
+   "edit",
+   "edition",
+   "editor",
+   "editorial"
+  ]
+ },
+ {
+  "key": "geo",
+  "meaning": "地",
+  "count": 9,
+  "words": [
+   "geographic",
+   "geographically",
+   "geography",
+   "geological",
+   "geologically",
+   "geology",
+   "geometric",
+   "geometrically",
+   "geometry"
+  ]
+ },
+ {
+  "key": "ject",
+  "meaning": "投掷",
+  "count": 9,
+  "words": [
+   "adjective",
+   "object",
+   "objection",
+   "objective",
+   "projection",
+   "reject",
+   "rejection",
+   "subject",
+   "subjective"
+  ]
+ },
+ {
+  "key": "nat",
+  "meaning": "出生",
+  "count": 9,
+  "words": [
+   "discriminate",
+   "discrimination",
+   "discriminatory",
+   "international",
+   "nation",
+   "national",
+   "native",
+   "nature",
+   "senate"
+  ]
+ },
+ {
+  "key": "or",
+  "meaning": "口、说",
+  "count": 9,
+  "words": [
+   "colorful",
+   "corridor",
+   "interior",
+   "major",
+   "oral",
+   "orphan",
+   "orphanage",
+   "superior",
+   "vendor"
+  ]
+ },
+ {
+  "key": "sign",
+  "meaning": "记号",
+  "count": 9,
+  "words": [
+   "assign",
+   "assignment",
+   "design",
+   "designer",
+   "resign",
+   "resignation",
+   "signal",
+   "significance",
+   "significant"
+  ]
+ },
+ {
+  "key": "sol",
+  "meaning": "太阳、唯一",
+  "count": 9,
+  "words": [
+   "consolidate",
+   "consolidation",
+   "isolate",
+   "isolation",
+   "solely",
+   "solid",
+   "solidify",
+   "solidity",
+   "solvent"
+  ]
+ },
+ {
+  "key": "stinct",
+  "meaning": "刺、区分",
+  "count": 9,
+  "words": [
+   "distinct",
+   "distinction",
+   "distinctive",
+   "distinguish",
+   "distinguishable",
+   "existing",
+   "instinct",
+   "instinctive",
+   "interesting"
+  ]
+ },
+ {
+  "key": "strain",
+  "meaning": "拉紧",
+  "count": 9,
+  "words": [
+   "distress",
+   "distressful",
+   "district",
+   "restrain",
+   "restraint",
+   "restrict",
+   "restriction",
+   "restrictive",
+   "stressful"
+  ]
+ },
+ {
+  "key": "tact",
+  "meaning": "接触",
+  "count": 9,
+  "words": [
+   "attach",
+   "attachment",
+   "attack",
+   "contact",
+   "contaminate",
+   "contamination",
+   "intact",
+   "intangible",
+   "tangible"
+  ]
+ },
+ {
+  "key": "aug",
+  "meaning": "增大",
+  "count": 7,
+  "words": [
+   "authentic",
+   "author",
+   "authorisation",
+   "authorise",
+   "authority",
+   "authorization",
+   "authorize"
+  ]
+ },
+ {
+  "key": "cent",
+  "meaning": "百",
+  "count": 8,
+  "words": [
+   "accent",
+   "center",
+   "centigrade",
+   "centimeter",
+   "centimetre",
+   "concentrate",
+   "decent",
+   "incentive"
+  ]
+ },
+ {
+  "key": "cid2",
+  "meaning": "?",
+  "count": 8,
+  "words": [
+   "accident",
+   "accidental",
+   "acid",
+   "acidity",
+   "decide",
+   "incidence",
+   "incident",
+   "incidental"
+  ]
+ },
+ {
+  "key": "flu",
+  "meaning": "流",
+  "count": 8,
+  "words": [
+   "affluence",
+   "affluent",
+   "fluency",
+   "fluent",
+   "fluid",
+   "influence",
+   "influential",
+   "influenza"
+  ]
+ },
+ {
+  "key": "fort",
+  "meaning": "强",
+  "count": 8,
+  "words": [
+   "comfort",
+   "comfortable",
+   "effort",
+   "enforce",
+   "enforcement",
+   "forceful",
+   "reinforce",
+   "reinforcement"
+  ]
+ },
+ {
+  "key": "ign",
+  "meaning": "?",
+  "count": 8,
+  "words": [
+   "ignorance",
+   "ignorant",
+   "ignore",
+   "pregnancy",
+   "pregnant",
+   "recognise",
+   "recognition",
+   "recognize"
+  ]
+ },
+ {
+  "key": "lat",
+  "meaning": "携带",
+  "count": 8,
+  "words": [
+   "relate",
+   "relation",
+   "relationship",
+   "relative",
+   "relativity",
+   "translate",
+   "translation",
+   "translator"
+  ]
+ },
+ {
+  "key": "log",
+  "meaning": "说话、学科",
+  "count": 8,
+  "words": [
+   "apologetic",
+   "apologise",
+   "apologize",
+   "apology",
+   "dialog",
+   "dialogue",
+   "logic",
+   "logical"
+  ]
+ },
+ {
+  "key": "ord",
+  "meaning": "秩序",
+  "count": 8,
+  "words": [
+   "coordinate",
+   "coordination",
+   "coordinator",
+   "disorder",
+   "extraordinary",
+   "order",
+   "orderly",
+   "ordinary"
+  ]
+ },
+ {
+  "key": "organ",
+  "meaning": "器官、工具",
+  "count": 8,
+  "words": [
+   "organic",
+   "organisation",
+   "organisational",
+   "organise",
+   "organism",
+   "organization",
+   "organizational",
+   "organize"
+  ]
+ },
+ {
+  "key": "pan",
+  "meaning": "满、展",
+  "count": 8,
+  "words": [
+   "accompany",
+   "companion",
+   "companionship",
+   "company",
+   "expand",
+   "expansion",
+   "expansive",
+   "panic"
+  ]
+ },
+ {
+  "key": "punct",
+  "meaning": "点、刺",
+  "count": 8,
+  "words": [
+   "appoint",
+   "appointment",
+   "disappoint",
+   "disappointing",
+   "disappointment",
+   "pointless",
+   "punctual",
+   "punctuality"
+  ]
+ },
+ {
+  "key": "real",
+  "meaning": "?",
+  "count": 8,
+  "words": [
+   "realisation",
+   "realise",
+   "realism",
+   "realistic",
+   "reality",
+   "realization",
+   "realize",
+   "really"
+  ]
+ },
+ {
+  "key": "riv",
+  "meaning": "河、源",
+  "count": 8,
+  "words": [
+   "arrival",
+   "arrive",
+   "derivation",
+   "derivative",
+   "derive",
+   "rival",
+   "rivalry",
+   "river"
+  ]
+ },
+ {
+  "key": "simil",
+  "meaning": "相似",
+  "count": 8,
+  "words": [
+   "assemble",
+   "assembly",
+   "resemblance",
+   "resemble",
+   "simple",
+   "simplicity",
+   "simplify",
+   "simply"
+  ]
+ },
+ {
+  "key": "terr",
+  "meaning": "地、怕",
+  "count": 8,
+  "words": [
+   "terrible",
+   "terrific",
+   "terrify",
+   "territorial",
+   "territory",
+   "terror",
+   "terrorism",
+   "terrorist"
+  ]
+ },
+ {
+  "key": "vel",
+  "meaning": "盖、卷",
+  "count": 8,
+  "words": [
+   "develop",
+   "developer",
+   "development",
+   "developmental",
+   "envelope",
+   "reveal",
+   "revelation",
+   "underdeveloped"
+  ]
+ },
+ {
+  "key": "bio",
+  "meaning": "生命",
+  "count": 7,
+  "words": [
+   "biographer",
+   "biographical",
+   "biography",
+   "biological",
+   "biologist",
+   "biology",
+   "biotechnology"
+  ]
+ },
+ {
+  "key": "clar",
+  "meaning": "清楚",
+  "count": 7,
+  "words": [
+   "clarification",
+   "clarify",
+   "clarity",
+   "clearly",
+   "declaration",
+   "declarative",
+   "declare"
+  ]
+ },
+ {
+  "key": "cur",
+  "meaning": "关心",
+  "count": 7,
+  "words": [
+   "accuracy",
+   "accurate",
+   "curable",
+   "curious",
+   "occur",
+   "secure",
+   "security"
+  ]
+ },
+ {
+  "key": "gest",
+  "meaning": "带来",
+  "count": 7,
+  "words": [
+   "digest",
+   "digestion",
+   "digestive",
+   "gesture",
+   "suggest",
+   "suggestion",
+   "suggestive"
+  ]
+ },
+ {
+  "key": "hospit",
+  "meaning": "客、敌",
+  "count": 7,
+  "words": [
+   "hospitable",
+   "hospital",
+   "hospitality",
+   "hospitalize",
+   "hostess",
+   "hostile",
+   "hostility"
+  ]
+ },
+ {
+  "key": "imag",
+  "meaning": "像、模仿",
+  "count": 2,
+  "words": [
+   "imagine",
+   "imaging"
+  ]
+ },
+ {
+  "key": "liber",
+  "meaning": "自由",
+  "count": 7,
+  "words": [
+   "deliberate",
+   "deliberation",
+   "liberal",
+   "liberate",
+   "liberation",
+   "liberty",
+   "library"
+  ]
+ },
+ {
+  "key": "mand",
+  "meaning": "命令、托付",
+  "count": 7,
+  "words": [
+   "command",
+   "commander",
+   "demand",
+   "demanding",
+   "recommend",
+   "recommendation",
+   "tremendous"
+  ]
+ },
+ {
+  "key": "merc",
+  "meaning": "交易",
+  "count": 7,
+  "words": [
+   "commerce",
+   "commercial",
+   "commercialise",
+   "commercialize",
+   "merchant",
+   "merciful",
+   "mercy"
+  ]
+ },
+ {
+  "key": "norm",
+  "meaning": "规范",
+  "count": 7,
+  "words": [
+   "enormous",
+   "normal",
+   "normalisation",
+   "normalise",
+   "normalization",
+   "normalize",
+   "normally"
+  ]
+ },
+ {
+  "key": "opt",
+  "meaning": "选择、最好",
+  "count": 7,
+  "words": [
+   "adopt",
+   "adoption",
+   "optimism",
+   "optimist",
+   "optimistic",
+   "option",
+   "optional"
+  ]
+ },
+ {
+  "key": "pass",
+  "meaning": "步",
+  "count": 7,
+  "words": [
+   "bypass",
+   "compass",
+   "passage",
+   "passion",
+   "passionate",
+   "passive",
+   "passport"
+  ]
+ },
+ {
+  "key": "pen",
+  "meaning": "惩罚",
+  "count": 6,
+  "words": [
+   "dependent",
+   "independent",
+   "penalise",
+   "penalize",
+   "penalty",
+   "penetration"
+  ]
+ },
+ {
+  "key": "pla",
+  "meaning": "平",
+  "count": 7,
+  "words": [
+   "display",
+   "exemplary",
+   "explanatory",
+   "placement",
+   "platform",
+   "replace",
+   "replacement"
+  ]
+ },
+ {
+  "key": "pri",
+  "meaning": "在前",
+  "count": 7,
+  "words": [
+   "priceless",
+   "priest",
+   "primarily",
+   "prior",
+   "priority",
+   "prison",
+   "prisoner"
+  ]
+ },
+ {
+  "key": "rupt",
+  "meaning": "破裂",
+  "count": 7,
+  "words": [
+   "corrupt",
+   "corruption",
+   "disrupt",
+   "disruption",
+   "disruptive",
+   "interrupt",
+   "interruption"
+  ]
+ },
+ {
+  "key": "sult",
+  "meaning": "?",
+  "count": 7,
+  "words": [
+   "consult",
+   "consultant",
+   "consultation",
+   "consultative",
+   "insult",
+   "result",
+   "resultant"
+  ]
+ },
+ {
+  "key": "urb",
+  "meaning": "城市",
+  "count": 7,
+  "words": [
+   "suburb",
+   "suburban",
+   "urban",
+   "urbanisation",
+   "urbanise",
+   "urbanization",
+   "urbanize"
+  ]
+ },
+ {
+  "key": "var",
+  "meaning": "变化",
+  "count": 7,
+  "words": [
+   "invariably",
+   "variable",
+   "variant",
+   "variation",
+   "variety",
+   "various",
+   "vary"
+  ]
+ },
+ {
+  "key": "voc",
+  "meaning": "呼唤",
+  "count": 7,
+  "words": [
+   "advocacy",
+   "advocate",
+   "provocation",
+   "provocative",
+   "provoke",
+   "vocation",
+   "vocational"
+  ]
+ },
+ {
+  "key": "cit",
+  "meaning": "唤起、引",
+  "count": 6,
+  "words": [
+   "citation",
+   "excite",
+   "excitement",
+   "exciting",
+   "recitation",
+   "recite"
+  ]
+ },
+ {
+  "key": "commun",
+  "meaning": "公共",
+  "count": 6,
+  "words": [
+   "communicate",
+   "communication",
+   "communicative",
+   "communism",
+   "communist",
+   "community"
+  ]
+ },
+ {
+  "key": "crit",
+  "meaning": "判断",
+  "count": 6,
+  "words": [
+   "criterion",
+   "critic",
+   "critical",
+   "criticise",
+   "criticism",
+   "criticize"
+  ]
+ },
+ {
+  "key": "cult",
+  "meaning": "耕种、培养",
+  "count": 6,
+  "words": [
+   "accumulate",
+   "accumulation",
+   "accumulative",
+   "cultivate",
+   "cultivation",
+   "culture"
+  ]
+ },
+ {
+  "key": "dur",
+  "meaning": "持续",
+  "count": 6,
+  "words": [
+   "durability",
+   "durable",
+   "duration",
+   "during",
+   "endurance",
+   "endure"
+  ]
+ },
+ {
+  "key": "fund",
+  "meaning": "底、基础",
+  "count": 6,
+  "words": [
+   "foundation",
+   "founder",
+   "founding",
+   "fundamental",
+   "funding",
+   "profound"
+  ]
+ },
+ {
+  "key": "hon",
+  "meaning": "荣誉",
+  "count": 6,
+  "words": [
+   "honest",
+   "honesty",
+   "honey",
+   "honor",
+   "honorable",
+   "honorary"
+  ]
+ },
+ {
+  "key": "medi",
+  "meaning": "中间",
+  "count": 6,
+  "words": [
+   "immediate",
+   "immediately",
+   "intermediary",
+   "intermediate",
+   "medium",
+   "remedial"
+  ]
+ },
+ {
+  "key": "metr",
+  "meaning": "测量",
+  "count": 6,
+  "words": [
+   "diameter",
+   "kilometer",
+   "kilometre",
+   "metric",
+   "millimeter",
+   "millimetre"
+  ]
+ },
+ {
+  "key": "migr",
+  "meaning": "迁移",
+  "count": 6,
+  "words": [
+   "immigrant",
+   "immigrate",
+   "immigration",
+   "migrant",
+   "migrate",
+   "migration"
+  ]
+ },
+ {
+  "key": "pel",
+  "meaning": "推、驱",
+  "count": 6,
+  "words": [
+   "compel",
+   "compelling",
+   "compulsory",
+   "expel",
+   "impulse",
+   "impulsive"
+  ]
+ },
+ {
+  "key": "qual",
+  "meaning": "种类、质",
+  "count": 6,
+  "words": [
+   "equal",
+   "equally",
+   "qualification",
+   "qualify",
+   "qualitative",
+   "quality"
+  ]
+ },
+ {
+  "key": "rect",
+  "meaning": "直、正",
+  "count": 6,
+  "words": [
+   "correct",
+   "correction",
+   "corrective",
+   "direct",
+   "direction",
+   "director"
+  ]
+ },
+ {
+  "key": "scrib",
+  "meaning": "写",
+  "count": 6,
+  "words": [
+   "describe",
+   "description",
+   "descriptive",
+   "prescribe",
+   "prescription",
+   "scripture"
+  ]
+ },
+ {
+  "key": "sequ",
+  "meaning": "跟随",
+  "count": 6,
+  "words": [
+   "consequence",
+   "consequent",
+   "consequently",
+   "sequence",
+   "sequential",
+   "subsequent"
+  ]
+ },
+ {
+  "key": "solv",
+  "meaning": "松开、解决",
+  "count": 2,
+  "words": [
+   "dissolve",
+   "resolve"
+  ]
+ },
+ {
+  "key": "tect",
+  "meaning": "覆盖",
+  "count": 6,
+  "words": [
+   "detect",
+   "detection",
+   "detective",
+   "protect",
+   "protection",
+   "protective"
+  ]
+ },
+ {
+  "key": "tra",
+  "meaning": "?",
+  "count": 6,
+  "words": [
+   "betray",
+   "betrayal",
+   "contrary",
+   "contrast",
+   "tradition",
+   "traditional"
+  ]
+ },
+ {
+  "key": "van",
+  "meaning": "前、空",
+  "count": 6,
+  "words": [
+   "advance",
+   "advancement",
+   "advantage",
+   "advantageous",
+   "vanish",
+   "vanity"
+  ]
+ },
+ {
+  "key": "vinc",
+  "meaning": "征服",
+  "count": 6,
+  "words": [
+   "convince",
+   "convincing",
+   "province",
+   "provincial",
+   "victorious",
+   "victory"
+  ]
+ },
+ {
+  "key": "arch",
+  "meaning": "首、主要",
+  "count": 5,
+  "words": [
+   "architect",
+   "architecture",
+   "research",
+   "researcher",
+   "search"
+  ]
+ },
+ {
+  "key": "bank2",
+  "meaning": "凳",
+  "count": 5,
+  "words": [
+   "banker",
+   "banking",
+   "banknote",
+   "bankrupt",
+   "bankruptcy"
+  ]
+ },
+ {
+  "key": "bat",
+  "meaning": "打",
+  "count": 5,
+  "words": [
+   "battalion",
+   "battery",
+   "combat",
+   "combative",
+   "debate"
+  ]
+ },
+ {
+  "key": "camp",
+  "meaning": "田、营",
+  "count": 5,
+  "words": [
+   "campaign",
+   "campus",
+   "champagne",
+   "champion",
+   "championship"
+  ]
+ },
+ {
+  "key": "caus",
+  "meaning": "原因、诉",
+  "count": 5,
+  "words": [
+   "accusation",
+   "accuse",
+   "because",
+   "discussion",
+   "excuse"
+  ]
+ },
+ {
+  "key": "circ",
+  "meaning": "?",
+  "count": 5,
+  "words": [
+   "circuit",
+   "circular",
+   "circulate",
+   "circulation",
+   "circus"
+  ]
+ },
+ {
+  "key": "cis",
+  "meaning": "切",
+  "count": 5,
+  "words": [
+   "decision",
+   "decisive",
+   "precise",
+   "precisely",
+   "precision"
+  ]
+ },
+ {
+  "key": "clin",
+  "meaning": "倾",
+  "count": 5,
+  "words": [
+   "clinic",
+   "clinical",
+   "decline",
+   "inclination",
+   "incline"
+  ]
+ },
+ {
+  "key": "colon",
+  "meaning": "垦殖",
+  "count": 5,
+  "words": [
+   "colonial",
+   "colonialism",
+   "colonise",
+   "colonize",
+   "colony"
+  ]
+ },
+ {
+  "key": "cret",
+  "meaning": "?",
+  "count": 5,
+  "words": [
+   "concrete",
+   "secrecy",
+   "secret",
+   "secretary",
+   "secretive"
+  ]
+ },
+ {
+  "key": "curr",
+  "meaning": "跑",
+  "count": 5,
+  "words": [
+   "currency",
+   "current",
+   "currently",
+   "excursion",
+   "occurrence"
+  ]
+ },
+ {
+  "key": "doc",
+  "meaning": "教",
+  "count": 5,
+  "words": [
+   "doctor",
+   "doctoral",
+   "doctorate",
+   "document",
+   "documentary"
+  ]
+ },
+ {
+  "key": "fess",
+  "meaning": "说",
+  "count": 5,
+  "words": [
+   "confess",
+   "confession",
+   "profession",
+   "professional",
+   "professor"
+  ]
+ },
+ {
+  "key": "flect",
+  "meaning": "弯曲",
+  "count": 5,
+  "words": [
+   "flexibility",
+   "flexible",
+   "reflect",
+   "reflection",
+   "reflective"
+  ]
+ },
+ {
+  "key": "gram",
+  "meaning": "字母、写",
+  "count": 5,
+  "words": [
+   "diagram",
+   "grammar",
+   "grammatical",
+   "kilogram",
+   "program"
+  ]
+ },
+ {
+  "key": "grat",
+  "meaning": "高兴、感谢",
+  "count": 5,
+  "words": [
+   "congratulate",
+   "congratulation",
+   "congratulatory",
+   "grateful",
+   "gratitude"
+  ]
+ },
+ {
+  "key": "integr",
+  "meaning": "完整",
+  "count": 5,
+  "words": [
+   "disintegrate",
+   "disintegration",
+   "integrate",
+   "integration",
+   "integrity"
+  ]
+ },
+ {
+  "key": "lim",
+  "meaning": "界限",
+  "count": 4,
+  "words": [
+   "eliminate",
+   "elimination",
+   "limit",
+   "limitation"
+  ]
+ },
+ {
+  "key": "liter",
+  "meaning": "文字",
+  "count": 5,
+  "words": [
+   "literacy",
+   "literal",
+   "literally",
+   "literary",
+   "literate"
+  ]
+ },
+ {
+  "key": "mar",
+  "meaning": "海、丈夫",
+  "count": 5,
+  "words": [
+   "marine",
+   "marital",
+   "marry",
+   "marvel",
+   "marvelous"
+  ]
+ },
+ {
+  "key": "ment",
+  "meaning": "心智",
+  "count": 5,
+  "words": [
+   "comment",
+   "commentary",
+   "mental",
+   "mentality",
+   "mention"
+  ]
+ },
+ {
+  "key": "nov",
+  "meaning": "新",
+  "count": 5,
+  "words": [
+   "innovate",
+   "innovation",
+   "innovative",
+   "renovate",
+   "renovation"
+  ]
+ },
+ {
+  "key": "ori",
+  "meaning": "升起、源头",
+  "count": 5,
+  "words": [
+   "majority",
+   "orient",
+   "oriental",
+   "orientation",
+   "originate"
+  ]
+ },
+ {
+  "key": "pac",
+  "meaning": "平、付",
+  "count": 5,
+  "words": [
+   "payment",
+   "payroll",
+   "peaceful",
+   "repay",
+   "repayment"
+  ]
+ },
+ {
+  "key": "pract",
+  "meaning": "实践",
+  "count": 5,
+  "words": [
+   "practicable",
+   "practical",
+   "practicality",
+   "practice",
+   "practise"
+  ]
+ },
+ {
+  "key": "prehens",
+  "meaning": "抓",
+  "count": 5,
+  "words": [
+   "comprehend",
+   "comprehension",
+   "comprehensive",
+   "comprise",
+   "surprise"
+  ]
+ },
+ {
+  "key": "priv",
+  "meaning": "个人、夺",
+  "count": 5,
+  "words": [
+   "deprivation",
+   "deprive",
+   "privacy",
+   "private",
+   "privilege"
+  ]
+ },
+ {
+  "key": "sci",
+  "meaning": "知",
+  "count": 5,
+  "words": [
+   "conscience",
+   "conscientious",
+   "conscious",
+   "science",
+   "scientist"
+  ]
+ },
+ {
+  "key": "sect",
+  "meaning": "切、分",
+  "count": 5,
+  "words": [
+   "insect",
+   "section",
+   "sector",
+   "segment",
+   "segmental"
+  ]
+ },
+ {
+  "key": "spir",
+  "meaning": "呼吸",
+  "count": 5,
+  "words": [
+   "inspiration",
+   "inspirational",
+   "inspire",
+   "spirit",
+   "spiritual"
+  ]
+ },
+ {
+  "key": "tir",
+  "meaning": "?",
+  "count": 5,
+  "words": [
+   "entire",
+   "entirety",
+   "retire",
+   "retirement",
+   "tiring"
+  ]
+ },
+ {
+  "key": "vest",
+  "meaning": "穿衣、脚印",
+  "count": 5,
+  "words": [
+   "invest",
+   "investigate",
+   "investigation",
+   "investment",
+   "investor"
+  ]
+ },
+ {
+  "key": "apt",
+  "meaning": "适合",
+  "count": 4,
+  "words": [
+   "adapt",
+   "adaptation",
+   "adaptive",
+   "aptitude"
+  ]
+ },
+ {
+  "key": "art",
+  "meaning": "技艺",
+  "count": 4,
+  "words": [
+   "artificial",
+   "artist",
+   "artistic",
+   "artistically"
+  ]
+ },
+ {
+  "key": "astr",
+  "meaning": "星",
+  "count": 3,
+  "words": [
+   "astronaut",
+   "astronomy",
+   "disastrous"
+  ]
+ },
+ {
+  "key": "cel",
+  "meaning": "高、藏",
+  "count": 4,
+  "words": [
+   "accelerate",
+   "conceal",
+   "concealment",
+   "excel"
+  ]
+ },
+ {
+  "key": "centr",
+  "meaning": "中心",
+  "count": 4,
+  "words": [
+   "central",
+   "centralise",
+   "centralize",
+   "concentration"
+  ]
+ },
+ {
+  "key": "cert",
+  "meaning": "确定",
+  "count": 4,
+  "words": [
+   "certainty",
+   "certificate",
+   "concert",
+   "uncertainty"
+  ]
+ },
+ {
+  "key": "claim",
+  "meaning": "喊",
+  "count": 4,
+  "words": [
+   "exclaim",
+   "exclamation",
+   "proclaim",
+   "proclamation"
+  ]
+ },
+ {
+  "key": "class",
+  "meaning": "等级",
+  "count": 4,
+  "words": [
+   "classic",
+   "classical",
+   "classification",
+   "classify"
+  ]
+ },
+ {
+  "key": "dem",
+  "meaning": "人民",
+  "count": 4,
+  "words": [
+   "academic",
+   "democracy",
+   "democrat",
+   "democratic"
+  ]
+ },
+ {
+  "key": "domin",
+  "meaning": "统治",
+  "count": 4,
+  "words": [
+   "dominance",
+   "dominant",
+   "dominate",
+   "domination"
+  ]
+ },
+ {
+  "key": "don",
+  "meaning": "给",
+  "count": 4,
+  "words": [
+   "abandon",
+   "donate",
+   "donation",
+   "donor"
+  ]
+ },
+ {
+  "key": "electr",
+  "meaning": "电",
+  "count": 4,
+  "words": [
+   "electric",
+   "electrical",
+   "electrician",
+   "electricity"
+  ]
+ },
+ {
+  "key": "equ",
+  "meaning": "相等",
+  "count": 4,
+  "words": [
+   "adequacy",
+   "equality",
+   "equivalence",
+   "equivalent"
+  ]
+ },
+ {
+  "key": "ess",
+  "meaning": "存在",
+  "count": 2,
+  "words": [
+   "essence",
+   "essential"
+  ]
+ },
+ {
+  "key": "fat",
+  "meaning": "说、命运",
+  "count": 4,
+  "words": [
+   "fatal",
+   "fatality",
+   "father",
+   "fatherly"
+  ]
+ },
+ {
+  "key": "frag",
+  "meaning": "破",
+  "count": 4,
+  "words": [
+   "fraction",
+   "fragment",
+   "fragmentary",
+   "fragmentation"
+  ]
+ },
+ {
+  "key": "fus",
+  "meaning": "流、倒",
+  "count": 4,
+  "words": [
+   "confuse",
+   "confusion",
+   "refusal",
+   "refuse"
+  ]
+ },
+ {
+  "key": "herit",
+  "meaning": "继承",
+  "count": 4,
+  "words": [
+   "heiress",
+   "heritage",
+   "inherit",
+   "inheritance"
+  ]
+ },
+ {
+  "key": "hum",
+  "meaning": "湿土",
+  "count": 4,
+  "words": [
+   "human",
+   "humanity",
+   "humor",
+   "humorous"
+  ]
+ },
+ {
+  "key": "ident",
+  "meaning": "?",
+  "count": 4,
+  "words": [
+   "identical",
+   "identification",
+   "identify",
+   "identity"
+  ]
+ },
+ {
+  "key": "labor",
+  "meaning": "劳动",
+  "count": 4,
+  "words": [
+   "collaborate",
+   "collaboration",
+   "collaborative",
+   "laborious"
+  ]
+ },
+ {
+  "key": "lev",
+  "meaning": "举、轻",
+  "count": 4,
+  "words": [
+   "elevate",
+   "elevation",
+   "relevance",
+   "relevant"
+  ]
+ },
+ {
+  "key": "loc",
+  "meaning": "地方",
+  "count": 4,
+  "words": [
+   "local",
+   "locality",
+   "locate",
+   "location"
+  ]
+ },
+ {
+  "key": "memor",
+  "meaning": "记忆",
+  "count": 4,
+  "words": [
+   "memorial",
+   "memorise",
+   "memorize",
+   "memory"
+  ]
+ },
+ {
+  "key": "mer",
+  "meaning": "值得",
+  "count": 4,
+  "words": [
+   "merely",
+   "merit",
+   "meritorious",
+   "merry"
+  ]
+ },
+ {
+  "key": "neutr",
+  "meaning": "两者都不",
+  "count": 4,
+  "words": [
+   "neutral",
+   "neutralise",
+   "neutrality",
+   "neutralize"
+  ]
+ },
+ {
+  "key": "oper",
+  "meaning": "工作",
+  "count": 4,
+  "words": [
+   "cooperate",
+   "cooperation",
+   "cooperative",
+   "operate"
+  ]
+ },
+ {
+  "key": "path",
+  "meaning": "感受",
+  "count": 4,
+  "words": [
+   "sympathetic",
+   "sympathise",
+   "sympathize",
+   "sympathy"
+  ]
+ },
+ {
+  "key": "pati",
+  "meaning": "忍受",
+  "count": 4,
+  "words": [
+   "impatience",
+   "impatient",
+   "patience",
+   "patient"
+  ]
+ },
+ {
+  "key": "pect",
+  "meaning": "看",
+  "count": 4,
+  "words": [
+   "expect",
+   "expectancy",
+   "expectation",
+   "suspect"
+  ]
+ },
+ {
+  "key": "phan",
+  "meaning": "显现",
+  "count": 4,
+  "words": [
+   "emphasise",
+   "emphasize",
+   "fantastic",
+   "infant"
+  ]
+ },
+ {
+  "key": "photo",
+  "meaning": "光",
+  "count": 4,
+  "words": [
+   "photograph",
+   "photographer",
+   "photographic",
+   "photography"
+  ]
+ },
+ {
+  "key": "phys",
+  "meaning": "自然、身体",
+  "count": 4,
+  "words": [
+   "physical",
+   "physician",
+   "physicist",
+   "physics"
+  ]
+ },
+ {
+  "key": "pret",
+  "meaning": "?",
+  "count": 4,
+  "words": [
+   "interpret",
+   "interpretation",
+   "interpreter",
+   "pretence"
+  ]
+ },
+ {
+  "key": "prox",
+  "meaning": "接近",
+  "count": 4,
+  "words": [
+   "approach",
+   "approximate",
+   "approximately",
+   "approximation"
+  ]
+ },
+ {
+  "key": "pur",
+  "meaning": "?",
+  "count": 4,
+  "words": [
+   "purify",
+   "purity",
+   "purpose",
+   "purposeful"
+  ]
+ },
+ {
+  "key": "quant",
+  "meaning": "量",
+  "count": 4,
+  "words": [
+   "quantification",
+   "quantify",
+   "quantitative",
+   "quantity"
+  ]
+ },
+ {
+  "key": "quart",
+  "meaning": "四",
+  "count": 4,
+  "words": [
+   "adequate",
+   "adequately",
+   "quarter",
+   "quarterly"
+  ]
+ },
+ {
+  "key": "scop",
+  "meaning": "看、镜",
+  "count": 4,
+  "words": [
+   "microscope",
+   "microscopic",
+   "telescope",
+   "telescopic"
+  ]
+ },
+ {
+  "key": "sert",
+  "meaning": "缚、放",
+  "count": 4,
+  "words": [
+   "desert",
+   "desertion",
+   "insert",
+   "insertion"
+  ]
+ },
+ {
+  "key": "sure",
+  "meaning": "省心、确信",
+  "count": 4,
+  "words": [
+   "assure",
+   "ensure",
+   "insure",
+   "treasure"
+  ]
+ },
+ {
+  "key": "techn",
+  "meaning": "技艺",
+  "count": 4,
+  "words": [
+   "technical",
+   "technician",
+   "technological",
+   "technology"
+  ]
+ },
+ {
+  "key": "the",
+  "meaning": "神、观、放",
+  "count": 4,
+  "words": [
+   "theatre",
+   "theory",
+   "therapist",
+   "therapy"
+  ]
+ },
+ {
+  "key": "toler",
+  "meaning": "忍受",
+  "count": 4,
+  "words": [
+   "tolerable",
+   "tolerance",
+   "tolerant",
+   "tolerate"
+  ]
+ },
+ {
+  "key": "tort",
+  "meaning": "扭",
+  "count": 4,
+  "words": [
+   "attorney",
+   "torture",
+   "tourism",
+   "tourist"
+  ]
+ },
+ {
+  "key": "und",
+  "meaning": "波",
+  "count": 4,
+  "words": [
+   "abundance",
+   "abundant",
+   "around",
+   "under"
+  ]
+ },
+ {
+  "key": "vac",
+  "meaning": "?",
+  "count": 4,
+  "words": [
+   "vacancy",
+   "vacant",
+   "vacation",
+   "vacuum"
+  ]
+ },
+ {
+  "key": "vad",
+  "meaning": "走、入侵",
+  "count": 4,
+  "words": [
+   "invade",
+   "invader",
+   "invasion",
+   "invasive"
+  ]
+ },
+ {
+  "key": "verb",
+  "meaning": "词语",
+  "count": 4,
+  "words": [
+   "adverb",
+   "proverb",
+   "proverbial",
+   "verbal"
+  ]
+ },
+ {
+  "key": "viol",
+  "meaning": "?",
+  "count": 4,
+  "words": [
+   "violate",
+   "violation",
+   "violence",
+   "violent"
+  ]
+ },
+ {
+  "key": "alt",
+  "meaning": "高",
+  "count": 3,
+  "words": [
+   "alter",
+   "alteration",
+   "altitude"
+  ]
+ },
+ {
+  "key": "cad",
+  "meaning": "落",
+  "count": 3,
+  "words": [
+   "casual",
+   "occasion",
+   "occasional"
+  ]
+ },
+ {
+  "key": "capit",
+  "meaning": "头",
+  "count": 3,
+  "words": [
+   "capital",
+   "capitalism",
+   "capitalist"
+  ]
+ },
+ {
+  "key": "cred",
+  "meaning": "?",
+  "count": 3,
+  "words": [
+   "credit",
+   "creditable",
+   "incredible"
+  ]
+ },
+ {
+  "key": "eco",
+  "meaning": "家、环境",
+  "count": 3,
+  "words": [
+   "ecological",
+   "ecology",
+   "economy"
+  ]
+ },
+ {
+  "key": "estim",
+  "meaning": "估价",
+  "count": 3,
+  "words": [
+   "estimate",
+   "estimation",
+   "underestimate"
+  ]
+ },
+ {
+  "key": "fam",
+  "meaning": "?",
+  "count": 3,
+  "words": [
+   "family",
+   "famine",
+   "famous"
+  ]
+ },
+ {
+  "key": "fid",
+  "meaning": "信",
+  "count": 3,
+  "words": [
+   "confidence",
+   "confident",
+   "confidential"
+  ]
+ },
+ {
+  "key": "horr",
+  "meaning": "害怕",
+  "count": 3,
+  "words": [
+   "horrible",
+   "horrify",
+   "horror"
+  ]
+ },
+ {
+  "key": "ide",
+  "meaning": "?",
+  "count": 3,
+  "words": [
+   "ideal",
+   "idealism",
+   "idealistic"
+  ]
+ },
+ {
+  "key": "lic",
+  "meaning": "允许",
+  "count": 3,
+  "words": [
+   "delicate",
+   "delicious",
+   "licence"
+  ]
+ },
+ {
+  "key": "lustr",
+  "meaning": "?",
+  "count": 3,
+  "words": [
+   "illustrate",
+   "illustration",
+   "illustrative"
+  ]
+ },
+ {
+  "key": "magn",
+  "meaning": "?",
+  "count": 3,
+  "words": [
+   "magnetic",
+   "magnificence",
+   "magnificent"
+  ]
+ },
+ {
+  "key": "med",
+  "meaning": "治疗",
+  "count": 3,
+  "words": [
+   "medical",
+   "medicine",
+   "remedy"
+  ]
+ },
+ {
+  "key": "merg",
+  "meaning": "沉",
+  "count": 3,
+  "words": [
+   "emerge",
+   "emergence",
+   "emergency"
+  ]
+ },
+ {
+  "key": "mir",
+  "meaning": "惊奇",
+  "count": 3,
+  "words": [
+   "admirable",
+   "admiration",
+   "admire"
+  ]
+ },
+ {
+  "key": "mix",
+  "meaning": "混合",
+  "count": 3,
+  "words": [
+   "mixer",
+   "seeming",
+   "seemingly"
+  ]
+ },
+ {
+  "key": "mut",
+  "meaning": "?",
+  "count": 3,
+  "words": [
+   "commute",
+   "commuter",
+   "mutual"
+  ]
+ },
+ {
+  "key": "narr",
+  "meaning": "讲述",
+  "count": 3,
+  "words": [
+   "narrate",
+   "narration",
+   "narrative"
+  ]
+ },
+ {
+  "key": "nect",
+  "meaning": "绑",
+  "count": 3,
+  "words": [
+   "connect",
+   "connection",
+   "connexion"
+  ]
+ },
+ {
+  "key": "plod",
+  "meaning": "拍、爆",
+  "count": 3,
+  "words": [
+   "explode",
+   "explosion",
+   "explosive"
+  ]
+ },
+ {
+  "key": "prim",
+  "meaning": "第一",
+  "count": 3,
+  "words": [
+   "primary",
+   "primitive",
+   "principal"
+  ]
+ },
+ {
+  "key": "psych",
+  "meaning": "心灵",
+  "count": 3,
+  "words": [
+   "psychological",
+   "psychologist",
+   "psychology"
+  ]
+ },
+ {
+  "key": "rat",
+  "meaning": "算、推定",
+  "count": 3,
+  "words": [
+   "irrational",
+   "rating",
+   "rational"
+  ]
+ },
+ {
+  "key": "rem",
+  "meaning": "?",
+  "count": 3,
+  "words": [
+   "removal",
+   "supremacy",
+   "supreme"
+  ]
+ },
+ {
+  "key": "rend",
+  "meaning": "给",
+  "count": 3,
+  "words": [
+   "render",
+   "rendering",
+   "surrender"
+  ]
+ },
+ {
+  "key": "roll",
+  "meaning": "轮、卷",
+  "count": 3,
+  "words": [
+   "enroll",
+   "enrollment",
+   "roller"
+  ]
+ },
+ {
+  "key": "scend",
+  "meaning": "攀",
+  "count": 3,
+  "words": [
+   "descend",
+   "descendant",
+   "descent"
+  ]
+ },
+ {
+  "key": "sil",
+  "meaning": "静",
+  "count": 3,
+  "words": [
+   "missile",
+   "silence",
+   "silent"
+  ]
+ },
+ {
+  "key": "tempt",
+  "meaning": "轻视、试",
+  "count": 3,
+  "words": [
+   "attempt",
+   "contempt",
+   "contemptible"
+  ]
+ },
+ {
+  "key": "termin",
+  "meaning": "界限",
+  "count": 3,
+  "words": [
+   "determination",
+   "determine",
+   "terminal"
+  ]
+ },
+ {
+  "key": "test",
+  "meaning": "见证",
+  "count": 3,
+  "words": [
+   "contest",
+   "contestant",
+   "protest"
+  ]
+ },
+ {
+  "key": "text",
+  "meaning": "编织",
+  "count": 3,
+  "words": [
+   "context",
+   "contextual",
+   "textile"
+  ]
+ },
+ {
+  "key": "trud",
+  "meaning": "推、冲",
+  "count": 3,
+  "words": [
+   "intrude",
+   "intruder",
+   "intrusion"
+  ]
+ },
+ {
+  "key": "virt",
+  "meaning": "?",
+  "count": 3,
+  "words": [
+   "virtual",
+   "virtually",
+   "virtuous"
+  ]
+ },
+ {
+  "key": "vol",
+  "meaning": "意愿",
+  "count": 3,
+  "words": [
+   "volume",
+   "voluntary",
+   "volunteer"
+  ]
+ },
+ {
+  "key": "vot",
+  "meaning": "誓、愿",
+  "count": 3,
+  "words": [
+   "devote",
+   "devotion",
+   "voter"
+  ]
+ },
+ {
+  "key": "abil",
+  "meaning": "能",
+  "count": 2,
+  "words": [
+   "ability",
+   "disability"
+  ]
+ },
+ {
+  "key": "ann",
+  "meaning": "年",
+  "count": 2,
+  "words": [
+   "anniversary",
+   "annual"
+  ]
+ },
+ {
+  "key": "audi",
+  "meaning": "听",
+  "count": 2,
+  "words": [
+   "audience",
+   "auditorium"
+  ]
+ },
+ {
+  "key": "bell",
+  "meaning": "战争",
+  "count": 2,
+  "words": [
+   "rebellion",
+   "rebellious"
+  ]
+ },
+ {
+  "key": "cand",
+  "meaning": "?",
+  "count": 2,
+  "words": [
+   "candidacy",
+   "candidate"
+  ]
+ },
+ {
+  "key": "celebr",
+  "meaning": "庆贺",
+  "count": 2,
+  "words": [
+   "celebrate",
+   "celebration"
+  ]
+ },
+ {
+  "key": "cern",
+  "meaning": "?",
+  "count": 2,
+  "words": [
+   "concern",
+   "concerning"
+  ]
+ },
+ {
+  "key": "chiev",
+  "meaning": "头",
+  "count": 2,
+  "words": [
+   "achieve",
+   "achievement"
+  ]
+ },
+ {
+  "key": "corp",
+  "meaning": "身体",
+  "count": 2,
+  "words": [
+   "corporate",
+   "corporation"
+  ]
+ },
+ {
+  "key": "demn",
+  "meaning": "罚",
+  "count": 2,
+  "words": [
+   "condemn",
+   "condemnation"
+  ]
+ },
+ {
+  "key": "dent",
+  "meaning": "牙",
+  "count": 2,
+  "words": [
+   "dental",
+   "dentist"
+  ]
+ },
+ {
+  "key": "dign",
+  "meaning": "值得",
+  "count": 2,
+  "words": [
+   "dignify",
+   "dignity"
+  ]
+ },
+ {
+  "key": "diplo",
+  "meaning": "双重",
+  "count": 2,
+  "words": [
+   "diplomat",
+   "diplomatic"
+  ]
+ },
+ {
+  "key": "dynam",
+  "meaning": "力",
+  "count": 2,
+  "words": [
+   "dynamic",
+   "dynamics"
+  ]
+ },
+ {
+  "key": "feder",
+  "meaning": "联盟",
+  "count": 2,
+  "words": [
+   "federal",
+   "federation"
+  ]
+ },
+ {
+  "key": "fict",
+  "meaning": "?",
+  "count": 2,
+  "words": [
+   "fiction",
+   "fictional"
+  ]
+ },
+ {
+  "key": "fig",
+  "meaning": "?",
+  "count": 2,
+  "words": [
+   "figurative",
+   "figure"
+  ]
+ },
+ {
+  "key": "firm",
+  "meaning": "坚固",
+  "count": 2,
+  "words": [
+   "confirm",
+   "confirmation"
+  ]
+ },
+ {
+  "key": "frequ",
+  "meaning": "频繁",
+  "count": 2,
+  "words": [
+   "frequency",
+   "frequent"
+  ]
+ },
+ {
+  "key": "frig",
+  "meaning": "冷",
+  "count": 2,
+  "words": [
+   "refrigeration",
+   "refrigerator"
+  ]
+ },
+ {
+  "key": "funct",
+  "meaning": "做、起作用",
+  "count": 2,
+  "words": [
+   "function",
+   "functional"
+  ]
+ },
+ {
+  "key": "graph",
+  "meaning": "写、画",
+  "count": 2,
+  "words": [
+   "graphic",
+   "graphically"
+  ]
+ },
+ {
+  "key": "grav",
+  "meaning": "重",
+  "count": 2,
+  "words": [
+   "gravitation",
+   "gravity"
+  ]
+ },
+ {
+  "key": "lax",
+  "meaning": "?",
+  "count": 2,
+  "words": [
+   "relax",
+   "relaxation"
+  ]
+ },
+ {
+  "key": "leis",
+  "meaning": "许可、闲",
+  "count": 2,
+  "words": [
+   "leisure",
+   "leisurely"
+  ]
+ },
+ {
+  "key": "long",
+  "meaning": "长",
+  "count": 2,
+  "words": [
+   "length",
+   "lengthy"
+  ]
+ },
+ {
+  "key": "lus",
+  "meaning": "玩",
+  "count": 2,
+  "words": [
+   "illusion",
+   "illusory"
+  ]
+ },
+ {
+  "key": "meas",
+  "meaning": "量",
+  "count": 2,
+  "words": [
+   "measure",
+   "measurement"
+  ]
+ },
+ {
+  "key": "mor",
+  "meaning": "习俗、道德",
+  "count": 2,
+  "words": [
+   "moral",
+   "morality"
+  ]
+ },
+ {
+  "key": "nav",
+  "meaning": "船",
+  "count": 2,
+  "words": [
+   "naval",
+   "navy"
+  ]
+ },
+ {
+  "key": "noc",
+  "meaning": "?",
+  "count": 2,
+  "words": [
+   "innocence",
+   "innocent"
+  ]
+ },
+ {
+  "key": "nutr",
+  "meaning": "滋养",
+  "count": 1,
+  "words": [
+   "nutrition"
+  ]
+ },
+ {
+  "key": "orb",
+  "meaning": "圆、轨",
+  "count": 2,
+  "words": [
+   "orbit",
+   "orbital"
+  ]
+ },
+ {
+  "key": "oxy",
+  "meaning": "酸、氧",
+  "count": 2,
+  "words": [
+   "dioxide",
+   "oxygen"
+  ]
+ },
+ {
+  "key": "pact",
+  "meaning": "?",
+  "count": 2,
+  "words": [
+   "compact",
+   "impact"
+  ]
+ },
+ {
+  "key": "phon",
+  "meaning": "声音",
+  "count": 2,
+  "words": [
+   "microphone",
+   "telephone"
+  ]
+ },
+ {
+  "key": "plaud",
+  "meaning": "?",
+  "count": 2,
+  "words": [
+   "applaud",
+   "applause"
+  ]
+ },
+ {
+  "key": "pleas",
+  "meaning": "高兴",
+  "count": 2,
+  "words": [
+   "pleasant",
+   "pleasing"
+  ]
+ },
+ {
+  "key": "plor",
+  "meaning": "哭、喊",
+  "count": 2,
+  "words": [
+   "exploration",
+   "explore"
+  ]
+ },
+ {
+  "key": "pun",
+  "meaning": "罚",
+  "count": 2,
+  "words": [
+   "punish",
+   "punishment"
+  ]
+ },
+ {
+  "key": "quaint",
+  "meaning": "?",
+  "count": 2,
+  "words": [
+   "acquaint",
+   "acquaintance"
+  ]
+ },
+ {
+  "key": "rap",
+  "meaning": "?",
+  "count": 2,
+  "words": [
+   "rapid",
+   "rapidity"
+  ]
+ },
+ {
+  "key": "ras",
+  "meaning": "?",
+  "count": 2,
+  "words": [
+   "erase",
+   "eraser"
+  ]
+ },
+ {
+  "key": "sacr",
+  "meaning": "?",
+  "count": 2,
+  "words": [
+   "sacrifice",
+   "sacrificial"
+  ]
+ },
+ {
+  "key": "sal",
+  "meaning": "盐",
+  "count": 2,
+  "words": [
+   "salary",
+   "salty"
+  ]
+ },
+ {
+  "key": "san",
+  "meaning": "健康",
+  "count": 2,
+  "words": [
+   "insane",
+   "insanity"
+  ]
+ },
+ {
+  "key": "sen",
+  "meaning": "老",
+  "count": 2,
+  "words": [
+   "senior",
+   "seniority"
+  ]
+ },
+ {
+  "key": "sorb",
+  "meaning": "吸收",
+  "count": 2,
+  "words": [
+   "absorb",
+   "absorption"
+  ]
+ },
+ {
+  "key": "sper",
+  "meaning": "希望",
+  "count": 2,
+  "words": [
+   "despair",
+   "desperate"
+  ]
+ },
+ {
+  "key": "tempor",
+  "meaning": "时间、调和",
+  "count": 2,
+  "words": [
+   "contemporary",
+   "temporary"
+  ]
+ },
+ {
+  "key": "tom",
+  "meaning": "切",
+  "count": 2,
+  "words": [
+   "atom",
+   "atomic"
+  ]
+ },
+ {
+  "key": "ton",
+  "meaning": "?",
+  "count": 2,
+  "words": [
+   "astonish",
+   "astonishment"
+  ]
+ },
+ {
+  "key": "trem",
+  "meaning": "?",
+  "count": 2,
+  "words": [
+   "extreme",
+   "extremity"
+  ]
+ },
+ {
+  "key": "tribu",
+  "meaning": "?",
+  "count": 2,
+  "words": [
+   "contribution",
+   "distribution"
+  ]
+ },
+ {
+  "key": "turb",
+  "meaning": "搅乱",
+  "count": 2,
+  "words": [
+   "disturb",
+   "disturbance"
+  ]
+ },
+ {
+  "key": "typ",
+  "meaning": "模型",
+  "count": 2,
+  "words": [
+   "typical",
+   "typist"
+  ]
+ },
+ {
+  "key": "ultim",
+  "meaning": "最后",
+  "count": 2,
+  "words": [
+   "ultimate",
+   "ultimately"
+  ]
+ },
+ {
+  "key": "urg",
+  "meaning": "?",
+  "count": 2,
+  "words": [
+   "urgency",
+   "urgent"
+  ]
+ },
+ {
+  "key": "zo",
+  "meaning": "动物",
+  "count": 2,
+  "words": [
+   "zoological",
+   "zoology"
+  ]
+ },
+ {
+  "key": "agri",
+  "meaning": "田",
+  "count": 1,
+  "words": [
+   "agriculture"
+  ]
+ },
+ {
+  "key": "ambul",
+  "meaning": "行走",
+  "count": 1,
+  "words": [
+   "ambulance"
+  ]
+ },
+ {
+  "key": "avi",
+  "meaning": "鸟",
+  "count": 1,
+  "words": [
+   "aviation"
+  ]
+ },
+ {
+  "key": "bar",
+  "meaning": "杆",
+  "count": 1,
+  "words": [
+   "barrier"
+  ]
+ },
+ {
+  "key": "celer",
+  "meaning": "快",
+  "count": 1,
+  "words": [
+   "acceleration"
+  ]
+ },
+ {
+  "key": "civ",
+  "meaning": "市民",
+  "count": 1,
+  "words": [
+   "civilian"
+  ]
+ },
+ {
+  "key": "cosm",
+  "meaning": "?",
+  "count": 1,
+  "words": [
+   "cosmic"
+  ]
+ },
+ {
+  "key": "cruc",
+  "meaning": "?",
+  "count": 1,
+  "words": [
+   "crucial"
+  ]
+ },
+ {
+  "key": "decor",
+  "meaning": "雅、装饰",
+  "count": 1,
+  "words": [
+   "decorate"
+  ]
+ },
+ {
+  "key": "dorm",
+  "meaning": "眠",
+  "count": 1,
+  "words": [
+   "dormitory"
+  ]
+ },
+ {
+  "key": "err",
+  "meaning": "错",
+  "count": 1,
+  "words": [
+   "error"
+  ]
+ },
+ {
+  "key": "fix",
+  "meaning": "固定",
+  "count": 1,
+  "words": [
+   "fixation"
+  ]
+ },
+ {
+  "key": "flor",
+  "meaning": "花",
+  "count": 1,
+  "words": [
+   "flourish"
+  ]
+ },
+ {
+  "key": "fut",
+  "meaning": "?",
+  "count": 1,
+  "words": [
+   "future"
+  ]
+ },
+ {
+  "key": "junct",
+  "meaning": "连接",
+  "count": 1,
+  "words": [
+   "conjunction"
+  ]
+ },
+ {
+  "key": "langu",
+  "meaning": "舌",
+  "count": 1,
+  "words": [
+   "language"
+  ]
+ },
+ {
+  "key": "milit",
+  "meaning": "?",
+  "count": 1,
+  "words": [
+   "military"
+  ]
+ },
+ {
+  "key": "nerv",
+  "meaning": "神经",
+  "count": 1,
+  "words": [
+   "nervous"
+  ]
+ },
+ {
+  "key": "numer",
+  "meaning": "数",
+  "count": 1,
+  "words": [
+   "numerous"
+  ]
+ },
+ {
+  "key": "para",
+  "meaning": "?",
+  "count": 1,
+  "words": [
+   "paragraph"
+  ]
+ },
+ {
+  "key": "phras",
+  "meaning": "?",
+  "count": 1,
+  "words": [
+   "phrasal"
+  ]
+ },
+ {
+  "key": "pict",
+  "meaning": "?",
+  "count": 1,
+  "words": [
+   "picture"
+  ]
+ },
+ {
+  "key": "plan",
+  "meaning": "?",
+  "count": 1,
+  "words": [
+   "explanation"
+  ]
+ },
+ {
+  "key": "plas",
+  "meaning": "?",
+  "count": 1,
+  "words": [
+   "plastic"
+  ]
+ },
+ {
+  "key": "plur",
+  "meaning": "?",
+  "count": 1,
+  "words": [
+   "plural"
+  ]
+ },
+ {
+  "key": "propri",
+  "meaning": "自己的",
+  "count": 1,
+  "words": [
+   "appropriate"
+  ]
+ },
+ {
+  "key": "radic",
+  "meaning": "根",
+  "count": 1,
+  "words": [
+   "radical"
+  ]
+ },
+ {
+  "key": "reput",
+  "meaning": "?",
+  "count": 1,
+  "words": [
+   "reputation"
+  ]
+ },
+ {
+  "key": "right",
+  "meaning": "?",
+  "count": 1,
+  "words": [
+   "upright"
+  ]
+ },
+ {
+  "key": "soph",
+  "meaning": "?",
+  "count": 1,
+  "words": [
+   "sophistication"
+  ]
+ },
+ {
+  "key": "spher",
+  "meaning": "球",
+  "count": 1,
+  "words": [
+   "spherical"
+  ]
+ },
+ {
+  "key": "stud",
+  "meaning": "学习",
+  "count": 1,
+  "words": [
+   "study"
+  ]
+ },
+ {
+  "key": "tal",
+  "meaning": "?",
+  "count": 1,
+  "words": [
+   "talent"
+  ]
+ },
+ {
+  "key": "therm",
+  "meaning": "热",
+  "count": 1,
+  "words": [
+   "thermometer"
+  ]
+ },
+ {
+  "key": "tot",
+  "meaning": "?",
+  "count": 1,
+  "words": [
+   "total"
+  ]
+ },
+ {
+  "key": "turn",
+  "meaning": "?",
+  "count": 1,
+  "words": [
+   "return"
+  ]
+ },
+ {
+  "key": "veget",
+  "meaning": "?",
+  "count": 1,
+  "words": [
+   "vegetable"
+  ]
+ }
+]

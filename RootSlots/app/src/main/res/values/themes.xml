@@ -1,0 +1,6 @@
+<resources>
+    <style name="Theme.RootSlots" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">#14121F</item>
+        <item name="android:statusBarColor">#14121F</item>
+    </style>
+</resources>
