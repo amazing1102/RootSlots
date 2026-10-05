@@ -23,10 +23,14 @@ import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.VolumeUp
 import androidx.compose.material3.Icon
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Slider
 import androidx.compose.material3.SliderDefaults
 import androidx.compose.material3.Text
@@ -40,12 +44,16 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -161,28 +169,48 @@ fun MineScreen(vm: SlotViewModel) {
                     )
                 }
                 Spacer(Modifier.height(12.dp))
-                Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                    listOf(20, 50, 100, 200).forEach { n ->
-                        val selected = vm.dailyGoal == n
-                        Box(
-                            Modifier
-                                .weight(1f)
-                                .clip(RoundedCornerShape(10.dp))
-                                .background(if (selected) c.accent else c.surfaceAlt)
-                                .clickable { vm.updateDailyGoal(n) }
-                                .padding(vertical = 8.dp),
-                            contentAlignment = Alignment.Center,
-                        ) {
-                            Text(
-                                "$n",
-                                color = if (selected) c.onAccent else c.textMid,
-                                fontSize = 14.sp, fontWeight = FontWeight.Black,
-                            )
-                        }
-                    }
+                // 每日目标:自由输入(数字键盘,失焦/完成时提交),不再是固定档位
+                var goalText by remember { mutableStateOf(vm.dailyGoal.toString()) }
+                LaunchedEffect(vm.dailyGoal) { goalText = vm.dailyGoal.toString() }
+                var goalFocused by remember { mutableStateOf(false) }
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Text("每天学习", color = c.textMid, fontSize = 14.sp)
+                    Spacer(Modifier.weight(1f))
+                    OutlinedTextField(
+                        value = goalText,
+                        onValueChange = { s -> if (s.length <= 4 && s.all { it.isDigit() }) goalText = s },
+                        modifier = Modifier
+                            .width(96.dp)
+                            .onFocusChanged {
+                                if (goalFocused && !it.isFocused) {
+                                    val n = goalText.toIntOrNull()
+                                    if (n != null && n >= 1) vm.updateDailyGoal(n) else goalText = vm.dailyGoal.toString()
+                                }
+                                goalFocused = it.isFocused
+                            },
+                        singleLine = true,
+                        textStyle = TextStyle(
+                            fontSize = 16.sp, fontWeight = FontWeight.Black,
+                            textAlign = TextAlign.Center, color = c.text,
+                        ),
+                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number, imeAction = ImeAction.Done),
+                        keyboardActions = KeyboardActions(onDone = {
+                            val n = goalText.toIntOrNull()
+                            if (n != null && n >= 1) vm.updateDailyGoal(n) else goalText = vm.dailyGoal.toString()
+                        }),
+                        colors = OutlinedTextFieldDefaults.colors(
+                            focusedBorderColor = c.accent,
+                            unfocusedBorderColor = c.stroke,
+                            cursorColor = c.accent,
+                            focusedTextColor = c.text,
+                            unfocusedTextColor = c.text,
+                        ),
+                    )
+                    Spacer(Modifier.width(6.dp))
+                    Text("词 / 天", color = c.textMid, fontSize = 14.sp)
                 }
                 Spacer(Modifier.height(6.dp))
-                Text("目标为每天学习的词数(转一次 = 学一词),达成后进度条变绿",
+                Text("目标为每天学习的词数(1–999),转一次 = 学一词,达成后进度条变绿",
                     color = c.textFaint, fontSize = 10.sp)
             }
         }

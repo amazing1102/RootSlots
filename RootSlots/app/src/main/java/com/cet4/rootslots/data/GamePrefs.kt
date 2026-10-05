@@ -94,7 +94,7 @@ class GamePrefs(private val context: Context) {
     }
 
     suspend fun setDailyGoal(n: Int) {
-        context.gameStore.edit { it[DAILY_GOAL] = n.coerceIn(5, 500) }
+        context.gameStore.edit { it[DAILY_GOAL] = n.coerceIn(1, 999) }
     }
 
     /** 历史日统计(供学习日历渲染),key = LocalDate */
