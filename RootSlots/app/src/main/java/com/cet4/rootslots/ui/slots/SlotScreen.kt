@@ -15,6 +15,8 @@ import androidx.compose.animation.core.spring
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
+import androidx.compose.animation.scaleIn
+import androidx.compose.animation.scaleOut
 import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
 import androidx.compose.animation.togetherWith
@@ -46,7 +48,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -68,6 +72,7 @@ import com.cet4.rootslots.ui.theme.FontBrand
 import com.cet4.rootslots.ui.theme.FontLed
 import com.cet4.rootslots.ui.theme.LocalAppColors
 import com.cet4.rootslots.ui.theme.pressScale
+import kotlinx.coroutines.delay
 
 @Composable
 fun SlotScreen(
@@ -314,7 +319,18 @@ private fun GamePane(
                                 )
                                 Spacer(Modifier.height(6.dp))
                             }
-                            if (!resolved) {
+                            if (resolved) {
+                                // 答完:释义 + 结算提示随选项着色一并浮现
+                                Spacer(Modifier.height(6.dp))
+                                Text(
+                                    vm.gloss ?: "",
+                                    color = c.textMid, fontSize = 15.sp, textAlign = TextAlign.Center,
+                                )
+                                vm.quizResult?.let {
+                                    Spacer(Modifier.height(2.dp))
+                                    Text(it, color = c.textDim, fontSize = 11.sp)
+                                }
+                            } else {
                                 Text(
                                     "跳过 · 拿半价奖励",
                                     color = c.textFaint, fontSize = 11.sp,
@@ -358,35 +374,56 @@ private fun GamePane(
         }
         }
 
-        // ---- SPIN:带机壳包边的实体按钮,按压回弹 + 触感;出题未答时禁用 ----
-        val enabled = !vm.spinning && !(vm.quiz != null && vm.quizPicked == null) && vm.energy >= 1
-        val spinIa = remember { MutableInteractionSource() }
-        Box(
-            modifier = Modifier
-                .size(112.dp)
-                .pressScale(spinIa, pressedScale = 0.9f)
-                .shadow(8.dp, CircleShape, clip = false)
-                .clip(CircleShape)
-                .background(if (enabled) c.accent else c.disabledBg)
-                .border(4.dp, c.cabinet, CircleShape)
-                .clickable(interactionSource = spinIa, indication = null, enabled = enabled) {
-                    view.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY)
-                    vm.spin()
-                },
-            contentAlignment = Alignment.Center,
-        ) {
-            Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                Text("SPIN", fontFamily = FontBrand, fontSize = 26.sp,
-                    color = if (enabled) c.onAccent else c.disabledText)
-                Text(if (vm.spinning) "转动中…" else "转动", fontSize = 12.sp,
-                    color = if (enabled) c.onAccent.copy(alpha = 0.7f) else c.disabledText)
+        // ---- SPIN 区:点击后褪去让位出题,答完停一拍再弹回(空间随动画收放) ----
+        val quizUnanswered = vm.quiz != null && vm.quizPicked == null
+        var spinShown by remember { mutableStateOf(true) }
+        LaunchedEffect(vm.spinning, quizUnanswered, vm.quizPicked, vm.spinId) {
+            when {
+                vm.spinning || quizUnanswered -> spinShown = false
+                vm.quiz != null -> { delay(1600); spinShown = true }   // 留时间看对错与释义
+                else -> spinShown = true
             }
         }
-        Spacer(Modifier.height(10.dp))
-        Text(
-            if (vm.energy >= 1) "能量每 10 秒回 1 点" else "能量恢复中…",
-            color = c.textDim, fontSize = 11.sp,
-        )
+        AnimatedVisibility(
+            visible = spinShown,
+            enter = fadeIn(tween(420)) +
+                scaleIn(
+                    initialScale = 0.55f,
+                    animationSpec = spring(dampingRatio = 0.5f, stiffness = Spring.StiffnessMediumLow),
+                ),
+            exit = fadeOut(tween(300)) + scaleOut(targetScale = 0.55f, animationSpec = tween(300)),
+        ) {
+            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                val enabled = !vm.spinning && vm.energy >= 1
+                val spinIa = remember { MutableInteractionSource() }
+                Box(
+                    modifier = Modifier
+                        .size(112.dp)
+                        .pressScale(spinIa, pressedScale = 0.9f)
+                        .shadow(8.dp, CircleShape, clip = false)
+                        .clip(CircleShape)
+                        .background(if (enabled) c.accent else c.disabledBg)
+                        .border(4.dp, c.cabinet, CircleShape)
+                        .clickable(interactionSource = spinIa, indication = null, enabled = enabled) {
+                            view.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY)
+                            vm.spin()
+                        },
+                    contentAlignment = Alignment.Center,
+                ) {
+                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                        Text("SPIN", fontFamily = FontBrand, fontSize = 26.sp,
+                            color = if (enabled) c.onAccent else c.disabledText)
+                        Text(if (vm.spinning) "转动中…" else "转动", fontSize = 12.sp,
+                            color = if (enabled) c.onAccent.copy(alpha = 0.7f) else c.disabledText)
+                    }
+                }
+                Spacer(Modifier.height(10.dp))
+                Text(
+                    if (vm.energy >= 1) "能量每 10 秒回 1 点" else "能量恢复中…",
+                    color = c.textDim, fontSize = 11.sp,
+                )
+            }
+        }
         Spacer(Modifier.height(14.dp))
 
         // 每根轴落位:轻微滴答触感
