@@ -38,6 +38,16 @@ urllib 下载 GitHub 会失败,需 curl 手动下载,镜像清单在 SOURCES);�
 查找时 lower();重音符按音节 onset 回退插入;AH0→ə、ER0→ər;连字符词分段查后直接拼;
 缺词界面隐藏音标行。DB v5 = words 表加 ipa 列。
 
+## 发布(v1.0.0)
+
+- release 包:`RootSlots/app/build/outputs/apk/release/app-release.apk`(137MB,R8+资源收缩,版本 1.0.0/build 2);
+  构建命令:`cd /d/CET4/RootSlots && JAVA_HOME=D:/Java/jdk-17.0.18 /d/gradle-8.7/bin/gradle.bat assembleRelease`
+- 签名:`RootSlots/release.keystore` + `RootSlots/keystore.properties`(均不入库,**备份这两个文件**,
+  密码在其中;丢了就无法出同签名更新);模拟器已验证 release 下 Piper/合成/播放全链路正常。
+- v1.0.0 新增:测验第四模式「看音标选词」+ 答后揭示单词释义;「我的」页复习统计卡
+  (近 7 天复习量柱状图 + 记忆曲线达成率环,数据来自 DB v6 review_logs 表,自启用起累积)。
+- R8 规则:app/proguard-rules.pro keep `com.k2fsa.sherpa.onnx.**`(JNI 按名反射,勿删)。
+
 ## 新会话恢复步骤
 
 1. 读本文件 + [AGENTS.md](AGENTS.md) + [词根老虎机-计划书.md](词根老虎机-计划书.md) v2(问题登记表 P1~P7、设计决策 §四)。
