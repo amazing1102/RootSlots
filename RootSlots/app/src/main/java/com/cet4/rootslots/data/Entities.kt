@@ -1,15 +1,20 @@
 package com.cet4.rootslots.data
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.Index
 import androidx.room.PrimaryKey
 
-/** 词表(6286 词 + 释义 + 美式 IPA 音标,组合词优先补齐) */
+/** 词表(6286 词 + 释义 + 美式 IPA + 多义项释义 + 例句 + 考试标签) */
 @Entity(tableName = "words")
 data class WordEntity(
     @PrimaryKey val w: String,
     val g: String? = null,
     val ipa: String? = null,
+    @ColumnInfo(name = "exam_tags") val examTags: String? = null,     // 考试标签,包裹式 ",cet4,gaokao,"
+    @ColumnInfo(name = "detail_gloss") val detailGloss: String? = null, // 多义项释义,义项以 \n 分行
+    @ColumnInfo(name = "sen_en") val senEn: String? = null,           // 主例句(英)
+    @ColumnInfo(name = "sen_zh") val senZh: String? = null,           // 主例句(中)
 )
 
 /** 词法成分:type = P 前缀 / R 词根 / S 后缀;surfaceList 以逗号分隔 */

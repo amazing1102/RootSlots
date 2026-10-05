@@ -48,7 +48,10 @@ import androidx.compose.ui.graphics.PathEffect
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.nativeCanvas
 import androidx.compose.ui.graphics.toArgb
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.cet4.rootslots.data.ComboEntity
@@ -65,6 +68,78 @@ import kotlin.math.ln
 private fun staggerEnter(index: Int): EnterTransition =
     fadeIn(tween(280, delayMillis = index * 80)) +
         slideInVertically(tween(280, delayMillis = index * 80)) { it / 12 }
+
+/** 释义(多义项)+ 例句卡:详情页共用 */
+@Composable
+private fun GlossAndExample(vm: SlotViewModel, word: String) {
+    val c = LocalAppColors.current
+    val gd = vm.detailGlossOf(word)
+    if (gd != null) {
+        Spacer(Modifier.height(10.dp))
+        Text("释义", color = c.textDim, fontSize = 12.sp, fontWeight = FontWeight.Bold)
+        Spacer(Modifier.height(4.dp))
+        gd.split("\n").forEach { line ->
+            Row {
+                Text(
+                    line.substringBefore(" "),
+                    color = c.prefix, fontSize = 13.sp, fontWeight = FontWeight.Black,
+                )
+                Spacer(Modifier.width(6.dp))
+                Text(line.substringAfter(" "), color = c.textMid, fontSize = 15.sp)
+            }
+            Spacer(Modifier.height(2.dp))
+        }
+    } else {
+        Text(vm.glossOf(word) ?: "", color = c.textMid, fontSize = 16.sp)
+    }
+    val senEn = vm.senEnOf(word)
+    if (!senEn.isNullOrBlank()) {
+        Spacer(Modifier.height(12.dp))
+        Column(
+            Modifier
+                .fillMaxWidth()
+                .clip(RoundedCornerShape(14.dp))
+                .background(c.surface)
+                .padding(12.dp)
+        ) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Text("例句", color = c.textDim, fontSize = 12.sp, fontWeight = FontWeight.Bold)
+                Spacer(Modifier.weight(1f))
+                Text(
+                    "🔊",
+                    fontSize = 16.sp,
+                    modifier = Modifier
+                        .clip(RoundedCornerShape(8.dp))
+                        .clickable { vm.pronounce(senEn) }
+                        .padding(2.dp),
+                )
+            }
+            Spacer(Modifier.height(4.dp))
+            // 例句中高亮当前词
+            val annotated = buildAnnotatedString {
+                var idx = 0
+                val lower = senEn.lowercase()
+                while (true) {
+                    val at = lower.indexOf(word.lowercase(), idx)
+                    if (at < 0) {
+                        append(senEn.substring(idx))
+                        break
+                    }
+                    append(senEn.substring(idx, at))
+                    withStyle(SpanStyle(color = c.accent, fontWeight = FontWeight.Black)) {
+                        append(senEn.substring(at, at + word.length))
+                    }
+                    idx = at + word.length
+                }
+            }
+            Text(annotated, color = c.text, fontSize = 15.sp, lineHeight = 22.sp)
+            vm.senZhOf(word)?.let {
+                Spacer(Modifier.height(4.dp))
+                Text(it, color = c.textDim, fontSize = 13.sp)
+            }
+        }
+    }
+}
 
 /** 单词详情:彩色分段 + 各段词法释义 + 词根族 + 艾宾浩斯记忆计划 + 收藏 + 发音 */
 @OptIn(androidx.compose.foundation.layout.ExperimentalLayoutApi::class)
@@ -161,7 +236,7 @@ fun DetailScreen(
                         Text("/$it/", color = c.textDim, fontSize = 15.sp)
                     }
                     Spacer(Modifier.height(6.dp))
-                    Text(vm.glossOf(word) ?: "", color = c.textMid, fontSize = 16.sp)
+                    GlossAndExample(vm, word)
                     Text("(该词暂无构词拆解)", color = c.textDim, fontSize = 13.sp)
                 }
             }
@@ -184,7 +259,7 @@ fun DetailScreen(
                         Text("/$it/", color = c.textDim, fontSize = 15.sp)
                     }
                     Spacer(Modifier.height(6.dp))
-                    Text(vm.glossOf(word) ?: "", color = c.textMid, fontSize = 16.sp)
+                    GlossAndExample(vm, word)
                 }
             }
 

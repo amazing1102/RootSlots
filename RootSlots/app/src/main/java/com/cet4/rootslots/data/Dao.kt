@@ -24,6 +24,21 @@ interface WordsDao {
 
     @Query("SELECT * FROM words WHERE g IS NOT NULL ORDER BY RANDOM() LIMIT 1")
     suspend fun randomGlossed(): WordEntity?
+
+    /** 升级补灌闸门:仍有未填充新字段的行 */
+    @Query("SELECT COUNT(*) FROM words WHERE exam_tags IS NULL OR exam_tags = '' OR detail_gloss IS NULL OR sen_en IS NULL")
+    suspend fun countUnenriched(): Int
+
+    /** 只补空字段,不覆盖已有值;exam_tags 用包裹式 ",cet4," */
+    @Query(
+        """UPDATE words SET
+           detail_gloss = COALESCE(detail_gloss, :gd),
+           sen_en = COALESCE(sen_en, :en),
+           sen_zh = COALESCE(sen_zh, :zh),
+           exam_tags = CASE WHEN exam_tags IS NULL OR exam_tags = '' THEN :tags ELSE exam_tags END
+           WHERE w = :w""",
+    )
+    suspend fun enrichRow(w: String, gd: String?, en: String?, zh: String?, tags: String)
 }
 
 @Dao

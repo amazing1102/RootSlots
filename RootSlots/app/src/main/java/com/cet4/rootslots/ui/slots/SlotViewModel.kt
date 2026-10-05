@@ -119,6 +119,9 @@ class SlotViewModel(app: Application) : AndroidViewModel(app) {
     fun meaningOf(type: String, key: String): String = repo.meaningOf(type, key)
     fun comboFor(w: String): ComboEntity? = repo.comboMap[w]
     fun glossOf(w: String): String? = repo.word(w)?.g
+    fun detailGlossOf(w: String): String? = repo.words[w]?.detailGloss
+    fun senEnOf(w: String): String? = repo.words[w]?.senEn
+    fun senZhOf(w: String): String? = repo.words[w]?.senZh
     fun ipaOf(w: String): String? = repo.ipaOf(w)
     fun familyWordList(key: String): List<String> = repo.familyWordList(key)
     fun familyEntries(): List<com.cet4.rootslots.data.FamilyEntity> =

@@ -43,6 +43,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.cet4.rootslots.data.Repository
@@ -300,6 +301,16 @@ fun ReviewScreen(
                         parseSegs(combo.segsJson).joinToString(" | ") { it.s } + "   「${combo.family}」",
                         color = c.root, fontSize = 14.sp,
                     )
+                }
+                // 例句:复习场景下强化记忆
+                val senEn = vm.senEnOf(w)
+                if (!senEn.isNullOrBlank()) {
+                    Spacer(Modifier.height(12.dp))
+                    Text(senEn, color = c.text, fontSize = 15.sp, textAlign = TextAlign.Center)
+                    vm.senZhOf(w)?.let {
+                        Spacer(Modifier.height(2.dp))
+                        Text(it, color = c.textDim, fontSize = 12.sp, textAlign = TextAlign.Center)
+                    }
                 }
             }
         }

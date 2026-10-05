@@ -654,6 +654,27 @@ def main():
     else:
         print("(提示) 无 assets/ipa.json —— 先跑 tools/build_ipa.py 生成音标")
     words_out = [{"w": w, "g": gmap.get(w), "i": ipa_map.get(w) or ipa_map.get(w.lower())} for w in words]
+
+    # 合并多义项释义 gd.json(ECDICT,build_gd.py 产物)+ 考试标签 exams.json
+    gd_path = os.path.join(ASSETS, "gd.json")
+    gd_map = json.load(open(gd_path, encoding="utf-8")) if os.path.exists(gd_path) else {}
+    ex_path = os.path.join(ASSETS, "exams.json")
+    ex_map = json.load(open(ex_path, encoding="utf-8")) if os.path.exists(ex_path) else {}
+    # 合并例句批次 assets/sentences/*.json:{word: [英文句, 中文翻译]}
+    sen_dir = os.path.join(ASSETS, "sentences")
+    sen_map = {}
+    for f in sorted(_glob.glob(os.path.join(sen_dir, "*.json"))):
+        sen_map.update(json.load(open(f, encoding="utf-8")))
+    for x in words_out:
+        w = x["w"]
+        x["gd"] = gd_map.get(w)
+        x["x"] = ex_map.get(w, "cet4")
+        s = sen_map.get(w)
+        x["se"] = s[0] if s else None
+        x["sz"] = s[1] if s else None
+    n_gd = sum(1 for x in words_out if x["gd"])
+    n_sen = sum(1 for x in words_out if x["se"])
+    print(f"多义项 gd: {n_gd}/{len(words_out)} | 例句: {n_sen}/{len(words_out)}")
     n_g = sum(1 for x in words_out if x["g"])
     n_i = sum(1 for x in words_out if x["i"])
     n_gc = sum(1 for c in combos_d if gmap.get(c["w"]))

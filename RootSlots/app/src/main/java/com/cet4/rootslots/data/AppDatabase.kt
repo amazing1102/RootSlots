@@ -13,7 +13,7 @@ import org.json.JSONObject
 
 @Database(
     entities = [WordEntity::class, MorphEntity::class, FamilyEntity::class, ComboEntity::class, FavoriteEntity::class, SpinEntity::class, SrsEntity::class, ReviewLogEntity::class],
-    version = 6,
+    version = 7,
     exportSchema = false,
 )
 abstract class AppDatabase : RoomDatabase() {
@@ -36,7 +36,7 @@ abstract class AppDatabase : RoomDatabase() {
 
         private fun build(context: Context): AppDatabase {
             val db = Room.databaseBuilder(context, AppDatabase::class.java, "rootslots.db")
-                .fallbackToDestructiveMigration()
+                .addMigrations(MIGRATION_6_7)
                 .addCallback(object : Callback() {
                     override fun onCreate(db: SupportSQLiteDatabase) {
                         super.onCreate(db)
@@ -54,6 +54,16 @@ abstract class AppDatabase : RoomDatabase() {
             return db
         }
 
+        /** v6 → v7:words 表新增多义项释义/例句/考试标签(非破坏,首例真迁移,后续升版照此范式) */
+        private val MIGRATION_6_7 = object : androidx.room.migration.Migration(6, 7) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL("ALTER TABLE words ADD COLUMN exam_tags TEXT")
+                db.execSQL("ALTER TABLE words ADD COLUMN detail_gloss TEXT")
+                db.execSQL("ALTER TABLE words ADD COLUMN sen_en TEXT")
+                db.execSQL("ALTER TABLE words ADD COLUMN sen_zh TEXT")
+            }
+        }
+
         /** 从 assets 的四个 JSON 预填全部表 */
         suspend fun prefill(context: Context) {
             val db = get(context)
@@ -66,6 +76,10 @@ abstract class AppDatabase : RoomDatabase() {
                         w = o.getString("w"),
                         g = if (o.isNull("g")) null else o.getString("g"),
                         ipa = if (o.isNull("i")) null else o.optString("i").ifBlank { null },
+                        examTags = if (o.isNull("x")) null else o.optString("x").let { ",$it," },
+                        detailGloss = if (o.isNull("gd")) null else o.optString("gd").ifBlank { null },
+                        senEn = if (o.isNull("se")) null else o.optString("se").ifBlank { null },
+                        senZh = if (o.isNull("sz")) null else o.optString("sz").ifBlank { null },
                     )
                 }
             )

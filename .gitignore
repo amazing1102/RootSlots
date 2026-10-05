@@ -21,3 +21,8 @@ tools/shots/
 # 签名密钥(本地保留,勿入库——丢了无法再出同签名更新)
 RootSlots/keystore.properties
 RootSlots/release.keystore
+
+# ECDICT 本地数据(过大不入库,见 词库扩展-数据规格.md)
+tools/stardict.db
+tools/ecdict-sqlite.zip
+tools/ecdict-csv.7z

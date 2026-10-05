@@ -11,6 +11,7 @@ import kotlinx.coroutines.sync.withLock
 class Repository private constructor(context: Context) {
     private val appContext = context.applicationContext
     private val db = AppDatabase.get(appContext)
+    private val prefs = GamePrefs(appContext)
     private val prefillMutex = kotlinx.coroutines.sync.Mutex()
 
     companion object SrsRules {
@@ -33,6 +34,9 @@ class Repository private constructor(context: Context) {
         )
         const val STAGE_GRADUATED = 10
         const val DAY_MS = 86_400_000L
+
+        /** 词库资产补灌版本:gd/例句/考试标签等资产数据更新时递增,触发一次 enrichIfNeeded 重跑 */
+        const val ASSETS_VER = "20261005a"
 
         /** 档位名:0=新学,1..9=节点档,10=已毕业 */
         fun stageLabel(stage: Int): String = when {
@@ -96,12 +100,55 @@ class Repository private constructor(context: Context) {
         while (tries < 200 && db.combosDao().count() == 0) {
             delay(150); tries++
         }
+        enrichIfNeeded()                             // 升级安装补灌新字段(多义项/例句/考试标签)
         load()
         if (combos.isEmpty()) {
             android.util.Log.e("Repo", "awaitReady: combos still empty after ${tries} polls")
         }
         ready = true
     }
+
+    /**
+     * 升级补灌:DB v7 新增的 exam_tags/detail_gloss/sen_en/sen_zh,
+     * 老安装经迁移升级后这些列是空的,从 assets 一次性补齐。
+     * 闸门 = DataStore 的 ASSETS_VER,资产数据更新时递增 Repository.ASSETS_VER 即可重跑一次。
+     */
+    private suspend fun enrichIfNeeded() {
+        if (prefs.assetsVer() == ASSETS_VER) return
+        try {
+            val gd = assetStringMap("gd.json")
+            val exams = assetStringMap("exams.json")
+            val sen = mutableMapOf<String, List<String>>()
+            val ctx = appContext
+            for (f in ctx.assets.list("sentences") ?: emptyArray()) {
+                if (!f.endsWith(".json")) continue
+                val obj = org.json.JSONObject(readAsset(ctx, "sentences/$f"))
+                for (key in obj.keys()) {
+                    val arr = obj.optJSONArray(key) ?: continue
+                    sen[key] = listOf(arr.optString(0), arr.optString(1))
+                }
+            }
+            val all = (gd.keys + exams.keys + sen.keys).distinct()
+            for (w in all) {
+                val tags = exams[w] ?: "cet4"
+                db.wordsDao().enrichRow(w, gd[w], sen[w]?.getOrNull(0), sen[w]?.getOrNull(1), ",$tags,")
+            }
+            prefs.setAssetsVer(ASSETS_VER)
+            android.util.Log.i("Enrich", "done: gd=${gd.size} sen=${sen.size} exams=${exams.size}")
+        } catch (e: Exception) {
+            android.util.Log.e("Enrich", "FAILED", e)
+        }
+    }
+
+    private fun assetStringMap(name: String): Map<String, String> {
+        val obj = org.json.JSONObject(readAsset(appContext, name))
+        val out = mutableMapOf<String, String>()
+        for (k in obj.keys()) out[k] = obj.optString(k)
+        return out
+    }
+
+    private fun readAsset(context: Context, name: String): String =
+        context.assets.open(name).bufferedReader().use { it.readText() }
 
     /** 幂等:库里没数据才从 assets 预填(不依赖 Room onCreate 时机) */
     private suspend fun ensurePrefilled() = prefillMutex.withLock {

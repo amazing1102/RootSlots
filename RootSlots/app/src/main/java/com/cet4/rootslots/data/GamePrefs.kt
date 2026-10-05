@@ -6,9 +6,11 @@ import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.floatPreferencesKey
 import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.core.longPreferencesKey
+import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.core.stringSetPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
@@ -32,6 +34,7 @@ class GamePrefs(private val context: Context) {
         val SPINS_TODAY = intPreferencesKey("spins_today")   // 今日已转(按 DAY_STAMP 归零)
         val DAY_STAMP = longPreferencesKey("day_stamp")      // SPINS_TODAY 所属日(LocalDate epochDay)
         val DAILY_STATS = stringSetPreferencesKey("daily_stats") // 历史日统计 "yyyymmdd:count:goal"
+        val ASSETS_VER = stringPreferencesKey("assets_ver")  // 词库资产补灌版本闸门(Repository.ASSETS_VER)
         const val ENERGY_MAX = 30
         const val REGEN_MS = 10_000L
         const val COINS_START = 200
@@ -134,5 +137,11 @@ class GamePrefs(private val context: Context) {
 
     suspend fun setWrongNotify(notify: Boolean) {
         context.gameStore.edit { it[WRONG_NOTIFY] = notify }
+    }
+
+    suspend fun assetsVer(): String? = context.gameStore.data.map { it[ASSETS_VER] }.first()
+
+    suspend fun setAssetsVer(v: String) {
+        context.gameStore.edit { it[ASSETS_VER] = v }
     }
 }
