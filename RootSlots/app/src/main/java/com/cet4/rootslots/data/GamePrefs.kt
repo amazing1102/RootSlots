@@ -22,23 +22,30 @@ class GamePrefs(private val context: Context) {
         val THEME = intPreferencesKey("theme")              // 0 跟随系统 / 1 深色 / 2 浅色
         val SPEECH_RATE = floatPreferencesKey("speech_rate")
         val WRONG_NOTIFY = booleanPreferencesKey("wrong_notify") // 答错弹窗提醒(关=静默入生词本)
+        val DAILY_GOAL = intPreferencesKey("daily_goal")     // 每日学习目标(转动次数)
+        val SPINS_TODAY = intPreferencesKey("spins_today")   // 今日已转(按 DAY_STAMP 归零)
+        val DAY_STAMP = longPreferencesKey("day_stamp")      // SPINS_TODAY 所属日(LocalDate epochDay)
         const val ENERGY_MAX = 30
         const val REGEN_MS = 10_000L
         const val COINS_START = 200
         const val SPEECH_RATE_DEFAULT = 0.85f
         const val WRONG_NOTIFY_DEFAULT = true
+        const val DAILY_GOAL_DEFAULT = 50
     }
 
-    data class Wallet(val coins: Int, val energy: Int, val totalSpins: Int)
+    data class Wallet(val coins: Int, val energy: Int, val totalSpins: Int, val spinsToday: Int, val dailyGoal: Int)
 
     val wallet: Flow<Wallet> = context.gameStore.data.map { p ->
         val last = p[LAST_REGEN] ?: 0L
         val stored = p[ENERGY] ?: ENERGY_MAX
         val regen = if (last == 0L) 0 else ((System.currentTimeMillis() - last) / REGEN_MS).toInt()
+        val today = java.time.LocalDate.now().toEpochDay()
         Wallet(
             coins = p[COINS] ?: COINS_START,
             energy = minOf(ENERGY_MAX, stored + regen),
             totalSpins = p[TOTAL_SPINS] ?: 0,
+            spinsToday = if (p[DAY_STAMP] == today) p[SPINS_TODAY] ?: 0 else 0,
+            dailyGoal = p[DAILY_GOAL] ?: DAILY_GOAL_DEFAULT,
         )
     }
 
@@ -70,7 +77,17 @@ class GamePrefs(private val context: Context) {
     }
 
     suspend fun incSpins() {
-        context.gameStore.edit { it[TOTAL_SPINS] = (it[TOTAL_SPINS] ?: 0) + 1 }
+        context.gameStore.edit { p ->
+            val today = java.time.LocalDate.now().toEpochDay()
+            val stamp = p[DAY_STAMP]
+            p[SPINS_TODAY] = if (stamp == today) (p[SPINS_TODAY] ?: 0) + 1 else 1
+            p[DAY_STAMP] = today
+            p[TOTAL_SPINS] = (p[TOTAL_SPINS] ?: 0) + 1
+        }
+    }
+
+    suspend fun setDailyGoal(n: Int) {
+        context.gameStore.edit { it[DAILY_GOAL] = n.coerceIn(5, 500) }
     }
 
     val theme: Flow<Int> = context.gameStore.data.map { it[THEME] ?: 0 }

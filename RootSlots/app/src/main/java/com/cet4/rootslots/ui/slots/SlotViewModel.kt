@@ -37,6 +37,8 @@ class SlotViewModel(app: Application) : AndroidViewModel(app) {
     var coins by mutableStateOf(GamePrefs.COINS_START); private set
     var energy by mutableStateOf(GamePrefs.ENERGY_MAX); private set
     var totalSpins by mutableStateOf(0); private set
+    var spinsToday by mutableStateOf(0); private set     // 今日已转(每日目标进度)
+    var dailyGoal by mutableStateOf(GamePrefs.DAILY_GOAL_DEFAULT); private set
     var combo by mutableStateOf(0); private set          // 本场连续转动数
     var familyStreak by mutableStateOf(0); private set   // 同词根家族连续数
     var lastReward by mutableStateOf(0); private set
@@ -87,6 +89,7 @@ class SlotViewModel(app: Application) : AndroidViewModel(app) {
             ready = true
             prefs.wallet.collect { w ->
                 coins = w.coins; energy = w.energy; totalSpins = w.totalSpins
+                spinsToday = w.spinsToday; dailyGoal = w.dailyGoal
             }
         }
         viewModelScope.launch {
@@ -102,6 +105,7 @@ class SlotViewModel(app: Application) : AndroidViewModel(app) {
 
     fun setThemeMode(mode: Int) { viewModelScope.launch { prefs.setTheme(mode) } }
     fun setSpeechRate(rate: Float) { viewModelScope.launch { prefs.setSpeechRate(rate); tts.setRate(rate) } }
+    fun updateDailyGoal(n: Int) { viewModelScope.launch { prefs.setDailyGoal(n) } }
 
     fun prefixFillers(): List<String> = repo.prefixFillers
     fun rootFillers(): List<String> = repo.rootFillers

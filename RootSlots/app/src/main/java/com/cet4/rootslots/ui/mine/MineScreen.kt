@@ -124,6 +124,67 @@ fun MineScreen(vm: SlotViewModel) {
         }
 
         Spacer(Modifier.height(18.dp))
+        SectionLabel("每日目标")
+        Spacer(Modifier.height(8.dp))
+        Card {
+            Column(Modifier.fillMaxWidth().padding(14.dp)) {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Text("今日已转", color = c.text, fontSize = 14.sp, fontWeight = FontWeight.Bold)
+                    Spacer(Modifier.weight(1f))
+                    Text(
+                        "${vm.spinsToday} / ${vm.dailyGoal}",
+                        color = if (vm.spinsToday >= vm.dailyGoal) c.success else c.accent,
+                        fontSize = 15.sp, fontWeight = FontWeight.Black,
+                    )
+                }
+                Spacer(Modifier.height(8.dp))
+                // 进度条:今日已转 / 目标
+                val fraction = if (vm.dailyGoal > 0) {
+                    (vm.spinsToday.toFloat() / vm.dailyGoal).coerceIn(0f, 1f)
+                } else 0f
+                Box(
+                    Modifier
+                        .fillMaxWidth()
+                        .height(8.dp)
+                        .clip(RoundedCornerShape(4.dp))
+                        .background(c.surfaceAlt)
+                ) {
+                    Box(
+                        Modifier
+                            .fillMaxWidth(fraction)
+                            .height(8.dp)
+                            .clip(RoundedCornerShape(4.dp))
+                            .background(if (vm.spinsToday >= vm.dailyGoal) c.success else c.accent)
+                    )
+                }
+                Spacer(Modifier.height(12.dp))
+                Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                    listOf(20, 50, 100, 200).forEach { n ->
+                        val selected = vm.dailyGoal == n
+                        Box(
+                            Modifier
+                                .weight(1f)
+                                .clip(RoundedCornerShape(10.dp))
+                                .background(if (selected) c.accent else c.surfaceAlt)
+                                .clickable { vm.updateDailyGoal(n) }
+                                .padding(vertical = 8.dp),
+                            contentAlignment = Alignment.Center,
+                        ) {
+                            Text(
+                                "$n",
+                                color = if (selected) c.onAccent else c.textMid,
+                                fontSize = 14.sp, fontWeight = FontWeight.Black,
+                            )
+                        }
+                    }
+                }
+                Spacer(Modifier.height(6.dp))
+                Text("目标为每天学习的词数(转一次 = 学一词),达成后进度条变绿",
+                    color = c.textFaint, fontSize = 10.sp)
+            }
+        }
+
+        Spacer(Modifier.height(18.dp))
         SectionLabel("外观")
         Spacer(Modifier.height(8.dp))
         Card {
