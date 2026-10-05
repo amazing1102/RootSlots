@@ -191,30 +191,34 @@ fun DetailScreen(
             AnimatedVisibility(visible = shown, enter = staggerEnter(1)) {
                 Column {
                     Spacer(Modifier.height(20.dp))
-                    // ---- 各段释义卡:FlowRow 等分铺满一页,不再横向滑动 ----
-                    FlowRow(
-                        horizontalArrangement = Arrangement.spacedBy(8.dp),
-                        verticalArrangement = Arrangement.spacedBy(8.dp),
-                    ) {
+                    // ---- 各段释义:一段一行,有几段显示几行 ----
+                    Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                         segs.forEach { seg ->
                             val color = c.typeColor(seg.t)
-                            Column(
+                            Row(
                                 Modifier
-                                    .weight(1f)
+                                    .fillMaxWidth()
                                     .clip(RoundedCornerShape(14.dp))
                                     .background(c.surface)
-                                    .padding(12.dp)
+                                    .padding(horizontal = 14.dp, vertical = 12.dp),
+                                verticalAlignment = Alignment.CenterVertically,
                             ) {
-                                Text(seg.s, color = color, fontSize = 22.sp, fontWeight = FontWeight.Black)
-                                Text("${c.typeName(seg.t)} · ${seg.k}",
-                                    color = color.copy(alpha = 0.75f), fontSize = 11.sp)
-                                Spacer(Modifier.height(6.dp))
-                                val segMeaning = vm.meaningOf(seg.t, seg.k)
-                                    .takeIf { it.isNotBlank() && it != "?" } ?: "(释义待补)"
                                 Text(
-                                    segMeaning,
-                                    color = c.textMid, fontSize = 13.sp,
+                                    seg.s,
+                                    color = color,
+                                    fontSize = 24.sp,
+                                    fontWeight = FontWeight.Black,
+                                    modifier = Modifier.width(104.dp),
                                 )
+                                Spacer(Modifier.width(10.dp))
+                                Column {
+                                    Text("${c.typeName(seg.t)} · ${seg.k}",
+                                        color = color.copy(alpha = 0.75f), fontSize = 11.sp)
+                                    Spacer(Modifier.height(3.dp))
+                                    val segMeaning = vm.meaningOf(seg.t, seg.k)
+                                        .takeIf { it.isNotBlank() && it != "?" } ?: "(释义待补)"
+                                    Text(segMeaning, color = c.textMid, fontSize = 13.sp)
+                                }
                             }
                         }
                     }
