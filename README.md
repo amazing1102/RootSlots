@@ -7,6 +7,7 @@
 ![Offline](https://img.shields.io/badge/offline-100%25-4CD487)
 ![Size](https://img.shields.io/badge/APK-137MB-F5B942)
 ![Release](https://img.shields.io/badge/release-v1.0.0-6D3FB8)
+![License](https://img.shields.io/badge/license-MIT-blue)
 
 **下载**:到 [Releases](https://github.com/amazing1102/RootSlots/releases) 页面下载 `RootSlots-v1.0.0.apk`,Android 8.0+ 直接安装。
 
@@ -78,6 +79,11 @@ gradle assembleRelease
 
 - 工具链:Android Studio(AGP 8.5.2 / Gradle 8.7 / JDK 17),minSdk 26 / targetSdk 35
 - 完整的开发约定、踩坑速查见 [AGENTS.md](AGENTS.md),里程碑与交接快照见 [HANDOFF.md](HANDOFF.md)
+
+## 📄 License
+
+代码以 [MIT](LICENSE) 协议开源;仓库内置的第三方数据/模型保留各自许可(见 LICENSE 附表),
+CET-4 词表与释义仅供学习交流。
 
 ## 🙏 致谢
 
