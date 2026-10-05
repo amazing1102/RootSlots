@@ -112,6 +112,13 @@ class SlotViewModel(app: Application) : AndroidViewModel(app) {
     val dailyStats: StateFlow<Map<java.time.LocalDate, DailyStat>> =
         prefs.dailyStats.stateIn(viewModelScope, SharingStarted.Eagerly, emptyMap())
 
+    /** 目标考试池(词库扩展):过滤老虎机/测验/图鉴出题范围 */
+    val exams: StateFlow<Set<String>> = repo.exams
+
+    fun setExams(s: Set<String>) {
+        viewModelScope.launch { prefs.setExams(s) }
+    }
+
     fun prefixFillers(): List<String> = repo.prefixFillers
     fun rootFillers(): List<String> = repo.rootFillers
     fun suffixFillers(): List<String> = repo.suffixFillers
@@ -124,8 +131,15 @@ class SlotViewModel(app: Application) : AndroidViewModel(app) {
     fun senZhOf(w: String): String? = repo.words[w]?.senZh
     fun ipaOf(w: String): String? = repo.ipaOf(w)
     fun familyWordList(key: String): List<String> = repo.familyWordList(key)
-    fun familyEntries(): List<com.cet4.rootslots.data.FamilyEntity> =
-        repo.families.values.sortedByDescending { it.count }
+
+    /** 详情页「同族词」:全库口径,不过滤考试(§8.2 详情页永不过滤) */
+    fun familyWordListAll(key: String): List<String> = repo.familyWordListAll(key)
+
+    /** 图鉴族列表:按当前考试池过滤,空族不显示 */
+    fun familyEntries(): List<com.cet4.rootslots.data.FamilyEntity> = repo.familyEntriesFiltered()
+
+    /** 词库规模(数据卡展示) */
+    suspend fun vocabCounts(): Triple<Int, Int, Int> = Triple(repo.words.size, repo.combos.size, repo.families.size)
     suspend fun spinTotal() = repo.spinTotal()
     suspend fun spunDistinct() = repo.spunDistinct()
     suspend fun spunWordSet() = repo.spunWordSet()

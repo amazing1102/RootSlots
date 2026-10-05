@@ -665,13 +665,30 @@ def main():
     sen_map = {}
     for f in sorted(_glob.glob(os.path.join(sen_dir, "*.json"))):
         sen_map.update(json.load(open(f, encoding="utf-8")))
+    # 合并扩展词库(build_dict.py 产物):新词条目 + 屈折吸收并入原形的考试标签
+    ew_path = os.path.join(ASSETS, "exam_words.json")
+    lt_path = os.path.join(ASSETS, "exam_lemma_tags.json")
+    exam_words = json.load(open(ew_path, encoding="utf-8")) if os.path.exists(ew_path) else []
+    lemma_tags = json.load(open(lt_path, encoding="utf-8")) if os.path.exists(lt_path) else {}
+
+    def union_tags(cur, extra):
+        if not extra:
+            return cur
+        return ",".join(sorted(set(cur.split(",")) | set(extra.split(",")) - {""}))
+
     for x in words_out:
         w = x["w"]
         x["gd"] = gd_map.get(w)
-        x["x"] = ex_map.get(w, "cet4")
+        x["x"] = union_tags(ex_map.get(w, "cet4"), lemma_tags.get(w.lower()))
         s = sen_map.get(w)
         x["se"] = s[0] if s else None
         x["sz"] = s[1] if s else None
+    for e in exam_words:
+        words_out.append({
+            "w": e["w"], "g": e["g"], "i": e["i"],
+            "gd": e["gd"], "x": union_tags(e["x"], lemma_tags.get(e["w"].lower())),
+            "se": None, "sz": None,
+        })
     n_gd = sum(1 for x in words_out if x["gd"])
     n_sen = sum(1 for x in words_out if x["se"])
     print(f"多义项 gd: {n_gd}/{len(words_out)} | 例句: {n_sen}/{len(words_out)}")

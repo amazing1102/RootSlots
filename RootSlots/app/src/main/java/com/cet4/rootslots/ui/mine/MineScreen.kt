@@ -12,6 +12,8 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -57,30 +59,35 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.cet4.rootslots.data.GamePrefs
 import com.cet4.rootslots.ui.slots.SlotViewModel
 import com.cet4.rootslots.ui.theme.LocalAppColors
 import java.time.LocalDate
 import kotlin.math.roundToInt
 
 /** 我的:收集统计(自图鉴迁来)+ 外观/发音/数据设置 */
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun MineScreen(vm: SlotViewModel) {
     val c = LocalAppColors.current
     val themeMode by vm.themeMode.collectAsState()
     val rate by vm.speechRate.collectAsState()
     val dailyStats by vm.dailyStats.collectAsState()
+    val exams by vm.exams.collectAsState()
     var spins by remember { mutableStateOf(0) }
     var distinct by remember { mutableStateOf(0) }
     var families by remember { mutableStateOf(0) }
     var covered by remember { mutableStateOf(0) }
+    var vocab by remember { mutableStateOf(Triple(0, 0, 0)) }
 
-    LaunchedEffect(Unit) {
+    LaunchedEffect(exams) {
         spins = vm.spinTotal()
         distinct = vm.spunDistinct()
         val spun = vm.spunWordSet()
         val fs = vm.familyEntries()
         families = fs.size
         covered = fs.count { f -> vm.familyWordList(f.key).any { it in spun } }
+        vocab = vm.vocabCounts()
     }
 
     Column(
@@ -211,6 +218,51 @@ fun MineScreen(vm: SlotViewModel) {
                 }
                 Spacer(Modifier.height(6.dp))
                 Text("目标为每天学习的词数(1–999),转一次 = 学一词,达成后进度条变绿",
+                    color = c.textFaint, fontSize = 10.sp)
+            }
+        }
+
+        Spacer(Modifier.height(18.dp))
+        SectionLabel("目标考试")
+        Spacer(Modifier.height(8.dp))
+        Card {
+            Column(Modifier.fillMaxWidth().padding(14.dp)) {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Text("出题范围", color = c.text, fontSize = 14.sp, fontWeight = FontWeight.Bold)
+                    Spacer(Modifier.weight(1f))
+                    Text("可多选 · 并集生效", color = c.textFaint, fontSize = 11.sp)
+                }
+                Spacer(Modifier.height(10.dp))
+                FlowRow(
+                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                    verticalArrangement = Arrangement.spacedBy(8.dp),
+                ) {
+                    GamePrefs.EXAM_CHOICES.forEach { (code, label) ->
+                        val selected = code in exams
+                        Row(
+                            Modifier
+                                .clip(RoundedCornerShape(50))
+                                .background(if (selected) c.accent else c.chip)
+                                .clickable {
+                                    val next = if (selected) exams - code else exams + code
+                                    vm.setExams(next)   // 空集由 GamePrefs 兜底回默认 cet4
+                                }
+                                .padding(horizontal = 14.dp, vertical = 8.dp),
+                            verticalAlignment = Alignment.CenterVertically,
+                        ) {
+                            if (selected) {
+                                Text("✓ ", color = c.onAccent, fontSize = 13.sp, fontWeight = FontWeight.Black)
+                            }
+                            Text(
+                                label,
+                                color = if (selected) c.onAccent else c.textMid,
+                                fontSize = 13.sp, fontWeight = FontWeight.Bold,
+                            )
+                        }
+                    }
+                }
+                Spacer(Modifier.height(8.dp))
+                Text("老虎机 / 测验 / 词根图鉴只从所选考试的词池出题;生词本与复习计划不受影响",
                     color = c.textFaint, fontSize = 10.sp)
             }
         }
@@ -395,7 +447,7 @@ fun MineScreen(vm: SlotViewModel) {
         SectionLabel("数据")
         Spacer(Modifier.height(8.dp))
         Card {
-            InfoRow("词库", "6286 词 · 组合词 2297 · 词根族 354")
+            InfoRow("词库", "${vocab.first} 词 · 组合词 ${vocab.second} · 词根族 ${vocab.third}")
             Divider()
             InfoRow("运行", "完全离线 · 无账号 · 数据在本机")
         }

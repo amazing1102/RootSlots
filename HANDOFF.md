@@ -21,7 +21,8 @@
 | M13 | 转轴经济(2026-10-05,用户采纳 A+C 组合):**落定开考**——停轴后 4 选 1 猜释义,答对 ×1.5/答错 −3🪙+词自动进生词本/跳过半价,答错清连击;**锈词折损**——生词本逾期词再转出固定 +2 且清连击,卡片挂逾期提示;毕业词基础 15;**SPIN 阶段感知动画**——点击/出题中淡出缩至 0.55 让位整屏出题,答完延迟 1.6s 淡入弹簧弹回,答后题区内浮现释义+结算提示;**答错弹窗**——「已移入生词本」+ 可勾选「下次不用提醒,自动加入」(DataStore wrong_notify 持久化),勾选后静默入生词本;弹窗期间 SPIN 隐藏,关闭后 0.4s 弹回;出题中详情入口禁用防剧透,结算区可滚动 |
 | M14 | 学习统计(2026-10-05,用户采纳双方案):**学习日历**——「我的」页月历热力图(格色 = 当日量÷当日目标,今天描边,底部本月共学/达标天数 + 🔥连续达标),历史存 DataStore daily_stats("yyyymmdd:count:goal" stringSet,零 DB 迁移),每次 spin 经 recordDailySpin() 累加;**生词本遗忘进度条**——每行 3dp 细条 = Repository.forgetProgress(stage/dueAt 算档位间隔消耗度,毕业 −1 显示满条金,到期红/过半金/新鲜绿),列表按紧迫度倒序(到期置顶、毕业与未排期垫底) |
 | M15 | 释义增强 + 例句(2026-10-05,词库扩展阶段一数据层):**ECDICT 接入**(tools/build_gd.py,sqlite 340 万词条,MIT)→ gd.json 多义项释义 6255/6286(词性归一 a.→adj.,滤 [化][医] 域噪音行,≤4 义项)+ exams.json 考试标签(词库扩展用);**例句** assets/sentences/s01.json 首批 250 组合词(用户追加批次顺延,同释义批模式);**DB v7 非破坏迁移**(首个真迁移,fallbackToDestructive 已移除):words 加 exam_tags/detail_gloss/sen_en/sen_zh 四列;**升级补灌** enrichIfNeeded(ASSETS_VER 闸门,老安装从 assets 补空字段,数据更新递增常量重跑);**UI**:详情页「释义」多义项(词性蓝色前缀)+「例句」卡(当前词高亮+中文+🔊整句朗读),复习页揭示后带例句;结果卡/列表仍用短释义 |
-| 数据 | **释义 6286/6286 全覆盖**(glosses/c01–c19 共 19 批)+ 音标 6173 词;组合词 2278(校验 0 错误) |
+| M16 | 词库扩展阶段一·架构贯通(2026-10-05,按 词库扩展-数据规格.md §9 实施):**合并管线 tools/build_dict.py**——ECDICT gk(高考)词拉取,§4 规则落地(屈折吸收 39 词标签并入原形/去词组/去单字符/大小写去重),§5 清洗(自策释义优先,ECDICT 首义项 ≤24 汉字,IPA phonetic 兜底 339/424);**超集 6710 词**(6286+424 新 gaokao 词,assets/words.json 1.3MB);**考试池过滤**(§8.2 清单):Repository 内存过滤 wordInPool(exam_tags 包裹式解析,无标签旧行按 cet4 兜底),randomCombo 抽词池(带缓存)/glossedWords 题池/图鉴族列表(count 按池内重计,空族隐藏)全过滤;**收藏/SRS/统计/详情页永不过滤**(详情页同族词用 familyWordListAll 全库口径);**目标考试 UI**:「我的-目标考试」多选 chips(阶段一放开 cet4/gaokao,EXAM_CHOICES 清单),空选兜底回 cet4;**升级补插**:enrichIfNeeded 兼职插新词行(INSERT IGNORE,只加行不动行,words.json 里库里缺的行就地补);**模拟器实测**:升级路径 newWords=424 插入、gaokao 单池转 3/3 词全带 gaokao 标签(1349 纯四级组合词被排除)、严格单池测验选项 4/4 在池、族覆盖 3/296↔3/352 双向刷新、收藏/SRS/角标全程不变;**顺手修复预填竞态**:onCreate 回调与 ensurePrefilled 双路径并发各灌一次导致自增主键表(morphs/combos)整体翻倍,已删 onCreate 预填留 ensurePrefilled 唯一路径 |
+| 数据 | **释义 6710/6710 全覆盖**(存量 glosses/c01–c19 + 新词 ECDICT 短释义)+ 音标 6512 词;组合词 2278(校验 0 错误);考试标签 gaokao 3643 / cet4 6387 |
 
 ## 经济数值(M13 后,改玩法先看)
 
@@ -40,11 +41,26 @@
 ## 剩余工作(仅剩可选打磨)
 
 1. **~~真机验收~~ ✅ 2026-10-04 用户确认:真机发音自然度通过(Piper amy),项目验收完成。**
-2. **词库扩展(全考试受众,规格待评审)**:方案与数据规格见
-   [词库扩展-数据规格.md](词库扩展-数据规格.md)(一词元库 + 考试标签 + 查询过滤;
-   ECDICT MIT 为骨架源;Room v7 非破坏迁移范式;分三阶段)。**用户尚未选定启动阶段。**
-3. **可选打磨(有想法再做)**:3989 条新释义抽检错别字;
+2. **词库扩展(全考试受众)**:规格见 [词库扩展-数据规格.md](词库扩展-数据规格.md)。
+   **阶段一(架构贯通)已完成 ✅ 2026-10-05**(M16);剩:
+   - **阶段二·扩库重跑**:词根表扩 500+(每根含义+≥3 库内例词,两道人工审)→ 全库重跑拆词 →
+     分考试覆盖率报告(目标全库组合词率 ≥40%,现 CET-4 36%);
+   - **阶段三·全考试收尾**:cet6/kaoyan/ielts/toefl/gre 池放开(GamePrefs.EXAM_CHOICES 加短码即可,
+     exams.json 已含全部标签,但新词只拉过 gk——需把 build_dict.py NEW_WORD_TAGS 放开重跑)、
+     IPA 兜底源完善(新词现 339/424)、释义来源标记统计(gs 字段未落)。
+3. **例句后续批次 s02+**:250/6710 已入库,余 ~6460 词按批产出(assets/sentences/,每批 250,
+   产完拷 App assets 并递增 Repository.ASSETS_VER)。
+4. **可选打磨(有想法再做)**:3989 条新释义抽检错别字;
    缺音标的 113 词人工补录(tools/ipa_missing.txt);若发新版可打 v1.0.1 tag + release。
+
+**M16 实施要点(动考试池/词库相关时看):** 考试集合唯一真源是 GamePrefs EXAMS(stringSet,默认/兜底
+{"cet4"}),Repository 单例 init 里 collect 成 StateFlow `_exams` 并暴露 `exams`;过滤统一走
+`wordInPool(WordEntity)`(examTags 拆包裹式 ",a,b,",null/空按 cet4)。新考试接入三步:
+① build_dict.py 的 NEW_WORD_TAGS/TAG_MAP 放开对应短码重跑管线;② GamePrefs.EXAM_CHOICES 加
+展示项;③ 递增 ASSETS_VER(若 assets 有变)。预填/补插路径:空库走 ensurePrefilled(唯一预填入口,
+**onCreate 预填已删——双路径并发会翻倍自增主键表**);老库加行走 enrichIfNeeded 的 insertIgnore
+(words.json 有而库里无的行),闸门 = ASSETS_VER。图鉴族 count 是过滤后动态值(f.copy),
+别再信 families 表里的静态 count 做池内统计。
 
 **M13 实施要点(改经济/玩法相关时看):** 结算已从 spin() 挪到 settleQuiz()(SlotViewModel):spin 只抽词+判锈词(pendingRust)+建轴;停稳后 buildQuizForCurrentWord() 出题(干扰项 = glossedWords 排自身去重抽 3,gloss 缺失自动按跳过结算);answerQuiz/skipQuiz → settleQuiz(correct: Boolean?)。quiz/quizPicked/quizResult/lastRust 均为 VM 状态;quiz 保留到下次 spin 才清(供 UI 变色),SPIN 与详情入口以 `quiz != null && quizPicked == null` 判禁用。锈词在 settle 各分支优先于 combo 结算。SPIN 显隐 = SlotScreen 的 spinShown(LaunchedEffect:spinning/出题未答→隐藏;答完 delay 1600ms→浮现;AnimatedVisibility fade+scale 0.55,enter 用弹簧)。
 

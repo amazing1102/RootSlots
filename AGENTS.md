@@ -13,9 +13,14 @@ D:\CET4\
 ├── cet4_word_formation_map.md        # 组合图谱(族键有别名:cid2/bank2 等)
 ├── assets\                           # ★ 管线输出目录(build_data.py 的 ASSETS)
 │   ├── words/morphs/families/combos.json
-│   └── glosses\c01–c07.json          # 释义批文件(2297 条,新增批次也放这里)
+│   ├── gd.json / exams.json          # ECDICT 多义项释义 + 存量词考试标签(build_gd.py)
+│   ├── exam_words.json / exam_lemma_tags.json  # 扩库新词 + 屈折吸收标签(build_dict.py)
+│   ├── glosses\c01–c07.json          # 释义批文件(2297 条,新增批次也放这里)
+│   └── sentences\s01.json            # 例句批次({word:[英,中]},新增批次顺延)
 ├── tools\
-│   ├── build_data.py                 # 数据管线:md → 4 份 JSON + 合并 glosses
+│   ├── build_data.py                 # 数据管线:md → 4 份 JSON + 合并 glosses/gd/exams/例句/扩库词
+│   ├── build_gd.py                   # ECDICT→存量词多义项释义+考试标签(需 tools/stardict.db)
+│   ├── build_dict.py                 # 词库扩展合并管线:ECDICT gk 等新词入库(§4/§5 规则)
 │   ├── verify_assets.py              # 校验器(拼接一致性+key 可解析,须 0 错误)
 │   └── shots\                        # 验收截图(不入库)
 └── RootSlots\                        # Android App(包名 com.cet4.rootslots)
@@ -33,7 +38,7 @@ D:\CET4\
 ## 技术栈与环境(本机路径)
 
 - AGP 8.5.2 / Gradle 8.7 / Kotlin 2.0.21 / Compose BOM 2024.09 / Room 2.6.1 + KSP;minSdk 26 / target 35
-- 完全离线单机:无网络权限、无后端;DataStore 存设置;Room 预填词库(当前 DB v4)
+- 完全离线单机:无网络权限、无后端;DataStore 存设置;Room 预填词库(当前 DB v7,词库超集 6710 词)
 - Android SDK:`D:\33603\AppData\Local\Android\Sdk`(local.properties 已配)
 - JDK:**必须 17** `D:\Java\jdk-17.0.18`(本机默认 java 是 25,不能用;已写入 gradle.properties `org.gradle.java.home`)
 - Gradle:**用 `D:\gradle-8.7\bin\gradle.bat`,不要用 gradlew.bat**(wrapper jar 损坏)
@@ -43,8 +48,9 @@ D:\CET4\
 ## 常用命令
 
 ```bash
-# 数据管线(改了 md 源表或 glosses 批文件后;ipa.json 缺失或词表变更时先跑 build_ipa.py)
-cd /d/CET4 && python tools/build_ipa.py && python tools/build_data.py && python tools/verify_assets.py
+# 数据管线(改了 md 源表或 glosses 批文件后;ipa.json 缺失或词表变更时先跑 build_ipa.py;
+# build_gd/build_dict 依赖 tools/stardict.db(851MB,已 gitignore),词表没变可跳过)
+cd /d/CET4 && python tools/build_ipa.py && python tools/build_gd.py && python tools/build_dict.py && python tools/build_data.py && python tools/verify_assets.py
 cp assets/{words,morphs,families,combos}.json RootSlots/app/src/main/assets/
 
 # 构建 + 安装
@@ -52,7 +58,9 @@ cd /d/CET4/RootSlots
 JAVA_HOME=D:/Java/jdk-17.0.18 /d/gradle-8.7/bin/gradle.bat assembleDebug
 adb install -r app/build/outputs/apk/debug/app-debug.apk
 
-# 改过 assets 后必须清库重灌(ensurePrefilled 只对空库):
+# 改 assets 后二选一:
+#  a) 常规内容更新(释义/例句/新词加行):递增 Repository.ASSETS_VER → install -r,数据无损
+#  b) 结构性变更(拆词/族表变了):清库重灌(ensurePrefilled 只对空库)
 adb shell pm clear com.cet4.rootslots && adb install -r ...
 ```
 
@@ -64,13 +72,17 @@ adb shell pm clear com.cet4.rootslots && adb install -r ...
   每页根布局显式 `.background(c.bg)`(浅色主题下否则露黑底)+ `statusBarsPadding()`+`navigationBarsPadding()`(targetSdk 35 强制 edge-to-edge)。
 - **导航**:无导航库。MainActivity 持有 Tab 状态(RootTab,**必须 enum**,sealed class 有 JVM 类初始化循环崩溃坑)+
   Overlay 全屏推入页(详情/复习,推入时隐藏 Tab 栏,保留 BackHandler);Tab 页不写返回键处理。
-- **Room**:破坏性迁移直接升 version;预填不依赖 onCreate,靠 `Repository.ensurePrefilled()` 幂等补跑(带 Mutex)。
+- **Room**:升 version 必须写真迁移 Migration 对象(**禁止破坏性迁移**,v7 起范式,会清用户收藏/SRS);
+  预填唯一入口 `Repository.ensurePrefilled()`(带 Mutex、空库判定),**onCreate 回调里别再挂预填**
+  (双路径并发会把 morphs/combos 自增主键表灌翻倍,真实踩过)。
+- **考试池过滤**:出题面(老虎机/测验/图鉴)一律走 `Repository.wordInPool`;收藏/SRS/统计/详情页永不过滤。
 - **JSON filler**:别用 `JSONArray.join`(会加引号),用 `AppDatabase.jsonJoin`。
 - 每个里程碑完成后更新 计划书-计划书.md 状态列和 HANDOFF.md,再提交 git。
 
 ## 已知坑速查(高频)
 
-1. 改 assets → 必须 `pm clear` 重灌;预填异步,首屏轮询 `awaitReady`(空库 60s 超时会 Log.e)。
+1. 改 assets → 常规内容更新走 ASSETS_VER 闸门(install -r 即可);拆词/族表等结构性变更才 `pm clear` 重灌。
+   预填异步,首屏轮询 `awaitReady`(空库 60s 超时会 Log.e)。
 2. MCP 截图宽 900、真机坐标 1080:**`input tap` 坐标 ×1.2**;ui_resolve 对 emoji(📚 等)解析不到,对普通中英文可用。
 3. 模拟器 API 35 无任何 TTS 引擎,TtsHelper 静默跳过属预期,真机才有声。
 4. 模拟器偶发自弹"屏幕截图"编辑器浮层,input tap 全打空 → HOME 键退出重进。

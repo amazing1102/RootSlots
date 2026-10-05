@@ -805,7 +805,7 @@
 "g": "v. 使上瘾 n. 上瘾者",
 "i": "əˈdɪkt",
 "gd": "v. 使沉溺, 使上瘾\nn. 入迷的人, 上瘾者",
-"x": "cet4,cet6,gre,ielts,kaoyan,toefl",
+"x": "cet4,cet6,gaokao,gre,ielts,kaoyan,toefl",
 "se": "He became a gambling addict in his twenties.",
 "sz": "他二十多岁时成了赌瘾患者。"
 },
@@ -3388,7 +3388,7 @@
 "g": "adj. 运动的；健壮的",
 "i": "æˈθlɛtɪk",
 "gd": "adj. 运动的",
-"x": "cet4,cet6,gaokao",
+"x": "cet4,cet6,gaokao,gre",
 "se": null,
 "sz": null
 },
@@ -4765,7 +4765,7 @@
 "g": "n. 被褥；床上用品",
 "i": "ˈbɛdɪŋ",
 "gd": "n. 被褥, 寝具, 床上用品, 基床",
-"x": "cet4",
+"x": "cet4,gaokao",
 "se": null,
 "sz": null
 },
@@ -5881,7 +5881,7 @@
 "g": "vt. 使厌烦 n. 令人厌烦的人",
 "i": "ˈbɔːr",
 "gd": "n. 令人讨厌的人, 激浪, 枪膛, 孔\nv. 使烦扰, 钻孔\nv. 钻孔\nbear的过去式",
-"x": "cet4,cet6,gre,ielts,kaoyan,toefl",
+"x": "cet4,cet6,gaokao,gre,ielts,kaoyan,toefl",
 "se": null,
 "sz": null
 },
@@ -6007,7 +6007,7 @@
 "g": "n. 碗",
 "i": "ˈboʊl",
 "gd": "n. 碗, 木球, 大酒杯\nv. 滚木球, 快而稳地行驶",
-"x": "cet4,gaokao,kaoyan,toefl",
+"x": "cet4,gaokao,ielts,kaoyan,toefl",
 "se": null,
 "sz": null
 },
@@ -8356,7 +8356,7 @@
 "g": "n. 芯片；薯条；碎片",
 "i": "ˈtʃɪp",
 "gd": "n. 屑片, 薄片, 碎片\nv. 削, 切, 削成碎片, 使摔倒, 凿\nv. 削下屑片",
-"x": "cet4,cet6,gre,ielts,kaoyan,toefl",
+"x": "cet4,cet6,gaokao,gre,ielts,kaoyan,toefl",
 "se": null,
 "sz": null
 },
@@ -8428,7 +8428,7 @@
 "g": "n. 筷子",
 "i": "ˈtʃɑːˌpstɪk",
 "gd": "n. 筷子",
-"x": "cet4",
+"x": "cet4,gaokao",
 "se": null,
 "sz": null
 },
@@ -21874,7 +21874,7 @@
 "g": "vt. 布置家具；提供",
 "i": "ˈfɜːrnɪʃ",
 "gd": "v. 供给, 提供, 装设",
-"x": "cet4,cet6,ielts,kaoyan,toefl",
+"x": "cet4,cet6,gaokao,ielts,kaoyan,toefl",
 "se": null,
 "sz": null
 },
@@ -22963,7 +22963,7 @@
 "g": "n. 祖父母",
 "i": "ˈɡræˌndpɛrənt",
 "gd": "n. 祖父母",
-"x": "cet4",
+"x": "cet4,gaokao",
 "se": null,
 "sz": null
 },
@@ -29083,7 +29083,7 @@
 "g": "adj. 迟的；晚期的 adv. 晚",
 "i": "ˈleɪt",
 "gd": "adj. 迟的, 晚的, 已故的\nadv. 很晚, 很迟, 晚",
-"x": "cet4,gaokao",
+"x": "cet4,gaokao,ielts",
 "se": null,
 "sz": null
 },
@@ -31063,7 +31063,7 @@
 "g": "v. 结婚；娶；嫁",
 "i": "ˈmɛriː",
 "gd": "v. 与...结婚, 娶, 嫁\nv. 结婚",
-"x": "cet4,gaokao,kaoyan",
+"x": "cet4,cet6,gaokao,kaoyan",
 "se": null,
 "sz": null
 },
@@ -41953,7 +41953,7 @@
 "g": "n. 茶点；恢复活力",
 "i": "rəˈfrɛʃmənt",
 "gd": "n. 点心, 起提神作用的事物, 精神爽快",
-"x": "cet4,cet6,ielts,kaoyan,toefl",
+"x": "cet4,cet6,gaokao,ielts,kaoyan,toefl",
 "se": null,
 "sz": null
 },
@@ -47551,7 +47551,7 @@
 "g": "n. 纪念品",
 "i": "ˌsuːvəˈnɪr",
 "gd": "n. 纪念品",
-"x": "cet4,cet6,gre,ielts,toefl",
+"x": "cet4,cet6,gaokao,gre,ielts,toefl",
 "se": null,
 "sz": null
 },
@@ -48532,7 +48532,7 @@
 "g": "n. 统计数据",
 "i": "stəˈtɪstɪk",
 "gd": "n. 统计量\nadj. 统计的, 统计学的",
-"x": "cet4",
+"x": "cet4,cet6,gaokao,ielts,kaoyan,toefl",
 "se": null,
 "sz": null
 },
@@ -56570,6 +56570,3822 @@
 "i": "ˌzuːˈlɑːdʒɪkəl",
 "gd": "adj. 动物学的",
 "x": "cet4",
+"se": null,
+"sz": null
+},
+{
+"w": "abnormal",
+"g": "adj. 反常的, 不规则的, 变态的, 畸形的",
+"i": "æb'nɒ:mәl",
+"gd": "adj. 反常的, 不规则的, 变态的, 畸形的\nn. 畸形的人",
+"x": "cet4,cet6,gaokao,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "abortion",
+"g": "n. 流产, 堕胎, 失败, 夭折, 中止",
+"i": "ә'bɒ:ʃәn",
+"gd": "n. 流产, 堕胎, 失败, 夭折, 中止",
+"x": "gaokao,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "abrupt",
+"g": "adj. 突然的, 唐突的, 陡峭的, 不连贯的",
+"i": "ә'brʌpt",
+"gd": "adj. 突然的, 唐突的, 陡峭的, 不连贯的",
+"x": "cet6,gaokao,gre,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "absurd",
+"g": "adj. 荒谬的, 不合理的, 可笑的",
+"i": "әb'sә:d",
+"gd": "adj. 荒谬的, 不合理的, 可笑的\nn. 荒诞",
+"x": "cet6,gaokao,gre,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "adolescence",
+"g": "n. 青春期",
+"i": "ˌædәu'lesәns",
+"gd": "n. 青春期",
+"x": "gaokao,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "adolescent",
+"g": "adj. 青春期的, 青少年的",
+"i": "ˌædәu'lesәnt",
+"gd": "adj. 青春期的, 青少年的\nn. 青少年",
+"x": "cet6,gaokao,gre,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "adore",
+"g": "v. 崇拜, 爱慕, 喜爱",
+"i": "ә'dɒ:",
+"gd": "v. 崇拜, 爱慕, 喜爱\nv. 崇拜, 爱慕",
+"x": "cet6,gaokao,gre,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "Africa",
+"g": "n. 非洲",
+"i": "'æfrikә",
+"gd": "n. 非洲",
+"x": "cet4,gaokao,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "African",
+"g": "n. 非洲人",
+"i": "'æfrikәn",
+"gd": "n. 非洲人\nadj. 非洲的, 非洲人的",
+"x": "cet4,gaokao,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "airmail",
+"g": "n. 航空邮件",
+"i": "'єәmeil",
+"gd": "n. 航空邮件",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "airspace",
+"g": "n. 空域, 空间",
+"i": "'єәspeis",
+"gd": "n. 空域, 空间",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "allergic",
+"g": "adj. 对...过敏的, 极反感的",
+"i": "ә'lә:dʒik",
+"gd": "adj. 对...过敏的, 极反感的",
+"x": "gaokao,gre,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "allocate",
+"g": "v. 分派, 分配",
+"i": "'ælәukeit",
+"gd": "v. 分派, 分配",
+"x": "cet6,gaokao,gre,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "ambiguous",
+"g": "adj. 不明确的, 模棱两可的",
+"i": "æm'bigjuәs",
+"gd": "adj. 不明确的, 模棱两可的",
+"x": "cet6,gaokao,gre,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "America",
+"g": "n. 美洲, 美国",
+"i": "ә'merikә",
+"gd": "n. 美洲, 美国",
+"x": "gaokao,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "American",
+"g": "n. 美国人",
+"i": "ә'merikәn",
+"gd": "n. 美国人\nadj. 美国的, 美洲的",
+"x": "gaokao,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "anecdote",
+"g": "n. 轶事, 奇闻",
+"i": "'ænikdәut",
+"gd": "n. 轶事, 奇闻",
+"x": "gaokao,gre,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "antarctic",
+"g": "adj. 南极的, 南极地带的",
+"i": "ænt'ɑ:ktik",
+"gd": "adj. 南极的, 南极地带的\nn. 南极地区",
+"x": "cet6,gaokao,gre,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "Antarctica",
+"g": "n. 南极洲",
+"i": "ænt'ɑ:ktikә",
+"gd": "n. 南极洲",
+"x": "gaokao,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "appendix",
+"g": "n. 附录, 附加物, 阑尾",
+"i": "ә'pendiks",
+"gd": "n. 附录, 附加物, 阑尾",
+"x": "cet6,gaokao,ielts,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "apron",
+"g": "n. 围裙",
+"i": "'eiprәn",
+"gd": "n. 围裙",
+"x": "gaokao,gre",
+"se": null,
+"sz": null
+},
+{
+"w": "Arab",
+"g": "n. 阿拉伯人, 阿拉伯马",
+"i": "'ærәb",
+"gd": "n. 阿拉伯人, 阿拉伯马\nadj. 阿拉伯人的, 阿拉伯的",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "Arabic",
+"g": "n. 阿拉伯语",
+"i": "'ærәbik",
+"gd": "n. 阿拉伯语\nadj. 阿拉伯语的, 阿拉伯人的, 阿拉伯式的",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "arch",
+"g": "n. 拱门, 拱形, 足弓",
+"i": "ɑ:tʃ",
+"gd": "n. 拱门, 拱形, 足弓\nv. 使成弓形\nv. 拱起, 成弓形\nadj. 主要的, 调皮的, 傲慢无礼的, 狡猾的",
+"x": "cet6,gaokao,gre,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "arctic",
+"g": "adj. 北极的, 极寒的",
+"i": "'ɑ:ktik",
+"gd": "adj. 北极的, 极寒的\nn. 北极圈, 北极",
+"x": "cet6,gaokao,gre,ielts,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "are",
+"g": "be的现在时复数或第二人称单数",
+"i": "ɑ:",
+"gd": "be的现在时复数或第二人称单数",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "armchair",
+"g": "n. 扶手椅",
+"i": "ˌɑ:m'tʃєә",
+"gd": "n. 扶手椅",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "Asia",
+"g": "n. 亚洲",
+"i": "'eiʒә",
+"gd": "n. 亚洲",
+"x": "gaokao,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "Asian",
+"g": "n. 亚洲人",
+"i": "'eiʃәn",
+"gd": "n. 亚洲人\nadj. 亚洲的, 亚洲人的",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "Atlantic",
+"g": "n. 大西洋",
+"i": "әt'læntik",
+"gd": "n. 大西洋\nadj. 大西洋的",
+"x": "cet4,gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "attentively",
+"g": "adv. 注意地, 留心地",
+"i": "ә'tentivli",
+"gd": "adv. 注意地, 留心地",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "Australia",
+"g": "n. 澳洲, 澳大利亚",
+"i": "ɒ'streiljә",
+"gd": "n. 澳洲, 澳大利亚",
+"x": "gaokao,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "Australian",
+"g": "n. 澳大利亚人",
+"i": "ɒ'streiljәn",
+"gd": "n. 澳大利亚人\nadj. 澳大利亚的, 澳洲的, 澳洲人的",
+"x": "gaokao,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "autonomous",
+"g": "adj. 自治的",
+"i": "ɒ:'tɒnәmәs",
+"gd": "adj. 自治的",
+"x": "gaokao,gre,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "backache",
+"g": "n. 背痛",
+"i": "'bækeik",
+"gd": "n. 背痛",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "bacterium",
+"g": "n. 细菌",
+"i": "bæk'tiәriәm",
+"gd": "n. 细菌",
+"x": "cet6,gaokao,gre,ielts,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "ballpoint",
+"g": "n. 圆珠笔",
+"i": null,
+"gd": "n. 圆珠笔",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "barbershop",
+"g": "n. 理发店",
+"i": null,
+"gd": "n. 理发店",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "bathrobe",
+"g": "n. 浴衣",
+"i": "'bɑ:θrәub",
+"gd": "n. 浴衣",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "bathtub",
+"g": "n. 浴缸",
+"i": "'bɑ:θtʌb",
+"gd": "n. 浴缸",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "battleground",
+"g": "n. 战场, 战地",
+"i": "'bætlgraund",
+"gd": "n. 战场, 战地",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "beancurd",
+"g": "n. 豆腐",
+"i": "'bi:nkə:d",
+"gd": "n. 豆腐",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "bedclothes",
+"g": "n. 铺盖, 床上用品",
+"i": "'bedklәuðz",
+"gd": "n. 铺盖, 床上用品",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "bedroom",
+"g": "n. 卧室",
+"i": null,
+"gd": "n. 卧室",
+"x": "gaokao,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "beehive",
+"g": "n. 蜂窝, 蜂箱",
+"i": null,
+"gd": "n. 蜂窝, 蜂箱",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "Belgium",
+"g": "n. 比利时",
+"i": "'beldʒәm",
+"gd": "n. 比利时",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "bingo",
+"g": "n. 宾戈(一种赌博游戏), 烈酒",
+"i": "'biŋgәu",
+"gd": "n. 宾戈(一种赌博游戏), 烈酒",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "birdcage",
+"g": "n. 鸟笼",
+"i": "'bә:dkeidʒ",
+"gd": "n. 鸟笼",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "birthplace",
+"g": "n. 诞生地",
+"i": "'bә:θpleis",
+"gd": "n. 诞生地",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "bishop",
+"g": "n. 主教, (国际象棋中的)象, 热果子酒",
+"i": "'biʃәp",
+"gd": "n. 主教, (国际象棋中的)象, 热果子酒",
+"x": "cet6,gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "bookcase",
+"g": "n. 书架, 书柜",
+"i": null,
+"gd": "n. 书架, 书柜",
+"x": "gaokao,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "bookmark",
+"g": "n. 书签",
+"i": "'bukmɑ:k",
+"gd": "n. 书签",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "bookshelf",
+"g": "n. 书架",
+"i": "'bukʃelf",
+"gd": "n. 书架",
+"x": "gaokao,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "bookshop",
+"g": "n. 书店",
+"i": "'bukʃɒp",
+"gd": "n. 书店",
+"x": "gaokao,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "bookstore",
+"g": "n. 书店",
+"i": "'bukstɒ:",
+"gd": "n. 书店",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "botanical",
+"g": "adj. 植物学的",
+"i": "bә'tænikәl",
+"gd": "adj. 植物学的\nn. 植物性药材",
+"x": "gaokao,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "botany",
+"g": "n. 植物学",
+"i": "'bɒtәni",
+"gd": "n. 植物学",
+"x": "gaokao,gre,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "boycott",
+"g": "n. 联合抵制",
+"i": "'bɒikɒt",
+"gd": "n. 联合抵制\nv. 联合抵制",
+"x": "cet6,gaokao,gre,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "breathless",
+"g": "adj. 喘不过气来的, 屏气的, 气喘吁吁的, 无风的, 死的",
+"i": "'breθlis",
+"gd": "adj. 喘不过气来的, 屏气的, 气喘吁吁的, 无风的, 死的",
+"x": "gaokao,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "brewery",
+"g": "n. 啤酒厂, 酿酒厂",
+"i": "'bru:әri",
+"gd": "n. 啤酒厂, 酿酒厂",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "Britain",
+"g": "n. 英国",
+"i": "'britәn",
+"gd": "n. 英国",
+"x": "gaokao,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "British",
+"g": "adj. 英国的",
+"i": "'britiʃ",
+"gd": "adj. 英国的\nn. 英国人, 英国英语",
+"x": "gaokao,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "brotherhood",
+"g": "n. 手足情谊, 兄弟关系",
+"i": "'brʌðәhud",
+"gd": "n. 手足情谊, 兄弟关系",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "Buddhism",
+"g": "n. 佛教",
+"i": null,
+"gd": "n. 佛教",
+"x": "cet6,gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "Buddhist",
+"g": "n. 佛教徒",
+"i": null,
+"gd": "n. 佛教徒\nadj. 佛教的",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "bun",
+"g": "n. 小面包",
+"i": "bʌn",
+"gd": "n. 小面包",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "bungalow",
+"g": "n. 平房",
+"i": "'bʌŋgәlәu",
+"gd": "n. 平房",
+"x": "gaokao,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "bureaucratic",
+"g": "adj. 官僚的",
+"i": "bjuәrәu'krætik",
+"gd": "adj. 官僚的",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "burglar",
+"g": "n. 窃贼",
+"i": "'bә:glә",
+"gd": "n. 窃贼",
+"x": "cet6,gaokao,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "businesswoman",
+"g": "n. 商人, 办理实务的人, 经商者",
+"i": "'bizniswjmæn",
+"gd": "n. 商人, 办理实务的人, 经商者",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "bye",
+"g": "interj. 再会, 回头见",
+"i": null,
+"gd": "interj. 再会, 回头见",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "Canada",
+"g": "n. 加拿大",
+"i": "'kænәdә",
+"gd": "n. 加拿大",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "Canadian",
+"g": "adj. 加拿大的",
+"i": "kә'neidiәn",
+"gd": "adj. 加拿大的",
+"x": "gaokao,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "capsule",
+"g": "n. 胶囊, 蒴果, 瓶帽, 航天舱",
+"i": "'kæpsju:l",
+"gd": "n. 胶囊, 蒴果, 瓶帽, 航天舱",
+"x": "cet6,gaokao,gre,ielts,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "caption",
+"g": "n. 说明, 字幕, 标题",
+"i": "'kæpʃәn",
+"gd": "n. 说明, 字幕, 标题\nv. 加上标题, 加上说明",
+"x": "gaokao,gre,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "carve",
+"g": "v. 雕刻, 切开",
+"i": "kɑ:v",
+"gd": "v. 雕刻, 切开",
+"x": "cet4,cet6,gaokao,gre,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "catastrophe",
+"g": "n. 大灾难, 大祸",
+"i": "kә'tæstrәfi",
+"gd": "n. 大灾难, 大祸",
+"x": "cet6,gaokao,gre,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "cathedral",
+"g": "n. 大教堂",
+"i": "kә'θi:drәl",
+"gd": "n. 大教堂",
+"x": "cet4,cet6,gaokao,gre,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "catholic",
+"g": "n. 天主教徒",
+"i": "'kæθәlik",
+"gd": "n. 天主教徒\nadj. 天主教的, 普遍的, 广泛的, 宽宏大量的",
+"x": "cet6,gaokao,gre,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "CD",
+"g": "n. 镭射碟, 镭射唱片",
+"i": null,
+"gd": "n. 镭射碟, 镭射唱片",
+"x": "gaokao,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "chairwoman",
+"g": "n. 女主席, 女议长",
+"i": "'tʃєәwumәn",
+"gd": "n. 女主席, 女议长",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "changeable",
+"g": "adj. 可改变的",
+"i": "'tʃeindʒәbl",
+"gd": "adj. 可改变的",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "chant",
+"g": "n. 圣歌, 赞美诗",
+"i": "tʃæntˌ tʃɑ:nt",
+"gd": "n. 圣歌, 赞美诗\nv. 吟唱, 诵扬",
+"x": "gaokao,gre,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "chick",
+"g": "n. 小鸡, 小鸟, 竹帘",
+"i": "tʃik",
+"gd": "n. 小鸡, 小鸟, 竹帘",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "childhood",
+"g": "n. 孩童时期",
+"i": "'tʃaildhud",
+"gd": "n. 孩童时期",
+"x": "cet4,gaokao,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "Chinese",
+"g": "n. 中文, 中国话, 中国人",
+"i": "tʃai'ni:z",
+"gd": "n. 中文, 中国话, 中国人\nadj. 中国的, 中国话的",
+"x": "gaokao,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "choir",
+"g": "n. 唱诗班, 唱诗班的席位",
+"i": "'kwaiә",
+"gd": "n. 唱诗班, 唱诗班的席位\nv. 合唱",
+"x": "gaokao,gre,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "cocoa",
+"g": "n. 可可粉, 可可茶, 可可色",
+"i": "'kәukәu",
+"gd": "n. 可可粉, 可可茶, 可可色",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "coincidence",
+"g": "n. 巧合, 同时发生",
+"i": "kәu'insidәns",
+"gd": "n. 巧合, 同时发生",
+"x": "cet6,gaokao,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "coke",
+"g": "n. 可口可乐, 焦炭",
+"i": "kәuk",
+"gd": "n. 可口可乐, 焦炭\nv. (使)成焦炭",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "collision",
+"g": "n. 碰撞, 冲突, 抵触",
+"i": "kә'liʒәn",
+"gd": "n. 碰撞, 冲突, 抵触",
+"x": "cet4,cet6,gaokao,gre,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "conservation",
+"g": "n. 保护, 保存",
+"i": "ˌkɒnsә'veiʃәn",
+"gd": "n. 保护, 保存",
+"x": "cet4,cet6,gaokao,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "coral",
+"g": "n. 珊瑚, 珊瑚色",
+"i": "'kɒrәl",
+"gd": "n. 珊瑚, 珊瑚色",
+"x": "gaokao,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "cordless",
+"g": "adj. 无绳索的, 交直流两用的",
+"i": "'kɒ:dlis",
+"gd": "adj. 无绳索的, 交直流两用的",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "cosy",
+"g": "adj. 温暖舒适的",
+"i": null,
+"gd": "adj. 温暖舒适的\nn. 保暖套",
+"x": "gaokao,ielts,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "court",
+"g": "n. 法院, 庭院, 奉承",
+"i": "kɒ:t",
+"gd": "n. 法院, 庭院, 奉承\nv. 献殷勤, 追求, 招致\nv. 求爱",
+"x": "cet4,cet6,gaokao,gre,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "crayon",
+"g": "n. 蜡笔, 蜡笔画",
+"i": "'kreiәn",
+"gd": "n. 蜡笔, 蜡笔画\nv. 以蜡笔作画",
+"x": "gaokao,gre,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "cuisine",
+"g": "n. 烹调风格, 烹调法, 烹饪, 厨房",
+"i": null,
+"gd": "n. 烹调风格, 烹调法, 烹饪, 厨房",
+"x": "gaokao,gre,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "deliberately",
+"g": "adv. 故意地",
+"i": "di'libәrәtli",
+"gd": "adv. 故意地",
+"x": "cet4,cet6,gaokao,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "dinosaur",
+"g": "n. 恐龙",
+"i": "'dainәsɒ:",
+"gd": "n. 恐龙",
+"x": "gaokao,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "directory",
+"g": "n. 目录, 工商名录, 指南",
+"i": "di'rektәri",
+"gd": "n. 目录, 工商名录, 指南",
+"x": "cet6,gaokao,ielts,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "disadvantage",
+"g": "n. 缺点, 不利, 坏处",
+"i": "ˌdisәd'vɑ:ntidʒ",
+"gd": "n. 缺点, 不利, 坏处",
+"x": "cet4,cet6,gaokao,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "disobey",
+"g": "v. 违反, 不服从",
+"i": "ˌdisә'bei",
+"gd": "v. 违反, 不服从",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "does",
+"g": "v. 做；工作；有用（do的第三人称单数形式）",
+"i": "dʌz; dәz",
+"gd": "v. 做；工作；有用（do的第三人称单数形式）",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "Dr",
+"g": "n. 博士, 医生",
+"i": null,
+"gd": "n. 博士, 医生",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "drawback",
+"g": "n. 缺点, 退税",
+"i": "'drɒ:bæk",
+"gd": "n. 缺点, 退税",
+"x": "cet6,gaokao,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "dumpling",
+"g": "n. 面团布丁, 团子",
+"i": "'dʌmpliŋ",
+"gd": "n. 面团布丁, 团子",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "dustbin",
+"g": "n. 垃圾箱",
+"i": "'dʌstbin",
+"gd": "n. 垃圾箱",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "dvd",
+"g": "abbr. 数字化视频光盘（Digital Video Disk）",
+"i": null,
+"gd": "abbr. 数字化视频光盘（Digital Video Disk）",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "Easter",
+"g": "n. 复活节",
+"i": "'i:stә",
+"gd": "n. 复活节",
+"x": "gaokao,ielts,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "eastwards",
+"g": "adv. 向东方地",
+"i": "'i:stwәdz",
+"gd": "adv. 向东方地",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "Egyptian",
+"g": "n. 埃及人",
+"i": "i'dʒipʃәn",
+"gd": "n. 埃及人\nadj. 埃及的, 埃及人的",
+"x": "cet6,gaokao,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "English",
+"g": "n. 英语",
+"i": "'iŋgliʃ",
+"gd": "n. 英语\nadj. 英文的, 英国人的",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "erupt",
+"g": "v. 爆发",
+"i": "i'rʌpt",
+"gd": "v. 爆发\nv. 喷出",
+"x": "cet6,gaokao,gre,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "European",
+"g": "n. 欧洲人",
+"i": "ˌjuәrә'pi:әn",
+"gd": "n. 欧洲人\nadj. 欧洲的, 欧洲人的",
+"x": "gaokao,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "exactly",
+"g": "adv. 确切地, 精确地, 恰好, 完全地, 确实, 恰恰正是, 确实如此",
+"i": "i^'zæktli",
+"gd": "adv. 确切地, 精确地, 恰好, 完全地, 确实, 恰恰正是, 确实如此",
+"x": "cet4,gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "explorer",
+"g": "n. 探险家, 探测者, 勘探器",
+"i": "ik'splɒ:rә",
+"gd": "n. 探险家, 探测者, 勘探器",
+"x": "gaokao,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "extremely",
+"g": "adv. 极端地, 非常地",
+"i": null,
+"gd": "adv. 极端地, 非常地",
+"x": "cet4,cet6,gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "eyewitness",
+"g": "n. 目击者, 见证人",
+"i": null,
+"gd": "n. 目击者, 见证人",
+"x": "gaokao,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "fairness",
+"g": "n. 晴朗, 光明正大, 美丽",
+"i": "'fєәnis",
+"gd": "n. 晴朗, 光明正大, 美丽",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "feast",
+"g": "n. 宴会, 酒席, 享受, 节日",
+"i": null,
+"gd": "n. 宴会, 酒席, 享受, 节日\nv. 款待, 享乐, 请客\nv. 参加宴会, 尽情地吃, 享受",
+"x": "cet4,cet6,gaokao,ielts,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "fighter",
+"g": "n. 斗士, 战士, 好战者, 战斗机",
+"i": "'faitә",
+"gd": "n. 斗士, 战士, 好战者, 战斗机",
+"x": "cet6,gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "fingernail",
+"g": "n. 手指甲",
+"i": "'fiŋgәneil",
+"gd": "n. 手指甲",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "firefighter",
+"g": "n. <美>消防队员",
+"i": null,
+"gd": "n. <美>消防队员",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "firewood",
+"g": "n. 木柴",
+"i": "'faiәwud",
+"gd": "n. 木柴",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "firework",
+"g": "n. 烟火具, 烟火, 烟火信号弹, 焰火, 激情的表现",
+"i": null,
+"gd": "n. 烟火具, 烟火, 烟火信号弹, 焰火, 激情的表现",
+"x": "cet6,gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "firmly",
+"g": "adv. 坚固, 坚定, 断然",
+"i": "'fә:mli",
+"gd": "adv. 坚固, 坚定, 断然",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "flashlight",
+"g": "n. 手电筒, 闪光信号灯",
+"i": "'flæʃlait",
+"gd": "n. 手电筒, 闪光信号灯",
+"x": "gaokao,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "fortnight",
+"g": "n. 两星期",
+"i": "'fɒ:tnait",
+"gd": "n. 两星期",
+"x": "cet4,cet6,gaokao,ielts,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "fourth",
+"g": "num. 第四, 四分之一",
+"i": "fɒ:θ",
+"gd": "num. 第四, 四分之一",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "fragile",
+"g": "adj. 易碎的, 脆的",
+"i": "'frædʒail",
+"gd": "adj. 易碎的, 脆的",
+"x": "cet6,gaokao,gre,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "fragrant",
+"g": "adj. 芬香的, 馥郁的, 愉快的",
+"i": "'freigrәnt",
+"gd": "adj. 芬香的, 馥郁的, 愉快的",
+"x": "cet6,gaokao,gre,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "franc",
+"g": "n. 法郎",
+"i": "fræŋk",
+"gd": "n. 法郎",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "French",
+"g": "n. 法国人, 法文, 法式",
+"i": "frentʃ",
+"gd": "n. 法国人, 法文, 法式\nadj. 法国的, 法国人的, 法语的",
+"x": "gaokao,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "Frenchman",
+"g": "n. 法国人",
+"i": "'frentʃmәn",
+"gd": "n. 法国人",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "friction",
+"g": "n. 摩擦, 摩擦治疗, 不和",
+"i": "'frikʃәn",
+"gd": "n. 摩擦, 摩擦治疗, 不和",
+"x": "cet4,cet6,gaokao,gre,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "gale",
+"g": "n. 狂风, 大风, 定期租金",
+"i": null,
+"gd": "n. 狂风, 大风, 定期租金",
+"x": "gaokao,gre,ielts,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "garlic",
+"g": "n. 大蒜",
+"i": "'gɑ:lik",
+"gd": "n. 大蒜",
+"x": "cet6,gaokao,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "German",
+"g": "n. 德国人, 德语",
+"i": "'dʒә:mәn",
+"gd": "n. 德国人, 德语\nadj. 德国的, 德国人的, 德国语的, 同父母的",
+"x": "cet4,cet6,gaokao,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "Germany",
+"g": "n. 德国",
+"i": "'dʒә:mәni",
+"gd": "n. 德国",
+"x": "cet4,cet6,gaokao,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "giraffe",
+"g": "n. 长颈鹿, 鹿豹座",
+"i": "dʒi'rɑ:f",
+"gd": "n. 长颈鹿, 鹿豹座",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "glare",
+"g": "n. 闪耀光, 刺眼",
+"i": "glєә",
+"gd": "n. 闪耀光, 刺眼\nv. 发眩光, 瞪视\nv. 瞪眼表示",
+"x": "cet4,cet6,gaokao,gre,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "glasshouse",
+"g": "n. 温室, 玻璃工场, 禁闭房",
+"i": "'glɑ:shaus",
+"gd": "n. 温室, 玻璃工场, 禁闭房",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "goldfish",
+"g": "n. 金鱼",
+"i": "'gәuldfiʃ",
+"gd": "n. 金鱼",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "Greece",
+"g": "n. 希腊",
+"i": null,
+"gd": "n. 希腊",
+"x": "gaokao,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "greedy",
+"g": "adj. 贪婪的, 贪得的, 贪吃的",
+"i": null,
+"gd": "adj. 贪婪的, 贪得的, 贪吃的",
+"x": "cet4,cet6,gaokao,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "Greek",
+"g": "n. 希腊人, 希腊语",
+"i": null,
+"gd": "n. 希腊人, 希腊语\nadj. 希腊的, 希腊人的",
+"x": "cet4,cet6,gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "greengrocer",
+"g": "n. 蔬菜水果商, 菜贩",
+"i": "'gri:ngrәusә",
+"gd": "n. 蔬菜水果商, 菜贩",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "grill",
+"g": "n. 烤架, 铁格子, 烤肉",
+"i": null,
+"gd": "n. 烤架, 铁格子, 烤肉\nv. 烧, 烤, 严加盘问, 给...装栅栏",
+"x": "gaokao,gre,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "gruel",
+"g": "n. 稀粥",
+"i": "'gru:әl",
+"gd": "n. 稀粥\nv. 使极度疲劳, 惩罚",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "gymnastics",
+"g": "n. 体操, 体育",
+"i": "dʒim'næstiks",
+"gd": "n. 体操, 体育",
+"x": "gaokao,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "ha",
+"g": "interj. 嘿, 哈, 哈哈",
+"i": "hɑ:",
+"gd": "interj. 嘿, 哈, 哈哈",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "haircut",
+"g": "n. 理发, (男子的)发式",
+"i": "'hєәkʌt",
+"gd": "n. 理发, (男子的)发式",
+"x": "cet4,cet6,gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "handbag",
+"g": "n. 手提包",
+"i": "'hændbæg",
+"gd": "n. 手提包",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "handkerchief",
+"g": "n. 手帕, 头巾, 围巾",
+"i": "'hæŋkәtʃif",
+"gd": "n. 手帕, 头巾, 围巾",
+"x": "cet4,cet6,gaokao,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "handtruck",
+"g": "n. 手推车,手推运货车",
+"i": "'hændtrʌk",
+"gd": "n. 手推车,手推运货车",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "hardworking",
+"g": "adj. 苦干的, 不辞辛劳的",
+"i": "'hɑ:dˌwә:kiŋ",
+"gd": "adj. 苦干的, 不辞辛劳的",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "hawk",
+"g": "n. 鹰, 掠夺者, 鹰派成员",
+"i": "hɒ:k",
+"gd": "n. 鹰, 掠夺者, 鹰派成员\nv. 放鹰行猎, 像鹰一般地袭击, 清嗓, 咳嗽\nv. 捕捉, 咳出, 兜售, 叫卖, 散播",
+"x": "cet4,cet6,gaokao,gre,ielts,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "headteacher",
+"g": "n. 中小学的校长",
+"i": "hed'ti:tʃər",
+"gd": "n. 中小学的校长",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "heavily",
+"g": "adv. 很重地, 严重地, 难以忍受地",
+"i": null,
+"gd": "adv. 很重地, 严重地, 难以忍受地",
+"x": "cet4,cet6,gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "helmet",
+"g": "n. 钢盔, 盔, 防护帽",
+"i": null,
+"gd": "n. 钢盔, 盔, 防护帽\nv. 给...戴头盔",
+"x": "cet4,cet6,gaokao,gre,ielts,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "herb",
+"g": "n. 药草, 香草",
+"i": "hә:b",
+"gd": "n. 药草, 香草",
+"x": "cet6,gaokao,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "hey",
+"g": "interj. 嗨",
+"i": null,
+"gd": "interj. 嗨",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "hibernate",
+"g": "v. 过冬, 冬眠, 避寒",
+"i": "'haibәneit",
+"gd": "v. 过冬, 冬眠, 避寒",
+"x": "gaokao,gre,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "hibernation",
+"g": "n. 过冬, 冬眠, 避寒",
+"i": "ˌhaibә'neiʃәn",
+"gd": "n. 过冬, 冬眠, 避寒",
+"x": "gaokao,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "hillside",
+"g": "n. 山坡, 山腹",
+"i": null,
+"gd": "n. 山坡, 山腹",
+"x": "cet4,cet6,gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "hive",
+"g": "n. 蜂房, 闹区, 蜜蜂群",
+"i": null,
+"gd": "n. 蜂房, 闹区, 蜜蜂群\nv. 进入蜂房, 储藏蜜于蜂房, 如蜂般群居\nv. 使进蜂房, 储备",
+"x": "gaokao,gre,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "hometown",
+"g": "n. 故乡, 家乡",
+"i": "hәum'taun",
+"gd": "n. 故乡, 家乡",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "hooray",
+"g": "interj. 万岁",
+"i": null,
+"gd": "interj. 万岁\nn. 万岁\nv. 呼万岁",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "howl",
+"g": "n. 嗥叫, 吠声, 号叫",
+"i": null,
+"gd": "n. 嗥叫, 吠声, 号叫\nv. 狂吠, 咆哮, 呼啸\nv. 对...吼叫, 狂喊着说",
+"x": "cet6,gaokao,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "hurricane",
+"g": "n. 飓风, 暴风, 暴风雨",
+"i": "'hә:rikәn",
+"gd": "n. 飓风, 暴风, 暴风雨",
+"x": "cet6,gaokao,gre,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "Iceland",
+"g": "n. 冰岛",
+"i": "'aislәnd",
+"gd": "n. 冰岛",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "incorrect",
+"g": "adj. 不正确的",
+"i": "ˌinkә'rekt",
+"gd": "adj. 不正确的",
+"x": "cet4,cet6,gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "India",
+"g": "n. 印度",
+"i": "'indjә",
+"gd": "n. 印度",
+"x": "cet4,cet6,gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "Indian",
+"g": "n. 印度人, 印第安人, 印第安语",
+"i": "'indiәn",
+"gd": "n. 印度人, 印第安人, 印第安语\nadj. 印度的, 印度群岛的, 印第安语的",
+"x": "cet4,cet6,gaokao,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "Ireland",
+"g": "n. 爱尔兰",
+"i": "'aiәlәnd",
+"gd": "n. 爱尔兰",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "Irish",
+"g": "n. 爱尔兰人, 爱尔兰语",
+"i": "'airiʃ",
+"gd": "n. 爱尔兰人, 爱尔兰语\nadj. 爱尔兰的",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "Italian",
+"g": "n. 意大利人, 意大利语",
+"i": "i'tæljәn",
+"gd": "n. 意大利人, 意大利语\nadj. 意大利的, 意大利语的",
+"x": "cet4,cet6,gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "Italy",
+"g": "n. 意大利",
+"i": "'itәli",
+"gd": "n. 意大利",
+"x": "gaokao,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "Japan",
+"g": "n. 日本",
+"i": "dʒә'pæn",
+"gd": "n. 日本",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "Japanese",
+"g": "n. 日本人, 日语",
+"i": "ˌdʒæpә'ni:z",
+"gd": "n. 日本人, 日语\nadj. 日本的, 日语的",
+"x": "gaokao,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "jewelry",
+"g": "n. 珠宝, 珠宝类",
+"i": "'dʒu:әlri",
+"gd": "n. 珠宝, 珠宝类",
+"x": "gaokao,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "kangaroo",
+"g": "n. 袋鼠",
+"i": "ˌkæŋgә'ru:",
+"gd": "n. 袋鼠",
+"x": "gaokao,gre,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "keeper",
+"g": "n. 监护人, 管理人, 看守人",
+"i": "'ki:pә",
+"gd": "n. 监护人, 管理人, 看守人",
+"x": "cet4,cet6,gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "labourer",
+"g": "n. 劳动者, 干体力工作的工人, 劳工",
+"i": "'leibәrә",
+"gd": "n. 劳动者, 干体力工作的工人, 劳工",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "lantern",
+"g": "n. 灯笼, 提灯, 航标灯",
+"i": "'læntәn",
+"gd": "n. 灯笼, 提灯, 航标灯\nv. 装上提灯",
+"x": "cet4,cet6,gaokao,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "leftover",
+"g": "n. 剩货, 残留物, 剩饭",
+"i": "'leftәuvә",
+"gd": "n. 剩货, 残留物, 剩饭\nadj. 残余的",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "lifetime",
+"g": "n. 一生, 终生",
+"i": null,
+"gd": "n. 一生, 终生\nadj. 一生的, 终生的",
+"x": "cet4,cet6,gaokao,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "litre",
+"g": "n. 升, 公升",
+"i": null,
+"gd": "n. 升, 公升",
+"x": "gaokao,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "locust",
+"g": "n. 蝗虫, 蚱蜢, 蝉",
+"i": "'lәukәst",
+"gd": "n. 蝗虫, 蚱蜢, 蝉",
+"x": "cet6,gaokao,gre",
+"se": null,
+"sz": null
+},
+{
+"w": "London",
+"g": "n. 伦敦",
+"i": "'lʌndәn",
+"gd": "n. 伦敦",
+"x": "gaokao,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "loudspeaker",
+"g": "n. 扩音器, 喇叭",
+"i": "'laud'spi:kә",
+"gd": "n. 扩音器, 喇叭",
+"x": "cet4,cet6,gaokao,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "lounge",
+"g": "n. 闲逛, 休闲室, 长沙发",
+"i": "laundʒ",
+"gd": "n. 闲逛, 休闲室, 长沙发\nv. 闲混, (懒洋洋地)躺\nv. 闲混",
+"x": "cet6,gaokao,gre,ielts,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "mailbox",
+"g": "n. 邮筒, 邮箱",
+"i": "'meilbɒks",
+"gd": "n. 邮筒, 邮箱",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "maple",
+"g": "n. 枫, 枫木, 淡棕色",
+"i": null,
+"gd": "n. 枫, 枫木, 淡棕色",
+"x": "cet6,gaokao,gre",
+"se": null,
+"sz": null
+},
+{
+"w": "marble",
+"g": "n. 大理石, 石弹, 雕刻品",
+"i": "'mɑ:bl",
+"gd": "n. 大理石, 石弹, 雕刻品\nadj. 大理石的, 冷酷无情的, 有大理石花纹的",
+"x": "cet4,cet6,gaokao,gre,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "mentally",
+"g": "adv. 心理上, 精神上, 智力上",
+"i": null,
+"gd": "adv. 心理上, 精神上, 智力上",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "Mexican",
+"g": "n. 墨西哥人, 墨西哥语",
+"i": "'meksikәn",
+"gd": "n. 墨西哥人, 墨西哥语\nadj. 墨西哥的",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "Mexico",
+"g": "n. 墨西哥",
+"i": "'meksikәu",
+"gd": "n. 墨西哥",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "microcomputer",
+"g": "n. 微电脑, 微机",
+"i": "ˌmaikrәu'kɒmpjutә",
+"gd": "n. 微电脑, 微机",
+"x": "cet4,cet6,gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "minibus",
+"g": "n. 中客车, 小型公共汽车",
+"i": "'minibʌs",
+"gd": "n. 中客车, 小型公共汽车",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "miniskirt",
+"g": "n. 超短裙",
+"i": "'miniskә:t",
+"gd": "n. 超短裙",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "mm",
+"g": "毫米",
+"i": null,
+"gd": "毫米",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "modem",
+"g": "n. 调制解调器",
+"i": "'mәudem",
+"gd": "n. 调制解调器",
+"x": "gaokao,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "Moscow",
+"g": "n. 莫斯科",
+"i": "'mɒskau",
+"gd": "n. 莫斯科",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "Moslem",
+"g": "n. 穆斯林",
+"i": "'mɒzlәm",
+"gd": "n. 穆斯林\nadj. 穆斯林的, 伊斯兰教的",
+"x": "cet6,gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "mosquito",
+"g": "n. 蚊子",
+"i": "mә'ski:tәu",
+"gd": "n. 蚊子",
+"x": "cet4,cet6,gaokao,gre,ielts,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "motherland",
+"g": "n. 祖国",
+"i": "'mʌðәlænd",
+"gd": "n. 祖国",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "motorbike",
+"g": "n. 机动脚踏两用车, 摩托车",
+"i": "'mәjtәbaik",
+"gd": "n. 机动脚踏两用车, 摩托车",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "motorcycle",
+"g": "n. 摩托车",
+"i": "'mәutәsaikl",
+"gd": "n. 摩托车",
+"x": "gaokao,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "motto",
+"g": "n. 箴言, 座右铭, 警句",
+"i": "'mɒtәu",
+"gd": "n. 箴言, 座右铭, 警句",
+"x": "gaokao,gre,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "mourn",
+"g": "v. 哀悼, 忧伤, 服丧",
+"i": "mɒ:n",
+"gd": "v. 哀悼, 忧伤, 服丧",
+"x": "cet4,cet6,gaokao,gre,ielts,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "moustache",
+"g": "n. 髭, 小胡子, 触须",
+"i": "'mʌstæʃ",
+"gd": "n. 髭, 小胡子, 触须",
+"x": "gaokao,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "Mr.",
+"g": "阁下, 先生",
+"i": null,
+"gd": "阁下, 先生",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "Ms.",
+"g": "女士",
+"i": null,
+"gd": "女士",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "mustard",
+"g": "n. 芥末, 芥菜, 强烈的兴趣",
+"i": "'mʌstәd",
+"gd": "n. 芥末, 芥菜, 强烈的兴趣",
+"x": "cet6,gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "mutton",
+"g": "n. 羊肉",
+"i": "'mʌtn",
+"gd": "n. 羊肉",
+"x": "cet4,cet6,gaokao,gre,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "necktie",
+"g": "n. 领带",
+"i": null,
+"gd": "n. 领带",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "no.",
+"g": "n. 号码, 编号",
+"i": "'nʌmbә",
+"gd": "n. 号码, 编号",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "noisily",
+"g": "adv. 吵闹地",
+"i": "'nɒizili",
+"gd": "adv. 吵闹地",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "northwards",
+"g": "adv. 向北方",
+"i": "'nɔ:θwәdz",
+"gd": "adv. 向北方",
+"x": "cet6,gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "numb",
+"g": "adj. 麻木的, 失去知觉的",
+"i": "nʌm",
+"gd": "adj. 麻木的, 失去知觉的\nv. 使麻木, 使昏迷, 使失去知觉",
+"x": "gaokao,gre,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "nylon",
+"g": "n. 尼龙",
+"i": "'nailɒn",
+"gd": "n. 尼龙",
+"x": "cet4,cet6,gaokao,ielts,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "Oceania",
+"g": "n. 大洋洲",
+"i": "ˌәuʃi'æniә",
+"gd": "n. 大洋洲",
+"x": "cet4,cet6,gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "offshore",
+"g": "adj. 海面的, 吹向海面的, 近海的",
+"i": "ɒ:f'ʃɒ:",
+"gd": "adj. 海面的, 吹向海面的, 近海的\nadv. 向海面",
+"x": "gaokao,ielts,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "oh",
+"g": "interj. (表示惊讶、恐怖、赞叹)哦",
+"i": "әu",
+"gd": "interj. (表示惊讶、恐怖、赞叹)哦",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "oilfield",
+"g": "n. 油田",
+"i": "ˈɔɪlfi:ld",
+"gd": "n. 油田",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "OK",
+"g": "adj. 好, 不错, 可以",
+"i": "'әu'kei",
+"gd": "adj. 好, 不错, 可以\nadv. 好, 不错, 可以\nn. 批准, 认可",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "omelette",
+"g": "n. 煎蛋卷, 炒蛋",
+"i": "'ɒmlit",
+"gd": "n. 煎蛋卷, 炒蛋",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "Ottawa",
+"g": "n. 渥太华",
+"i": "'ɔtәwә",
+"gd": "n. 渥太华",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "ouch",
+"g": "interj. 哎唷(表剧痛)",
+"i": "autʃ",
+"gd": "interj. 哎唷(表剧痛)\nn. 扣环, 胸针, 珠宝饰物",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "ought",
+"g": "aux. 应该, 大概",
+"i": "ɒ:t",
+"gd": "aux. 应该, 大概\nn. 责任",
+"x": "cet4,cet6,gaokao,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "outspoken",
+"g": "adj. 直言无讳的, 坦率的, 坦白无隐的",
+"i": "ˌaut'spәukәn",
+"gd": "adj. 直言无讳的, 坦率的, 坦白无隐的",
+"x": "gaokao,gre,ielts,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "overweight",
+"g": "n. 超过重量, 过重, 优势",
+"i": "'әuvә'weit",
+"gd": "n. 超过重量, 过重, 优势\nadj. 超过重量的, 超重的\nv. 使超重, 重于, 过于重视",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "pacific",
+"g": "n. 太平洋",
+"i": "pә'sifik",
+"gd": "n. 太平洋\nadj. 太平洋的, 太平洋沿岸的, 爱好和平的, 安静的, 平息的",
+"x": "cet4,cet6,gaokao,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "paddle",
+"g": "n. 桨, 划桨, 明轮翼",
+"i": "'pædl",
+"gd": "n. 桨, 划桨, 明轮翼\nv. 划桨, 戏水, 涉水\nv. 用桨划, 划船运送, 搅, 拌",
+"x": "gaokao,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "pancake",
+"g": "n. 薄烤饼, 薄煎饼, 烙饼",
+"i": "'pænkeik",
+"gd": "n. 薄烤饼, 薄煎饼, 烙饼",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "paperwork",
+"g": "n. 文书工作",
+"i": "'peipәwә:k",
+"gd": "n. 文书工作",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "Paris",
+"g": "n. 巴黎",
+"i": "'pæris",
+"gd": "n. 巴黎",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "parrot",
+"g": "n. 鹦鹉, 应声虫",
+"i": "'pærәt",
+"gd": "n. 鹦鹉, 应声虫\nv. 学舌, 机械地模仿",
+"x": "gaokao,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "perfume",
+"g": "n. 香水, 香气, (悦人的)气氛, 美名",
+"i": "'pә:fju:m",
+"gd": "n. 香水, 香气, (悦人的)气氛, 美名\nv. 洒香水于, 薰香, 使充满香气",
+"x": "cet4,cet6,gaokao,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "pest",
+"g": "n. 令人讨厌之物, 有害之物, 害虫, 瘟疫",
+"i": null,
+"gd": "n. 令人讨厌之物, 有害之物, 害虫, 瘟疫",
+"x": "cet6,gaokao,gre,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "pineapple",
+"g": "n. 凤梨, 菠萝, 失业救济金",
+"i": "'painˌæpl",
+"gd": "n. 凤梨, 菠萝, 失业救济金",
+"x": "cet6,gaokao,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "playmate",
+"g": "n. 玩伴, 游伴",
+"i": null,
+"gd": "n. 玩伴, 游伴",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "playroom",
+"g": "n. 游戏室, 娱乐室",
+"i": null,
+"gd": "n. 游戏室, 娱乐室",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "popcorn",
+"g": "n. 爆米花",
+"i": "'pɒpkɒ:n",
+"gd": "n. 爆米花",
+"x": "gaokao,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "porridge",
+"g": "n. 粥, 糊",
+"i": "'pɒ:ridʒ",
+"gd": "n. 粥, 糊",
+"x": "cet4,cet6,gaokao,gre",
+"se": null,
+"sz": null
+},
+{
+"w": "postbox",
+"g": "n. 邮筒",
+"i": "'pәustbɒks",
+"gd": "n. 邮筒",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "postcode",
+"g": "n. 邮政编码",
+"i": "'pәustkәud",
+"gd": "n. 邮政编码",
+"x": "gaokao,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "prairie",
+"g": "n. 大草原, 草甸",
+"i": "'prєәri",
+"gd": "n. 大草原, 草甸",
+"x": "cet6,gaokao,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "project",
+"g": "n. 计划, 设计, 事业",
+"i": "'prɒdʒekt",
+"gd": "n. 计划, 设计, 事业\nv. 计划, 设计, 投掷, 发射, 使凸出, 放映\nv. 凸出",
+"x": "cet4,cet6,gaokao,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "properly",
+"g": "adv. 适当地, 相当地",
+"i": "'prɒpәli",
+"gd": "adv. 适当地, 相当地",
+"x": "cet4,cet6,gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "punctuate",
+"g": "vt.vi. 给文章加标点, 加标点符号",
+"i": "'pʌŋktjueit",
+"gd": "vt.vi. 给文章加标点, 加标点符号\nv. 强调, 加强, (常用被动)不时打断\nn. 标点, 标点法, 标点符号",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "punctuation",
+"g": "n. 标点, 标点符号",
+"i": "ˌpʌŋktʃu'eiʃәn",
+"gd": "n. 标点, 标点符号",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "pyramid",
+"g": "n. 角锥, 金字塔",
+"i": "'pirәmid",
+"gd": "n. 角锥, 金字塔\nv. (使)成金字塔状, (使)渐增, (使)上涨",
+"x": "gaokao,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "quilt",
+"g": "n. 棉被",
+"i": null,
+"gd": "n. 棉被\nv. 加软衬料后缝制, 东拼西凑地编\nv. 缝被子",
+"x": "cet4,cet6,gaokao,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "radiation",
+"g": "n. 辐射",
+"i": "ˌreidi'eiʃәn",
+"gd": "n. 辐射",
+"x": "cet4,cet6,gaokao,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "radioactive",
+"g": "adj. 放射性的, 有放射能的",
+"i": "ˌreidiәu'æktiv",
+"gd": "adj. 放射性的, 有放射能的",
+"x": "cet4,cet6,gaokao,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "radium",
+"g": "n. 镭",
+"i": "'reidiәm",
+"gd": "n. 镭",
+"x": "cet4,cet6,gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "rainfall",
+"g": "n. 降雨, 降雨量",
+"i": "'reinfɒ:l",
+"gd": "n. 降雨, 降雨量",
+"x": "gaokao,ielts,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "random",
+"g": "n. 随意, 随机",
+"i": "'rændәm",
+"gd": "n. 随意, 随机\nadj. 任意的, 随便的, 胡乱的, 随机的\nadv. 胡乱地",
+"x": "cet6,gaokao,gre,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "razor",
+"g": "n. 剃刀",
+"i": "'reizә",
+"gd": "n. 剃刀\nv. 剃",
+"x": "cet4,cet6,gaokao,gre,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "rebuild",
+"g": "v. 改建, 重建, 改造",
+"i": null,
+"gd": "v. 改建, 重建, 改造\nv. 重建",
+"x": "gaokao,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "recipe",
+"g": "n. 食谱, 处方, 秘诀",
+"i": null,
+"gd": "n. 食谱, 处方, 秘诀",
+"x": "cet6,gaokao,gre,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "rectangle",
+"g": "n. 长方形, 矩形",
+"i": "'rektæŋgl",
+"gd": "n. 长方形, 矩形",
+"x": "cet6,gaokao,gre,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "redirect",
+"g": "v. 重新寄送, 使改道, 使改方向",
+"i": "ˌri:di'rekt",
+"gd": "v. 重新寄送, 使改道, 使改方向",
+"x": "gaokao,gre,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "referee",
+"g": "n. 仲裁人, 调解人, 裁判员",
+"i": "ˌrefә'ri:",
+"gd": "n. 仲裁人, 调解人, 裁判员\nv. 仲裁, 裁判",
+"x": "cet6,gaokao,gre,ielts,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "reuse",
+"g": "v. 再使用",
+"i": null,
+"gd": "v. 再使用\nn. 重新使用",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "rewind",
+"g": "v. 重绕",
+"i": null,
+"gd": "v. 重绕\nn. 重绕",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "rewrite",
+"g": "v. 重写, 改写, 改写新闻, 书面答复",
+"i": null,
+"gd": "v. 重写, 改写, 改写新闻, 书面答复\nv. 修改旧作\nn. 改写的作品",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "rhyme",
+"g": "n. 韵, 押韵, 韵文",
+"i": null,
+"gd": "n. 韵, 押韵, 韵文\nv. 押韵\nv. 使押韵, 用韵诗表达",
+"x": "gaokao,gre",
+"se": null,
+"sz": null
+},
+{
+"w": "rigid",
+"g": "adj. 坚硬的, 刚性的, 严格的, 精密的, 刻板的",
+"i": "'ridʒid",
+"gd": "adj. 坚硬的, 刚性的, 严格的, 精密的, 刻板的",
+"x": "cet4,cet6,gaokao,gre,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "rooster",
+"g": "n. 公鸡, 栖息的鸟",
+"i": "'ru:stә",
+"gd": "n. 公鸡, 栖息的鸟",
+"x": "cet6,gaokao,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "rot",
+"g": "n. 腐烂, 腐蚀, 败坏",
+"i": "rɒt",
+"gd": "n. 腐烂, 腐蚀, 败坏\nv. 腐烂, 烂, 堕落, 憔悴\nv. 使腐烂, 使腐朽, 使堕落",
+"x": "cet4,cet6,gaokao,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "roundabout",
+"g": "adj. 迂回的, 委婉的",
+"i": "'raundәˌbaut",
+"gd": "adj. 迂回的, 委婉的\nn. 迂回路线",
+"x": "cet6,gaokao,gre,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "row",
+"g": "n. 排, 行, 街道, 划船, 吵闹",
+"i": "rәuˌ rau",
+"gd": "n. 排, 行, 街道, 划船, 吵闹\nv. 使成排, 划, 划船, 参加(赛船), 痛骂\nv. 划船, 划动, 争吵",
+"x": "cet4,cet6,gaokao,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "rugby",
+"g": "n. 橄榄球, 橄榄球赛",
+"i": "'rʌ^bi",
+"gd": "n. 橄榄球, 橄榄球赛",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "Russia",
+"g": "n. 俄国, 俄罗斯",
+"i": "'rʌʃә",
+"gd": "n. 俄国, 俄罗斯",
+"x": "gaokao,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "Russian",
+"g": "n. 俄国人, 俄语",
+"i": "'rʌʃәn",
+"gd": "n. 俄国人, 俄语\nadj. 俄国的, 俄语的",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "sacred",
+"g": "adj. 神圣的, 献给上帝的, 庄严的, 祭祀的",
+"i": null,
+"gd": "adj. 神圣的, 献给上帝的, 庄严的, 祭祀的",
+"x": "cet4,cet6,gaokao,gre,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "salesgirl",
+"g": "n. 女店员",
+"i": "'seilzgә:l",
+"gd": "n. 女店员",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "saleswoman",
+"g": "n. 女售货员, 女店员",
+"i": "'seilzwumәn",
+"gd": "n. 女售货员, 女店员",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "salute",
+"g": "v. 行礼, 致意, 问候, 放礼炮",
+"i": "sә'lu:t",
+"gd": "v. 行礼, 致意, 问候, 放礼炮\nv. 向...致意, 迎接, 赞扬\nn. 招呼, 敬礼, 礼炮",
+"x": "cet4,cet6,gaokao,gre,ielts,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "saucer",
+"g": "n. 茶碟, 茶托",
+"i": "'sɒ:sә",
+"gd": "n. 茶碟, 茶托",
+"x": "cet4,cet6,gaokao,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "savage",
+"g": "adj. 未开化的, 野蛮的, 无礼的, 残酷的, 原始的, 粗鲁的, 未开发的",
+"i": "'sævidʒ",
+"gd": "adj. 未开化的, 野蛮的, 无礼的, 残酷的, 原始的, 粗鲁的, 未开发的\nv. 用暴力对付, 凶猛攻击\nn. 原始人, 粗鲁人",
+"x": "cet6,gaokao,gre,ielts,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "scarf",
+"g": "n. 围巾, 头巾, 领带, 领巾, 嵌接",
+"i": "skɑ:f",
+"gd": "n. 围巾, 头巾, 领带, 领巾, 嵌接\nv. 用围巾围, 嵌接",
+"x": "cet4,cet6,gaokao,gre,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "sceptical",
+"g": "adj. 怀疑论的, 怀疑的",
+"i": null,
+"gd": "adj. 怀疑论的, 怀疑的",
+"x": "cet6,gaokao,gre,ielts,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "schoolbag",
+"g": "n. 书包",
+"i": "'sku:lbæ^",
+"gd": "n. 书包",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "schoolmate",
+"g": "n. 同窗, 同学",
+"i": null,
+"gd": "n. 同窗, 同学",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "Scotland",
+"g": "n. 苏格兰",
+"i": "'skɒtlәnd",
+"gd": "n. 苏格兰",
+"x": "gaokao,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "Scottish",
+"g": "adj. 苏格兰的, 苏格兰人的",
+"i": "'skɒtiʃ",
+"gd": "adj. 苏格兰的, 苏格兰人的",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "sculpture",
+"g": "n. 雕刻, 雕塑",
+"i": "'skʌlptʃә",
+"gd": "n. 雕刻, 雕塑\nv. 雕刻, 雕塑\nv. 当雕刻师",
+"x": "cet6,gaokao,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "seagull",
+"g": "n. 鸥",
+"i": "'si:^ʌl",
+"gd": "n. 鸥",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "seaman",
+"g": "n. 船员, 海员, 水兵",
+"i": "'si:mәn",
+"gd": "n. 船员, 海员, 水兵",
+"x": "cet4,cet6,gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "seashell",
+"g": "n. 海贝壳",
+"i": "'si:ʃel",
+"gd": "n. 海贝壳",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "seaside",
+"g": "adj. 海边的, 海滨的",
+"i": null,
+"gd": "adj. 海边的, 海滨的\nn. 海滨",
+"x": "cet6,gaokao,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "seaweed",
+"g": "n. 海草, 海藻",
+"i": null,
+"gd": "n. 海草, 海藻",
+"x": "gaokao,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "secondhand",
+"g": "adj. 间接获得的, 旧的, 二手的, 做旧货买卖的",
+"i": "'sekәnd'hænd",
+"gd": "adj. 间接获得的, 旧的, 二手的, 做旧货买卖的\nadv. 间接地, 间接听来, 以旧货",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "semicircle",
+"g": "n. 半圆形",
+"i": "'semiˌsә:kl",
+"gd": "n. 半圆形",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "settler",
+"g": "n. 移民者, 解决者, 结算员",
+"i": "'setlә",
+"gd": "n. 移民者, 解决者, 结算员",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "seventh",
+"g": "num. 第七, 七分之一",
+"i": "'sevnθ",
+"gd": "num. 第七, 七分之一",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "shabby",
+"g": "adj. 衣衫褴褛的, 低劣的, 破旧的, 吝啬的, 卑鄙的",
+"i": "'ʃæbi",
+"gd": "adj. 衣衫褴褛的, 低劣的, 破旧的, 吝啬的, 卑鄙的",
+"x": "cet6,gaokao,gre,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "Shanghai",
+"g": "n. 上海, 浦东鸡",
+"i": "'ʃæŋhai",
+"gd": "n. 上海, 浦东鸡\nadj. 上海的, 上海时行的, 上海风格的\nv. 拐骗, 胁迫",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "shark",
+"g": "n. 鲨鱼, 骗子",
+"i": "ʃɑ:k",
+"gd": "n. 鲨鱼, 骗子\nv. 诈骗",
+"x": "cet6,gaokao,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "sharpener",
+"g": "n. 研磨者, 卷笔刀, 研磨工具",
+"i": "'ʃɑ:pnә",
+"gd": "n. 研磨者, 卷笔刀, 研磨工具",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "shopkeeper",
+"g": "n. 零售商, 店主, 老板",
+"i": "'ʃɒpˌki:pә",
+"gd": "n. 零售商, 店主, 老板",
+"x": "cet4,cet6,gaokao,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "sickness",
+"g": "n. 疾病, 不健康, 呕吐",
+"i": null,
+"gd": "n. 疾病, 不健康, 呕吐",
+"x": "cet4,cet6,gaokao,ielts,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "sideway",
+"g": "n. 小路, 人行道, 旁路",
+"i": null,
+"gd": "n. 小路, 人行道, 旁路",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "silly",
+"g": "adj. 愚蠢的, 糊涂的",
+"i": null,
+"gd": "adj. 愚蠢的, 糊涂的",
+"x": "cet4,cet6,gaokao,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "sincerely",
+"g": "adv. 真诚地",
+"i": "sin'siәli",
+"gd": "adv. 真诚地",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "sixteenth",
+"g": "num. 第十六, 十六分之一",
+"i": "'siks'ti:nθ",
+"gd": "num. 第十六, 十六分之一",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "sixth",
+"g": "num. 第六, 六分之一",
+"i": "siksθ",
+"gd": "num. 第六, 六分之一",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "skateboard",
+"g": "n. 溜冰板",
+"i": "'skeitbɔ:d",
+"gd": "n. 溜冰板",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "skillfully",
+"g": "adv. 巧妙地；精巧地",
+"i": null,
+"gd": "adv. 巧妙地；精巧地",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "smoker",
+"g": "n. 吸烟者, 吸烟的人, 吸烟车厢, (美)(非正式)蒸汽火车头",
+"i": "'smәukә",
+"gd": "n. 吸烟者, 吸烟的人, 吸烟车厢, (美)(非正式)蒸汽火车头",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "snatch",
+"g": "n. 抢夺, 攫取, 片断",
+"i": "snætʃ",
+"gd": "n. 抢夺, 攫取, 片断\nv. 夺取, 攫取\nv. 想抢走, 攫取",
+"x": "cet6,gaokao,gre,ielts,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "sneaker",
+"g": "n. 鬼鬼祟祟做事的人, 卑鄙者, 帆布胶底运动鞋",
+"i": "'sni:kә",
+"gd": "n. 鬼鬼祟祟做事的人, 卑鄙者, 帆布胶底运动鞋",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "sneeze",
+"g": "n. 喷嚏",
+"i": null,
+"gd": "n. 喷嚏\nv. 打喷嚏",
+"x": "cet6,gaokao,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "sniff",
+"g": "n. 以鼻吸气, 嗅, 气息",
+"i": null,
+"gd": "n. 以鼻吸气, 嗅, 气息\nv. 嗅, 蔑视, 嗤之以鼻\nv. 闻, 用力吸, 发觉",
+"x": "cet6,gaokao,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "snowball",
+"g": "n. 雪球, 果味冰霜卷, 滚雪球式的募捐法",
+"i": "'snәubɒ:l",
+"gd": "n. 雪球, 果味冰霜卷, 滚雪球式的募捐法\nv. 向...丢雪球, 使滚雪球般增长\nv. 打雪仗, 滚雪球般增长",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "snowman",
+"g": "n. 雪人",
+"i": "'snәumæn",
+"gd": "n. 雪人",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "sob",
+"g": "v. 啜泣, 呜咽",
+"i": "sɒb",
+"gd": "v. 啜泣, 呜咽\nv. 哭诉, 哭得使\nn. 啜泣, 呜咽",
+"x": "cet4,cet6,gaokao,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "socket",
+"g": "n. 窝, 穴, 插座, 眼窝",
+"i": "'sɒkit",
+"gd": "n. 窝, 穴, 插座, 眼窝\nv. 插进插座",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "softball",
+"g": "n. 垒球运动, 垒球",
+"i": "'sɒftbɒ:l",
+"gd": "n. 垒球运动, 垒球",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "Spanish",
+"g": "n. 西班牙人, 西班牙语",
+"i": "'spæniʃ",
+"gd": "n. 西班牙人, 西班牙语\nadj. 西班牙的",
+"x": "cet4,cet6,gaokao,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "sparrow",
+"g": "n. 麻雀",
+"i": "'spærәu",
+"gd": "n. 麻雀",
+"x": "cet4,cet6,gaokao,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "spear",
+"g": "n. 矛, 枪, 持矛者, 嫩枝",
+"i": "spiә",
+"gd": "n. 矛, 枪, 持矛者, 嫩枝\nv. 用矛刺\nv. 刺, 戳\nadj. 父系的",
+"x": "cet4,cet6,gaokao,gre,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "squid",
+"g": "n. 枪乌贼, 鱿鱼, 反潜水雷发射装置",
+"i": null,
+"gd": "n. 枪乌贼, 鱿鱼, 反潜水雷发射装置",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "squirrel",
+"g": "n. 松鼠, 松鼠毛皮",
+"i": "'skwә:rәl",
+"gd": "n. 松鼠, 松鼠毛皮\nv. 贮藏",
+"x": "cet4,cet6,gaokao,gre,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "steward",
+"g": "n. 管理人, 招待员, 管家, 乘务员",
+"i": "'stju:wәd",
+"gd": "n. 管理人, 招待员, 管家, 乘务员",
+"x": "cet4,cet6,gaokao,ielts,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "stewardess",
+"g": "n. 空中小姐, 女管理人, 女管家",
+"i": "'stju:wәdis",
+"gd": "n. 空中小姐, 女管理人, 女管家",
+"x": "cet4,cet6,gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "stick",
+"g": "n. 棍, 棒, 刺, 枯枝, 茎, 条状物",
+"i": null,
+"gd": "n. 棍, 棒, 刺, 枯枝, 茎, 条状物\nv. 插进, 刺入, 钉住, 伸出, 粘贴, 停止\nv. 粘住, 停留, 坚持, 陷住, 伸出",
+"x": "cet4,cet6,gaokao,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "stomachache",
+"g": "n. 胃痛, 肚子痛",
+"i": "'stʌmәkeik",
+"gd": "n. 胃痛, 肚子痛",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "stopwatch",
+"g": "n. 计时表, 码表",
+"i": "'stɒpwɒtʃ",
+"gd": "n. 计时表, 码表",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "stout",
+"g": "adj. 结实的；矮胖的；勇敢的；激烈的",
+"i": null,
+"gd": "adj. 结实的；矮胖的；勇敢的；激烈的\nn. 矮胖子；烈性啤酒",
+"x": "cet6,gaokao,gre,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "strait",
+"g": "n. 海峡, 困境",
+"i": null,
+"gd": "n. 海峡, 困境\nadj. 困难的, 窘迫的, 狭窄的",
+"x": "cet6,gaokao,gre,ielts,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "strawberry",
+"g": "n. 草莓",
+"i": "'strɒ:bәri",
+"gd": "n. 草莓",
+"x": "cet4,cet6,gaokao,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "stubborn",
+"g": "adj. 顽固的, 不听话的, 执拗的, 棘手的",
+"i": "'stʌbәn",
+"gd": "adj. 顽固的, 不听话的, 执拗的, 棘手的",
+"x": "cet6,gaokao,gre,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "subscribe",
+"g": "v. 捐献, 签署",
+"i": "sәb'skraib",
+"gd": "v. 捐献, 签署\nv. 赞成, 同意, 捐款, 预订, 认购",
+"x": "cet6,gaokao,gre,ielts,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "suite",
+"g": "n. 随员, 套房, (一)组, (一)套, 组曲, 继之而来的事",
+"i": null,
+"gd": "n. 随员, 套房, (一)组, (一)套, 组曲, 继之而来的事",
+"x": "gaokao,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "sunburnt",
+"g": "adj. 晒黑的, 有晒斑的, 日炙的",
+"i": "'sʌnb\\\\:nt",
+"gd": "adj. 晒黑的, 有晒斑的, 日炙的",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "sunglasses",
+"g": "n. 太阳镜, 墨镜, 太阳眼镜",
+"i": null,
+"gd": "n. 太阳镜, 墨镜, 太阳眼镜",
+"x": "gaokao,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "superman",
+"g": "n. 具有超人能力的人, 超人",
+"i": "'sju:pәmæn",
+"gd": "n. 具有超人能力的人, 超人",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "swap",
+"g": "n. 以货易货",
+"i": "swɒp",
+"gd": "n. 以货易货\nv. 交换, 替换, 交易",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "Swiss",
+"g": "n. 瑞士人, 瑞士腔调",
+"i": null,
+"gd": "n. 瑞士人, 瑞士腔调\nadj. 瑞士的, 瑞士风格的",
+"x": "cet4,cet6,gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "Switzerland",
+"g": "n. 瑞士",
+"i": "'switsәlәnd",
+"gd": "n. 瑞士",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "symphony",
+"g": "n. 交响乐, 交响曲",
+"i": "'simfәni",
+"gd": "n. 交响乐, 交响曲",
+"x": "cet6,gaokao,gre,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "tanker",
+"g": "n. 坦克手, 油船, 空中加油飞机, 运油飞机, 油槽/水槽汽车",
+"i": "'tæŋkә",
+"gd": "n. 坦克手, 油船, 空中加油飞机, 运油飞机, 油槽/水槽汽车",
+"x": "cet6,gaokao,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "tasteless",
+"g": "adj. 没味道的, 无鉴赏力的",
+"i": null,
+"gd": "adj. 没味道的, 无鉴赏力的",
+"x": "gaokao,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "teamwork",
+"g": "n. 协同作业, 协力",
+"i": "'ti:mwә:k",
+"gd": "n. 协同作业, 协力",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "teapot",
+"g": "n. 茶壶",
+"i": "'ti:pɒt",
+"gd": "n. 茶壶",
+"x": "gaokao,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "tease",
+"g": "n. 揶揄, 戏弄, 逗惹",
+"i": null,
+"gd": "n. 揶揄, 戏弄, 逗惹\nv. 戏弄, 取笑, 强求, 梳理, 使起毛",
+"x": "cet6,gaokao,gre,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "telegram",
+"g": "n. 电报, 一封电报",
+"i": "'teli^ræm",
+"gd": "n. 电报, 一封电报",
+"x": "cet4,cet6,gaokao,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "telegraph",
+"g": "n. 电报, 电报机",
+"i": "'teligrɑ:f",
+"gd": "n. 电报, 电报机\nv. 打电报\nv. 打电报给, 电汇, 流露, 显示出要...的样子",
+"x": "cet4,cet6,gaokao,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "temptation",
+"g": "n. 诱惑, 诱惑物",
+"i": "temp'teiʃәn",
+"gd": "n. 诱惑, 诱惑物",
+"x": "cet4,cet6,gaokao,gre,ielts,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "tentative",
+"g": "n. 试验",
+"i": "'tentәtiv",
+"gd": "n. 试验\nadj. 试验性的, 暂时的",
+"x": "cet6,gaokao,gre,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "thermos",
+"g": "n. 热水瓶",
+"i": "'θә:mәs",
+"gd": "n. 热水瓶",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "thrill",
+"g": "n. 震颤, 激动, 刺激性, 一阵激动",
+"i": "θril",
+"gd": "n. 震颤, 激动, 刺激性, 一阵激动\nv. 震颤, 颤抖, 激动\nv. 使激动, 使颤动",
+"x": "cet4,cet6,gaokao,ielts,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "thunderstorm",
+"g": "n. 雷暴雨",
+"i": "'θʌndәstɒ:m",
+"gd": "n. 雷暴雨",
+"x": "gaokao,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "Tibet",
+"g": "n. 西藏",
+"i": null,
+"gd": "n. 西藏",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "timetable",
+"g": "n. 时间表",
+"i": null,
+"gd": "n. 时间表",
+"x": "cet4,cet6,gaokao,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "Tokyo",
+"g": "n. 东京",
+"i": "'tәukjәu",
+"gd": "n. 东京",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "tomb",
+"g": "n. 坟墓, 死亡",
+"i": null,
+"gd": "n. 坟墓, 死亡\nv. 埋葬",
+"x": "cet4,cet6,gaokao,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "toothache",
+"g": "n. 牙痛",
+"i": "'tu:θeik",
+"gd": "n. 牙痛",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "toothbrush",
+"g": "n. 牙刷",
+"i": "'tu:θbrʌʃ",
+"gd": "n. 牙刷",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "toothpaste",
+"g": "n. 牙膏",
+"i": "'tu:θpeist",
+"gd": "n. 牙膏",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "tortoise",
+"g": "n. 龟, 行动迟缓的人",
+"i": "'tɒ:tәs",
+"gd": "n. 龟, 行动迟缓的人",
+"x": "cet4,cet6,gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "totally",
+"g": "adv. 完全地",
+"i": "'tәutli",
+"gd": "adv. 完全地",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "tournament",
+"g": "n. 比赛, 竞赛, 锦标赛, 联赛",
+"i": "'tә:nәmәnt",
+"gd": "n. 比赛, 竞赛, 锦标赛, 联赛",
+"x": "gaokao,gre,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "traveler",
+"g": "n. 旅行者, 游客, 旅客, 旅行推销员, 活动起重架, 行车, 临时记帐单",
+"i": "'trævlә",
+"gd": "n. 旅行者, 游客, 旅客, 旅行推销员, 活动起重架, 行车, 临时记帐单",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "typhoon",
+"g": "n. 台风",
+"i": null,
+"gd": "n. 台风",
+"x": "cet4,cet6,gaokao,gre,ielts,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "unable",
+"g": "adj. 不能的, 不会的",
+"i": "ʌn'eibl",
+"gd": "adj. 不能的, 不会的",
+"x": "cet4,cet6,gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "unbearable",
+"g": "adj. 无法忍受的, 承受不住的",
+"i": "ˌʌn'bєәrәbl",
+"gd": "adj. 无法忍受的, 承受不住的",
+"x": "cet4,cet6,gaokao,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "unbelievable",
+"g": "adj. 难以置信的",
+"i": "ˌʌnbi'li:vәbl",
+"gd": "adj. 难以置信的",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "uncomfortable",
+"g": "adj. 不舒服的, 不自在的, 不安的",
+"i": "ˌʌn'kʌmfәtәbl",
+"gd": "adj. 不舒服的, 不自在的, 不安的",
+"x": "cet4,cet6,gaokao,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "unconditional",
+"g": "adj. 无条件的, 无限制的, 绝对的",
+"i": "ˌʌnkәn'diʃәnl",
+"gd": "adj. 无条件的, 无限制的, 绝对的",
+"x": "gaokao,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "unconscious",
+"g": "adj. 未意识到的, 无意识的, 无知觉的",
+"i": "ˌʌn'kɒnʃәs",
+"gd": "adj. 未意识到的, 无意识的, 无知觉的",
+"x": "cet4,cet6,gaokao,gre,ielts,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "undivided",
+"g": "adj. 未分开的, 专一的, (组织等)未分裂的",
+"i": "ˌʌndi'vaidid",
+"gd": "adj. 未分开的, 专一的, (组织等)未分裂的",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "unfair",
+"g": "adj. 不公平的, 不正直的, 不正当的",
+"i": "ˌʌn'fєә",
+"gd": "adj. 不公平的, 不正直的, 不正当的",
+"x": "cet4,cet6,gaokao,ielts,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "unfit",
+"g": "adj. 不适当的, 不胜任的, 不健康的",
+"i": "ˌʌn'fit",
+"gd": "adj. 不适当的, 不胜任的, 不健康的\nv. 使不相宜, 使不合格",
+"x": "cet6,gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "unfold",
+"g": "v. 展开, 打开, 披露, 开展, 挑明",
+"i": "ˌʌn'fәuld",
+"gd": "v. 展开, 打开, 披露, 开展, 挑明\nv. 伸展, 开花, 呈现",
+"x": "cet6,gaokao,gre,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "unfortunate",
+"g": "adj. 不幸的, 不合适的, 不吉利的",
+"i": "ˌʌn'fɒ:tʃәnit",
+"gd": "adj. 不幸的, 不合适的, 不吉利的",
+"x": "cet4,cet6,gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "unfortunately",
+"g": "adv. 恐怕, 不幸的是",
+"i": "ʌn'fɔ:tjjnәtli",
+"gd": "adv. 恐怕, 不幸的是",
+"x": "cet4,cet6,gaokao,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "unhappy",
+"g": "adj. 不快乐的, 不幸的, 不适当的",
+"i": "ˌʌn'hæpi",
+"gd": "adj. 不快乐的, 不幸的, 不适当的",
+"x": "cet4,cet6,gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "unhealthy",
+"g": "adj. 不健康的",
+"i": "ˌʌn'helθi",
+"gd": "adj. 不健康的",
+"x": "gaokao,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "unimportant",
+"g": "adj. 不重要的",
+"i": "ˌʌnim'pɒ:tnt",
+"gd": "adj. 不重要的",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "unknown",
+"g": "adj. 不知道的, 未知的, 陌生的",
+"i": "ˌʌn'nәun",
+"gd": "adj. 不知道的, 未知的, 陌生的\nn. 未知物, 未知数",
+"x": "cet4,cet6,gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "unlike",
+"g": "adj. 不像的, 不同的",
+"i": "ˌʌn'laik",
+"gd": "adj. 不像的, 不同的\nprep. 不像, 和...不同",
+"x": "cet4,cet6,gaokao,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "unmarried",
+"g": "adj. 未婚的, 单身的",
+"i": "ˌʌn'mærid",
+"gd": "adj. 未婚的, 单身的",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "unpleasant",
+"g": "adj. 使人不愉快的, 使人厌恶的, 煞风景的",
+"i": "ˌʌn'pleznt",
+"gd": "adj. 使人不愉快的, 使人厌恶的, 煞风景的",
+"x": "cet4,cet6,gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "unrest",
+"g": "n. 不安的状态, 动荡的局面",
+"i": "ˌʌn'rest",
+"gd": "n. 不安的状态, 动荡的局面",
+"x": "gaokao,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "unsafe",
+"g": "adj. 不安全的, 不安稳的, 危险的",
+"i": "ˌʌn'seif",
+"gd": "adj. 不安全的, 不安稳的, 危险的",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "unsuccessful",
+"g": "adj. 不成功的",
+"i": "ˌʌnsәk'sesful",
+"gd": "adj. 不成功的",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "untrue",
+"g": "adj. 不真实的, 不正确的, 不忠实的",
+"i": "ˌʌn'tru:",
+"gd": "adj. 不真实的, 不正确的, 不忠实的",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "unusual",
+"g": "adj. 不寻常的, 罕见的, 与众不同的",
+"i": "ˌʌn'ju:ʒu:l",
+"gd": "adj. 不寻常的, 罕见的, 与众不同的",
+"x": "cet4,cet6,gaokao,ielts,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "unwilling",
+"g": "adj. 不愿意的, 勉强的",
+"i": "ˌʌn'wiliŋ",
+"gd": "adj. 不愿意的, 勉强的",
+"x": "cet4,cet6,gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "vanilla",
+"g": "n. 香草, 香子兰",
+"i": "vә'nilә",
+"gd": "n. 香草, 香子兰",
+"x": "gaokao,gre",
+"se": null,
+"sz": null
+},
+{
+"w": "vase",
+"g": "n. 花瓶, 瓶",
+"i": null,
+"gd": "n. 花瓶, 瓶",
+"x": "cet4,cet6,gaokao,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "veal",
+"g": "n. 小牛肉",
+"i": null,
+"gd": "n. 小牛肉\nv. 宰小牛",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "vest",
+"g": "n. 背心, 汗背心",
+"i": null,
+"gd": "n. 背心, 汗背心\nv. 使穿衣服, 授予\nv. 穿衣服, 归属",
+"x": "cet4,cet6,gaokao,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "vice",
+"g": "n. 恶习, 恶行, 罪恶, 堕落, 缺陷, 恶癖, 老虎钳",
+"i": null,
+"gd": "n. 恶习, 恶行, 罪恶, 堕落, 缺陷, 恶癖, 老虎钳\nv. 钳住\nprep. 代替",
+"x": "cet4,cet6,gaokao,ielts,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "videophone",
+"g": "n. 电视电话",
+"i": "'vidiәu'fәun",
+"gd": "n. 电视电话",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "viewer",
+"g": "n. 观察者, 看电视者, 视察员, 观察器",
+"i": "'vju:ә",
+"gd": "n. 观察者, 看电视者, 视察员, 观察器",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "wag",
+"g": "v. 摇摆, 摇动, 饶舌",
+"i": "wæg",
+"gd": "v. 摇摆, 摇动, 饶舌\nv. 摆动, 喋喋不休\nn. 摇摆, 爱说笑打趣的人",
+"x": "cet6,gaokao,gre,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "walkman",
+"g": "n. 随身听（商标名称）",
+"i": null,
+"gd": "n. 随身听（商标名称）",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "walnut",
+"g": "n. 胡桃",
+"i": "'wɒ:lnәt",
+"gd": "n. 胡桃",
+"x": "cet6,gaokao,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "washroom",
+"g": "n. 盥洗室",
+"i": "'wɒʃrum",
+"gd": "n. 盥洗室",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "watermelon",
+"g": "n. 西瓜",
+"i": "'wɒtәˌmelәn",
+"gd": "n. 西瓜",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "wayside",
+"g": "n. 路旁",
+"i": null,
+"gd": "n. 路旁\nadj. 路旁的",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "weatherman",
+"g": "n. 气象员；天气预报员",
+"i": "'weðәmæn",
+"gd": "n. 气象员；天气预报员",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "westwards",
+"g": "adv. 向西",
+"i": "'westwәdz",
+"gd": "adv. 向西",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "willingly",
+"g": "adv. 自动地, 欣然地",
+"i": "'wiliŋli",
+"gd": "adv. 自动地, 欣然地",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "windbreaker",
+"g": "n. 防风林, 防风茄克衫, 风衣",
+"i": "'windˌbreikә",
+"gd": "n. 防风林, 防风茄克衫, 风衣",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "woo",
+"g": "v. 追求, 向...求爱, 恳求",
+"i": null,
+"gd": "v. 追求, 向...求爱, 恳求\nv. 求爱, 央求",
+"x": "gaokao,gre",
+"se": null,
+"sz": null
+},
+{
+"w": "workday",
+"g": "n. 工作日, (一天的)工作时数",
+"i": null,
+"gd": "n. 工作日, (一天的)工作时数",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "workmate",
+"g": "n. 共同工作者, 同事",
+"i": null,
+"gd": "n. 共同工作者, 同事",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "workplace",
+"g": "n. 工作场所, 工厂, 车间",
+"i": null,
+"gd": "n. 工作场所, 工厂, 车间",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "wrestle",
+"g": "n. 摔跤, 角力, 扭斗",
+"i": null,
+"gd": "n. 摔跤, 角力, 扭斗\nv. 摔跤, 搏斗, 斗争, 斟酌\nv. 与(对手)摔跤",
+"x": "cet6,gaokao,ielts",
+"se": null,
+"sz": null
+},
+{
+"w": "yawn",
+"g": "n. 哈欠",
+"i": "jɒ:n",
+"gd": "n. 哈欠\nv. 打哈欠, 裂开\nv. 打着哈欠说",
+"x": "cet4,cet6,gaokao,gre,ielts,kaoyan,toefl",
+"se": null,
+"sz": null
+},
+{
+"w": "yummy",
+"g": "adj. 美味的, 可口的, 赏心悦目的, 愉快的",
+"i": "'jʌmi",
+"gd": "adj. 美味的, 可口的, 赏心悦目的, 愉快的",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "zebra",
+"g": "n. 斑马",
+"i": "'zi:brә",
+"gd": "n. 斑马",
+"x": "cet4,cet6,gaokao,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "zip",
+"g": "n. 尖啸声, 拉链, 活力",
+"i": null,
+"gd": "n. 尖啸声, 拉链, 活力\nv. 给...以速度, 使增加活力, 拉(拉链)\nv. 有力而迅速地行动, 嘘嘘地响, 拉拉链",
+"x": "gaokao,kaoyan",
+"se": null,
+"sz": null
+},
+{
+"w": "zipper",
+"g": "n. 拉链",
+"i": "'zipә",
+"gd": "n. 拉链",
+"x": "gaokao",
+"se": null,
+"sz": null
+},
+{
+"w": "zoom",
+"g": "n. 急速上升, 变焦摄影, 嗡嗡声",
+"i": null,
+"gd": "n. 急速上升, 变焦摄影, 嗡嗡声\nv. 猛增, 急速上升, 摄象机移动\nv. 使摄象机移动",
+"x": "gaokao,kaoyan",
 "se": null,
 "sz": null
 }

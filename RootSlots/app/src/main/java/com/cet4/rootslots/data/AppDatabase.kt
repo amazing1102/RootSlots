@@ -5,9 +5,6 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import org.json.JSONArray
 import org.json.JSONObject
 
@@ -37,21 +34,11 @@ abstract class AppDatabase : RoomDatabase() {
         private fun build(context: Context): AppDatabase {
             val db = Room.databaseBuilder(context, AppDatabase::class.java, "rootslots.db")
                 .addMigrations(MIGRATION_6_7)
-                .addCallback(object : Callback() {
-                    override fun onCreate(db: SupportSQLiteDatabase) {
-                        super.onCreate(db)
-                        CoroutineScope(Dispatchers.IO).launch {
-                            try {
-                                prefill(context)
-                                android.util.Log.i("Prefill", "done")
-                            } catch (e: Exception) {
-                                android.util.Log.e("Prefill", "FAILED", e)
-                            }
-                        }
-                    }
-                })
                 .build()
             return db
+            // 预填唯一入口是 Repository.ensurePrefilled()(带 Mutex、空库判定)。
+            // 这里绝不能再挂 onCreate 预填:首装时两条路径并发各灌一次,
+            // 自增主键表(morphs/combos)会整体翻倍——真实踩过的坑。
         }
 
         /** v6 → v7:words 表新增多义项释义/例句/考试标签(非破坏,首例真迁移,后续升版照此范式) */

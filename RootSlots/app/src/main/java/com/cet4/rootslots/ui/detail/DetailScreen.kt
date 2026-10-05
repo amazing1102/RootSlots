@@ -310,13 +310,13 @@ fun DetailScreen(
                     Spacer(Modifier.height(4.dp))
                     Text("「$fam $famMeaning」", color = c.root, fontSize = 18.sp, fontWeight = FontWeight.Bold)
                     Spacer(Modifier.height(4.dp))
-                    Text("共 ${vm.familyWordList(fam).size} 个表内词,点击跳转:", color = c.textDim, fontSize = 12.sp)
+                    Text("共 ${vm.familyWordListAll(fam).size} 个表内词,点击跳转:", color = c.textDim, fontSize = 12.sp)
                     Spacer(Modifier.height(8.dp))
                     androidx.compose.foundation.layout.FlowRow(
                         horizontalArrangement = Arrangement.spacedBy(8.dp),
                         verticalArrangement = Arrangement.spacedBy(6.dp),
                     ) {
-                        vm.familyWordList(fam).forEach { w ->
+                        vm.familyWordListAll(fam).forEach { w ->
                             val isCurrent = w == word
                             Text(
                                 w,

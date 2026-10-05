@@ -34,6 +34,7 @@ import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -62,12 +63,15 @@ fun CodexScreen(
     var spun by remember { mutableStateOf(setOf<String>()) }
     var expanded by remember { mutableStateOf<String?>(null) }
     var query by remember { mutableStateOf("") }
+    val exams by vm.exams.collectAsState()
 
-    LaunchedEffect(Unit) {
+    // 考试集合变更时重载(族列表按目标考试过滤,空族不显示)
+    LaunchedEffect(exams) {
         val fs = vm.familyEntries()
         families = fs
         famWords = fs.associate { it.key to vm.familyWordList(it.key) }
         spun = vm.spunWordSet()
+        if (expanded != null && famWords[expanded].isNullOrEmpty()) expanded = null
     }
 
     val shown = if (query.isBlank()) families

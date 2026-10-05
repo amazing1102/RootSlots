@@ -10,11 +10,17 @@
 import json
 import os
 import sqlite3
+import sys
 
 TOOLS = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(TOOLS)
 ASSETS = os.path.join(ROOT, "assets")
 DB = os.path.join(TOOLS, "stardict.db")
+
+# 词枚举走源词表 md(而非 assets/words.json):words.json 扩库后含新考试词,
+# 而 exams.json 语义是「存量 CET-4 词表标签基线」,新词标签由 build_dict.py 负责。
+sys.path.insert(0, TOOLS)
+import build_data
 
 # ECDICT 词性前缀归一 → 项目风格(n./v./adj./adv.)
 POS_MAP = [("a. ", "adj. "), ("ad. ", "adv. "), ("vi. ", "v. "), ("vt. ", "v. ")]
@@ -47,8 +53,7 @@ def clean_translation(t: str) -> str | None:
 
 
 def main():
-    words = [x["w"] if isinstance(x, dict) else x
-             for x in json.load(open(os.path.join(ASSETS, "words.json"), encoding="utf-8"))]
+    words = build_data.parse_words()
     con = sqlite3.connect(DB)
     cur = con.cursor()
     gd, exams = {}, {}

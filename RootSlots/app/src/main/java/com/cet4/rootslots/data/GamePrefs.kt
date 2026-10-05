@@ -35,12 +35,20 @@ class GamePrefs(private val context: Context) {
         val DAY_STAMP = longPreferencesKey("day_stamp")      // SPINS_TODAY 所属日(LocalDate epochDay)
         val DAILY_STATS = stringSetPreferencesKey("daily_stats") // 历史日统计 "yyyymmdd:count:goal"
         val ASSETS_VER = stringPreferencesKey("assets_ver")  // 词库资产补灌版本闸门(Repository.ASSETS_VER)
+        val EXAMS = stringSetPreferencesKey("exams")         // 目标考试集合(短码,并集生效)
         const val ENERGY_MAX = 30
         const val REGEN_MS = 10_000L
         const val COINS_START = 200
         const val SPEECH_RATE_DEFAULT = 0.85f
         const val WRONG_NOTIFY_DEFAULT = true
         const val DAILY_GOAL_DEFAULT = 50
+        const val EXAM_DEFAULT = "cet4"
+
+        /** 目标考试展示清单(阶段一放开 cet4/gaokao,其余池随词库扩展阶段逐步开放) */
+        val EXAM_CHOICES = listOf(
+            "cet4" to "四级 CET-4",
+            "gaokao" to "高考 GAOKAO",
+        )
     }
 
     data class Wallet(val coins: Int, val energy: Int, val totalSpins: Int, val spinsToday: Int, val dailyGoal: Int)
@@ -143,5 +151,14 @@ class GamePrefs(private val context: Context) {
 
     suspend fun setAssetsVer(v: String) {
         context.gameStore.edit { it[ASSETS_VER] = v }
+    }
+
+    /** 目标考试集合(至少保留一个;清空视为回退默认 cet4) */
+    val exams: Flow<Set<String>> = context.gameStore.data.map { p ->
+        p[EXAMS]?.takeIf { it.isNotEmpty() } ?: setOf(EXAM_DEFAULT)
+    }
+
+    suspend fun setExams(s: Set<String>) {
+        context.gameStore.edit { it[EXAMS] = s.ifEmpty { setOf(EXAM_DEFAULT) } }
     }
 }

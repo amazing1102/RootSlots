@@ -1,7 +1,13 @@
 package com.cet4.rootslots.data
 
 import android.content.Context
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.withLock
 
 /**
@@ -35,8 +41,8 @@ class Repository private constructor(context: Context) {
         const val STAGE_GRADUATED = 10
         const val DAY_MS = 86_400_000L
 
-        /** 词库资产补灌版本:gd/例句/考试标签等资产数据更新时递增,触发一次 enrichIfNeeded 重跑 */
-        const val ASSETS_VER = "20261005a"
+        /** 词库资产补灌版本:gd/例句/考试标签/扩库新词更新时递增,触发一次 enrichIfNeeded 重跑 */
+        const val ASSETS_VER = "20261005b"
 
         /** 档位名:0=新学,1..9=节点档,10=已毕业 */
         fun stageLabel(stage: Int): String = when {
@@ -93,6 +99,23 @@ class Repository private constructor(context: Context) {
 
     @Volatile var ready = false; private set
 
+    // ---- 目标考试池(词库扩展 §8):标签交集过滤,收藏/SRS/统计永不过滤 ----
+    private val _exams = MutableStateFlow(setOf(GamePrefs.EXAM_DEFAULT))
+    val exams: StateFlow<Set<String>> = _exams
+
+    init {
+        CoroutineScope(SupervisorJob() + Dispatchers.Default).launch {
+            prefs.exams.collect { _exams.value = it }
+        }
+    }
+
+    /** 词是否落在当前目标考试并集内(无标签的旧行按 cet4 兜底) */
+    fun wordInPool(e: WordEntity): Boolean {
+        val tags = e.examTags?.split(',')?.filter { it.isNotBlank() }?.ifEmpty { null }
+            ?: setOf(GamePrefs.EXAM_DEFAULT)
+        return tags.any { it in _exams.value }
+    }
+
     suspend fun awaitReady() {
         if (ready) return
         ensurePrefilled()                            // 空库(首装/迁移/上次失败)就地补跑预填
@@ -109,8 +132,9 @@ class Repository private constructor(context: Context) {
     }
 
     /**
-     * 升级补灌:DB v7 新增的 exam_tags/detail_gloss/sen_en/sen_zh,
-     * 老安装经迁移升级后这些列是空的,从 assets 一次性补齐。
+     * 升级补灌:①DB v7 新增的 exam_tags/detail_gloss/sen_en/sen_zh,老安装经迁移升级后
+     * 这些列是空的,从 assets 一次性补齐;②词库扩库后 words.json 超出库里行数的新词
+     * (如阶段一的 gaokao 词)就地补插,只加行不动行,收藏/SRS 不受影响。
      * 闸门 = DataStore 的 ASSETS_VER,资产数据更新时递增 Repository.ASSETS_VER 即可重跑一次。
      */
     private suspend fun enrichIfNeeded() {
@@ -133,8 +157,27 @@ class Repository private constructor(context: Context) {
                 val tags = exams[w] ?: "cet4"
                 db.wordsDao().enrichRow(w, gd[w], sen[w]?.getOrNull(0), sen[w]?.getOrNull(1), ",$tags,")
             }
+            // 扩库新词补插:assets words.json 里库里还没有的行(IGNORE,不覆盖已有行)
+            val known = db.wordsDao().allWords().toSet()
+            val arr = org.json.JSONArray(readAsset(ctx, "words.json"))
+            val fresh = mutableListOf<WordEntity>()
+            for (i in 0 until arr.length()) {
+                val o = arr.getJSONObject(i)
+                val w = o.getString("w")
+                if (w in known) continue
+                fresh += WordEntity(
+                    w = w,
+                    g = if (o.isNull("g")) null else o.getString("g"),
+                    ipa = if (o.isNull("i")) null else o.optString("i").ifBlank { null },
+                    examTags = if (o.isNull("x")) null else o.optString("x").let { ",$it," },
+                    detailGloss = if (o.isNull("gd")) null else o.optString("gd").ifBlank { null },
+                    senEn = if (o.isNull("se")) null else o.optString("se").ifBlank { null },
+                    senZh = if (o.isNull("sz")) null else o.optString("sz").ifBlank { null },
+                )
+            }
+            if (fresh.isNotEmpty()) db.wordsDao().insertIgnore(fresh)
             prefs.setAssetsVer(ASSETS_VER)
-            android.util.Log.i("Enrich", "done: gd=${gd.size} sen=${sen.size} exams=${exams.size}")
+            android.util.Log.i("Enrich", "done: gd=${gd.size} sen=${sen.size} exams=${exams.size} newWords=${fresh.size}")
         } catch (e: Exception) {
             android.util.Log.e("Enrich", "FAILED", e)
         }
@@ -179,18 +222,34 @@ class Repository private constructor(context: Context) {
 
     private val rng = java.util.Random()
 
-    /** 随机抽组合词,避免与上一词重复;词库未就绪返回 null */
+    /** 当前考试池内的组合词(缓存,考试集合变更时重算) */
+    @Volatile private var poolCombos: List<ComboEntity> = emptyList()
+    private var poolKey: Set<String> = emptySet()
+
+    private fun examPoolCombos(): List<ComboEntity> {
+        if (poolKey != _exams.value) {
+            poolCombos = combos.filter { c -> words[c.w]?.let(::wordInPool) == true }
+            poolKey = _exams.value
+        }
+        return poolCombos
+    }
+
+    /** 随机抽组合词(限当前考试池),避免与上一词重复;词库未就绪/池空返回 null */
     fun randomCombo(exclude: String? = null): ComboEntity? {
-        if (combos.isEmpty()) return null
+        val pool = examPoolCombos()
+        if (pool.isEmpty()) return null
         repeat(8) {
-            val c = combos[rng.nextInt(combos.size)]
+            val c = pool[rng.nextInt(pool.size)]
             if (c.w != exclude) return c
         }
-        return combos[rng.nextInt(combos.size)]
+        return pool[rng.nextInt(pool.size)]
     }
 
     fun word(w: String): WordEntity? = words[w]
-    fun glossedWords(): List<WordEntity> = words.values.filter { !it.g.isNullOrBlank() }
+
+    /** 测验题池:有释义且落在当前考试池内 */
+    fun glossedWords(): List<WordEntity> =
+        words.values.filter { !it.g.isNullOrBlank() && wordInPool(it) }
     fun ipaOf(w: String): String? = words[w]?.ipa?.takeIf { it.isNotBlank() }
     fun family(key: String): FamilyEntity? = families[key]
 
@@ -275,9 +334,24 @@ class Repository private constructor(context: Context) {
     suspend fun spinTotal(): Int = db.spinsDao().count()
     suspend fun spunDistinct(): Int = db.spinsDao().distinctWords()
     suspend fun spunWordSet(): Set<String> = db.spinsDao().distinctWordList().toSet()
-    fun familyWordList(key: String): List<String> =
-        db // 占位使单例结构清晰;实际取 families 内存
-            .let { families[key]?.wordList?.split(",")?.filter { s -> s.isNotBlank() } ?: emptyList() }
 
+    /** 图鉴族列表:词表按当前考试池过滤,空族不显示,count 为过滤后词数(§8.2) */
+    fun familyEntriesFiltered(): List<FamilyEntity> =
+        families.values.map { f ->
+            f.copy(count = familyWordListFiltered(f.key).size)
+        }.filter { it.count > 0 }
+            .sortedByDescending { it.count }
+
+    fun familyWordList(key: String): List<String> = familyWordListFiltered(key)
+
+    /** 全库族词表(详情页「同族词」用:详情页永不过滤,§8.2) */
+    fun familyWordListAll(key: String): List<String> =
+        families[key]?.wordList?.split(",")?.filter { it.isNotBlank() } ?: emptyList()
+
+    private fun familyWordListFiltered(key: String): List<String> =
+        families[key]?.wordList
+            ?.split(",")
+            ?.filter { s -> s.isNotBlank() && words[s]?.let(::wordInPool) == true }
+            ?: emptyList()
 }
 

@@ -19,6 +19,13 @@ interface WordsDao {
     @Query("SELECT * FROM words")
     suspend fun all(): List<WordEntity>
 
+    @Query("SELECT w FROM words")
+    suspend fun allWords(): List<String>
+
+    /** 升级补灌新词行:已存在则跳过,绝不触碰用户数据表 */
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insertIgnore(words: List<WordEntity>)
+
     @Query("SELECT * FROM words WHERE w = :word")
     suspend fun byWord(word: String): WordEntity?
 
