@@ -17,7 +17,7 @@
 
 | 模块 | 说明 |
 |---|---|
-| 🎰 **动态段轴老虎机** | 轴数 = 词段数(2~4),每根轴按段类型着色(前缀蓝/词根金/后缀紫),停轴左→右逐段点亮,完整真词大字随停轴显色;金币、连击、能量回充 |
+| 🎰 **动态段轴老虎机** | 轴数 = 词段数(2~4),跑马灯泡带追逐/庆祝、纸面滚筒(回拉-快转-回弹三段停轴)、LED 金币/能量计数;停轴左→右逐段点亮,完整真词大字随停轴显色 + 胜利脉冲 |
 | 🔍 **构词详情双形态** | 2278 个组合词=分段释义卡(每段的词根含义);其余词=整词卡;词根族一键跳转 |
 | 🧠 **艾宾浩斯 SRS** | 经典 9 记忆节点(5分钟→30分钟→12小时→1/2/4/7/15/30天),通过即毕业;详情页绘制该词的记忆保持率曲线 |
 | ✍️ **四模式测验** | 释义选词 / 看音标选词 / 听音选词 / 拼写补全,覆盖全词表 |
@@ -89,6 +89,7 @@ CET-4 词表与释义仅供学习交流。
 
 - [CMUdict](https://github.com/Alexir/CMUdict)(BSD)— 美式 IPA 数据源
 - [sherpa-onnx](https://github.com/k2-fsa/sherpa-onnx)(Apache-2.0)+ [Piper voices](https://github.com/rhasspy/piper-voices)(MIT)— 离线神经语音
+- [Bungee](https://github.com/google/fonts/tree/main/ofl/bungee)(OFL)— 招牌体;[DSEG7](https://github.com/keshikan/DSEG)(OFL)— 七段管 LED 数字体
 - [Jetpack Compose](https://developer.android.com/compose) / [Room](https://developer.android.com/training/data-storage/room)
 
 ---

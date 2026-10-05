@@ -1,6 +1,11 @@
 package com.cet4.rootslots.ui.detail
 
 import androidx.activity.compose.BackHandler
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.EnterTransition
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.slideInVertically
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -50,6 +55,11 @@ import kotlinx.coroutines.launch
 import kotlin.math.exp
 import kotlin.math.ln
 
+/** 详情页分区错峰入场:大词 → 分段卡 → 词根族 → 记忆计划 */
+private fun staggerEnter(index: Int): EnterTransition =
+    fadeIn(tween(280, delayMillis = index * 80)) +
+        slideInVertically(tween(280, delayMillis = index * 80)) { it / 12 }
+
 /** 单词详情:彩色分段 + 各段词法释义 + 词根族 + 艾宾浩斯记忆计划 + 收藏 + 发音 */
 @OptIn(androidx.compose.foundation.layout.ExperimentalLayoutApi::class)
 @Composable
@@ -66,9 +76,11 @@ fun DetailScreen(
     val segs = remember(word) { combo?.let { parseSegs(it.segsJson) } ?: emptyList() }
     var fav by remember(word) { mutableStateOf(false) }
     var srs by remember(word) { mutableStateOf<SrsEntity?>(null) }
+    var shown by remember(word) { mutableStateOf(false) }
     LaunchedEffect(word) {
         fav = vm.isFavorite(word)
         srs = vm.srsOf(word)
+        shown = true
     }
 
     Column(
@@ -114,99 +126,115 @@ fun DetailScreen(
 
         if (combo == null) {
             // ---- 整词模式(无构词拆解) ----
-            Text(word, color = c.text, fontSize = 34.sp, fontWeight = FontWeight.Black)
-            vm.ipaOf(word)?.let {
-                Spacer(Modifier.height(2.dp))
-                Text("/$it/", color = c.textDim, fontSize = 15.sp)
-            }
-            Spacer(Modifier.height(6.dp))
-            Text(vm.glossOf(word) ?: "", color = c.textMid, fontSize = 16.sp)
-            Text("(该词暂无构词拆解)", color = c.textDim, fontSize = 13.sp)
-        } else {
-            // ---- 大词 + 分段 ----
-            Row(verticalAlignment = Alignment.Bottom) {
-                segs.forEach { seg ->
-                    Text(
-                        seg.s,
-                        color = c.typeColor(seg.t),
-                        fontSize = if (word.length > 10) 38.sp else 44.sp,
-                        fontWeight = FontWeight.Black,
-                    )
+            AnimatedVisibility(visible = shown, enter = staggerEnter(0)) {
+                Column {
+                    Text(word, color = c.text, fontSize = 34.sp, fontWeight = FontWeight.Black)
+                    vm.ipaOf(word)?.let {
+                        Spacer(Modifier.height(2.dp))
+                        Text("/$it/", color = c.textDim, fontSize = 15.sp)
+                    }
+                    Spacer(Modifier.height(6.dp))
+                    Text(vm.glossOf(word) ?: "", color = c.textMid, fontSize = 16.sp)
+                    Text("(该词暂无构词拆解)", color = c.textDim, fontSize = 13.sp)
                 }
             }
-            vm.ipaOf(word)?.let {
-                Spacer(Modifier.height(2.dp))
-                Text("/$it/", color = c.textDim, fontSize = 15.sp)
+        } else {
+            // ---- 大词 + 分段 ----
+            AnimatedVisibility(visible = shown, enter = staggerEnter(0)) {
+                Column {
+                    Row(verticalAlignment = Alignment.Bottom) {
+                        segs.forEach { seg ->
+                            Text(
+                                seg.s,
+                                color = c.typeColor(seg.t),
+                                fontSize = if (word.length > 10) 38.sp else 44.sp,
+                                fontWeight = FontWeight.Black,
+                            )
+                        }
+                    }
+                    vm.ipaOf(word)?.let {
+                        Spacer(Modifier.height(2.dp))
+                        Text("/$it/", color = c.textDim, fontSize = 15.sp)
+                    }
+                    Spacer(Modifier.height(6.dp))
+                    Text(vm.glossOf(word) ?: "", color = c.textMid, fontSize = 16.sp)
+                }
             }
-            Spacer(Modifier.height(6.dp))
-            Text(vm.glossOf(word) ?: "", color = c.textMid, fontSize = 16.sp)
 
-            Spacer(Modifier.height(20.dp))
-
-            // ---- 各段释义卡 ----
-            Row(
-                Modifier.horizontalScroll(rememberScrollState()),
-                horizontalArrangement = Arrangement.spacedBy(8.dp),
-            ) {
-                segs.forEach { seg ->
-                    val color = c.typeColor(seg.t)
-                    Column(
-                        Modifier
-                            .width(150.dp)
-                            .clip(RoundedCornerShape(14.dp))
-                            .background(c.surface)
-                            .padding(12.dp)
+            AnimatedVisibility(visible = shown, enter = staggerEnter(1)) {
+                Column {
+                    Spacer(Modifier.height(20.dp))
+                    // ---- 各段释义卡 ----
+                    Row(
+                        Modifier.horizontalScroll(rememberScrollState()),
+                        horizontalArrangement = Arrangement.spacedBy(8.dp),
                     ) {
-                        Text(seg.s, color = color, fontSize = 22.sp, fontWeight = FontWeight.Black)
-                        Text("${c.typeName(seg.t)} · ${seg.k}",
-                            color = color.copy(alpha = 0.75f), fontSize = 11.sp)
-                        Spacer(Modifier.height(6.dp))
-                        val segMeaning = vm.meaningOf(seg.t, seg.k)
-                            .takeIf { it.isNotBlank() && it != "?" } ?: "(释义待补)"
-                        Text(
-                            segMeaning,
-                            color = c.textMid, fontSize = 13.sp,
-                        )
+                        segs.forEach { seg ->
+                            val color = c.typeColor(seg.t)
+                            Column(
+                                Modifier
+                                    .width(150.dp)
+                                    .clip(RoundedCornerShape(14.dp))
+                                    .background(c.surface)
+                                    .padding(12.dp)
+                            ) {
+                                Text(seg.s, color = color, fontSize = 22.sp, fontWeight = FontWeight.Black)
+                                Text("${c.typeName(seg.t)} · ${seg.k}",
+                                    color = color.copy(alpha = 0.75f), fontSize = 11.sp)
+                                Spacer(Modifier.height(6.dp))
+                                val segMeaning = vm.meaningOf(seg.t, seg.k)
+                                    .takeIf { it.isNotBlank() && it != "?" } ?: "(释义待补)"
+                                Text(
+                                    segMeaning,
+                                    color = c.textMid, fontSize = 13.sp,
+                                )
+                            }
+                        }
                     }
                 }
             }
 
-            Spacer(Modifier.height(20.dp))
-
-            // ---- 词根族卡片 ----
-            val fam = combo.family
-            val famMeaning = vm.familyMeaning(fam).takeIf { it.isNotBlank() && it != "?" } ?: "(含义待补)"
-            Text("词根族", color = c.textDim, fontSize = 12.sp)
-            Spacer(Modifier.height(4.dp))
-            Text("「$fam $famMeaning」", color = c.root, fontSize = 18.sp, fontWeight = FontWeight.Bold)
-            Spacer(Modifier.height(4.dp))
-            Text("共 ${vm.familyWordList(fam).size} 个表内词,点击跳转:", color = c.textDim, fontSize = 12.sp)
-        Spacer(Modifier.height(8.dp))
-        @OptIn(androidx.compose.foundation.layout.ExperimentalLayoutApi::class)
-        androidx.compose.foundation.layout.FlowRow(
-            horizontalArrangement = Arrangement.spacedBy(8.dp),
-            verticalArrangement = Arrangement.spacedBy(6.dp),
-        ) {
-            vm.familyWordList(fam).forEach { w ->
-                val isCurrent = w == word
-                Text(
-                    w,
-                    color = if (isCurrent) c.bg else c.suffix,
-                    fontSize = 14.sp, fontWeight = FontWeight.Bold,
-                    modifier = Modifier
-                        .clip(RoundedCornerShape(50))
-                        .background(if (isCurrent) c.suffix else c.chip)
-                        .clickable(enabled = !isCurrent) { onOpenWord(w) }
-                        .padding(horizontal = 12.dp, vertical = 7.dp),
-                )
+            AnimatedVisibility(visible = shown, enter = staggerEnter(2)) {
+                Column {
+                    Spacer(Modifier.height(20.dp))
+                    // ---- 词根族卡片 ----
+                    val fam = combo.family
+                    val famMeaning = vm.familyMeaning(fam).takeIf { it.isNotBlank() && it != "?" } ?: "(含义待补)"
+                    Text("词根族", color = c.textDim, fontSize = 12.sp)
+                    Spacer(Modifier.height(4.dp))
+                    Text("「$fam $famMeaning」", color = c.root, fontSize = 18.sp, fontWeight = FontWeight.Bold)
+                    Spacer(Modifier.height(4.dp))
+                    Text("共 ${vm.familyWordList(fam).size} 个表内词,点击跳转:", color = c.textDim, fontSize = 12.sp)
+                    Spacer(Modifier.height(8.dp))
+                    androidx.compose.foundation.layout.FlowRow(
+                        horizontalArrangement = Arrangement.spacedBy(8.dp),
+                        verticalArrangement = Arrangement.spacedBy(6.dp),
+                    ) {
+                        vm.familyWordList(fam).forEach { w ->
+                            val isCurrent = w == word
+                            Text(
+                                w,
+                                color = if (isCurrent) c.bg else c.suffix,
+                                fontSize = 14.sp, fontWeight = FontWeight.Bold,
+                                modifier = Modifier
+                                    .clip(RoundedCornerShape(50))
+                                    .background(if (isCurrent) c.suffix else c.chip)
+                                    .clickable(enabled = !isCurrent) { onOpenWord(w) }
+                                    .padding(horizontal = 12.dp, vertical = 7.dp),
+                            )
+                        }
+                    }
+                }
             }
         }
+
+        AnimatedVisibility(visible = shown, enter = staggerEnter(3)) {
+            Column {
+                Spacer(Modifier.height(20.dp))
+                // ---- 艾宾浩斯记忆计划(收藏即排期;曲线=复习把遗忘曲线一次次拉回 100%) ----
+                MemoryCard(vm, word, srs)
+            }
         }
-
-        Spacer(Modifier.height(20.dp))
-
-        // ---- 艾宾浩斯记忆计划(收藏即排期;曲线=复习把遗忘曲线一次次拉回 100%) ----
-        MemoryCard(vm, word, srs)
 
         Spacer(Modifier.height(28.dp))
     }

@@ -3,6 +3,16 @@ package com.cet4.rootslots
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.ExitTransition
+import androidx.compose.animation.core.FastOutSlowInEasing
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.slideInVertically
+import androidx.compose.animation.slideOutVertically
+import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -58,34 +68,70 @@ private fun AppNav(vm: SlotViewModel) {
 
     Column(Modifier.fillMaxSize()) {
         Box(Modifier.weight(1f)) {
-            when (val o = overlay) {
-                is Overlay.Detail -> DetailScreen(
-                    word = o.word, vm = vm,
-                    onBack = { overlay = null },
-                    onOpenWord = { overlay = Overlay.Detail(it) },
-                )
-                Overlay.Review -> ReviewScreen(vm = vm, onBack = { overlay = null })
-                null -> when (tab) {
-                    RootTab.Codex -> CodexScreen(
-                        vm = vm,
+            // 推入页转场:推入时从底部上滑盖住旧页,关闭时下滑退场
+            AnimatedContent(
+                targetState = overlay,
+                transitionSpec = {
+                    if (targetState != null) {
+                        (slideInVertically(tween(300, easing = FastOutSlowInEasing)) { it } + fadeIn(tween(220)))
+                            .togetherWith(ExitTransition.None)
+                    } else {
+                        fadeIn(tween(240))
+                            .togetherWith(
+                                slideOutVertically(tween(300, easing = FastOutSlowInEasing)) { it } +
+                                    fadeOut(tween(240))
+                            )
+                    }
+                },
+                label = "overlay",
+            ) { o ->
+                when (o) {
+                    is Overlay.Detail -> DetailScreen(
+                        word = o.word, vm = vm,
+                        onBack = { overlay = null },
                         onOpenWord = { overlay = Overlay.Detail(it) },
                     )
-                    RootTab.Favorites -> FavoritesScreen(
-                        vm = vm,
-                        onOpenWord = { overlay = Overlay.Detail(it) },
-                        onStartReview = { overlay = Overlay.Review },
-                    )
-                    RootTab.Mine -> MineScreen(vm = vm)
-                    RootTab.Quiz -> QuizScreen(vm = vm)
-                    RootTab.Slots -> SlotScreen(
+                    Overlay.Review -> ReviewScreen(vm = vm, onBack = { overlay = null })
+                    null -> TabContent(vm, tab,
                         onOpenDetail = { overlay = Overlay.Detail(it) },
-                        vm = vm,
+                        onStartReview = { overlay = Overlay.Review },
                     )
                 }
             }
         }
-        if (overlay == null) {
+        // Tab 栏随推入页收起/展开
+        AnimatedVisibility(
+            visible = overlay == null,
+            enter = slideInVertically(tween(260, easing = FastOutSlowInEasing)) { it } + fadeIn(),
+            exit = slideOutVertically(tween(200, easing = FastOutSlowInEasing)) { it } + fadeOut(),
+        ) {
             RootTabBar(selected = tab, dueCount = dueCount, onTab = { tab = it })
+        }
+    }
+}
+
+/** Tab 内容切换:淡入 + 轻微上滑,替代生硬的瞬切 */
+@Composable
+private fun TabContent(
+    vm: SlotViewModel,
+    tab: RootTab,
+    onOpenDetail: (String) -> Unit,
+    onStartReview: () -> Unit,
+) {
+    AnimatedContent(
+        targetState = tab,
+        transitionSpec = {
+            (fadeIn(tween(220)) + slideInVertically(tween(240)) { it / 30 })
+                .togetherWith(fadeOut(tween(120)))
+        },
+        label = "tabContent",
+    ) { t ->
+        when (t) {
+            RootTab.Codex -> CodexScreen(vm = vm, onOpenWord = onOpenDetail)
+            RootTab.Favorites -> FavoritesScreen(vm = vm, onOpenWord = onOpenDetail, onStartReview = onStartReview)
+            RootTab.Mine -> MineScreen(vm = vm)
+            RootTab.Quiz -> QuizScreen(vm = vm)
+            RootTab.Slots -> SlotScreen(onOpenDetail = onOpenDetail, vm = vm)
         }
     }
 }

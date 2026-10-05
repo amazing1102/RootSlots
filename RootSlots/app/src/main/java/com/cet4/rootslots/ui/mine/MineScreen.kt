@@ -1,5 +1,10 @@
 package com.cet4.rootslots.ui.mine
 
+import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.FastOutSlowInEasing
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.animateIntAsState
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -76,11 +81,14 @@ fun MineScreen(vm: SlotViewModel) {
         Text("我的", color = c.accent, fontSize = 22.sp, fontWeight = FontWeight.Black)
         Spacer(Modifier.height(14.dp))
 
-        // ---- 统计卡 ----
+        // ---- 统计卡(数字滚动入场) ----
+        val spinsA by animateIntAsState(spins, tween(750, easing = FastOutSlowInEasing), label = "spins")
+        val distinctA by animateIntAsState(distinct, tween(750, easing = FastOutSlowInEasing), label = "distinct")
+        val coveredA by animateIntAsState(covered, tween(750, easing = FastOutSlowInEasing), label = "covered")
         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            StatCard("累计转动", "$spins", c.prefix, Modifier.weight(1f))
-            StatCard("见过单词", "$distinct", c.suffix, Modifier.weight(1f))
-            StatCard("族覆盖", "$covered/$families", c.accent, Modifier.weight(1f))
+            StatCard("累计转动", "$spinsA", c.prefix, Modifier.weight(1f))
+            StatCard("见过单词", "$distinctA", c.suffix, Modifier.weight(1f))
+            StatCard("族覆盖", "$coveredA/$families", c.accent, Modifier.weight(1f))
         }
 
         Spacer(Modifier.height(18.dp))
@@ -216,6 +224,12 @@ private fun StatCard(label: String, value: String, color: Color, modifier: Modif
 @Composable
 private fun AchievementRing(progress: Float, modifier: Modifier = Modifier) {
     val c = LocalAppColors.current
+    // 达成率圆环从 0 转起来
+    val anim by animateFloatAsState(
+        targetValue = progress.coerceIn(0f, 1f),
+        animationSpec = tween(900, easing = FastOutSlowInEasing),
+        label = "ring",
+    )
     Canvas(modifier) {
         val stroke = 8.dp.toPx()
         val inset = stroke / 2
@@ -228,7 +242,7 @@ private fun AchievementRing(progress: Float, modifier: Modifier = Modifier) {
         )
         drawArc(
             color = c.accent,
-            startAngle = -90f, sweepAngle = 360f * progress.coerceIn(0f, 1f), useCenter = false,
+            startAngle = -90f, sweepAngle = 360f * anim, useCenter = false,
             topLeft = Offset(inset, inset), size = androidx.compose.ui.geometry.Size(arcSize, arcSize),
             style = Stroke(width = stroke, cap = StrokeCap.Round),
         )
@@ -238,6 +252,12 @@ private fun AchievementRing(progress: Float, modifier: Modifier = Modifier) {
 @Composable
 private fun WeekBars(weekly: List<Int>) {
     val c = LocalAppColors.current
+    // 柱子从地面长出来
+    val appear = remember { Animatable(0f) }
+    LaunchedEffect(weekly) {
+        appear.snapTo(0f)
+        appear.animateTo(1f, tween(650, easing = FastOutSlowInEasing))
+    }
     val labels = (6 downTo 0).map { back ->
         val d = java.time.LocalDate.now().minusDays(back.toLong()).dayOfWeek.value
         "一二三四五六日"[d - 1].toString()
@@ -256,7 +276,7 @@ private fun WeekBars(weekly: List<Int>) {
                 Box(
                     Modifier
                         .width(16.dp)
-                        .height((8 + 44f * count / max).dp)
+                        .height(((8 + 44f * count / max) * appear.value).dp)
                         .clip(RoundedCornerShape(4.dp))
                         .background(if (count > 0) c.accent else c.surfaceAlt)
                 )

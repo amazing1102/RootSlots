@@ -56,7 +56,7 @@ adb install -r app/build/outputs/apk/debug/app-debug.apk
 adb shell pm clear com.cet4.rootslots && adb install -r ...
 ```
 
-验收方式:每个里程碑在模拟器实测 + 截图。SPIN 按钮约 `adb shell input tap 540 2118`。
+验收方式:每个里程碑在模拟器实测 + 截图。SPIN 按钮约 `adb shell input tap 540 1784`(1080×2400,M12 后布局;底部 5 Tab y≈2220)。
 
 ## 代码约定
 

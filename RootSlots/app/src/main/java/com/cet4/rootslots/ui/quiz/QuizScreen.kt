@@ -1,7 +1,15 @@
 package com.cet4.rootslots.ui.quiz
 
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.animateColorAsState
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.slideInVertically
+import androidx.compose.foundation.LocalIndication
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -28,6 +36,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -35,6 +44,7 @@ import androidx.compose.ui.unit.sp
 import com.cet4.rootslots.data.Q
 import com.cet4.rootslots.ui.slots.SlotViewModel
 import com.cet4.rootslots.ui.theme.LocalAppColors
+import com.cet4.rootslots.ui.theme.pressScale
 import kotlinx.coroutines.delay
 import kotlin.random.Random
 
@@ -156,8 +166,10 @@ fun QuizScreen(vm: SlotViewModel) {
             }
         }
         // 答题反馈:音标/听音题揭示单词与释义
-        if (picked != null && (q.kind == "ipa" || q.kind == "sound")) {
-            Spacer(Modifier.height(10.dp))
+        AnimatedVisibility(
+            visible = picked != null && (q.kind == "ipa" || q.kind == "sound"),
+            enter = fadeIn(tween(250)) + slideInVertically(tween(250)) { it / 3 },
+        ) {
             val hit = picked == q.answer
             Text(
                 "${q.answer}  ${q.aux}",
@@ -172,18 +184,30 @@ fun QuizScreen(vm: SlotViewModel) {
             q.options.forEach { opt ->
                 val isAnswer = opt == q.answer
                 val isPicked = opt == picked
-                val bg = when {
-                    picked == null -> c.surface
-                    isAnswer -> c.successBg
-                    isPicked -> c.dangerBg
-                    else -> c.surface
-                }
-                val fg = when {
-                    picked == null -> c.text
-                    isAnswer -> c.success
-                    isPicked -> c.danger
-                    else -> c.textFaint
-                }
+                val ia = remember(opt) { MutableInteractionSource() }
+                // 颜色渐变入场:对/错状态不再硬切
+                val bg by animateColorAsState(
+                    when {
+                        picked == null -> c.surface
+                        isAnswer -> c.successBg
+                        isPicked -> c.dangerBg
+                        else -> c.surface
+                    },
+                    tween(280), label = "optBg",
+                )
+                val fg by animateColorAsState(
+                    when {
+                        picked == null -> c.text
+                        isAnswer -> c.success
+                        isPicked -> c.danger
+                        else -> c.textFaint
+                    },
+                    tween(280), label = "optFg",
+                )
+                val borderColor by animateColorAsState(
+                    if (picked != null && isAnswer) c.success else Color.Transparent,
+                    tween(280), label = "optBorder",
+                )
                 Text(
                     opt,
                     color = fg,
@@ -191,9 +215,15 @@ fun QuizScreen(vm: SlotViewModel) {
                     fontWeight = FontWeight.Bold,
                     modifier = Modifier
                         .fillMaxWidth()
+                        .pressScale(ia, pressedScale = 0.97f)
                         .clip(RoundedCornerShape(12.dp))
                         .background(bg)
-                        .clickable(enabled = picked == null) { picked = opt }
+                        .border(1.5.dp, borderColor, RoundedCornerShape(12.dp))
+                        .clickable(
+                            interactionSource = ia,
+                            indication = LocalIndication.current,
+                            enabled = picked == null,
+                        ) { picked = opt }
                         .padding(vertical = 14.dp),
                     textAlign = TextAlign.Center,
                 )
@@ -219,50 +249,38 @@ private fun MenuPane(vm: SlotViewModel, onStart: (String) -> Unit) {
         Spacer(Modifier.height(8.dp))
         Text("每轮 10 题 · 答对 +2 金币", color = c.textDim, fontSize = 13.sp)
         Spacer(Modifier.height(26.dp))
-        Button(
-            onClick = { onStart("gloss") },
-            modifier = Modifier.fillMaxWidth(),
-            colors = ButtonDefaults.buttonColors(containerColor = c.accent, contentColor = c.onAccent),
-        ) {
-            Column(Modifier.padding(vertical = 8.dp)) {
-                Text("释义选词", fontSize = 18.sp, fontWeight = FontWeight.Black)
-                Text("看中文释义,选出对应单词", fontSize = 12.sp)
-            }
-        }
+        MenuButton("释义选词", "看中文释义,选出对应单词", container = c.accent, content = c.onAccent) { onStart("gloss") }
         Spacer(Modifier.height(12.dp))
-        Button(
-            onClick = { onStart("ipa") },
-            modifier = Modifier.fillMaxWidth(),
-            colors = ButtonDefaults.buttonColors(containerColor = c.surfaceAlt, contentColor = c.text),
-        ) {
-            Column(Modifier.padding(vertical = 8.dp)) {
-                Text("看音标选词", fontSize = 18.sp, fontWeight = FontWeight.Black)
-                Text("看美式音标,选出对应单词", fontSize = 12.sp)
-            }
-        }
+        MenuButton("看音标选词", "看美式音标,选出对应单词", container = c.surfaceAlt, content = c.text) { onStart("ipa") }
         Spacer(Modifier.height(12.dp))
-        Button(
-            onClick = { onStart("sound") },
-            modifier = Modifier.fillMaxWidth(),
-            colors = ButtonDefaults.buttonColors(containerColor = c.suffix, contentColor = c.bg),
-        ) {
-            Column(Modifier.padding(vertical = 8.dp)) {
-                Text("听音选词", fontSize = 18.sp, fontWeight = FontWeight.Black)
-                Text("听发音选单词(需设备语音引擎)", fontSize = 12.sp)
-            }
-        }
+        MenuButton("听音选词", "听发音选单词(需设备语音引擎)", container = c.suffix, content = c.bg) { onStart("sound") }
         Spacer(Modifier.height(12.dp))
-        Button(
-            onClick = { onStart("spell") },
-            modifier = Modifier.fillMaxWidth(),
-            colors = ButtonDefaults.buttonColors(containerColor = c.prefix, contentColor = c.bg),
-        ) {
-            Column(Modifier.padding(vertical = 8.dp)) {
-                Text("拼写补全", fontSize = 18.sp, fontWeight = FontWeight.Black)
-                Text("补全单词缺失的字母", fontSize = 12.sp)
-            }
-        }
+        MenuButton("拼写补全", "补全单词缺失的字母", container = c.prefix, content = c.bg) { onStart("spell") }
         Spacer(Modifier.weight(1f))
+    }
+}
+
+@Composable
+private fun MenuButton(
+    title: String,
+    sub: String,
+    container: Color,
+    content: Color,
+    onClick: () -> Unit,
+) {
+    val ia = remember { MutableInteractionSource() }
+    Button(
+        onClick = onClick,
+        interactionSource = ia,
+        modifier = Modifier
+            .fillMaxWidth()
+            .pressScale(ia, pressedScale = 0.97f),
+        colors = ButtonDefaults.buttonColors(containerColor = container, contentColor = content),
+    ) {
+        Column(Modifier.padding(vertical = 8.dp)) {
+            Text(title, fontSize = 18.sp, fontWeight = FontWeight.Black)
+            Text(sub, fontSize = 12.sp)
+        }
     }
 }
 

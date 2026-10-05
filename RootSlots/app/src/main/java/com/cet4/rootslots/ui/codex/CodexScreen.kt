@@ -1,8 +1,16 @@
 package com.cet4.rootslots.ui.codex
 
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.expandVertically
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.shrinkVertically
+import androidx.compose.foundation.LocalIndication
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
@@ -39,6 +47,7 @@ import androidx.compose.ui.unit.sp
 import com.cet4.rootslots.data.FamilyEntity
 import com.cet4.rootslots.ui.slots.SlotViewModel
 import com.cet4.rootslots.ui.theme.LocalAppColors
+import com.cet4.rootslots.ui.theme.pressScale
 
 /** 词根图鉴:354 词根族,搜索 + 转出进度;统计卡在「我的」页 */
 @OptIn(ExperimentalLayoutApi::class)
@@ -115,9 +124,11 @@ fun CodexScreen(
             items(shown, key = { it.key }) { fam ->
                 val touched = (famWords[fam.key] ?: emptyList()).count { it in spun }
                 val isExp = expanded == fam.key
+                val ia = remember { MutableInteractionSource() }
                 Column(
                     Modifier
                         .fillMaxWidth()
+                        .pressScale(ia, pressedScale = 0.98f)
                         .clip(RoundedCornerShape(12.dp))
                         .background(c.surface)
                         .border(
@@ -125,7 +136,10 @@ fun CodexScreen(
                             if (touched > 0) c.accent.copy(alpha = 0.55f) else c.stroke,
                             RoundedCornerShape(12.dp),
                         )
-                        .clickable { expanded = if (isExp) null else fam.key }
+                        .clickable(
+                            interactionSource = ia,
+                            indication = LocalIndication.current,
+                        ) { expanded = if (isExp) null else fam.key }
                         .padding(horizontal = 12.dp, vertical = 9.dp)
                 ) {
                     Row(verticalAlignment = Alignment.CenterVertically) {
@@ -139,7 +153,12 @@ fun CodexScreen(
                             Text("未遇到 · ${fam.count}词", color = c.textFaint, fontSize = 11.sp)
                         }
                     }
-                    if (isExp) {
+                    // 词表展开/收起:纵向展开 + 淡入淡出
+                    AnimatedVisibility(
+                        visible = isExp,
+                        enter = expandVertically(tween(240)) + fadeIn(tween(240)),
+                        exit = shrinkVertically(tween(180)) + fadeOut(tween(180)),
+                    ) {
                         Spacer(Modifier.height(8.dp))
                         FlowRow(
                             horizontalArrangement = Arrangement.spacedBy(6.dp),

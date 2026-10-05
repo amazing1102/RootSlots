@@ -1,8 +1,14 @@
 package com.cet4.rootslots.ui.review
 
 import androidx.activity.compose.BackHandler
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.slideInVertically
+import androidx.compose.foundation.LocalIndication
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -37,6 +43,7 @@ import com.cet4.rootslots.data.Repository
 import com.cet4.rootslots.data.parseSegs
 import com.cet4.rootslots.ui.slots.SlotViewModel
 import com.cet4.rootslots.ui.theme.LocalAppColors
+import com.cet4.rootslots.ui.theme.pressScale
 import kotlinx.coroutines.launch
 
 /** 生词本 Tab:收藏列表 + SRS 排期 + 进入复习(复习为全屏推入页) */
@@ -103,12 +110,17 @@ fun FavoritesScreen(
                     r.srs == null -> ""
                     else -> Repository.dueLabel(r.srs.dueAt)
                 }
+                val ia = remember { MutableInteractionSource() }
                 Row(
                     Modifier
                         .fillMaxWidth()
+                        .pressScale(ia, pressedScale = 0.98f)
                         .clip(RoundedCornerShape(12.dp))
                         .background(c.surface)
-                        .clickable { onOpenWord(r.w) }
+                        .clickable(
+                            interactionSource = ia,
+                            indication = LocalIndication.current,
+                        ) { onOpenWord(r.w) }
                         .padding(horizontal = 12.dp, vertical = 10.dp),
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
@@ -219,25 +231,33 @@ fun ReviewScreen(
             .clickable { vm.pronounce(w) }
             .padding(6.dp))
 
+        // 答案揭示:淡入上滑(常驻组合,保证入场动画能播)
+        Spacer(Modifier.weight(1f))
+        AnimatedVisibility(
+            visible = revealed,
+            enter = fadeIn(tween(280)) + slideInVertically(tween(280)) { it / 8 },
+            exit = androidx.compose.animation.ExitTransition.None,
+        ) {
+            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                Text(vm.glossOf(w) ?: "(释义待补)", color = c.text, fontSize = 18.sp)
+                val combo = vm.comboFor(w)
+                if (combo != null) {
+                    Spacer(Modifier.height(10.dp))
+                    Text(
+                        parseSegs(combo.segsJson).joinToString(" | ") { it.s } + "   「${combo.family}」",
+                        color = c.root, fontSize = 14.sp,
+                    )
+                }
+            }
+        }
         if (!revealed) {
-            Spacer(Modifier.weight(1f))
+            Spacer(Modifier.height(14.dp))
             Button(
                 onClick = { revealed = true },
                 colors = ButtonDefaults.buttonColors(containerColor = c.prefix, contentColor = c.bg),
             ) { Text("显示答案", fontWeight = FontWeight.Black, modifier = Modifier.padding(horizontal = 24.dp, vertical = 4.dp)) }
-            Spacer(Modifier.weight(1f))
         } else {
-            Spacer(Modifier.height(16.dp))
-            Text(vm.glossOf(w) ?: "(释义待补)", color = c.text, fontSize = 18.sp)
-            val combo = vm.comboFor(w)
-            if (combo != null) {
-                Spacer(Modifier.height(10.dp))
-                Text(
-                    parseSegs(combo.segsJson).joinToString(" | ") { it.s } + "   「${combo.family}」",
-                    color = c.root, fontSize = 14.sp,
-                )
-            }
-            Spacer(Modifier.weight(1f))
+            Spacer(Modifier.height(14.dp))
             Row(horizontalArrangement = Arrangement.spacedBy(14.dp)) {
                 Button(
                     onClick = {
@@ -260,7 +280,7 @@ fun ReviewScreen(
                     colors = ButtonDefaults.buttonColors(containerColor = c.accent, contentColor = c.onAccent),
                 ) { Text("认识 +1🪙", fontWeight = FontWeight.Black, modifier = Modifier.padding(horizontal = 14.dp)) }
             }
-            Spacer(Modifier.height(20.dp))
         }
+        Spacer(Modifier.height(20.dp))
     }
 }

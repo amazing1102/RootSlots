@@ -1,5 +1,8 @@
 package com.cet4.rootslots.ui.nav
 
+import androidx.compose.animation.core.Spring
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.spring
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Casino
 import androidx.compose.material.icons.filled.Favorite
@@ -15,6 +18,9 @@ import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
@@ -39,6 +45,12 @@ fun RootTabBar(selected: RootTab, dueCount: Int, onTab: (RootTab) -> Unit) {
     NavigationBar(containerColor = c.surface) {
         RootTab.entries.forEach { tab ->
             val isSel = tab == selected
+            // 选中图标弹簧放大一小格,落点有"咔哒"感
+            val iconScale by animateFloatAsState(
+                targetValue = if (isSel) 1.14f else 1f,
+                animationSpec = spring(dampingRatio = 0.5f, stiffness = Spring.StiffnessMedium),
+                label = "tabIconScale",
+            )
             NavigationBarItem(
                 selected = isSel,
                 onClick = { onTab(tab) },
@@ -53,6 +65,10 @@ fun RootTabBar(selected: RootTab, dueCount: Int, onTab: (RootTab) -> Unit) {
                         Icon(
                             imageVector = if (tab == RootTab.Favorites && isSel) Icons.Filled.Favorite else tab.icon,
                             contentDescription = tab.label,
+                            modifier = Modifier.graphicsLayer {
+                                scaleX = iconScale
+                                scaleY = iconScale
+                            },
                         )
                     }
                 },
