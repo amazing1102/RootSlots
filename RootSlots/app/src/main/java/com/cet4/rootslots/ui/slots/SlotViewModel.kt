@@ -49,6 +49,15 @@ class SlotViewModel(app: Application) : AndroidViewModel(app) {
     var spinning by mutableStateOf(false); private set
     var spinId by mutableStateOf(0); private set          // 每次转动 +1,驱动转轴重建
 
+    // 落定开考(方案A):停轴后 4 选 1 猜释义,答对 1.5× / 答错 -3 且词进生词本 / 跳过半价
+    // 锈词折损(方案C):生词本逾期未复习的词再转出,收益固定 +2 且连击清零
+    data class QuizState(val options: List<String>, val answer: String)
+    var quiz by mutableStateOf<QuizState?>(null); private set
+    var quizPicked by mutableStateOf<String?>(null); private set   // 已选选项;"·skip·"=跳过
+    var quizResult by mutableStateOf<String?>(null); private set   // 结算提示行
+    var lastRust by mutableStateOf(false); private set
+    private var pendingRust = false
+
     // 转轴:轴数=段数,每根轴落一个真实词段(动态段轴,不再固定 P/R/S 三轴)
     var reels by mutableStateOf<List<ReelSpec>>(emptyList()); private set
 
@@ -60,7 +69,6 @@ class SlotViewModel(app: Application) : AndroidViewModel(app) {
     val speechRate: StateFlow<Float> = prefs.speechRate.stateIn(viewModelScope, SharingStarted.Eagerly, GamePrefs.SPEECH_RATE_DEFAULT)
 
     private var lastFamilyKey: String? = null
-    private var pendingSpeak = false
 
     init {
         engineStatus = tts.lastStatus
@@ -168,23 +176,22 @@ class SlotViewModel(app: Application) : AndroidViewModel(app) {
         viewModelScope.launch {
             if (!prefs.tryConsumeEnergy()) return@launch
             val c = repo.randomCombo(current?.w) ?: return@launch   // 词库未就绪,不消耗能量
-            val wordSegs = parseSegs(c.segsJson)
 
-            // 结算先行(转轴只是把结果演出来)
-            combo += 1
-            var reward = (10 * (1 + minOf(combo, 20) * 0.05)).roundToInt()
-            if (c.family == lastFamilyKey) familyStreak += 1 else familyStreak = 1
-            if (familyStreak >= 2) reward += 5 * (familyStreak - 1)
-            lastFamilyKey = c.family
-            lastReward = reward
-            prefs.addCoins(reward)
-            prefs.incSpins()
+            // 锈词判定(C):已收藏且到期未复习(未毕业)
+            val srs = repo.srsOf(c.w)
+            pendingRust = srs != null &&
+                srs.dueAt <= System.currentTimeMillis() &&
+                srs.stage < Repository.STAGE_GRADUATED
+            lastRust = pendingRust
 
+            // 结算延后到答题后(A);此刻只出题面
+            quiz = null; quizPicked = null; quizResult = null; lastReward = 0
             repo.recordSpin(c.w)
+            prefs.incSpins()
             current = c
-            segs = wordSegs
+            segs = parseSegs(c.segsJson)
             gloss = repo.word(c.w)?.g
-            reels = wordSegs.map { seg ->
+            reels = segs.map { seg ->
                 ReelSpec(
                     type = seg.t,
                     target = seg.s,
@@ -196,25 +203,87 @@ class SlotViewModel(app: Application) : AndroidViewModel(app) {
                 )
             }
             litIndices = emptySet()
-            pendingSpeak = true
             spinning = true
             spinId += 1
         }
     }
 
-    /** 转轴停稳回调:左→右依次停,点亮对应段;全部停稳后发音结算 */
+    /** 转轴停稳回调:左→右依次停;全部停稳后落定开考 */
     fun onReelStopped(index: Int) {
         litIndices = litIndices + index
         if (litIndices.size >= reels.size && spinning) {
             spinning = false
-            val w = current?.w
-            if (w != null && pendingSpeak) {
-                pendingSpeak = false
-                tts.speak(w)
-            }
+            viewModelScope.launch { buildQuizForCurrentWord() }
         }
     }
 
+    private suspend fun buildQuizForCurrentWord() {
+        val c = current ?: return
+        val correct = gloss?.takeIf { it.isNotBlank() }
+        val pool = repo.glossedWords()
+            .filter { it.w != c.w && !it.g.isNullOrBlank() && it.g != correct }
+            .distinctBy { it.g }
+            .shuffled()
+        if (correct == null || pool.size < 3) {
+            settleQuiz(null)   // 无释义/词池不足,无法出题 → 按跳过结算
+            return
+        }
+        val options = (pool.take(3).mapNotNull { it.g } + correct).shuffled()
+        quiz = QuizState(options, correct)
+    }
+
+    fun answerQuiz(option: String) {
+        val q = quiz ?: return
+        if (quizPicked != null) return
+        quizPicked = option
+        settleQuiz(option == q.answer)
+    }
+
+    fun skipQuiz() {
+        if (quiz == null || quizPicked != null) return
+        quizPicked = "·skip·"
+        settleQuiz(null)
+    }
+
+    /**
+     * 统一结算:correct = true 答对(1.5×) / false 答错(-3,词进生词本,连击清零) /
+     * null 跳过(0.5×)。锈词无论结果收益固定 +2 且连击清零。
+     */
+    private fun settleQuiz(correct: Boolean?) {
+        val c = current ?: return
+        val w = c.w
+        viewModelScope.launch {
+            if (correct == false) {
+                combo = 0; familyStreak = 0; lastFamilyKey = null
+                lastReward = 0
+                val delta = -minOf(3, coins)
+                prefs.addCoins(delta)
+                if (!repo.isFavorite(w)) repo.toggleFavorite(w)   // 错词自动进生词本排期复习
+                quizResult = "答错了 −3🪙 · 已收进生词本"
+            } else if (pendingRust) {
+                combo = 0; familyStreak = 0; lastFamilyKey = null
+                lastReward = 2
+                prefs.addCoins(2)
+                quizResult = "锈词 +2 · 先去复习"
+            } else {
+                combo += 1
+                if (c.family == lastFamilyKey) familyStreak += 1 else familyStreak = 1
+                lastFamilyKey = c.family
+                val graduated = repo.srsOf(w)?.stage?.let { it >= Repository.STAGE_GRADUATED } == true
+                val base = if (graduated) 15 else 10
+                var reward = (base * (1 + minOf(combo, 20) * 0.05)).roundToInt()
+                if (familyStreak >= 2) reward += 5 * (familyStreak - 1)
+                reward = if (correct == true) (reward * 1.5).roundToInt() else (reward * 0.5).roundToInt()
+                lastReward = reward
+                prefs.addCoins(reward)
+                quizResult = when (correct) {
+                    true -> "答对了 · 1.5× +$reward🪙"
+                    else -> "跳过 · 半价 +$reward🪙"
+                }
+            }
+            tts.speak(w)
+        }
+    }
     override fun onCleared() {
         tts.shutdown()
         super.onCleared()

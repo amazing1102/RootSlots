@@ -40,6 +40,7 @@ import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -204,6 +205,13 @@ private fun GamePane(
 
         Spacer(Modifier.height(12.dp))
 
+        // ---- 结算区(可滚动):结果卡 + 出题 + 浮字;SPIN 恒在底部 ----
+        Column(
+            Modifier
+                .fillMaxWidth()
+                .weight(1f)
+                .verticalScroll(rememberScrollState())
+        ) {
         // ---- 结果卡:随转轴入场,完整词逐段点亮,停稳后胜利脉冲 ----
         val winScale = remember { Animatable(1f) }
         LaunchedEffect(vm.spinId, vm.spinning) {
@@ -233,7 +241,7 @@ private fun GamePane(
                         .clip(RoundedCornerShape(20.dp))
                         .background(c.surface)
                         .border(1.dp, c.stroke, RoundedCornerShape(20.dp))
-                        .clickable(enabled = !vm.spinning) { onOpenDetail(w) }
+                        .clickable(enabled = !vm.spinning && !(vm.quiz != null && vm.quizPicked == null)) { onOpenDetail(w) }
                         .padding(horizontal = 12.dp, vertical = 12.dp),
                     horizontalAlignment = Alignment.CenterHorizontally,
                 ) {
@@ -258,6 +266,10 @@ private fun GamePane(
                         Text("/$ipa/", color = c.textDim, fontSize = 13.sp)
                     }
                     if (!vm.spinning) {
+                        if (vm.lastRust) {
+                            Spacer(Modifier.height(4.dp))
+                            Text("⚠ 生词本已逾期,先去复习", color = c.danger, fontSize = 11.sp)
+                        }
                         val fam = vm.current?.family
                         if (fam != null) {
                             Spacer(Modifier.height(6.dp))
@@ -268,13 +280,60 @@ private fun GamePane(
                                 color = c.textDim, fontSize = 11.sp,
                             )
                         }
-                        Spacer(Modifier.height(4.dp))
-                        Text(
-                            vm.gloss ?: "",
-                            color = c.textMid, fontSize = 15.sp, textAlign = TextAlign.Center,
-                        )
-                        Spacer(Modifier.height(2.dp))
-                        Text("点击单词查看构词详情 →", color = c.textFaint, fontSize = 10.sp)
+                        // 落定开考:出题中隐藏释义,答完显示并对色
+                        val quiz = vm.quiz
+                        if (quiz != null) {
+                            Spacer(Modifier.height(8.dp))
+                            Text("这个词什么意思?", color = c.text, fontSize = 14.sp, fontWeight = FontWeight.Bold)
+                            Spacer(Modifier.height(6.dp))
+                            val resolved = vm.quizPicked != null
+                            quiz.options.forEach { opt ->
+                                val isAnswer = opt == quiz.answer
+                                val isPickedWrong = opt == vm.quizPicked && !isAnswer
+                                Text(
+                                    opt,
+                                    color = when {
+                                        resolved && isAnswer -> c.success
+                                        isPickedWrong -> c.danger
+                                        else -> c.text
+                                    },
+                                    fontSize = 14.sp, fontWeight = FontWeight.Bold,
+                                    textAlign = TextAlign.Center,
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .clip(RoundedCornerShape(10.dp))
+                                        .background(
+                                            when {
+                                                resolved && isAnswer -> c.successBg
+                                                isPickedWrong -> c.dangerBg
+                                                else -> c.surfaceAlt
+                                            }
+                                        )
+                                        .clickable(enabled = !resolved) { vm.answerQuiz(opt) }
+                                        .padding(vertical = 9.dp),
+                                )
+                                Spacer(Modifier.height(6.dp))
+                            }
+                            if (!resolved) {
+                                Text(
+                                    "跳过 · 拿半价奖励",
+                                    color = c.textFaint, fontSize = 11.sp,
+                                    modifier = Modifier.clickable { vm.skipQuiz() },
+                                )
+                            }
+                        } else {
+                            Spacer(Modifier.height(4.dp))
+                            Text(
+                                vm.gloss ?: "",
+                                color = c.textMid, fontSize = 15.sp, textAlign = TextAlign.Center,
+                            )
+                            vm.quizResult?.let {
+                                Spacer(Modifier.height(2.dp))
+                                Text(it, color = c.textDim, fontSize = 11.sp)
+                            }
+                            Spacer(Modifier.height(2.dp))
+                            Text("点击单词查看构词详情 →", color = c.textFaint, fontSize = 10.sp)
+                        }
                     }
                 }
             }
@@ -297,11 +356,10 @@ private fun GamePane(
         if (vm.familyStreak >= 2 && !vm.spinning) {
             Text("🎰 词根家族连击 ×${vm.familyStreak}", color = c.suffix, fontSize = 13.sp)
         }
+        }
 
-        Spacer(Modifier.weight(1f))
-
-        // ---- SPIN:带机壳包边的实体按钮,按压回弹 + 触感 ----
-        val enabled = !vm.spinning && vm.energy >= 1
+        // ---- SPIN:带机壳包边的实体按钮,按压回弹 + 触感;出题未答时禁用 ----
+        val enabled = !vm.spinning && !(vm.quiz != null && vm.quizPicked == null) && vm.energy >= 1
         val spinIa = remember { MutableInteractionSource() }
         Box(
             modifier = Modifier

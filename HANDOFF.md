@@ -18,7 +18,15 @@
 | M9 | 美式 IPA:CMUdict 0.7b→ARPAbet→IPA(98.2% 覆盖,缺词 113 导出)→ words.json "i" → DB v5 → 五处展示 |
 | M10 | 内置神经语音:sherpa-onnx AAR 1.13.8 + Piper en_US-amy fp32(63MB);SpeechEngine 抽象(系统TTS先顶/Piper就绪自动切换);espeak-ng-data 拷 filesDir;APK 175MB |
 | M12 | 机台化视觉与动效(2026-10-05):机柜+跑马灯泡带、纸面滚筒+三段停轴+字迹减淡、Bungee/DSEG7 字体、LED 计数、SPIN 按压+触感、结果卡入场/胜利脉冲、推入页上滑转场、各页微交互;README 六图已更新。P8 后补:详情页段卡一段一行整宽竖排(有几段显示几行,不横滑)+ 顶栏固定不随滚;发音按钮统一 Material VolumeUp 图标(详情/复习/测验重播/我的试听) |
+| M13 | 转轴经济(2026-10-05,用户采纳 A+C 组合):**落定开考**——停轴后 4 选 1 猜释义,答对 ×1.5/答错 −3🪙+词自动进生词本/跳过半价,答错清连击;**锈词折损**——生词本逾期词再转出固定 +2 且清连击,卡片挂逾期提示;毕业词基础 15;出题中 SPIN/详情禁用防剧透,结算区可滚动 |
 | 数据 | **释义 6286/6286 全覆盖**(glosses/c01–c19 共 19 批)+ 音标 6173 词;组合词 2278(校验 0 错误) |
+
+## 经济数值(M13 后,改玩法先看)
+
+- 基础奖励:新词/未逾期 10,已毕业 15;×(1 + min(combo,20)×0.05) + 同族连击 5×(n−1);答对 ×1.5,跳过 ×0.5
+- 答错:−3🪙(钱包钳 0)+ combo/familyStreak 清零 + 词自动收藏(SRS 新学档)
+- 锈词 = srs 非空 && dueAt ≤ now && stage < GRADUATED:无论答对与否收益固定 +2、连击清零
+- 金币仍无消费出口(候选:护盾/能量道具,未立项)
 
 **v1 时的四大用户反馈(P1~P4)已全部闭环:** 布局(M7)、发音/音标(M9+M10)、构词展示(M8)、配色+明暗主题(M6)。
 滚动条胶囊:新构建未复现,判定为模拟器瞬时浮层(见 AGENTS.md 已知坑 #8 同类),关闭。
@@ -28,6 +36,8 @@
 1. **~~真机验收~~ ✅ 2026-10-04 用户确认:真机发音自然度通过(Piper amy),项目验收完成。**
 2. **可选打磨(有想法再做)**:3989 条新释义抽检错别字;
    缺音标的 113 词人工补录(tools/ipa_missing.txt);若发新版可打 v1.0.1 tag + release。
+
+**M13 实施要点(改经济/玩法相关时看):** 结算已从 spin() 挪到 settleQuiz()(SlotViewModel):spin 只抽词+判锈词(pendingRust)+建轴;停稳后 buildQuizForCurrentWord() 出题(干扰项 = glossedWords 排自身去重抽 3,gloss 缺失自动按跳过结算);answerQuiz/skipQuiz → settleQuiz(correct: Boolean?)。quiz/quizPicked/quizResult/lastRust 均为 VM 状态;quiz 保留到下次 spin 才清(供 UI 变色),SPIN 与详情入口以 `quiz != null && quizPicked == null` 判禁用。锈词在 settle 各分支优先于 combo 结算。
 
 **M12 实施要点(改视觉/动效相关时看):** 机台硬件 token 在 Theme.kt(cabinet/reelPaperHi/Lo/reelInk/bulbDim);
 字体 res/font(bungee_regular.ttf、dseg7_classic_bold.ttf,OFL,License 附表已登记)→ `FontBrand`/`FontLed`;
