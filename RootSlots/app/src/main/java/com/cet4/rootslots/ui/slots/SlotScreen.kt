@@ -289,8 +289,6 @@ private fun GamePane(
                         val quiz = vm.quiz
                         if (quiz != null) {
                             Spacer(Modifier.height(8.dp))
-                            Text("这个词什么意思?", color = c.text, fontSize = 14.sp, fontWeight = FontWeight.Bold)
-                            Spacer(Modifier.height(6.dp))
                             val resolved = vm.quizPicked != null
                             quiz.options.forEach { opt ->
                                 val isAnswer = opt == quiz.answer
