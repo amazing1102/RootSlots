@@ -106,8 +106,16 @@ fun FavoritesScreen(
         if (rows.isEmpty()) {
             Text("在详情页点「♡ 收藏」把生词收进来", color = c.textFaint, fontSize = 13.sp)
         }
+        // 按遗忘紧迫度排序:到期/逾期置顶,已毕业与未排期垫底
+        val sorted = rows.sortedByDescending { r ->
+            when {
+                r.srs == null -> -2f
+                r.srs.stage >= Repository.STAGE_GRADUATED -> -1f
+                else -> Repository.forgetProgress(r.srs) ?: -2f
+            }
+        }
         LazyColumn(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-            items(rows, key = { it.w }) { r ->
+            items(sorted, key = { it.w }) { r ->
                 val stageTxt = when {
                     r.srs == null -> "未排期"
                     else -> Repository.stageLabel(r.srs.stage)
@@ -117,7 +125,7 @@ fun FavoritesScreen(
                     else -> Repository.dueLabel(r.srs.dueAt)
                 }
                 val ia = remember { MutableInteractionSource() }
-                Row(
+                Column(
                     Modifier
                         .fillMaxWidth()
                         .pressScale(ia, pressedScale = 0.98f)
@@ -127,9 +135,9 @@ fun FavoritesScreen(
                             interactionSource = ia,
                             indication = LocalIndication.current,
                         ) { onOpenWord(r.w) }
-                        .padding(horizontal = 12.dp, vertical = 10.dp),
-                    verticalAlignment = Alignment.CenterVertically,
+                        .padding(horizontal = 12.dp, vertical = 10.dp)
                 ) {
+                    Row(verticalAlignment = Alignment.CenterVertically) {
                     Column(Modifier.weight(1f)) {
                         Row(verticalAlignment = Alignment.CenterVertically) {
                             Text(r.w, color = c.suffix, fontSize = 16.sp, fontWeight = FontWeight.Bold)
@@ -145,9 +153,37 @@ fun FavoritesScreen(
                         Text(dueTxt, color = if (r.srs != null && r.srs.dueAt <= System.currentTimeMillis()) c.accent else c.textFaint, fontSize = 11.sp)
                     }
                 }
+                // 遗忘进度:上次复习后档位间隔的消耗度(毕业 = 满条金色)
+                Repository.forgetProgress(r.srs)?.let { p ->
+                    Spacer(Modifier.height(8.dp))
+                    val isGraduated = p < 0f
+                    Box(
+                        Modifier
+                            .fillMaxWidth()
+                            .height(3.dp)
+                            .clip(RoundedCornerShape(2.dp))
+                            .background(c.surfaceAlt)
+                    ) {
+                        Box(
+                            Modifier
+                                .fillMaxWidth(if (isGraduated) 1f else p)
+                                .height(3.dp)
+                                .clip(RoundedCornerShape(2.dp))
+                                .background(
+                                    when {
+                                        isGraduated -> c.accent
+                                        p >= 1f -> c.danger
+                                        p >= 0.5f -> c.accent
+                                        else -> c.success
+                                    }
+                                )
+                        )
+                    }
+                }
             }
         }
     }
+}
 }
 
 /** 复习卡流:词 → 显示答案 → 认识/没记住 */

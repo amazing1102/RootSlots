@@ -41,6 +41,20 @@ class Repository private constructor(context: Context) {
             else -> "${NODE_LABELS[stage - 1]}档"
         }
 
+        /**
+         * 遗忘进度(0..1):上次复习后,当前档位间隔被"消耗"的比例。
+         * 1 = 已到期/逾期;毕业词返回 -1(供 UI 显示满条金色"已完成");
+         * 未排期返回 null。
+         */
+        fun forgetProgress(srs: SrsEntity?, now: Long = System.currentTimeMillis()): Float? = when {
+            srs == null -> null
+            srs.stage >= STAGE_GRADUATED -> -1f
+            else -> {
+                val interval = NODE_MS[(srs.stage - 1).coerceIn(0, NODE_MS.size - 1)].toFloat()
+                (1f - (srs.dueAt - now) / interval).coerceIn(0f, 1f)
+            }
+        }
+
         /** 到期时间友好显示(含当天内的分钟/小时档) */
         fun dueLabel(dueAt: Long, now: Long = System.currentTimeMillis()): String = when {
             dueAt == Long.MAX_VALUE -> "长期记忆"

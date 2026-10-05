@@ -6,11 +6,17 @@ import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.floatPreferencesKey
 import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.core.longPreferencesKey
+import androidx.datastore.preferences.core.stringSetPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 
 private val Context.gameStore by preferencesDataStore(name = "game")
+
+/** 一天的学习记录:转动次数与当日的目标值(用于日历热力图与连续达标天数) */
+data class DailyStat(val day: LocalDate, val count: Int, val goal: Int)
 
 /** 金币 / 能量 / 累计转数的持久化(能量按时间回充)+ 外观与发音设置 */
 class GamePrefs(private val context: Context) {
@@ -25,6 +31,7 @@ class GamePrefs(private val context: Context) {
         val DAILY_GOAL = intPreferencesKey("daily_goal")     // 每日学习目标(转动次数)
         val SPINS_TODAY = intPreferencesKey("spins_today")   // 今日已转(按 DAY_STAMP 归零)
         val DAY_STAMP = longPreferencesKey("day_stamp")      // SPINS_TODAY 所属日(LocalDate epochDay)
+        val DAILY_STATS = stringSetPreferencesKey("daily_stats") // 历史日统计 "yyyymmdd:count:goal"
         const val ENERGY_MAX = 30
         const val REGEN_MS = 10_000L
         const val COINS_START = 200
@@ -88,6 +95,29 @@ class GamePrefs(private val context: Context) {
 
     suspend fun setDailyGoal(n: Int) {
         context.gameStore.edit { it[DAILY_GOAL] = n.coerceIn(5, 500) }
+    }
+
+    /** 历史日统计(供学习日历渲染),key = LocalDate */
+    val dailyStats: Flow<Map<LocalDate, DailyStat>> = context.gameStore.data.map { p ->
+        (p[DAILY_STATS] ?: emptySet()).mapNotNull { e ->
+            runCatching {
+                val s = e.split(":")
+                DailyStat(LocalDate.parse(s[0], DateTimeFormatter.BASIC_ISO_DATE), s[1].toInt(), s[2].toInt())
+            }.getOrNull()
+        }.associateBy { it.day }
+    }
+
+    /** 每转一次,当日历史 +1(DataStore 集合读改写) */
+    suspend fun recordDailySpin() {
+        context.gameStore.edit { p ->
+            val today = LocalDate.now()
+            val key = today.format(DateTimeFormatter.BASIC_ISO_DATE)
+            val set = p[DAILY_STATS] ?: emptySet()
+            val cur = set.firstOrNull { it.startsWith("$key:") }
+            val count = (cur?.split(":")?.getOrNull(1)?.toIntOrNull() ?: 0) + 1
+            val goal = p[DAILY_GOAL] ?: DAILY_GOAL_DEFAULT
+            p[DAILY_STATS] = set.filterNot { it.startsWith("$key:") }.toSet() + "$key:$count:$goal"
+        }
     }
 
     val theme: Flow<Int> = context.gameStore.data.map { it[THEME] ?: 0 }

@@ -7,6 +7,7 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.cet4.rootslots.data.ComboEntity
+import com.cet4.rootslots.data.DailyStat
 import com.cet4.rootslots.data.GamePrefs
 import com.cet4.rootslots.data.Repository
 import com.cet4.rootslots.data.Q
@@ -107,6 +108,10 @@ class SlotViewModel(app: Application) : AndroidViewModel(app) {
     fun setSpeechRate(rate: Float) { viewModelScope.launch { prefs.setSpeechRate(rate); tts.setRate(rate) } }
     fun updateDailyGoal(n: Int) { viewModelScope.launch { prefs.setDailyGoal(n) } }
 
+    /** 学习日历历史(每日转动数/当日目标) */
+    val dailyStats: StateFlow<Map<java.time.LocalDate, DailyStat>> =
+        prefs.dailyStats.stateIn(viewModelScope, SharingStarted.Eagerly, emptyMap())
+
     fun prefixFillers(): List<String> = repo.prefixFillers
     fun rootFillers(): List<String> = repo.rootFillers
     fun suffixFillers(): List<String> = repo.suffixFillers
@@ -202,6 +207,7 @@ class SlotViewModel(app: Application) : AndroidViewModel(app) {
             wrongDialogWord = null
             repo.recordSpin(c.w)
             prefs.incSpins()
+            prefs.recordDailySpin()
             current = c
             segs = parseSegs(c.segsJson)
             gloss = repo.word(c.w)?.g

@@ -46,10 +46,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.cet4.rootslots.ui.slots.SlotViewModel
 import com.cet4.rootslots.ui.theme.LocalAppColors
+import java.time.LocalDate
 import kotlin.math.roundToInt
 
 /** 我的:收集统计(自图鉴迁来)+ 外观/发音/数据设置 */
@@ -58,6 +60,7 @@ fun MineScreen(vm: SlotViewModel) {
     val c = LocalAppColors.current
     val themeMode by vm.themeMode.collectAsState()
     val rate by vm.speechRate.collectAsState()
+    val dailyStats by vm.dailyStats.collectAsState()
     var spins by remember { mutableStateOf(0) }
     var distinct by remember { mutableStateOf(0) }
     var families by remember { mutableStateOf(0) }
@@ -181,6 +184,103 @@ fun MineScreen(vm: SlotViewModel) {
                 Spacer(Modifier.height(6.dp))
                 Text("目标为每天学习的词数(转一次 = 学一词),达成后进度条变绿",
                     color = c.textFaint, fontSize = 10.sp)
+            }
+        }
+
+        Spacer(Modifier.height(18.dp))
+        SectionLabel("学习日历")
+        Spacer(Modifier.height(8.dp))
+        Card {
+            Column(Modifier.fillMaxWidth().padding(14.dp)) {
+                val today = LocalDate.now()
+                val first = today.withDayOfMonth(1)
+                val stats = dailyStats
+                // 连续达标天数:今天没达标就从昨天往前数(今天还没结束,不算断签)
+                var streak = 0
+                var cursor = if (stats[today]?.let { it.count >= it.goal } == true) today else today.minusDays(1)
+                while (stats[cursor]?.let { it.count >= it.goal } == true) {
+                    streak++
+                    cursor = cursor.minusDays(1)
+                }
+                val monthStats = stats.filterKeys { it.month == first.month && it.year == first.year }
+                val monthCount = monthStats.values.sumOf { it.count }
+                val monthHit = monthStats.values.count { it.count >= it.goal }
+
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Text(
+                        "${first.year} 年 ${first.monthValue} 月",
+                        color = c.text, fontSize = 14.sp, fontWeight = FontWeight.Bold,
+                    )
+                    Spacer(Modifier.weight(1f))
+                    Text(
+                        if (streak > 0) "🔥 连续 $streak 天达标" else "今天学一点,点亮格子",
+                        color = if (streak > 0) c.accent else c.textFaint,
+                        fontSize = 12.sp, fontWeight = FontWeight.Bold,
+                    )
+                }
+                Spacer(Modifier.height(10.dp))
+                Row(Modifier.fillMaxWidth()) {
+                    listOf("一", "二", "三", "四", "五", "六", "日").forEach {
+                        Text(it, color = c.textFaint, fontSize = 10.sp, textAlign = TextAlign.Center, modifier = Modifier.weight(1f))
+                    }
+                }
+                Spacer(Modifier.height(4.dp))
+                val lead = first.dayOfWeek.value - 1   // 周一 = 0
+                val cells: List<Int?> = List(lead) { null } + (1..first.lengthOfMonth()).map { it }
+                cells.chunked(7).forEach { week ->
+                    Row(Modifier.fillMaxWidth()) {
+                        week.forEach { d ->
+                            Box(
+                                Modifier
+                                    .weight(1f)
+                                    .padding(horizontal = 2.dp, vertical = 2.dp),
+                                contentAlignment = Alignment.Center,
+                            ) {
+                                if (d == null) {
+                                    Spacer(Modifier.height(34.dp))
+                                } else {
+                                    val date = first.withDayOfMonth(d)
+                                    val stat = stats[date]
+                                    val isFuture = date.isAfter(today)
+                                    val isToday = date == today
+                                    val hit = stat != null && stat.count >= stat.goal
+                                    val bg = when {
+                                        isFuture -> Color.Transparent
+                                        stat == null || stat.count == 0 -> c.surfaceAlt.copy(alpha = 0.45f)
+                                        hit -> c.accent
+                                        else -> c.accent.copy(
+                                            alpha = 0.25f + 0.5f * (stat.count.toFloat() / stat.goal.coerceAtLeast(1)).coerceIn(0f, 1f),
+                                        )
+                                    }
+                                    Box(
+                                        Modifier
+                                            .fillMaxWidth()
+                                            .height(34.dp)
+                                            .clip(RoundedCornerShape(8.dp))
+                                            .background(bg)
+                                            .then(
+                                                if (isToday) Modifier.border(1.5.dp, c.accent, RoundedCornerShape(8.dp))
+                                                else Modifier
+                                            ),
+                                        contentAlignment = Alignment.Center,
+                                    ) {
+                                        Text(
+                                            "$d",
+                                            color = when {
+                                                isFuture -> c.textFaint.copy(alpha = 0.5f)
+                                                hit -> c.onAccent
+                                                else -> c.textDim
+                                            },
+                                            fontSize = 11.sp, fontWeight = FontWeight.Bold,
+                                        )
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                Spacer(Modifier.height(8.dp))
+                Text("本月共学 $monthCount 词 · 达标 $monthHit 天", color = c.textFaint, fontSize = 11.sp)
             }
         }
 
