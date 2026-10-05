@@ -9,10 +9,11 @@ import androidx.compose.animation.slideInVertically
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -88,12 +89,15 @@ fun DetailScreen(
             .fillMaxSize()
             .background(c.bg)
             .statusBarsPadding().navigationBarsPadding()
-            .verticalScroll(rememberScrollState())
-            .padding(horizontal = 16.dp)
     ) {
-        Spacer(Modifier.height(6.dp))
-        // ---- 顶栏 ----
-        Row(verticalAlignment = Alignment.CenterVertically) {
+        // ---- 顶栏(固定:返回/发音/收藏不随内容滚走) ----
+        Row(
+            Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp)
+                .padding(top = 6.dp, bottom = 4.dp),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
             Text("← 返回", color = c.textMid, fontSize = 15.sp,
                 modifier = Modifier
                     .clip(RoundedCornerShape(8.dp))
@@ -122,7 +126,15 @@ fun DetailScreen(
                     .padding(horizontal = 12.dp, vertical = 8.dp))
         }
 
-        Spacer(Modifier.height(18.dp))
+        // ---- 内容区(滚动) ----
+        Column(
+            Modifier
+                .fillMaxWidth()
+                .weight(1f)
+                .verticalScroll(rememberScrollState())
+                .padding(horizontal = 16.dp)
+        ) {
+        Spacer(Modifier.height(14.dp))
 
         if (combo == null) {
             // ---- 整词模式(无构词拆解) ----
@@ -164,16 +176,16 @@ fun DetailScreen(
             AnimatedVisibility(visible = shown, enter = staggerEnter(1)) {
                 Column {
                     Spacer(Modifier.height(20.dp))
-                    // ---- 各段释义卡 ----
-                    Row(
-                        Modifier.horizontalScroll(rememberScrollState()),
+                    // ---- 各段释义卡:FlowRow 等分铺满一页,不再横向滑动 ----
+                    FlowRow(
                         horizontalArrangement = Arrangement.spacedBy(8.dp),
+                        verticalArrangement = Arrangement.spacedBy(8.dp),
                     ) {
                         segs.forEach { seg ->
                             val color = c.typeColor(seg.t)
                             Column(
                                 Modifier
-                                    .width(150.dp)
+                                    .weight(1f)
                                     .clip(RoundedCornerShape(14.dp))
                                     .background(c.surface)
                                     .padding(12.dp)
@@ -237,6 +249,7 @@ fun DetailScreen(
         }
 
         Spacer(Modifier.height(28.dp))
+        }
     }
 }
 
