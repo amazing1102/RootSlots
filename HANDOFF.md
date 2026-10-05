@@ -39,7 +39,10 @@
 ## 剩余工作(仅剩可选打磨)
 
 1. **~~真机验收~~ ✅ 2026-10-04 用户确认:真机发音自然度通过(Piper amy),项目验收完成。**
-2. **可选打磨(有想法再做)**:3989 条新释义抽检错别字;
+2. **词库扩展(全考试受众,规格待评审)**:方案与数据规格见
+   [词库扩展-数据规格.md](词库扩展-数据规格.md)(一词元库 + 考试标签 + 查询过滤;
+   ECDICT MIT 为骨架源;Room v7 非破坏迁移范式;分三阶段)。**用户尚未选定启动阶段。**
+3. **可选打磨(有想法再做)**:3989 条新释义抽检错别字;
    缺音标的 113 词人工补录(tools/ipa_missing.txt);若发新版可打 v1.0.1 tag + release。
 
 **M13 实施要点(改经济/玩法相关时看):** 结算已从 spin() 挪到 settleQuiz()(SlotViewModel):spin 只抽词+判锈词(pendingRust)+建轴;停稳后 buildQuizForCurrentWord() 出题(干扰项 = glossedWords 排自身去重抽 3,gloss 缺失自动按跳过结算);answerQuiz/skipQuiz → settleQuiz(correct: Boolean?)。quiz/quizPicked/quizResult/lastRust 均为 VM 状态;quiz 保留到下次 spin 才清(供 UI 变色),SPIN 与详情入口以 `quiz != null && quizPicked == null` 判禁用。锈词在 settle 各分支优先于 combo 结算。SPIN 显隐 = SlotScreen 的 spinShown(LaunchedEffect:spinning/出题未答→隐藏;答完 delay 1600ms→浮现;AnimatedVisibility fade+scale 0.55,enter 用弹簧)。
