@@ -187,7 +187,27 @@ class Repository private constructor(context: Context) {
             lapses = cur.lapses + if (known) 0 else 1,
         )
         db.srsDao().upsert(e)
+        db.reviewLogDao().insert(
+            ReviewLogEntity(w = w, at = System.currentTimeMillis(), known = known)
+        )
         return e
+    }
+
+    /** 近 7 天每天的复习量(旧→新,今天在最后) */
+    suspend fun weeklyReviews(): List<Int> {
+        val day = DAY_MS
+        val today0 = System.currentTimeMillis() / day * day   // UTC 零点;粗粒度统计足够
+        return (6 downTo 0).map { back ->
+            val from = today0 - back * day
+            db.reviewLogDao().countBetween(from, from + day)
+        }
+    }
+
+    /** 记忆曲线达成率:未逾期词占全部在学词的比例(0~1) */
+    suspend fun memoryAchievement(): Float {
+        val tracked = db.srsDao().count()
+        if (tracked == 0) return 0f
+        return 1f - db.srsDao().dueCount(System.currentTimeMillis()) / tracked.toFloat()
     }
 
     suspend fun srsOf(w: String): SrsEntity? = db.srsDao().byWord(w)

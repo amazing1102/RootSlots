@@ -111,6 +111,15 @@ interface SpinsDao {
 }
 
 @Dao
+interface ReviewLogDao {
+    @Insert
+    suspend fun insert(e: ReviewLogEntity)
+
+    @Query("SELECT COUNT(*) FROM review_logs WHERE at >= :since AND at < :until")
+    suspend fun countBetween(since: Long, until: Long): Int
+}
+
+@Dao
 interface SrsDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(e: SrsEntity)
@@ -126,4 +135,7 @@ interface SrsDao {
 
     @Query("SELECT * FROM srs WHERE dueAt <= :now ORDER BY dueAt ASC")
     suspend fun due(now: Long): List<SrsEntity>
+
+    @Query("SELECT COUNT(*) FROM srs")
+    suspend fun count(): Int
 }

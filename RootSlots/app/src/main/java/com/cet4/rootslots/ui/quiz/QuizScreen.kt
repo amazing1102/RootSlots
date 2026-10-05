@@ -139,7 +139,12 @@ fun QuizScreen(vm: SlotViewModel) {
             Spacer(Modifier.height(8.dp))
             Text(q.aux, color = c.textMid, fontSize = 15.sp)
         } else {
-            Text(q.prompt, color = c.text, fontSize = 22.sp, fontWeight = FontWeight.Bold)
+            Text(
+                q.prompt,
+                color = c.text,
+                fontSize = if (q.kind == "ipa") 26.sp else 22.sp,
+                fontWeight = FontWeight.Bold,
+            )
             if (q.kind == "sound") {
                 Spacer(Modifier.height(10.dp))
                 Text("🔊 重播", fontSize = 15.sp, color = c.prefix,
@@ -149,6 +154,16 @@ fun QuizScreen(vm: SlotViewModel) {
                         .clickable { vm.pronounce(q.answer) }
                         .padding(horizontal = 14.dp, vertical = 8.dp))
             }
+        }
+        // 答题反馈:音标/听音题揭示单词与释义
+        if (picked != null && (q.kind == "ipa" || q.kind == "sound")) {
+            Spacer(Modifier.height(10.dp))
+            val hit = picked == q.answer
+            Text(
+                "${q.answer}  ${q.aux}",
+                color = if (hit) c.success else c.danger,
+                fontSize = 15.sp, fontWeight = FontWeight.Bold,
+            )
         }
 
         Spacer(Modifier.weight(1f))
@@ -216,6 +231,17 @@ private fun MenuPane(vm: SlotViewModel, onStart: (String) -> Unit) {
         }
         Spacer(Modifier.height(12.dp))
         Button(
+            onClick = { onStart("ipa") },
+            modifier = Modifier.fillMaxWidth(),
+            colors = ButtonDefaults.buttonColors(containerColor = c.surfaceAlt, contentColor = c.text),
+        ) {
+            Column(Modifier.padding(vertical = 8.dp)) {
+                Text("看音标选词", fontSize = 18.sp, fontWeight = FontWeight.Black)
+                Text("看美式音标,选出对应单词", fontSize = 12.sp)
+            }
+        }
+        Spacer(Modifier.height(12.dp))
+        Button(
             onClick = { onStart("sound") },
             modifier = Modifier.fillMaxWidth(),
             colors = ButtonDefaults.buttonColors(containerColor = c.suffix, contentColor = c.bg),
@@ -241,5 +267,5 @@ private fun MenuPane(vm: SlotViewModel, onStart: (String) -> Unit) {
 }
 
 private fun modeTitle(m: String) = when (m) {
-    "gloss" -> "释义选词"; "sound" -> "听音选词"; else -> "拼写补全"
+    "gloss" -> "释义选词"; "ipa" -> "看音标选词"; "sound" -> "听音选词"; else -> "拼写补全"
 }

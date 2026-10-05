@@ -12,8 +12,8 @@ import org.json.JSONArray
 import org.json.JSONObject
 
 @Database(
-    entities = [WordEntity::class, MorphEntity::class, FamilyEntity::class, ComboEntity::class, FavoriteEntity::class, SpinEntity::class, SrsEntity::class],
-    version = 5,
+    entities = [WordEntity::class, MorphEntity::class, FamilyEntity::class, ComboEntity::class, FavoriteEntity::class, SpinEntity::class, SrsEntity::class, ReviewLogEntity::class],
+    version = 6,
     exportSchema = false,
 )
 abstract class AppDatabase : RoomDatabase() {
@@ -24,6 +24,7 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun favoritesDao(): FavoritesDao
     abstract fun spinsDao(): SpinsDao
     abstract fun srsDao(): SrsDao
+    abstract fun reviewLogDao(): ReviewLogDao
 
     companion object {
         @Volatile private var instance: AppDatabase? = null

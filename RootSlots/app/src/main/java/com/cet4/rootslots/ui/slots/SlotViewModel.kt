@@ -108,11 +108,14 @@ class SlotViewModel(app: Application) : AndroidViewModel(app) {
     suspend fun dueCount() = repo.dueCount()
     suspend fun answerReview(w: String, known: Boolean) = repo.answerReview(w, known)
     suspend fun srsOf(w: String) = repo.srsOf(w)
+    suspend fun weeklyReviews() = repo.weeklyReviews()
+    suspend fun memoryAchievement() = repo.memoryAchievement()
     suspend fun addCoins(n: Int) = prefs.addCoins(n)
 
-    /** 组一套测验题:从有释义的词池抽,三模式 */
+    /** 组一套测验题:从有释义的词池抽(音标题只取有音标的词),四模式 */
     fun buildQuiz(mode: String, count: Int): List<Q> = buildList {
-        val pool = repo.glossedWords()
+        val base = repo.glossedWords()
+        val pool = if (mode == "ipa") base.filter { !it.ipa.isNullOrBlank() } else base
         if (pool.size < 8) return@buildList
         val rng = Random(System.nanoTime())
         val words = pool.shuffled(rng).take(count)
@@ -122,6 +125,10 @@ class SlotViewModel(app: Application) : AndroidViewModel(app) {
             when (mode) {
                 "gloss" -> add(Q(
                     kind = "gloss", prompt = entry.g ?: "", aux = "",
+                    options = (distractors + entry.w).shuffled(rng), answer = entry.w, word = entry.w,
+                ))
+                "ipa" -> add(Q(
+                    kind = "ipa", prompt = "/${entry.ipa}/", aux = entry.g ?: "",
                     options = (distractors + entry.w).shuffled(rng), answer = entry.w, word = entry.w,
                 ))
                 "sound" -> add(Q(

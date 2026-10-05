@@ -71,6 +71,15 @@ data class SrsEntity(
     val lapses: Int = 0,
 )
 
+/** 每次复习作答记录(驱动「我的」页复习统计图表) */
+@Entity(tableName = "review_logs", indices = [androidx.room.Index("at")])
+data class ReviewLogEntity(
+    @PrimaryKey(autoGenerate = true) val id: Long = 0,
+    val w: String,
+    val at: Long,
+    val known: Boolean,
+)
+
 /** 测验题(三模式共用) */
 data class Q(
     val kind: String,        // gloss / sound / spell

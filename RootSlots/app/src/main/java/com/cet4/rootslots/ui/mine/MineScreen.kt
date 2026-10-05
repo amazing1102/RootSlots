@@ -1,5 +1,6 @@
 package com.cet4.rootslots.ui.mine
 
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -31,7 +32,11 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -76,6 +81,35 @@ fun MineScreen(vm: SlotViewModel) {
             StatCard("累计转动", "$spins", c.prefix, Modifier.weight(1f))
             StatCard("见过单词", "$distinct", c.suffix, Modifier.weight(1f))
             StatCard("族覆盖", "$covered/$families", c.accent, Modifier.weight(1f))
+        }
+
+        Spacer(Modifier.height(18.dp))
+        SectionLabel("复习统计")
+        Spacer(Modifier.height(8.dp))
+        Card {
+            var weekly by remember { mutableStateOf(List(7) { 0 }) }
+            var achievement by remember { mutableStateOf(0f) }
+            LaunchedEffect(Unit) {
+                weekly = vm.weeklyReviews()
+                achievement = vm.memoryAchievement()
+            }
+            Row(Modifier.fillMaxWidth().padding(14.dp), verticalAlignment = Alignment.CenterVertically) {
+                Box(Modifier.size(84.dp), contentAlignment = Alignment.Center) {
+                    AchievementRing(achievement, Modifier.fillMaxSize())
+                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                        Text("${(achievement * 100).roundToInt()}%",
+                            color = c.accent, fontSize = 16.sp, fontWeight = FontWeight.Black)
+                        Text("达成率", color = c.textFaint, fontSize = 9.sp)
+                    }
+                }
+                Spacer(Modifier.width(14.dp))
+                Column(Modifier.weight(1f)) {
+                    WeekBars(weekly)
+                    Spacer(Modifier.height(4.dp))
+                    Text("近 7 天复习量 · 达成率 = 未逾期生词占比",
+                        color = c.textFaint, fontSize = 9.sp)
+                }
+            }
         }
 
         Spacer(Modifier.height(18.dp))
@@ -176,6 +210,61 @@ private fun StatCard(label: String, value: String, color: Color, modifier: Modif
     ) {
         Text(value, color = color, fontSize = 17.sp, fontWeight = FontWeight.Black)
         Text(label, color = c.textDim, fontSize = 11.sp)
+    }
+}
+
+@Composable
+private fun AchievementRing(progress: Float, modifier: Modifier = Modifier) {
+    val c = LocalAppColors.current
+    Canvas(modifier) {
+        val stroke = 8.dp.toPx()
+        val inset = stroke / 2
+        val arcSize = size.width - stroke
+        drawArc(
+            color = c.surfaceAlt,
+            startAngle = 0f, sweepAngle = 360f, useCenter = false,
+            topLeft = Offset(inset, inset), size = androidx.compose.ui.geometry.Size(arcSize, arcSize),
+            style = Stroke(width = stroke, cap = StrokeCap.Round),
+        )
+        drawArc(
+            color = c.accent,
+            startAngle = -90f, sweepAngle = 360f * progress.coerceIn(0f, 1f), useCenter = false,
+            topLeft = Offset(inset, inset), size = androidx.compose.ui.geometry.Size(arcSize, arcSize),
+            style = Stroke(width = stroke, cap = StrokeCap.Round),
+        )
+    }
+}
+
+@Composable
+private fun WeekBars(weekly: List<Int>) {
+    val c = LocalAppColors.current
+    val labels = (6 downTo 0).map { back ->
+        val d = java.time.LocalDate.now().minusDays(back.toLong()).dayOfWeek.value
+        "一二三四五六日"[d - 1].toString()
+    }
+    val max = (weekly.maxOrNull() ?: 0).coerceAtLeast(1)
+    Row(
+        Modifier.fillMaxWidth().height(76.dp),
+        horizontalArrangement = Arrangement.SpaceBetween,
+        verticalAlignment = Alignment.Bottom,
+    ) {
+        weekly.forEachIndexed { i, count ->
+            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                Text("$count", color = if (count > 0) c.textMid else c.textFaint,
+                    fontSize = 9.sp, fontWeight = FontWeight.Bold)
+                Spacer(Modifier.height(2.dp))
+                Box(
+                    Modifier
+                        .width(16.dp)
+                        .height((8 + 44f * count / max).dp)
+                        .clip(RoundedCornerShape(4.dp))
+                        .background(if (count > 0) c.accent else c.surfaceAlt)
+                )
+                Spacer(Modifier.height(2.dp))
+                Text(if (i == weekly.size - 1) "今天" else labels[i],
+                    color = c.textFaint, fontSize = 9.sp)
+            }
+        }
     }
 }
 
