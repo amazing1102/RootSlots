@@ -1,6 +1,7 @@
 package com.cet4.rootslots.data
 
 import android.content.Context
+import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.floatPreferencesKey
 import androidx.datastore.preferences.core.intPreferencesKey
@@ -20,10 +21,12 @@ class GamePrefs(private val context: Context) {
         val TOTAL_SPINS = intPreferencesKey("total_spins")
         val THEME = intPreferencesKey("theme")              // 0 跟随系统 / 1 深色 / 2 浅色
         val SPEECH_RATE = floatPreferencesKey("speech_rate")
+        val WRONG_NOTIFY = booleanPreferencesKey("wrong_notify") // 答错弹窗提醒(关=静默入生词本)
         const val ENERGY_MAX = 30
         const val REGEN_MS = 10_000L
         const val COINS_START = 200
         const val SPEECH_RATE_DEFAULT = 0.85f
+        const val WRONG_NOTIFY_DEFAULT = true
     }
 
     data class Wallet(val coins: Int, val energy: Int, val totalSpins: Int)
@@ -72,6 +75,7 @@ class GamePrefs(private val context: Context) {
 
     val theme: Flow<Int> = context.gameStore.data.map { it[THEME] ?: 0 }
     val speechRate: Flow<Float> = context.gameStore.data.map { it[SPEECH_RATE] ?: SPEECH_RATE_DEFAULT }
+    val wrongNotify: Flow<Boolean> = context.gameStore.data.map { it[WRONG_NOTIFY] ?: WRONG_NOTIFY_DEFAULT }
 
     suspend fun setTheme(mode: Int) {
         context.gameStore.edit { it[THEME] = mode.coerceIn(0, 2) }
@@ -79,5 +83,9 @@ class GamePrefs(private val context: Context) {
 
     suspend fun setSpeechRate(rate: Float) {
         context.gameStore.edit { it[SPEECH_RATE] = rate.coerceIn(0.5f, 1.2f) }
+    }
+
+    suspend fun setWrongNotify(notify: Boolean) {
+        context.gameStore.edit { it[WRONG_NOTIFY] = notify }
     }
 }

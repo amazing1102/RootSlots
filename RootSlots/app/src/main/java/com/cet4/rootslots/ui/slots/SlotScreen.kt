@@ -43,10 +43,14 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.Checkbox
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -372,14 +376,16 @@ private fun GamePane(
         }
         }
 
-        // ---- SPIN 区:点击后褪去让位出题,答完停一拍再弹回(空间随动画收放) ----
+        // ---- SPIN 区:点击后褪去让位出题,答错等弹窗关闭、答完停一拍再弹回 ----
         val quizUnanswered = vm.quiz != null && vm.quizPicked == null
+        val wrongNotify by vm.wrongNotify.collectAsState()
+        val answeredWrong = vm.quizResult?.startsWith("答错") == true
         var spinShown by remember { mutableStateOf(true) }
-        LaunchedEffect(vm.spinning, quizUnanswered, vm.quizPicked, vm.spinId) {
+        LaunchedEffect(vm.spinning, quizUnanswered, vm.quizPicked, vm.wrongDialogWord, answeredWrong, vm.spinId) {
             when {
-                vm.spinning || quizUnanswered -> spinShown = false
-                vm.quiz != null -> { delay(1600); spinShown = true }   // 留时间看对错与释义
-                else -> spinShown = true
+                vm.spinning || quizUnanswered || vm.wrongDialogWord != null -> spinShown = false
+                answeredWrong && wrongNotify -> { delay(400); spinShown = true }  // 弹窗刚关,稍作停顿
+                else -> { delay(1600); spinShown = true }                         // 留时间看对错与释义
             }
         }
         AnimatedVisibility(
@@ -429,6 +435,36 @@ private fun GamePane(
             if (vm.spinId > 0 && vm.litIndices.isNotEmpty()) {
                 view.performHapticFeedback(HapticFeedbackConstants.CLOCK_TICK)
             }
+        }
+
+        // 答错弹窗:告知已入生词本,可勾选「下次不用提醒」转为静默自动加入
+        vm.wrongDialogWord?.let { w ->
+            var dontAsk by remember(w) { mutableStateOf(false) }
+            AlertDialog(
+                onDismissRequest = { vm.dismissWrongDialog(dontAsk) },
+                title = { Text("已移入生词本", fontWeight = FontWeight.Black) },
+                text = {
+                    Column {
+                        Text("「$w」答错了,已自动加入生词本,并按记忆曲线安排复习。", fontSize = 14.sp)
+                        Spacer(Modifier.height(10.dp))
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            modifier = Modifier
+                                .clip(RoundedCornerShape(10.dp))
+                                .clickable { dontAsk = !dontAsk }
+                                .padding(vertical = 2.dp),
+                        ) {
+                            Checkbox(checked = dontAsk, onCheckedChange = { dontAsk = it })
+                            Text("下次不用提醒,自动加入", fontSize = 13.sp)
+                        }
+                    }
+                },
+                confirmButton = {
+                    TextButton(onClick = { vm.dismissWrongDialog(dontAsk) }) {
+                        Text("知道了")
+                    }
+                },
+            )
         }
     }
 }

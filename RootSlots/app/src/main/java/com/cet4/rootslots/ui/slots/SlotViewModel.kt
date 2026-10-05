@@ -56,7 +56,16 @@ class SlotViewModel(app: Application) : AndroidViewModel(app) {
     var quizPicked by mutableStateOf<String?>(null); private set   // 已选选项;"·skip·"=跳过
     var quizResult by mutableStateOf<String?>(null); private set   // 结算提示行
     var lastRust by mutableStateOf(false); private set
+    var wrongDialogWord by mutableStateOf<String?>(null); private set // 答错弹窗:展示「已移入生词本」(null=不弹/已关)
     private var pendingRust = false
+
+    val wrongNotify: StateFlow<Boolean> = prefs.wrongNotify.stateIn(viewModelScope, SharingStarted.Eagerly, GamePrefs.WRONG_NOTIFY_DEFAULT)
+
+    /** 关闭答错弹窗;勾选「下次不用提醒」时静默化后续答错 */
+    fun dismissWrongDialog(dontAskAgain: Boolean) {
+        wrongDialogWord = null
+        if (dontAskAgain) viewModelScope.launch { prefs.setWrongNotify(false) }
+    }
 
     // 转轴:轴数=段数,每根轴落一个真实词段(动态段轴,不再固定 P/R/S 三轴)
     var reels by mutableStateOf<List<ReelSpec>>(emptyList()); private set
@@ -186,6 +195,7 @@ class SlotViewModel(app: Application) : AndroidViewModel(app) {
 
             // 结算延后到答题后(A);此刻只出题面
             quiz = null; quizPicked = null; quizResult = null; lastReward = 0
+            wrongDialogWord = null
             repo.recordSpin(c.w)
             prefs.incSpins()
             current = c
@@ -258,8 +268,10 @@ class SlotViewModel(app: Application) : AndroidViewModel(app) {
                 lastReward = 0
                 val delta = -minOf(3, coins)
                 prefs.addCoins(delta)
-                if (!repo.isFavorite(w)) repo.toggleFavorite(w)   // 错词自动进生词本排期复习
-                quizResult = "答错了 −3🪙 · 已收进生词本"
+                val newly = !repo.isFavorite(w)
+                if (newly) repo.toggleFavorite(w)   // 错词自动进生词本排期复习
+                quizResult = if (newly) "答错了 −3🪙 · 已收进生词本" else "答错了 −3🪙"
+                if (newly && wrongNotify.value) wrongDialogWord = w
             } else if (pendingRust) {
                 combo = 0; familyStreak = 0; lastFamilyKey = null
                 lastReward = 2
