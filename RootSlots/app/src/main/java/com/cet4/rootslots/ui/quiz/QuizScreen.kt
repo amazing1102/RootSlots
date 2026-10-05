@@ -22,9 +22,14 @@ import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.VolumeUp
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -157,12 +162,23 @@ fun QuizScreen(vm: SlotViewModel) {
             )
             if (q.kind == "sound") {
                 Spacer(Modifier.height(10.dp))
-                Text("🔊 重播", fontSize = 15.sp, color = c.prefix,
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
                     modifier = Modifier
                         .clip(RoundedCornerShape(10.dp))
                         .background(c.chip)
                         .clickable { vm.pronounce(q.answer) }
-                        .padding(horizontal = 14.dp, vertical = 8.dp))
+                        .padding(horizontal = 14.dp, vertical = 8.dp),
+                ) {
+                    Icon(
+                        Icons.AutoMirrored.Filled.VolumeUp,
+                        contentDescription = "重播",
+                        tint = c.prefix,
+                        modifier = Modifier.size(16.dp),
+                    )
+                    Spacer(Modifier.width(5.dp))
+                    Text("重播", fontSize = 15.sp, color = c.prefix)
+                }
             }
         }
         // 答题反馈:音标/听音题揭示单词与释义

@@ -24,6 +24,9 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.VolumeUp
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Slider
 import androidx.compose.material3.SliderDefaults
 import androidx.compose.material3.Text
@@ -162,7 +165,14 @@ fun MineScreen(vm: SlotViewModel) {
                 Modifier.fillMaxWidth().clickable { vm.pronounce("reduction") }.padding(14.dp),
                 verticalAlignment = Alignment.CenterVertically,
             ) {
-                Text("🔊 试听发音", color = c.text, fontSize = 15.sp, fontWeight = FontWeight.Bold)
+                Icon(
+                    Icons.AutoMirrored.Filled.VolumeUp,
+                    contentDescription = "试听",
+                    tint = c.prefix,
+                    modifier = Modifier.size(18.dp),
+                )
+                Spacer(Modifier.width(8.dp))
+                Text("试听发音", color = c.text, fontSize = 15.sp, fontWeight = FontWeight.Bold)
                 Spacer(Modifier.weight(1f))
                 Text("example · reduction", color = c.textDim, fontSize = 12.sp)
             }

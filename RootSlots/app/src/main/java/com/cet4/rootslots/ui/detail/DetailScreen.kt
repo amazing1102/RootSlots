@@ -21,11 +21,16 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.navigationBarsPadding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.VolumeUp
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -104,12 +109,22 @@ fun DetailScreen(
                     .clickable { onBack() }
                     .padding(horizontal = 6.dp, vertical = 4.dp))
             Spacer(Modifier.weight(1f))
-            Text("🔊", fontSize = 22.sp,
-                modifier = Modifier
-                    .clip(RoundedCornerShape(10.dp))
+            // 发音按钮:Material 喇叭图标(圆形底座),替代渲染不一致的 🔊 emoji
+            Box(
+                Modifier
+                    .size(38.dp)
+                    .clip(CircleShape)
                     .background(c.chip)
-                    .clickable { vm.pronounce(word) }
-                    .padding(horizontal = 12.dp, vertical = 6.dp))
+                    .clickable { vm.pronounce(word) },
+                contentAlignment = Alignment.Center,
+            ) {
+                Icon(
+                    Icons.AutoMirrored.Filled.VolumeUp,
+                    contentDescription = "发音",
+                    tint = c.prefix,
+                    modifier = Modifier.size(20.dp),
+                )
+            }
             Spacer(Modifier.width(8.dp))
             Text(if (fav) "♥ 已收藏" else "♡ 收藏",
                 color = if (fav) c.accent else c.textMid,
