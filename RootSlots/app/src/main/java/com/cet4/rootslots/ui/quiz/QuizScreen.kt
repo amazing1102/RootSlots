@@ -11,6 +11,7 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -21,12 +22,17 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Abc
 import androidx.compose.material.icons.automirrored.filled.VolumeUp
+import androidx.compose.material.icons.filled.ChevronRight
+import androidx.compose.material.icons.filled.Spellcheck
+import androidx.compose.material.icons.filled.Translate
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
@@ -42,6 +48,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -265,38 +272,59 @@ private fun MenuPane(vm: SlotViewModel, onStart: (String) -> Unit) {
         Spacer(Modifier.height(8.dp))
         Text("每轮 10 题 · 答对 +2 金币", color = c.textDim, fontSize = 13.sp)
         Spacer(Modifier.height(26.dp))
-        MenuButton("释义选词", "看中文释义,选出对应单词", container = c.accent, content = c.onAccent) { onStart("gloss") }
+        MenuCard("释义选词", "看中文释义,选出对应单词", Icons.Filled.Translate) { onStart("gloss") }
         Spacer(Modifier.height(12.dp))
-        MenuButton("看音标选词", "看美式音标,选出对应单词", container = c.surfaceAlt, content = c.text) { onStart("ipa") }
+        MenuCard("看音标选词", "看美式音标,选出对应单词", Icons.Filled.Abc) { onStart("ipa") }
         Spacer(Modifier.height(12.dp))
-        MenuButton("听音选词", "听发音选单词(需设备语音引擎)", container = c.suffix, content = c.bg) { onStart("sound") }
+        MenuCard("听音选词", "听发音选单词(需设备语音引擎)", Icons.AutoMirrored.Filled.VolumeUp) { onStart("sound") }
         Spacer(Modifier.height(12.dp))
-        MenuButton("拼写补全", "补全单词缺失的字母", container = c.prefix, content = c.bg) { onStart("spell") }
+        MenuCard("拼写补全", "补全单词缺失的字母", Icons.Filled.Spellcheck) { onStart("spell") }
         Spacer(Modifier.weight(1f))
     }
 }
 
+/** 测验入口:统一浅卡 + 图标 + 左对齐文字,不再四种高饱和色块 */
 @Composable
-private fun MenuButton(
+private fun MenuCard(
     title: String,
     sub: String,
-    container: Color,
-    content: Color,
+    icon: ImageVector,
     onClick: () -> Unit,
 ) {
+    val c = LocalAppColors.current
     val ia = remember { MutableInteractionSource() }
-    Button(
-        onClick = onClick,
-        interactionSource = ia,
-        modifier = Modifier
+    Row(
+        Modifier
             .fillMaxWidth()
-            .pressScale(ia, pressedScale = 0.97f),
-        colors = ButtonDefaults.buttonColors(containerColor = container, contentColor = content),
+            .pressScale(ia, pressedScale = 0.97f)
+            .clip(RoundedCornerShape(16.dp))
+            .background(c.surface)
+            .border(1.dp, c.stroke, RoundedCornerShape(16.dp))
+            .clickable(interactionSource = ia, indication = LocalIndication.current, onClick = onClick)
+            .padding(horizontal = 14.dp, vertical = 12.dp),
+        verticalAlignment = Alignment.CenterVertically,
     ) {
-        Column(Modifier.padding(vertical = 8.dp)) {
-            Text(title, fontSize = 18.sp, fontWeight = FontWeight.Black)
-            Text(sub, fontSize = 12.sp)
+        Box(
+            Modifier
+                .size(42.dp)
+                .clip(CircleShape)
+                .background(c.chip),
+            contentAlignment = Alignment.Center,
+        ) {
+            Icon(icon, contentDescription = title, tint = c.accent, modifier = Modifier.size(22.dp))
         }
+        Spacer(Modifier.width(12.dp))
+        Column(Modifier.weight(1f)) {
+            Text(title, color = c.text, fontSize = 17.sp, fontWeight = FontWeight.Black)
+            Spacer(Modifier.height(2.dp))
+            Text(sub, color = c.textDim, fontSize = 12.sp)
+        }
+        Icon(
+            Icons.Filled.ChevronRight,
+            contentDescription = null,
+            tint = c.textFaint,
+            modifier = Modifier.size(20.dp),
+        )
     }
 }
 
