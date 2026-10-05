@@ -38,6 +38,12 @@ urllib 下载 GitHub 会失败,需 curl 手动下载,镜像清单在 SOURCES);�
 查找时 lower();重音符按音节 onset 回退插入;AH0→ə、ER0→ər;连字符词分段查后直接拼;
 缺词界面隐藏音标行。DB v5 = words 表加 ipa 列。
 
+## 仓库
+
+- 远程:**https://github.com/amazing1102/RootSlots.git**(main 已推送,2026-10-05);
+- 推送走本机代理(git 全局已配 127.0.0.1:7897,Clash 需开启);onnx 模型 60MB 超推荐值被警告,
+  后续若频繁改动模型可考虑 Git LFS。
+
 ## 发布(v1.0.0)
 
 - release 包:`RootSlots/app/build/outputs/apk/release/app-release.apk`(137MB,R8+资源收缩,版本 1.0.0/build 2);
