@@ -28454,8 +28454,8 @@
 "i": "ˈdʒʊriː",
 "gd": "n. 陪审团, 评判委员会\nadj. 应急的",
 "x": "cet4,cet6,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The jury reached its verdict after two days.",
+"sz": "陪审团经过两天作出了裁决。"
 },
 {
 "w": "juror",
@@ -28463,8 +28463,8 @@
 "i": "ˈdʒʊrər",
 "gd": "n. 陪审员, 审查委员",
 "x": "cet4",
-"se": null,
-"sz": null
+"se": "One juror asked to see the photographs again.",
+"sz": "一名陪审员请求再看一次那些照片。"
 },
 {
 "w": "just",
@@ -28481,8 +28481,8 @@
 "i": "ˈdʒʌstəs",
 "gd": "n. 正义, 公平, 公正, 正确, 司法, 审判",
 "x": "cet4,cet6,gaokao,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The new law promises quicker justice for small claims.",
+"sz": "新法律承诺让小额索赔更快得到司法裁决。"
 },
 {
 "w": "justify",
@@ -28490,8 +28490,8 @@
 "i": "ˈdʒʌstəˌfaɪ",
 "gd": "v. 替...辩护, 证明\nv. 证明合法",
 "x": "cet4,cet6,gre,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "How can you justify spending the whole grant on one laptop?",
+"sz": "你凭什么为把整笔经费花在一台笔记本上辩护？"
 },
 {
 "w": "justification",
@@ -28499,8 +28499,8 @@
 "i": "ˌdʒʌstəfəˈkeɪʃən",
 "gd": "n. 辩护, 证明正当, 释罪",
 "x": "cet4,cet6,gre,ielts",
-"se": null,
-"sz": null
+"se": "There is no justification for charging children full price.",
+"sz": "向儿童收取全价毫无正当理由。"
 },
 {
 "w": "keen",
@@ -28580,8 +28580,8 @@
 "i": "ˈkɪləˌɡræm",
 "gd": "n. 千克, 公斤",
 "x": "cet4,gaokao",
-"se": null,
-"sz": null
+"se": "Flour at the market is sold by the kilogram.",
+"sz": "市场里的面粉按公斤出售。"
 },
 {
 "w": "kilogramme",
@@ -28607,8 +28607,8 @@
 "i": "kəˈlɑːmətər",
 "gd": "n. 千米, 公里",
 "x": "cet4",
-"se": null,
-"sz": null
+"se": "The new bridge spans one kilometer of open water.",
+"sz": "新桥横跨一公里的开阔水面。"
 },
 {
 "w": "kilometre",
@@ -28616,8 +28616,8 @@
 "i": "ˌkɪˈlɔːˌmʌtər",
 "gd": "n. 公里, 千米",
 "x": "cet4,kaoyan",
-"se": null,
-"sz": null
+"se": "The station is half a kilometre further than I thought.",
+"sz": "车站比我以为的还要远半公里。"
 },
 {
 "w": "kin",
@@ -28841,8 +28841,8 @@
 "i": "ləˈbɔːriːəs",
 "gd": "adj. 艰苦的, 费劲的, 勤劳的",
 "x": "cet4,ielts,toefl",
-"se": null,
-"sz": null
+"se": "Restoring the mosaic was slow, laborious work.",
+"sz": "修复马赛克是一项缓慢费力的工作。"
 },
 {
 "w": "laboratory",
@@ -29003,8 +29003,8 @@
 "i": "ˈlæŋɡwədʒ",
 "gd": "n. 语言, 文字, 措辞",
 "x": "cet4,gaokao,ielts",
-"se": null,
-"sz": null
+"se": "Sign language counts as a full language in its own right.",
+"sz": "手语本身就算一门完整的语言。"
 },
 {
 "w": "lap",
@@ -29408,8 +29408,8 @@
 "i": "ˈlɛktʃər",
 "gd": "n. 演讲, 谴责, 讲稿\nv. 演讲, 训诫, 说教\nv. 讲演",
 "x": "cet4,cet6,gaokao,ielts,kaoyan",
-"se": null,
-"sz": null
+"se": "The Tuesday lecture covers medieval stained glass.",
+"sz": "周二的讲座讲中世纪彩绘玻璃。"
 },
 {
 "w": "lecturer",
@@ -29453,8 +29453,8 @@
 "i": "ˈliːɡəl",
 "gd": "adj. 法律的, 法定的, 合法的",
 "x": "cet4,cet6,gaokao,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The charity offers legal advice to tenants.",
+"sz": "这家慈善机构为租客提供法律咨询。"
 },
 {
 "w": "legalize",
@@ -29462,8 +29462,8 @@
 "i": "ˈliːɡəˌlaɪz",
 "gd": "v. 法律上认为正当, 使合法化",
 "x": "cet4,toefl",
-"se": null,
-"sz": null
+"se": "Several states voted to legalize the ticket resale market.",
+"sz": "好几个州投票决定使票务转售市场合法化。"
 },
 {
 "w": "legalise",
@@ -29471,8 +29471,8 @@
 "i": null,
 "gd": "v. 使合法化, 使成为法定, 法律上认可",
 "x": "cet4",
-"se": null,
-"sz": null
+"se": "Parliament may legalise the sale of the new vaccine.",
+"sz": "议会可能会使新疫苗的销售合法化。"
 },
 {
 "w": "legend",
@@ -29534,8 +29534,8 @@
 "i": "ˈlɛʒər",
 "gd": "n. 空闲, 闲暇, 悠闲\nadj. 空闲的, 有闲的",
 "x": "cet4,cet6,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The town built a leisure center beside the lake.",
+"sz": "镇上在湖边建了一座休闲中心。"
 },
 {
 "w": "leisurely",
@@ -29543,8 +29543,8 @@
 "i": "ˈliːzərliː",
 "gd": "adj. 悠闲的, 从容的\nadv. 从容地, 悠闲地",
 "x": "cet4,toefl",
-"se": null,
-"sz": null
+"se": "After the exam, they took a leisurely walk along the canal.",
+"sz": "考完试，他们沿着运河悠闲地散步。"
 },
 {
 "w": "lemon",
@@ -29642,8 +29642,8 @@
 "i": "ˈlaɪəbəl",
 "gd": "adj. 有义务的, 应负责的, 有...倾向的",
 "x": "cet4,cet6,ielts,kaoyan",
-"se": null,
-"sz": null
+"se": "Drivers are liable for any damage they cause.",
+"sz": "司机要对他们造成的任何损坏负责。"
 },
 {
 "w": "liability",
@@ -29651,8 +29651,8 @@
 "i": "ˌlaɪəˈbɪlɪtiː",
 "gd": "n. 责任, 债务, 倾向",
 "x": "cet4,cet6,gre,ielts,kaoyan",
-"se": null,
-"sz": null
+"se": "The company accepted full liability for the delay.",
+"sz": "公司对延误承担全部责任。"
 },
 {
 "w": "liberal",
@@ -29660,8 +29660,8 @@
 "i": "ˈlɪˌbɜːrəl",
 "gd": "n. 自由主义者\nadj. 慷慨的, 不拘泥的, 宽大的, 自由主义的",
 "x": "cet4,cet6,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The college takes a liberal attitude toward course choices.",
+"sz": "这所学院对选课持开明态度。"
 },
 {
 "w": "liberate",
@@ -29669,8 +29669,8 @@
 "i": "ˈlɪˌbɜːrˌeɪt",
 "gd": "v. 解放, 释放, 使自由",
 "x": "cet4,cet6,gaokao,gre,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The town was liberated after four long years of occupation.",
+"sz": "经过四年漫长的占领，这座小镇终获解放。"
 },
 {
 "w": "liberation",
@@ -29678,8 +29678,8 @@
 "i": "ˌlɪˌbɜːrˈeɪʃən",
 "gd": "n. 释放, 解放",
 "x": "cet4,cet6,gaokao",
-"se": null,
-"sz": null
+"se": "The liberation of the city is celebrated every May.",
+"sz": "每年五月都会纪念这座城市的解放。"
 },
 {
 "w": "liberty",
@@ -29687,8 +29687,8 @@
 "i": "ˈlɪbərˌtiː",
 "gd": "n. 自由, 特权, 许可, 冒失",
 "x": "cet4,cet6,gaokao,gre,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The constitution guarantees liberty of speech.",
+"sz": "宪法保障言论自由。"
 },
 {
 "w": "library",
@@ -29696,8 +29696,8 @@
 "i": "ˈlaɪbrɛˌriː",
 "gd": "n. 图书馆, 藏书, 库",
 "x": "cet4,gaokao,ielts",
-"se": null,
-"sz": null
+"se": "The library keeps its rare books in a glass case.",
+"sz": "图书馆把珍本书放在玻璃柜里。"
 },
 {
 "w": "librarian",
@@ -29723,8 +29723,8 @@
 "i": "ˈlaɪsəns",
 "gd": "n. 执照, 许可证, 特许\nv. 许可, 特许, 认可",
 "x": "cet4,ielts",
-"se": null,
-"sz": null
+"se": "A fishing licence costs twenty pounds a year.",
+"sz": "钓鱼执照一年二十英镑。"
 },
 {
 "w": "lick",
@@ -29867,8 +29867,8 @@
 "i": "ˈlɪmət",
 "gd": "n. 界限, 边界, 限度, 极限, 限制\nv. 限制, 限定",
 "x": "cet4,cet6,gaokao,kaoyan",
-"se": null,
-"sz": null
+"se": "There is a strict limit of one bag per passenger.",
+"sz": "每位乘客严格限带一件行李。"
 },
 {
 "w": "limitation",
@@ -29876,8 +29876,8 @@
 "i": "ˌlɪmɪˈteɪʃən",
 "gd": "n. 限制, 缺陷, 限额",
 "x": "cet4,cet6,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The study admits its main limitation: a small sample.",
+"sz": "这项研究承认其主要局限：样本太小。"
 },
 {
 "w": "limited",
@@ -30011,8 +30011,8 @@
 "i": "ˈlɪtərəl",
 "gd": "adj. 逐字的, 字面上的, 文字的, 字母的\nn. 印刷错误",
 "x": "cet4,cet6,gre",
-"se": null,
-"sz": null
+"se": "The literal meaning of the phrase is different from its use.",
+"sz": "这个短语的字面意思和实际用法不一样。"
 },
 {
 "w": "literally",
@@ -30020,8 +30020,8 @@
 "i": "ˈlɪtərəliː",
 "gd": "adv. 逐字地, 按照字面上地, 不夸张地",
 "x": "cet4,cet6,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The queue literally reached the next town.",
+"sz": "队伍真可谓一直排到了邻镇。"
 },
 {
 "w": "literary",
@@ -30029,8 +30029,8 @@
 "i": "ˈlɪtərˌɛriː",
 "gd": "adj. 文学的, 文艺的, 精通文学的",
 "x": "cet4,cet6,gaokao,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "She won a literary prize for her first novel.",
+"sz": "她的处女作获得了一个文学奖。"
 },
 {
 "w": "literature",
@@ -30047,8 +30047,8 @@
 "i": "ˈlɪtərət",
 "gd": "n. 学者\nadj. 有读写能力的, 精通文学的, 受过教育的",
 "x": "cet4,gre,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "Every pupil leaves the school fully literate and numerate.",
+"sz": "每个学生毕业时都能读会写、能算数。"
 },
 {
 "w": "literacy",
@@ -30056,8 +30056,8 @@
 "i": "ˈlɪtərəsiː",
 "gd": "n. 读写能力, 识字, 精通文学",
 "x": "cet4,cet6,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The charity funds literacy classes for adults.",
+"sz": "这家慈善机构资助成人读写班。"
 },
 {
 "w": "litter",
@@ -30101,8 +30101,8 @@
 "i": "ˈlaɪvliːˌhʊd",
 "gd": "n. 生计, 营生, 生活",
 "x": "cet4,toefl",
-"se": null,
-"sz": null
+"se": "The dam threatens the fishing families' livelihood.",
+"sz": "这座水坝威胁着渔业家庭的生计。"
 },
 {
 "w": "lively",
@@ -30110,8 +30110,8 @@
 "i": "ˈlaɪvliː",
 "gd": "adj. 活泼的, 鲜明的, 生动的",
 "x": "cet4,cet6,gaokao,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The market turns lively as soon as the fishing boats land.",
+"sz": "渔船一靠岸，集市就热闹起来。"
 },
 {
 "w": "liver",
@@ -30119,8 +30119,8 @@
 "i": "ˈlɪvər",
 "gd": "n. 肝脏, 生活者, 居民",
 "x": "cet4,cet6,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The doctor warned him about the effect of alcohol on the liver.",
+"sz": "医生警告他饮酒对肝脏的影响。"
 },
 {
 "w": "living-room",
@@ -30182,8 +30182,8 @@
 "i": "ˈloʊkəl",
 "gd": "adj. 地方性的, 当地的, 局部的, 乡土的, 本地的\nn. 当地居民, 本地新闻, 局部",
 "x": "cet4,cet6,gaokao,ielts,kaoyan",
-"se": null,
-"sz": null
+"se": "The local bakery opens before dawn.",
+"sz": "本地面包店天不亮就开门。"
 },
 {
 "w": "locality",
@@ -30191,8 +30191,8 @@
 "i": "loʊˈkælətiː",
 "gd": "n. 地方, 所在, 位置",
 "x": "cet4,cet6,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The bird is rare in this locality.",
+"sz": "这种鸟在这个地区很罕见。"
 },
 {
 "w": "locate",
@@ -30200,8 +30200,8 @@
 "i": "ˈloʊˌkeɪt",
 "gd": "v. 找出, 设于, 位于\nv. 定居",
 "x": "cet4,cet6,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The map helps you locate every wartime shelter.",
+"sz": "这张地图能帮你找出每一处战时防空洞的位置。"
 },
 {
 "w": "location",
@@ -30209,8 +30209,8 @@
 "i": "loʊˈkeɪʃən",
 "gd": "n. 位置, 场所, 特定区域",
 "x": "cet4,cet6,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The film crew chose an unusual location for the finale.",
+"sz": "剧组为大结局选了一个不同寻常的地点。"
 },
 {
 "w": "lock",
@@ -30263,8 +30263,8 @@
 "i": "ˈlɑːdʒɪk",
 "gd": "n. 逻辑, 逻辑学, 推理的方法, 推理, 逻辑性",
 "x": "cet4,cet6,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "There is a simple logic behind the seating plan.",
+"sz": "座位安排背后有一个简单的逻辑。"
 },
 {
 "w": "logical",
@@ -30272,8 +30272,8 @@
 "i": "ˈlɑːdʒɪkəl",
 "gd": "adj. 合乎逻辑的, 合理的",
 "x": "cet4,cet6,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "It is logical to start the route from the station.",
+"sz": "从车站出发走这条线路是合理的。"
 },
 {
 "w": "logo",
@@ -30317,8 +30317,8 @@
 "i": "ˈlɛŋkθ",
 "gd": "n. 长度, 长, 期间, 一段",
 "x": "cet4,cet6,gaokao,ielts,kaoyan",
-"se": null,
-"sz": null
+"se": "The queue stretched the full length of the street.",
+"sz": "队伍排满了整条街。"
 },
 {
 "w": "lengthy",
@@ -30326,8 +30326,8 @@
 "i": "ˈlɛŋθiː",
 "gd": "adj. 冗长的, 漫长的",
 "x": "cet4,toefl",
-"se": null,
-"sz": null
+"se": "The contract ran to a lengthy forty pages.",
+"sz": "合同长达四十页，颇为冗长。"
 },
 {
 "w": "look",
@@ -30668,8 +30668,8 @@
 "i": "mæˈɡnɛtɪk",
 "gd": "adj. 有磁性的, 有吸引力的, 催眠术的",
 "x": "cet4,cet6,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The toy train runs on a magnetic track.",
+"sz": "这款玩具火车在磁力轨道上运行。"
 },
 {
 "w": "magnificent",
@@ -30677,8 +30677,8 @@
 "i": "mæˈɡnɪfəsənt",
 "gd": "adj. 华丽的, 高尚的, 宏伟的",
 "x": "cet4,cet6,gre,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The cathedral has a magnificent carved doorway.",
+"sz": "大教堂有一扇雕刻壮丽的正门。"
 },
 {
 "w": "magnificence",
@@ -30686,8 +30686,8 @@
 "i": null,
 "gd": "n. 富丽堂皇, 华丽, 宏大",
 "x": "cet4,toefl",
-"se": null,
-"sz": null
+"se": "Visitors still marvel at the magnificence of the palace stair.",
+"sz": "游客至今仍惊叹于宫殿楼梯的宏伟。"
 },
 {
 "w": "maid",
@@ -30749,8 +30749,8 @@
 "i": "meɪˈnteɪn",
 "gd": "v. 维持, 维修, 保持, 坚持, 供养, 主张",
 "x": "cet4,cet6,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "Volunteers maintain the canal path every spring.",
+"sz": "志愿者每年春天养护运河步道。"
 },
 {
 "w": "maintenance",
@@ -30758,8 +30758,8 @@
 "i": "ˈmeɪntənəns",
 "gd": "n. 维护, 保持, 维修, 生活费用, 坚持, 扶养",
 "x": "cet4,cet6,gre,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The lift is closed for routine maintenance.",
+"sz": "电梯因例行维护停用。"
 },
 {
 "w": "major",
@@ -30767,8 +30767,8 @@
 "i": "ˈmeɪdʒər",
 "gd": "n. 主修课, 成年人, 陆军少校\nadj. 主要的, 较多的, 大部分的, 成年的, 严重的\nv. 主修",
 "x": "cet4,cet6,gaokao,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "Traffic noise is a major complaint in the survey.",
+"sz": "交通噪音是这次调查中的主要抱怨。"
 },
 {
 "w": "majority",
@@ -30776,8 +30776,8 @@
 "i": "məˈdʒɔːrətiː",
 "gd": "n. 多数, 大半",
 "x": "cet4,cet6,gaokao,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The majority of members voted for the change.",
+"sz": "大多数成员投票赞成这项改动。"
 },
 {
 "w": "make",
@@ -30839,8 +30839,8 @@
 "i": "ˈmænliː",
 "gd": "adj. 象男人的, 强壮的, 适于男人的",
 "x": "cet4,cet6",
-"se": null,
-"sz": null
+"se": "The novel mocks old ideas of manly silence.",
+"sz": "这部小说嘲讽了男子汉必须沉默的旧观念。"
 },
 {
 "w": "manhood",
@@ -30848,8 +30848,8 @@
 "i": "ˈmæˌnhʊd",
 "gd": "n. 成年, 勇气, 男儿",
 "x": "cet4",
-"se": null,
-"sz": null
+"se": "In the story, a journey marks a boy's passage into manhood.",
+"sz": "在故事里，一段旅程标志着少年步入成年。"
 },
 {
 "w": "manage",
@@ -30857,8 +30857,8 @@
 "i": "ˈmænədʒ",
 "gd": "v. 处理\nv. 管理, 控制, 维持, 达成, 经营, 运用",
 "x": "cet4,cet6,gaokao,kaoyan",
-"se": null,
-"sz": null
+"se": "With two staff gone, she manages the shop alone.",
+"sz": "走了两名员工后，她独自管理这家店。"
 },
 {
 "w": "management",
@@ -30866,8 +30866,8 @@
 "i": "ˈmænədʒmənt",
 "gd": "n. 经营, 支配, 管理",
 "x": "cet4,cet6,ielts,kaoyan",
-"se": null,
-"sz": null
+"se": "The management promised a reply within the week.",
+"sz": "管理层承诺一周内给予答复。"
 },
 {
 "w": "manager",
@@ -30875,8 +30875,8 @@
 "i": "ˈmænədʒər",
 "gd": "n. 经理, 管理员, 管理器",
 "x": "cet4,gaokao,ielts",
-"se": null,
-"sz": null
+"se": "The manager posted the new rota on the door.",
+"sz": "经理把新的排班表贴在了门上。"
 },
 {
 "w": "managerial",
@@ -30884,8 +30884,8 @@
 "i": "ˌmænɪˈdʒɪriːəl",
 "gd": "adj. 管理的",
 "x": "cet4,cet6",
-"se": null,
-"sz": null
+"se": "She took a managerial post at the coastal hotel.",
+"sz": "她在那家海滨酒店担任了管理职位。"
 },
 {
 "w": "manipulate",
@@ -30938,8 +30938,8 @@
 "i": "ˈmænjuːəl",
 "gd": "n. 手册, 指南\nadj. 手的, 手动的, 手工的, 体力的",
 "x": "cet4,cet6,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "Read the manual before assembling the shelf.",
+"sz": "组装书架前先看说明书。"
 },
 {
 "w": "manufacture",
@@ -30947,8 +30947,8 @@
 "i": "ˌmænjəˈfæktʃər",
 "gd": "n. 产品, 制造\nv. 制造, 假造\nv. 制造",
 "x": "cet4,cet6,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The plant can manufacture a car in under a day.",
+"sz": "这家工厂制造一辆汽车用时不到一天。"
 },
 {
 "w": "manufacturer",
@@ -30965,8 +30965,8 @@
 "i": "ˈmɛniː",
 "gd": "n. 多数, 多数人\nadj. 许多的\npron. 许多",
 "x": "cet4,gaokao",
-"se": null,
-"sz": null
+"se": "Many hands make light work, as the saying goes.",
+"sz": "俗话说，人多好办事。"
 },
 {
 "w": "map",
@@ -31028,8 +31028,8 @@
 "i": "mərˈiːn",
 "gd": "n. 舰队, 水兵, 海景画\nadj. 海的, 海产的, 海底的, 船舶的, 海运的",
 "x": "cet4,cet6,gre,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The marine reserve protects seahorses and rare algae.",
+"sz": "这片海洋保护区保护着海马和珍稀藻类。"
 },
 {
 "w": "mark",
@@ -31064,8 +31064,8 @@
 "i": "ˈmɛriː",
 "gd": "v. 与...结婚, 娶, 嫁\nv. 结婚",
 "x": "cet4,cet6,gaokao,kaoyan",
-"se": null,
-"sz": null
+"se": "They plan to marry in the village church in June.",
+"sz": "他们计划六月在家乡的教堂结婚。"
 },
 {
 "w": "marriage",
@@ -31082,8 +31082,8 @@
 "i": "ˈmærətəl",
 "gd": "adj. 丈夫的, 婚姻的, 夫妇间的",
 "x": "cet4,gre,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "She offers marital counseling at the community center.",
+"sz": "她在社区中心提供婚姻咨询。"
 },
 {
 "w": "marsh",
@@ -31109,8 +31109,8 @@
 "i": "ˈmɑːrvəl",
 "gd": "n. 奇异事物, 罕见例子\nv. 惊异于\nv. 惊异",
 "x": "cet4,cet6,gre,ielts,toefl",
-"se": null,
-"sz": null
+"se": "The canal system was an engineering marvel of its age.",
+"sz": "这套运河系统是当年的一项工程奇迹。"
 },
 {
 "w": "marvelous",
@@ -31118,8 +31118,8 @@
 "i": "ˈmɑːrvələs",
 "gd": "adj. 令人惊异的, 了不起的, 不平常的",
 "x": "cet4,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The fireworks over the bay were simply marvelous.",
+"sz": "海湾上空的烟花真是美极了。"
 },
 {
 "w": "marvellous",
@@ -31244,8 +31244,8 @@
 "i": "məˈtɪriːəl",
 "gd": "n. 材料, 物资, 素材, 布料, 资料\nadj. 物质的, 肉体的, 重要的",
 "x": "cet4,cet6,gaokao,ielts,kaoyan",
-"se": null,
-"sz": null
+"se": "The tailor sources his material from the old mill.",
+"sz": "裁缝的布料取自那家老纺织厂。"
 },
 {
 "w": "materialism",
@@ -31253,8 +31253,8 @@
 "i": "məˈtɪriːəˌlɪzəm",
 "gd": "n. 唯物主义",
 "x": "cet4,cet6",
-"se": null,
-"sz": null
+"se": "The play satirizes consumer materialism.",
+"sz": "这部戏剧讽刺了消费物质主义。"
 },
 {
 "w": "materialist",
@@ -31262,8 +31262,8 @@
 "i": "məˈtɪriːəlɪst",
 "gd": "n. 唯物主义者",
 "x": "cet4",
-"se": null,
-"sz": null
+"se": "The philosopher was a committed materialist.",
+"sz": "这位哲学家是坚定的唯物主义者。"
 },
 {
 "w": "materialize",
@@ -31271,8 +31271,8 @@
 "i": "məˈtɪriːəˌlaɪz",
 "gd": "v. 赋予实质, 使体现, 物质化\nv. 成有形, 体现, 实现",
 "x": "cet4,gre",
-"se": null,
-"sz": null
+"se": "The extra trains materialized once demand rose.",
+"sz": "需求一上来，加开的列车就落实了。"
 },
 {
 "w": "materialise",
@@ -31280,8 +31280,8 @@
 "i": null,
 "gd": "vi.vt. (使)物质化, (使)具体化, (使)追求物质利益, (使)显形, 成为事实, 实现\nv. 突然出现",
 "x": "cet4",
-"se": null,
-"sz": null
+"se": "The promised funding never materialised.",
+"sz": "承诺的资金始终没有兑现。"
 },
 {
 "w": "math",
@@ -31334,8 +31334,8 @@
 "i": "məˈtʃʊr",
 "gd": "adj. 成熟的, 到期的, 充分考虑的\nv. 使成熟\nv. 成熟, 到期",
 "x": "cet4,cet6,gaokao,gre,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "Cheese needs a cool cellar to mature properly.",
+"sz": "奶酪需要凉爽的地窖才能妥善成熟。"
 },
 {
 "w": "maturity",
@@ -31496,8 +31496,8 @@
 "i": "ˈmɛʒər",
 "gd": "n. 尺寸, 量度器, 量度标准, 测量, 量具, 程度, 范围, 限度, 分寸, 措施, 方法\nv. 测量, 测度, 估量, 权衡, 调节, 拿(自己或自己的力量等)作较量\nv. 度量",
 "x": "cet4,cet6,gaokao,ielts,kaoyan",
-"se": null,
-"sz": null
+"se": "Measure the window before ordering curtains.",
+"sz": "订窗帘前先量好窗户的尺寸。"
 },
 {
 "w": "measurement",
@@ -31505,8 +31505,8 @@
 "i": "ˈmɛʒərmənt",
 "gd": "n. 尺寸, 度量, 度量单位",
 "x": "cet4,cet6,ielts",
-"se": null,
-"sz": null
+"se": "Each measurement was checked twice by two students.",
+"sz": "每个测量值都由两名学生复核了两遍。"
 },
 {
 "w": "measurable",
@@ -31622,8 +31622,8 @@
 "i": "ˈmɛdəkəl",
 "gd": "n. 医生, 体格检查\nadj. 医学的, 内科的, 药的",
 "x": "cet4,cet6,gaokao,ielts,kaoyan",
-"se": null,
-"sz": null
+"se": "The village has a small medical practice above the shop.",
+"sz": "村卫生所在小铺楼上，规模不大。"
 },
 {
 "w": "Medicare",
@@ -31640,8 +31640,8 @@
 "i": "ˈmɛdəsən",
 "gd": "n. 药, 医学, 内科\nv. 给...用药",
 "x": "cet4,gaokao,ielts,toefl",
-"se": null,
-"sz": null
+"se": "Take the medicine with food, never on an empty stomach.",
+"sz": "这药要随餐服用，切勿空腹。"
 },
 {
 "w": "medicinal",
@@ -31658,8 +31658,8 @@
 "i": "ˈmiːdiːəm",
 "gd": "n. 媒体, 方法, 媒介\nadj. 半生熟的, 中间的",
 "x": "cet4,cet6,gaokao,gre,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "Radio remains a powerful medium in rural areas.",
+"sz": "在农村，广播仍是影响力很大的媒介。"
 },
 {
 "w": "media",
@@ -31748,8 +31748,8 @@
 "i": "məˈmɔːriːəl",
 "gd": "n. 纪念物, 请愿书\nadj. 记念的, 记忆的",
 "x": "cet4,cet6,gaokao,gre,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "A stone memorial lists the names of the lost crew.",
+"sz": "一座石碑纪念墙刻着遇难船员的名字。"
 },
 {
 "w": "memory",
@@ -31757,8 +31757,8 @@
 "i": "ˈmɛməriː",
 "gd": "n. 记忆, 记忆力, 回忆, 纪念, 存储\nn. 内存",
 "x": "cet4,cet6,gaokao,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The tune brings back a memory of my grandmother's kitchen.",
+"sz": "这段旋律唤起了我对祖母厨房的记忆。"
 },
 {
 "w": "memorize",
@@ -31766,8 +31766,8 @@
 "i": "ˈmɛmərˌaɪz",
 "gd": "v. 记住, 熟记, 背熟",
 "x": "cet4,gaokao,toefl",
-"se": null,
-"sz": null
+"se": "Applicants must memorize the airport codes for the test.",
+"sz": "考生必须背下机场代码以备考试。"
 },
 {
 "w": "memorise",
@@ -31775,8 +31775,8 @@
 "i": null,
 "gd": "v. 记住, 熟记, 记录, 存储",
 "x": "cet4,ielts",
-"se": null,
-"sz": null
+"se": "Actors memorise dozens of pages of script each week.",
+"sz": "演员们每周要背几十页台词。"
 },
 {
 "w": "mend",
@@ -31793,8 +31793,8 @@
 "i": "ˈmɛntəl",
 "gd": "adj. 心智的, 精神病的, 心理的, 颏的\nn. 精神病患者",
 "x": "cet4,cet6,gaokao,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "A short walk helps your mental as much as your physical health.",
+"sz": "散步对精神健康的益处不亚于对身体的好处。"
 },
 {
 "w": "mentality",
@@ -31802,8 +31802,8 @@
 "i": "mɛˈntælətiː",
 "gd": "n. 精神力, 智力, 头脑作用, 心态",
 "x": "cet4,ielts",
-"se": null,
-"sz": null
+"se": "Winning at all costs is a poor sporting mentality.",
+"sz": "不惜代价求胜是一种糟糕的体育心态。"
 },
 {
 "w": "mention",
@@ -31811,8 +31811,8 @@
 "i": "ˈmɛnʃən",
 "gd": "n. 提到, 言及, 陈述\nv. 提到, 提及",
 "x": "cet4,gaokao,toefl",
-"se": null,
-"sz": null
+"se": "Did the report mention the cost of repairs?",
+"sz": "报告提到修理费用了吗？"
 },
 {
 "w": "menu",
@@ -31829,8 +31829,8 @@
 "i": "ˈmɜːrtʃənt",
 "gd": "n. 商人, 店主\nadj. 商业的, 商人的",
 "x": "cet4,cet6,gaokao,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The old merchant house is now a tea museum.",
+"sz": "这栋老商宅如今是茶叶博物馆。"
 },
 {
 "w": "mercy",
@@ -31838,8 +31838,8 @@
 "i": "ˈmɜːrsiː",
 "gd": "n. 仁慈, 宽恕, 慈悲, 怜悯, 幸运",
 "x": "cet4,cet6,gaokao,ielts,kaoyan",
-"se": null,
-"sz": null
+"se": "The court showed mercy and issued a warning instead.",
+"sz": "法庭网开一面，只给了口头警告。"
 },
 {
 "w": "merciful",
@@ -31847,8 +31847,8 @@
 "i": "ˈmɜːrsɪfəl",
 "gd": "adj. 仁慈的, 慈悲的",
 "x": "cet4,cet6,gaokao,toefl",
-"se": null,
-"sz": null
+"se": "The referee was merciful and only booked the captain.",
+"sz": "裁判手下留情，只给了队长一张黄牌。"
 },
 {
 "w": "mere",
@@ -31865,8 +31865,8 @@
 "i": "ˈmɪrliː",
 "gd": "adv. 只",
 "x": "cet4,cet6,gaokao,kaoyan",
-"se": null,
-"sz": null
+"se": "The change is merely cosmetic; the engine is the same.",
+"sz": "这只是表面改动，发动机没变。"
 },
 {
 "w": "merit",
@@ -31874,8 +31874,8 @@
 "i": "ˈmɛrət",
 "gd": "n. 优点, 功绩, 价值, 功过, 真相\nv. 值得\nv. 应受",
 "x": "cet4,cet6,gre,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The plan has merit, but the timing is wrong.",
+"sz": "这个方案有可取之处，但时机不对。"
 },
 {
 "w": "meritorious",
@@ -31883,8 +31883,8 @@
 "i": "ˌmɛrəˈtɔːriːəs",
 "gd": "adj. 有功绩的, 有价值的, 可称赞的",
 "x": "cet4,gre",
-"se": null,
-"sz": null
+"se": "The panel praised the meritorious service of the lifeguards.",
+"sz": "评审组表扬了救生员值得称赞的贡献。"
 },
 {
 "w": "merry",
@@ -31892,8 +31892,8 @@
 "i": "ˈmɛriː",
 "gd": "adj. 快乐的, 愉快的, 嬉戏作乐的",
 "x": "cet4,cet6,gaokao,kaoyan",
-"se": null,
-"sz": null
+"se": "The whole pub joined in the merry chorus.",
+"sz": "全酒吧的人都加入了欢乐的合唱。"
 },
 {
 "w": "merriment",
@@ -31982,8 +31982,8 @@
 "i": "ˈmɛtrɪk",
 "gd": "adj. 公尺的, 公制的, 计量的",
 "x": "cet4,cet6,ielts,kaoyan",
-"se": null,
-"sz": null
+"se": " Britain uses a mix of metric and old units.",
+"sz": "英国混用公制和旧制单位。"
 },
 {
 "w": "method",
@@ -32027,8 +32027,8 @@
 "i": "ˈmaɪkrəˌfoʊn",
 "gd": "n. 扩音器, 麦克风",
 "x": "cet4,cet6,ielts,kaoyan",
-"se": null,
-"sz": null
+"se": "Tap the microphone twice before you speak.",
+"sz": "发言前轻点两下话筒。"
 },
 {
 "w": "microscope",
@@ -32036,8 +32036,8 @@
 "i": "ˈmaɪkrəˌskoʊp",
 "gd": "n. 显微镜",
 "x": "cet4,cet6,gaokao,gre,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "Under the microscope, the sand grains look like jewels.",
+"sz": "在显微镜下，沙粒看起来像宝石。"
 },
 {
 "w": "microscopic",
@@ -32045,8 +32045,8 @@
 "i": "ˌmaɪkrəˈskɑːpɪk",
 "gd": "adj. 显微镜的, 用显微镜可见的, 微观的, (非正式)极微小的, 细微的",
 "x": "cet4,cet6,gre,toefl",
-"se": null,
-"sz": null
+"se": "The crack was microscopic, yet it sank the boat.",
+"sz": "裂缝微小如尘，却让船沉了。"
 },
 {
 "w": "microwave",
@@ -32126,8 +32126,8 @@
 "i": "ˈmaɪˌɡreɪt",
 "gd": "v. 移动, 移往, 随季节而移居",
 "x": "cet4,cet6,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "These swallows migrate between Africa and the Baltic.",
+"sz": "这些燕子在非洲和波罗的海之间迁徙。"
 },
 {
 "w": "migration",
@@ -32135,8 +32135,8 @@
 "i": "maɪˈɡreɪʃən",
 "gd": "n. 移民, 移往, 移动",
 "x": "cet4,ielts,toefl",
-"se": null,
-"sz": null
+"se": "The documentary tracks the migration of the caribou.",
+"sz": "这部纪录片跟踪拍摄驯鹿的迁徙。"
 },
 {
 "w": "migrant",
@@ -32144,8 +32144,8 @@
 "i": "ˈmaɪɡrənt",
 "gd": "n. 候鸟, 移居者",
 "x": "cet4,cet6,toefl",
-"se": null,
-"sz": null
+"se": "The reserve shelters migrant birds in early spring.",
+"sz": "保护区在早春为候鸟提供栖身之所。"
 },
 {
 "w": "mild",
@@ -32180,8 +32180,8 @@
 "i": "ˈmɪləˌtɛriː",
 "gd": "n. 军队\nadj. 军事的, 军人的, 适于战争的",
 "x": "cet4,cet6,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The castle later served as a military hospital.",
+"sz": "这座城堡后来被用作军事医院。"
 },
 {
 "w": "milk",
@@ -32216,8 +32216,8 @@
 "i": "ˈmɪləˌmiːtər",
 "gd": "n. 毫米",
 "x": "cet4,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The engineer measured the gap to the nearest millimeter.",
+"sz": "工程师把缝隙量到了毫米精度。"
 },
 {
 "w": "millimetre",
@@ -32225,8 +32225,8 @@
 "i": "ˈmɪləˌmiːtər",
 "gd": "n. 毫米",
 "x": "cet4,cet6",
-"se": null,
-"sz": null
+"se": "Rainfall is recorded in millimetres at the little station.",
+"sz": "小气象站的降雨以毫米记录。"
 },
 {
 "w": "million",
@@ -32270,8 +32270,8 @@
 "i": "ˈmɪnərəl",
 "gd": "n. 矿物, 无机物, 苏打水\nadj. 矿物的, 似矿物的",
 "x": "cet4,gaokao,toefl",
-"se": null,
-"sz": null
+"se": "The spring water is rich in natural minerals.",
+"sz": "这片泉水富含天然矿物质。"
 },
 {
 "w": "mining",
@@ -32279,8 +32279,8 @@
 "i": "ˈmaɪnɪŋ",
 "gd": "n. 采矿",
 "x": "cet4,ielts",
-"se": null,
-"sz": null
+"se": "Copper mining shaped the whole valley's history.",
+"sz": "铜矿开采塑造了整个山谷的历史。"
 },
 {
 "w": "minimum",
@@ -32324,8 +32324,8 @@
 "i": "ˈmɪnəstər",
 "gd": "n. 部长, 牧师, 公使\nv. 服侍, 救助, 主持宗教仪式",
 "x": "cet4,cet6,gaokao,ielts,kaoyan",
-"se": null,
-"sz": null
+"se": "The health minister announced the clinic program.",
+"sz": "卫生部长宣布了诊所计划。"
 },
 {
 "w": "ministry",
@@ -32333,8 +32333,8 @@
 "i": "ˈmɪnəstriː",
 "gd": "n. 部, 内阁, 服务",
 "x": "cet4,cet6,gaokao,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The education ministry funds the school meals.",
+"sz": "教育部为学校供餐提供资金。"
 },
 {
 "w": "ministerial",
@@ -32342,8 +32342,8 @@
 "i": "ˌmɪnɪˈstiːriːəl",
 "gd": "adj. 部长的, 内阁的, 执政的",
 "x": "cet4",
-"se": null,
-"sz": null
+"se": "The change needs ministerial approval before March.",
+"sz": "这项改动需要在内阁部长层面于三月前批准。"
 },
 {
 "w": "minor",
@@ -32351,8 +32351,8 @@
 "i": "ˈmaɪnər",
 "gd": "n. 未成年人, 副修科目\nadj. 较小的, 二流的, 未成年的\nv. 副修",
 "x": "cet4,cet6,kaoyan",
-"se": null,
-"sz": null
+"se": "A minor crack in the wall needs no immediate repair.",
+"sz": "墙上的小裂缝不需要立刻修补。"
 },
 {
 "w": "minority",
@@ -32360,8 +32360,8 @@
 "i": "maɪˈnɔːrətiː",
 "gd": "n. 少数, 未成年, 少数民族\nadj. 少数的, 属于少数派的",
 "x": "cet4,cet6,gaokao,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "A small minority opposed the new timetable.",
+"sz": "少数人反对新的时刻表。"
 },
 {
 "w": "minus",
@@ -32369,8 +32369,8 @@
 "i": "ˈmaɪnəs",
 "gd": "n. 负号, 不足\nadj. 减的, 负的, 阴性的\nprep. 减, 缺",
 "x": "cet4,cet6,gaokao,ielts,kaoyan",
-"se": null,
-"sz": null
+"se": "Ten degrees minus wind chill still feels cold.",
+"sz": "零下十度再算上寒风，还是相当冷。"
 },
 {
 "w": "minute",
@@ -32378,8 +32378,8 @@
 "i": "ˈmɪnət",
 "gd": "n. 分, 分钟, 片刻, 备忘录, 笔记\nv. 记录, 摘录, 测定时间\nadj. 微小的, 详细的",
 "x": "cet4,gaokao,ielts,toefl",
-"se": null,
-"sz": null
+"se": "Wait a minute; the second half is about to start.",
+"sz": "等一会儿，下半场就要开始了。"
 },
 {
 "w": "miracle",
@@ -32468,8 +32468,8 @@
 "i": "ˈmɪsəl",
 "gd": "n. 发射物, 导弹, 飞弹, 火箭\nadj. 可发射的",
 "x": "cet4,cet6,gaokao,gre,ielts,kaoyan",
-"se": null,
-"sz": null
+"se": "The museum displays an early guided missile.",
+"sz": "博物馆陈列着一枚早期导弹。"
 },
 {
 "w": "missing",
@@ -32477,8 +32477,8 @@
 "i": "ˈmɪsɪŋ",
 "gd": "adj. 不见的, 缺少的",
 "x": "cet4,cet6,kaoyan",
-"se": null,
-"sz": null
+"se": "The cat has been missing since Tuesday.",
+"sz": "那只猫从周二起就不见了。"
 },
 {
 "w": "mission",
@@ -32486,8 +32486,8 @@
 "i": "ˈmɪʃən",
 "gd": "n. 任务, 代表团, 使命, 传教团\nv. 派遣, 向...传教",
 "x": "cet4,cet6,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The aid mission delivered blankets to the valley.",
+"sz": "援助使团把毯子送到了山谷。"
 },
 {
 "w": "mist",
@@ -32549,8 +32549,8 @@
 "i": "ˌmɪsəndərˈstænd",
 "gd": "v. 误解, 误会",
 "x": "cet4,cet6,gaokao,kaoyan",
-"se": null,
-"sz": null
+"se": "Do not misunderstand the gesture; it means good luck here.",
+"sz": "别误解这个手势，它在这里表示好运。"
 },
 {
 "w": "misunderstanding",
@@ -32558,8 +32558,8 @@
 "i": "ˌmɪsəndərˈstændɪŋ",
 "gd": "n. 误会, 误解",
 "x": "cet4",
-"se": null,
-"sz": null
+"se": "The whole dispute grew from a small misunderstanding.",
+"sz": "整个争端源于一个小误会。"
 },
 {
 "w": "mix",
@@ -32585,8 +32585,8 @@
 "i": "ˈmɪksər",
 "gd": "n. 混合者, 混合器, 搅拌机, 搅拌器, 混频器, (非正式)交际家, 与人相处的人",
 "x": "cet4,cet6",
-"se": null,
-"sz": null
+"se": "The stand mixer kneads the dough in four minutes.",
+"sz": "立式搅拌机四分钟就把面揉好了。"
 },
 {
 "w": "mobile",
@@ -32594,8 +32594,8 @@
 "i": "ˈmoʊbəl",
 "gd": "adj. 移动的, 易变的, 机动的\nn. 活动物体",
 "x": "cet4,cet6,gaokao,gre,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "She kept a mobile clinic running across three villages.",
+"sz": "她让一间流动诊所跑遍了三个村子。"
 },
 {
 "w": "mode",
@@ -32621,8 +32621,8 @@
 "i": "ˈmɑːdərət",
 "gd": "adj. 适度的, 稳健的, 中等的, 节制的\nv. 节制, 减轻, 使缓和\nv. 变缓和, 主持会议",
 "x": "cet4,cet6,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "Moderate exercise suits most beginners best.",
+"sz": "适度运动最适合大多数初学者。"
 },
 {
 "w": "moderation",
@@ -32630,8 +32630,8 @@
 "i": "ˌmɑːdərˈeɪʃən",
 "gd": "n. 缓和, 适度, 温和",
 "x": "cet4",
-"se": null,
-"sz": null
+"se": "Enjoy sweets in moderation, the dentist says.",
+"sz": "牙医说，甜食要有节制地吃。"
 },
 {
 "w": "moderator",
@@ -32639,8 +32639,8 @@
 "i": "ˈmɑːdərˌeɪtər",
 "gd": "n. 主席, 会议主持人, 仲裁人",
 "x": "cet4",
-"se": null,
-"sz": null
+"se": "The moderator gave each candidate two minutes.",
+"sz": "主持人给每位候选人两分钟。"
 },
 {
 "w": "modern",
@@ -32693,8 +32693,8 @@
 "i": "ˈmɑːdəst",
 "gd": "adj. 谦逊的, 羞怯的, 端庄的, 适度的",
 "x": "cet4,cet6,gaokao,gre,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The team set itself a modest target of fourth place.",
+"sz": "球队给自己定了个谦虚的目标：第四名。"
 },
 {
 "w": "modesty",
@@ -32702,8 +32702,8 @@
 "i": "ˈmɑːdəstiː",
 "gd": "n. 谦逊, 质朴, 羞怯",
 "x": "cet4,cet6",
-"se": null,
-"sz": null
+"se": "Her modesty hides a fierce competitive streak.",
+"sz": "她的谦虚掩盖着一股强烈的求胜心。"
 },
 {
 "w": "modify",
@@ -32711,8 +32711,8 @@
 "i": "ˈmɑːdəˌfaɪ",
 "gd": "v. 修正, 变更, 修饰, 缓和, 减轻\nv. 被修改",
 "x": "cet4,cet6,gre,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "You can modify the recipe with olive oil instead.",
+"sz": "你可以把配方改成用橄榄油。"
 },
 {
 "w": "modification",
@@ -32720,8 +32720,8 @@
 "i": "ˌmɑːdəfəˈkeɪʃən",
 "gd": "n. 修正, 修饰, 修改",
 "x": "cet4,cet6",
-"se": null,
-"sz": null
+"se": "The boat needs one modification before the race.",
+"sz": "参赛前这艘船需要一处改装。"
 },
 {
 "w": "modifier",
@@ -32846,8 +32846,8 @@
 "i": "ˈmʌniː",
 "gd": "n. 金钱, 一笔款, 财富, 货币, 金额",
 "x": "cet4,gaokao,ielts",
-"se": null,
-"sz": null
+"se": "The tickets cost money, but the proceeds fund the pool.",
+"sz": "门票要花钱，但收益都投进了泳池维护。"
 },
 {
 "w": "monetary",
@@ -32864,8 +32864,8 @@
 "i": "ˈmɑːnətər",
 "gd": "n. 监督器, 级长, 监听员, 班长, 监视器, 告诫物\nv. 监视, 监听, 监督",
 "x": "cet4,cet6,gaokao,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "Nurses monitor the patient's heart overnight.",
+"sz": "护士整夜监测病人的心率。"
 },
 {
 "w": "monkey",
@@ -32882,8 +32882,8 @@
 "i": "ˈmɑːnstər",
 "gd": "n. 怪物, 恶人, 巨物",
 "x": "cet4,cet6,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The lighthouse was built after a monster storm in 1881.",
+"sz": "这座灯塔是1881年一场特大风暴后修建的。"
 },
 {
 "w": "monstrous",
@@ -32891,8 +32891,8 @@
 "i": "ˈmɑːnstrəs",
 "gd": "adj. 巨大的, 畸形的, 怪异的",
 "x": "cet4,cet6,gre,ielts",
-"se": null,
-"sz": null
+"se": "The storm left monstrous waves against the seawall.",
+"sz": "风暴过后，防波堤上浪高惊人。"
 },
 {
 "w": "month",
@@ -32900,8 +32900,8 @@
 "i": "ˈmʌnθ",
 "gd": "n. 月",
 "x": "cet4,gaokao,ielts",
-"se": null,
-"sz": null
+"se": "The gallery changes its exhibition every month.",
+"sz": "美术馆每个月换一次展。"
 },
 {
 "w": "monthly",
@@ -32909,8 +32909,8 @@
 "i": "ˈmʌnθliː",
 "gd": "n. 月刊\nadj. 每月的, 每月一次的",
 "x": "cet4,kaoyan",
-"se": null,
-"sz": null
+"se": "The astronomy club publishes a monthly newsletter.",
+"sz": "天文俱乐部每月出一期通讯。"
 },
 {
 "w": "monument",
@@ -32918,8 +32918,8 @@
 "i": "ˈmɑːnjuːmənt",
 "gd": "n. 纪念碑, 纪念物, 石碑",
 "x": "cet4,cet6,gaokao,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "A bronze statue on the square is the town's war monument.",
+"sz": "广场上的青铜雕像是镇的战争纪念碑。"
 },
 {
 "w": "monumental",
@@ -32927,8 +32927,8 @@
 "i": "ˌmɑːnjəˈmɛntəl",
 "gd": "adj. 纪念碑的, 做为纪念的, 不朽的",
 "x": "cet4,gre",
-"se": null,
-"sz": null
+"se": "Finishing the canal was a monumental task for its era.",
+"sz": "在那个年代，修完这条运河是一项意义深远的浩大工程。"
 },
 {
 "w": "mood",
@@ -32972,8 +32972,8 @@
 "i": "ˈmɔːrəl",
 "gd": "n. 道德, 品行, 寓意\nadj. 道德的, 品性端正的, 精神上的",
 "x": "cet4,cet6,gaokao,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "Every fable ends with a moral.",
+"sz": "每篇寓言结尾都有一个寓意。"
 },
 {
 "w": "morality",
@@ -32981,8 +32981,8 @@
 "i": "ˌmɔːˈræləˌtiː",
 "gd": "n. 道德, 教训, 品行",
 "x": "cet4,cet6,ielts,kaoyan",
-"se": null,
-"sz": null
+"se": "The novel questions the morality of revenge.",
+"sz": "这部小说质疑复仇的道德性。"
 },
 {
 "w": "more",
@@ -33071,8 +33071,8 @@
 "i": "ˈmoʊʃən",
 "gd": "n. 移动, 手势, 动作, 意向, 请求, 提议\nv. 打手势",
 "x": "cet4,cet6,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The council passed a motion to save the library.",
+"sz": "议会通过了一项拯救图书馆的动议。"
 },
 {
 "w": "motivate",
@@ -33098,8 +33098,8 @@
 "i": "ˈmoʊtɪv",
 "gd": "n. 动机, 目的, 主题, 基调\nadj. 运动的, 成为动机的",
 "x": "cet4,cet6,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The police found no clear motive for the theft.",
+"sz": "警方没有找到这起盗窃的明确动机。"
 },
 {
 "w": "motor",
@@ -33107,8 +33107,8 @@
 "i": "ˈmoʊtər",
 "gd": "n. 马达, 发动机, 原动力, 汽车\nadj. 马达的, 发动机的, 汽车的, 发动的\nv. 推动, 以汽车载运\nv. 乘汽车, 驾车",
 "x": "cet4,cet6,gaokao,kaoyan",
-"se": null,
-"sz": null
+"se": "The pump's motor hums quietly behind the shed.",
+"sz": "水泵的马达在棚子后面低声嗡嗡作响。"
 },
 {
 "w": "motorway",
@@ -33197,8 +33197,8 @@
 "i": "ˈmuːvmənt",
 "gd": "n. 运动, 动作, 运转, 移动, 倾向, 变化, 活动, 乐章",
 "x": "cet4,cet6,gaokao,gre,kaoyan",
-"se": null,
-"sz": null
+"se": "Slow movement is the secret of the dance style.",
+"sz": "缓慢的动作是这种舞步的诀窍。"
 },
 {
 "w": "movie",
@@ -33260,8 +33260,8 @@
 "i": "ˈmʌltəpəl",
 "gd": "n. 倍数, 并联\nadj. 多样的, 许多的, 多功能的",
 "x": "cet4,cet6,gre,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The storm caused multiple road closures.",
+"sz": "风暴造成多处道路封闭。"
 },
 {
 "w": "multiply",
@@ -33269,8 +33269,8 @@
 "i": "ˈmʌltəˌplaɪ",
 "gd": "v. 繁殖, 乘, 增加",
 "x": "cet4,cet6,gaokao,gre,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "Bacteria multiply quickly in warm milk.",
+"sz": "细菌在温热的牛奶里繁殖很快。"
 },
 {
 "w": "multiplication",
@@ -33278,8 +33278,8 @@
 "i": "ˌmʌltəpləˈkeɪʃən",
 "gd": "n. 乘法, 增加, 乘法运算",
 "x": "cet4,cet6",
-"se": null,
-"sz": null
+"se": "The class raced through the multiplication tables.",
+"sz": "全班学生飞快地背完了乘法表。"
 },
 {
 "w": "municipal",
@@ -33395,8 +33395,8 @@
 "i": "ˈmjuːtʃuːəl",
 "gd": "adj. 相互的, 共有的",
 "x": "cet4,cet6,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The partnership rests on mutual trust.",
+"sz": "这一合作关系建立在相互信任之上。"
 },
 {
 "w": "my",
@@ -33521,8 +33521,8 @@
 "i": "ˈnɛˌreɪt",
 "gd": "v. 说故事, 说明, 叙述",
 "x": "cet4,kaoyan",
-"se": null,
-"sz": null
+"se": "She was invited to narrate the nature documentary.",
+"sz": "她受邀为那部自然纪录片担任旁白。"
 },
 {
 "w": "narration",
@@ -33530,8 +33530,8 @@
 "i": "nɛˈreɪʃən",
 "gd": "n. 叙述, 故事, 叙述文",
 "x": "cet4,cet6,toefl",
-"se": null,
-"sz": null
+"se": "The film's narration is spare but moving.",
+"sz": "影片的旁白简洁却动人。"
 },
 {
 "w": "narrative",
@@ -33539,8 +33539,8 @@
 "i": "ˈnærətɪv",
 "gd": "n. 叙述, 故事\nadj. 叙述的, 叙事的, 故事体的",
 "x": "cet4,cet6,gre,ielts,kaoyan",
-"se": null,
-"sz": null
+"se": "The museum tells the town's narrative through ten rooms.",
+"sz": "博物馆用十个展厅讲述小镇的故事。"
 },
 {
 "w": "narrator",
@@ -33584,8 +33584,8 @@
 "i": "ˈneɪʃən",
 "gd": "n. 国家, 民族",
 "x": "cet4,cet6,gaokao,kaoyan",
-"se": null,
-"sz": null
+"se": "The whole nation watched the eclipse together.",
+"sz": "全国上下一起观看了日食。"
 },
 {
 "w": "national",
@@ -33593,8 +33593,8 @@
 "i": "ˈnæʃənəl",
 "gd": "adj. 国家的, 国立的, 全国性的, 民族的",
 "x": "cet4,cet6,gaokao,ielts,kaoyan",
-"se": null,
-"sz": null
+"se": "The park is a national treasure of ancient oaks.",
+"sz": "这座公园是以古橡树闻名的国家瑰宝。"
 },
 {
 "w": "nationality",
@@ -33638,8 +33638,8 @@
 "i": "ˈneɪtɪv",
 "gd": "n. 本地人, 土产, 当地人\nadj. 本国的, 与生俱来的, 自然的",
 "x": "cet4,cet6,gaokao,ielts,kaoyan",
-"se": null,
-"sz": null
+"se": "The native orchids bloom only after fires.",
+"sz": "本地兰花只在山火过后开放。"
 },
 {
 "w": "nature",
@@ -33647,8 +33647,8 @@
 "i": "ˈneɪtʃər",
 "gd": "n. 自然, 大自然, 本性, 性格, 性质",
 "x": "cet4,cet6,gaokao,ielts,kaoyan",
-"se": null,
-"sz": null
+"se": "Nature reclaims the quarries a little each year.",
+"sz": "大自然每年都会收复一点废弃采石场。"
 },
 {
 "w": "natural",
@@ -33683,8 +33683,8 @@
 "i": "ˈneɪviː",
 "gd": "n. 海军, 海军人员, 海军军力, 烟蒂",
 "x": "cet4,cet6,gaokao,kaoyan",
-"se": null,
-"sz": null
+"se": "He served in the navy for eight years.",
+"sz": "他在海军服役了八年。"
 },
 {
 "w": "naval",
@@ -33692,8 +33692,8 @@
 "i": "ˈneɪvəl",
 "gd": "adj. 海军的, 军舰的, 有舰队的",
 "x": "cet4,cet6,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The naval museum occupies the old dry dock.",
+"sz": "海军博物馆设在老船坞里。"
 },
 {
 "w": "near",
@@ -33953,8 +33953,8 @@
 "i": "ˈnɜːrvəs",
 "gd": "adj. 神经紧张的, 不安的, 神经的",
 "x": "cet4,cet6,gaokao,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "First-time exhibitors are always nervous on opening night.",
+"sz": "首次参展者在开幕夜总是紧张。"
 },
 {
 "w": "nest",
@@ -33998,8 +33998,8 @@
 "i": "ˈnuːtrəl",
 "gd": "n. 中立者, 中立国, 非彩色, 空档\nadj. 中立的, 中性的, 无色的",
 "x": "cet4,cet6,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "Switzerland stayed neutral through both world wars.",
+"sz": "瑞士在两次世界大战中都保持中立。"
 },
 {
 "w": "neutrality",
@@ -34007,8 +34007,8 @@
 "i": "nuːˈtrælətiː",
 "gd": "n. 中立, 不偏不倚, 中间状态",
 "x": "cet4",
-"se": null,
-"sz": null
+"se": "The village's neutrality protected it during the war.",
+"sz": "这座村庄的中立地位使它在战争中幸免。"
 },
 {
 "w": "neutralize",
@@ -34016,8 +34016,8 @@
 "i": "ˈnuːtrəˌlaɪz",
 "gd": "v. 使中立, 使成中立地带, 使中和, 抵销\nv. 中立化, 变无效, 中和",
 "x": "cet4,gre,ielts,toefl",
-"se": null,
-"sz": null
+"se": "Baking soda will neutralize most kitchen odors.",
+"sz": "小苏打能中和大部分厨房异味。"
 },
 {
 "w": "neutralise",
@@ -34025,8 +34025,8 @@
 "i": null,
 "gd": "v. 使中立化, 使成为无效\nvt.vi. 抵销, (使)中和",
 "x": "cet4",
-"se": null,
-"sz": null
+"se": "The filter will neutralise most of the smell.",
+"sz": "这个滤芯能抵消大部分气味。"
 },
 {
 "w": "never",
@@ -34259,8 +34259,8 @@
 "i": "ˈnɑːnsɛns",
 "gd": "n. 无意义的事, 荒谬言行, 荒唐",
 "x": "cet4,cet6,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The rumor about the tunnel is pure nonsense.",
+"sz": "关于那条隧道的传闻纯属胡说。"
 },
 {
 "w": "noodle",
@@ -34304,8 +34304,8 @@
 "i": "ˈnɔːrməl",
 "gd": "n. 常态, 标准, 正常, 普通\nadj. 正常的, 正规的, 标准的, 师范的, 正态的",
 "x": "cet4,cet6,gaokao,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "Rain in October is perfectly normal here.",
+"sz": "这里十月份下雨再正常不过。"
 },
 {
 "w": "normally",
@@ -34313,8 +34313,8 @@
 "i": "ˈnɔːrməliː",
 "gd": "adv. 正规地, 合规则, 正常地",
 "x": "cet4,cet6,toefl",
-"se": null,
-"sz": null
+"se": "The ferry normally sails at half past the hour.",
+"sz": "渡轮通常在每小时的半点发船。"
 },
 {
 "w": "normalize",
@@ -34322,8 +34322,8 @@
 "i": "ˈnɔːrməˌlaɪz",
 "gd": "v. 使常态化, 使合标准, 使合规格",
 "x": "cet4",
-"se": null,
-"sz": null
+"se": "It took years to normalize the spelling of the word.",
+"sz": "这个单词的拼法花了很多年才规范下来。"
 },
 {
 "w": "normalise",
@@ -34331,8 +34331,8 @@
 "i": null,
 "gd": "vt.vi. 使正常化, 恢复友好状态, 使标准化",
 "x": "cet4",
-"se": null,
-"sz": null
+"se": "Physiotherapy helped normalise her walking after the cast.",
+"sz": "物理治疗帮助她在拆石膏后恢复了正常步态。"
 },
 {
 "w": "normalization",
@@ -34340,8 +34340,8 @@
 "i": "ˌnɔːrməlɪˈzeɪʃən",
 "gd": "n. 常态化, 正常化, 正规化",
 "x": "cet4,cet6,kaoyan",
-"se": null,
-"sz": null
+"se": "The database normalization cut the file size in half.",
+"sz": "数据库标准化使文件体积减半。"
 },
 {
 "w": "normalisation",
@@ -34349,8 +34349,8 @@
 "i": null,
 "gd": "n. normalise的变形",
 "x": "cet4",
-"se": null,
-"sz": null
+"se": "The normalisation of relations took two decades.",
+"sz": "两国关系正常化花了二十年。"
 },
 {
 "w": "north",
@@ -34448,8 +34448,8 @@
 "i": "noʊˈteɪʃən",
 "gd": "n. 记号, 符号表示法, 注释",
 "x": "cet4,cet6,ielts,toefl",
-"se": null,
-"sz": null
+"se": "Musical notation has barely changed in two centuries.",
+"sz": "乐谱记号两个世纪来几乎没变。"
 },
 {
 "w": "notable",
@@ -34457,8 +34457,8 @@
 "i": "ˈnoʊtəbəl",
 "gd": "n. 著名人士, 值得注意之事物\nadj. 值得注意的, 显著的",
 "x": "cet4,cet6,gre,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The bridge is a notable example of iron engineering.",
+"sz": "这座桥是铁构工程的显著范例。"
 },
 {
 "w": "notebook",
@@ -34484,8 +34484,8 @@
 "i": "ˈnoʊtɪs",
 "gd": "n. 注意, 布告, 通知, 预告, 短评\nv. 注意, 通知, 评论, 提及, 关注\nv. 注意",
 "x": "cet4,cet6,gaokao,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "Did you notice the crack above the door?",
+"sz": "你注意到门上方的裂缝了吗？"
 },
 {
 "w": "noticeable",
@@ -34493,8 +34493,8 @@
 "i": "ˈnoʊtəsəbəl",
 "gd": "adj. 显而易见的, 显著的, 值得注意的",
 "x": "cet4,cet6,kaoyan",
-"se": null,
-"sz": null
+"se": "The building has a noticeable lean after the quake.",
+"sz": "地震后，这座楼明显倾斜。"
 },
 {
 "w": "notify",
@@ -34502,8 +34502,8 @@
 "i": "ˈnoʊtəˌfaɪ",
 "gd": "v. 通知, 通告, 报告",
 "x": "cet4,cet6,ielts,kaoyan",
-"se": null,
-"sz": null
+"se": "Please notify the school if your child is ill.",
+"sz": "孩子生病请通知学校。"
 },
 {
 "w": "notification",
@@ -34511,8 +34511,8 @@
 "i": "ˌnoʊtəfəˈkeɪʃən",
 "gd": "n. 通知, 通告, 告示",
 "x": "cet4,cet6",
-"se": null,
-"sz": null
+"se": "You will get a notification when the shop reopens.",
+"sz": "商店重新开门时你会收到通知。"
 },
 {
 "w": "notion",
@@ -34520,8 +34520,8 @@
 "i": "ˈnoʊʃən",
 "gd": "n. 概念, 观念, 想法, 打算, 别致的小东西",
 "x": "cet4,cet6,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The notion of a quiet canal city soon vanished.",
+"sz": "运河城市宁静安详的印象很快破灭了。"
 },
 {
 "w": "notional",
@@ -34529,8 +34529,8 @@
 "i": "ˈnoʊʃənəl",
 "gd": "adj. 概念的, 想像的",
 "x": "cet4",
-"se": null,
-"sz": null
+"se": "The rent is notional; the caretaker pays little.",
+"sz": "租金只是名义上的，管理员付得很少。"
 },
 {
 "w": "noun",
@@ -34682,8 +34682,8 @@
 "i": "ˈnuːmərəs",
 "gd": "adj. 很多的, 数目众多的, 多数的",
 "x": "cet4,cet6,gre,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "Numerous visitors asked about the stained glass.",
+"sz": "许多游客问起那些彩绘玻璃。"
 },
 {
 "w": "nurse",
@@ -34718,8 +34718,8 @@
 "i": "nuːˈtrɪʃən",
 "gd": "n. 营养, 营养学",
 "x": "cet4,cet6,gaokao,gre,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "Good nutrition matters more than any supplement.",
+"sz": "良好的营养比任何补剂都重要。"
 },
 {
 "w": "nutrient",
@@ -34781,8 +34781,8 @@
 "i": "ˈɑːbdʒɛkt",
 "gd": "n. 物体, 目标, 目的, 对象, 宾语, 客体\nv. 反对, 抱反感\nv. 提出...来反对",
 "x": "cet4,cet6,gaokao,ielts,kaoyan",
-"se": null,
-"sz": null
+"se": "A strange object washed up on the jetty.",
+"sz": "一个奇怪的物体被冲上了防波堤。"
 },
 {
 "w": "objection",
@@ -34790,8 +34790,8 @@
 "i": "əˈbdʒɛkʃən",
 "gd": "n. 异议, 反对, 不喜欢, 缺点, 缺陷, 妨碍, 拒绝之理由",
 "x": "cet4,cet6,gre,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The only objection came from the ferry operator.",
+"sz": "唯一的反对意见来自渡轮运营商。"
 },
 {
 "w": "objective",
@@ -34799,8 +34799,8 @@
 "i": "əˈbdʒɛktɪv",
 "gd": "n. 目的, 目标, 宗旨, 宾格, 实物\nadj. 客观的, 如实的, 无偏见的, 宾格的",
 "x": "cet4,cet6,gre,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The objective this season is simple: survive.",
+"sz": "本赛季的目标很简单：保级。"
 },
 {
 "w": "oblige",
@@ -34808,8 +34808,8 @@
 "i": "əˈblaɪdʒ",
 "gd": "v. 强制, 施恩惠于, 使感激\nv. 施恩惠, 帮忙",
 "x": "cet4,cet6,gre,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "Falling sales may oblige the factory to close early.",
+"sz": "销售下滑可能迫使工厂提前关门。"
 },
 {
 "w": "obligation",
@@ -34817,8 +34817,8 @@
 "i": "ˌɑːbləˈɡeɪʃən",
 "gd": "n. 义务, 责任, 约束, 契约, 恩惠, 债务",
 "x": "cet4,cet6,gre,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "Drivers have a legal obligation to stop after an accident.",
+"sz": "事故后停车是司机的法定义务。"
 },
 {
 "w": "obliged",
@@ -34844,8 +34844,8 @@
 "i": "əˈbzɜːrv",
 "gd": "v. 觉察到, 遵守, 注意到, 庆祝\nv. 注意, 评论",
 "x": "cet4,cet6,gaokao,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "Astronomers observe the comet from three sites.",
+"sz": "天文学家在三个观测点观测这颗彗星。"
 },
 {
 "w": "observation",
@@ -34853,8 +34853,8 @@
 "i": "ˌɑːbzərˈveɪʃən",
 "gd": "n. 观察, 注意, 观测, 观察力",
 "x": "cet4,cet6,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The observation deck reopens at sunset.",
+"sz": "观景台在日落时重新开放。"
 },
 {
 "w": "observer",
@@ -34862,8 +34862,8 @@
 "i": "əˈbzɜːrvər",
 "gd": "n. 观察者, 遵守者, 观察员",
 "x": "cet4,cet6",
-"se": null,
-"sz": null
+"se": "A neutral observer kept score during the talks.",
+"sz": "谈判期间由一名中立观察员记录。"
 },
 {
 "w": "observant",
@@ -34871,8 +34871,8 @@
 "i": "əˈbzɜːrvənt",
 "gd": "adj. 严格遵守...的, 留心的, 当心的, 观察力敏锐的, 注意观察的",
 "x": "cet4",
-"se": null,
-"sz": null
+"se": "Only the most observant visitors spot the hidden cat.",
+"sz": "只有观察最敏锐的游客才能发现那只藏起来的猫。"
 },
 {
 "w": "obstacle",
@@ -34889,8 +34889,8 @@
 "i": "əˈbteɪn",
 "gd": "v. 获得, 达到\nv. 流行, 得到公认",
 "x": "cet4,cet6,gaokao,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "You can obtain the form from any post office.",
+"sz": "表格在任何邮局都能领到。"
 },
 {
 "w": "obtainment",
@@ -34898,8 +34898,8 @@
 "i": null,
 "gd": "n. 获得",
 "x": "cet4",
-"se": null,
-"sz": null
+"se": "The obtainment of the permit took six weeks.",
+"sz": "拿到这张许可证花了六周。"
 },
 {
 "w": "obvious",
@@ -34907,8 +34907,8 @@
 "i": "ˈɑːbviːəs",
 "gd": "adj. 明显的, 明白的, 显然的, 平淡无奇的",
 "x": "cet4,cet6,gaokao,gre,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The answer was obvious once the map was turned.",
+"sz": "地图一转过来，答案就一目了然。"
 },
 {
 "w": "obviously",
@@ -34916,8 +34916,8 @@
 "i": "ˈɑːbviːəsliː",
 "gd": "adv. 显而易见地, 明显地",
 "x": "cet4,cet6",
-"se": null,
-"sz": null
+"se": "Obviously, the tide decides when the boats sail.",
+"sz": "显然，潮汐决定船只何时出港。"
 },
 {
 "w": "occasion",
@@ -34925,8 +34925,8 @@
 "i": "əˈkeɪʒən",
 "gd": "n. 场合, 时机, 机会, 诱因, 理由\nv. 惹起, 引起",
 "x": "cet4,cet6,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The bells ring on every state occasion.",
+"sz": "每逢国家庆典，钟声都会响起。"
 },
 {
 "w": "occasional",
@@ -34934,8 +34934,8 @@
 "i": "ɔːˈkeɪʒənəl",
 "gd": "adj. 偶然的, 临时的",
 "x": "cet4,cet6,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "An occasional deer crosses the garden at dawn.",
+"sz": "偶尔有鹿在黎明穿过花园。"
 },
 {
 "w": "occasionally",
@@ -34952,8 +34952,8 @@
 "i": "ˌɑːkjəˈpeɪʃən",
 "gd": "n. 职业, 占有, 占有期, 占领, 占领军",
 "x": "cet4,cet6,gaokao,gre,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "Please state your occupation on the form.",
+"sz": "请在表格上填写你的职业。"
 },
 {
 "w": "occupational",
@@ -34961,8 +34961,8 @@
 "i": "ɑːkjəˈpeɪʃənəl",
 "gd": "adj. 职业的, 军事占领的",
 "x": "cet4,ielts",
-"se": null,
-"sz": null
+"se": "The clinic specializes in occupational lung disease.",
+"sz": "这家诊所专攻职业性肺病。"
 },
 {
 "w": "occupy",
@@ -34970,8 +34970,8 @@
 "i": "ˈɑːkjəˌpaɪ",
 "gd": "v. 占领, 占(时间、空间等), 住进, 担任, 使从事, 使全神贯注",
 "x": "cet4,cet6,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "Tall reeds occupy the far end of the pond.",
+"sz": "高高的芦苇占据了池塘远端。"
 },
 {
 "w": "occupancy",
@@ -34979,8 +34979,8 @@
 "i": "ˈɑːkjəpənsiː",
 "gd": "n. 占有, 居住, 占用",
 "x": "cet4",
-"se": null,
-"sz": null
+"se": "The hotel's occupancy doubles during the festival.",
+"sz": "节日期间酒店入住率翻倍。"
 },
 {
 "w": "occupant",
@@ -34988,8 +34988,8 @@
 "i": "ˈɑːkjəpənt",
 "gd": "n. 占有者, 居住者, 占用者",
 "x": "cet4,toefl",
-"se": null,
-"sz": null
+"se": "The last occupant of the cottage was a clockmaker.",
+"sz": "小屋的最后一位住客是位钟表匠。"
 },
 {
 "w": "occur",
@@ -34997,8 +34997,8 @@
 "i": "əˈkɜːr",
 "gd": "v. 发生, 被想到, 存在",
 "x": "cet4,cet6,gaokao,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "Frost can occur here as late as May.",
+"sz": "这里最晚到五月还可能出现霜冻。"
 },
 {
 "w": "occurrence",
@@ -35006,8 +35006,8 @@
 "i": "əˈkɜːrəns",
 "gd": "n. 发生, 事件, 出现",
 "x": "cet4,cet6,gre,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "Power cuts are a rare occurrence since the new cables.",
+"sz": "换新电缆后，停电已很罕见。"
 },
 {
 "w": "ocean",
@@ -35123,8 +35123,8 @@
 "i": "əˈfɛnd",
 "gd": "v. 犯罪, 冒犯, 违反, 进攻",
 "x": "cet4,cet6,gre,ielts,kaoyan",
-"se": null,
-"sz": null
+"se": "Loud laughter can offend in some churches.",
+"sz": "在有些教堂里，高声大笑可能冒犯他人。"
 },
 {
 "w": "offense",
@@ -35132,8 +35132,8 @@
 "i": "əˈfɛns",
 "gd": "n. 犯罪, 伤感情, 攻击",
 "x": "cet4",
-"se": null,
-"sz": null
+"se": "In American English, the spelling is offense.",
+"sz": "美式英语中，这个词拼作 offense。"
 },
 {
 "w": "offence",
@@ -35141,8 +35141,8 @@
 "i": null,
 "gd": "n. 犯罪, 冒犯, 违反, 罪过, 过错, 攻击",
 "x": "cet4,cet6,gaokao,ielts,kaoyan",
-"se": null,
-"sz": null
+"se": "Littering is an offence under the local bylaw.",
+"sz": "乱扔垃圾按当地附例属违法行为。"
 },
 {
 "w": "offensive",
@@ -35150,8 +35150,8 @@
 "i": "əˈfɛnsɪv",
 "gd": "adj. 令人不快的, 侮辱的, 攻击性的",
 "x": "cet4,cet6,gre,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "Some nicknames are offensive even without bad intent.",
+"sz": "有些绰号即使并无恶意也令人不快。"
 },
 {
 "w": "offender",
@@ -35159,8 +35159,8 @@
 "i": "əˈfɛndər",
 "gd": "n. 罪犯, 无礼的人, 得罪人的人",
 "x": "cet4",
-"se": null,
-"sz": null
+"se": "First-time offenders often get community service.",
+"sz": "初犯者通常被判处社区服务。"
 },
 {
 "w": "offer",
@@ -35168,8 +35168,8 @@
 "i": "ˈɔːfər",
 "gd": "n. 给予(物), 出价, 提议, 意图, 报价\nv. 提供, 出价, 奉献, 试图, 使出现, 演出\nv. 出现, 献祭, 提议, 求婚",
 "x": "cet4,cet6,gaokao,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The museum will offer free entry all winter.",
+"sz": "博物馆整个冬天都将免费开放。"
 },
 {
 "w": "offering",
@@ -35177,8 +35177,8 @@
 "i": "ˈɔːfərɪŋ",
 "gd": "n. 提供, 奉献物, 牲礼, 上市的股票(或证券等)",
 "x": "cet4",
-"se": null,
-"sz": null
+"se": "The bakery's latest offering sells out by ten.",
+"sz": "面包店的新品十点前就卖光了。"
 },
 {
 "w": "office",
@@ -35186,8 +35186,8 @@
 "i": "ˈɔːfəs",
 "gd": "n. 办公室, 部, 公职, 职责",
 "x": "cet4,gaokao,ielts",
-"se": null,
-"sz": null
+"se": "The ticket office opens at eight sharp.",
+"sz": "售票处八点整开门。"
 },
 {
 "w": "officer",
@@ -35195,8 +35195,8 @@
 "i": "ˈɔːfəsər",
 "gd": "n. 军官, 主管, 官员, 公务员\nv. 指挥",
 "x": "cet4,cet6,gaokao,ielts,kaoyan",
-"se": null,
-"sz": null
+"se": "The customs officer waved the van through.",
+"sz": "海关官员挥手放行了那辆面包车。"
 },
 {
 "w": "official",
@@ -35204,8 +35204,8 @@
 "i": "əˈfɪʃəl",
 "gd": "n. 官员, 公务员, 职员\nadj. 公务的, 官方的, 正式的",
 "x": "cet4,cet6,gaokao,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "An official statement is expected on Monday.",
+"sz": "官方声明预计周一发布。"
 },
 {
 "w": "often",
@@ -35456,8 +35456,8 @@
 "i": "ˈɑːpərˌeɪt",
 "gd": "v. 操作, 运转, 动手术, 活动",
 "x": "cet4,cet6,gaokao,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The funicular has operated since 1898.",
+"sz": "这条缆索铁路自1898年运营至今。"
 },
 {
 "w": "operation",
@@ -35510,8 +35510,8 @@
 "i": "əˈpoʊz",
 "gd": "v. 反对, 以...对抗, 抗争\nv. 反对",
 "x": "cet4,cet6,gaokao,gre,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "Farmers oppose the new water charges.",
+"sz": "农民反对新的水费方案。"
 },
 {
 "w": "opposition",
@@ -35519,8 +35519,8 @@
 "i": "ˌɑːpəˈzɪʃən",
 "gd": "n. 反对, 敌对, 相反, 在野党",
 "x": "cet4,toefl",
-"se": null,
-"sz": null
+"se": "The opposition demanded a public inquiry.",
+"sz": "反对派要求公开调查。"
 },
 {
 "w": "opponent",
@@ -35528,8 +35528,8 @@
 "i": "əˈpoʊnənt",
 "gd": "n. 对手, 敌手, 反对者\nadj. 敌对的, 反对的, 对面的",
 "x": "cet4,cet6,gre,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The chess opponent offered a draw on move thirty.",
+"sz": "国际象棋对手在第三十步提议和棋。"
 },
 {
 "w": "opposite",
@@ -35537,8 +35537,8 @@
 "i": "ˈɑːpəzɪt",
 "gd": "adj. 相对的, 相反的, 对面的\nprep. 对面\nn. 对立面",
 "x": "cet4,cet6,gaokao,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The bank is opposite the old mill.",
+"sz": "银行在老磨坊对面。"
 },
 {
 "w": "opt",
@@ -35555,8 +35555,8 @@
 "i": "ˈɑːpʃən",
 "gd": "n. 选择权, 挑选, 选项",
 "x": "cet4,cet6,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The cheapest option is the afternoon ferry.",
+"sz": "最便宜的选择是下午的渡轮。"
 },
 {
 "w": "optional",
@@ -35564,8 +35564,8 @@
 "i": "ˈɑːpʃənəl",
 "gd": "adj. 可选择的, 随意的",
 "x": "cet4,cet6,gaokao,gre,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The museum tour is optional but highly praised.",
+"sz": "博物馆导览是可选项目，但广受好评。"
 },
 {
 "w": "optimism",
@@ -35573,8 +35573,8 @@
 "i": "ˈɑːptɪˌmɪzəm",
 "gd": "n. 乐观主义, 乐观, 乐天",
 "x": "cet4,cet6,gre,ielts",
-"se": null,
-"sz": null
+"se": "The vintage posters radiate postwar optimism.",
+"sz": "这些老海报洋溢着战后的乐观情绪。"
 },
 {
 "w": "optimistic",
@@ -35582,8 +35582,8 @@
 "i": "ˌɑːptɪˈmɪstɪk",
 "gd": "adj. 乐观的, 乐观主义的, 乐天的",
 "x": "cet4,cet6,gaokao,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "Engineers are optimistic about the bridge repair.",
+"sz": "工程师们对桥梁修复持乐观态度。"
 },
 {
 "w": "optimist",
@@ -35591,8 +35591,8 @@
 "i": "ˈɑːptɪmɪst",
 "gd": "n. 乐观者, 乐观主义者",
 "x": "cet4,gre,toefl",
-"se": null,
-"sz": null
+"se": "A born optimist, she kept the shop through three floods.",
+"sz": "天生乐观的她让小店熬过了三次洪水。"
 },
 {
 "w": "or",
@@ -35609,8 +35609,8 @@
 "i": "ˈɔːrəl",
 "gd": "n. 口试\nadj. 口头的, 口述的, 口部的",
 "x": "cet4,cet6,gaokao,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The exam includes an oral test in front of two teachers.",
+"sz": "考试包括一场两位老师面前的口试。"
 },
 {
 "w": "orange",
@@ -35627,8 +35627,8 @@
 "i": "ˈɔːrbət",
 "gd": "n. 轨道, 常轨, 眼眶\nv. 绕...轨道而行\nv. 进入轨道, 盘旋",
 "x": "cet4,cet6,gaokao,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The weather satellite completed its 5,000th orbit.",
+"sz": "这颗气象卫星完成了第5000圈轨道运行。"
 },
 {
 "w": "orbital",
@@ -35636,8 +35636,8 @@
 "i": "ˈɔːrbətəl",
 "gd": "adj. 轨道的, 眼眶的",
 "x": "cet4,toefl",
-"se": null,
-"sz": null
+"se": "The orbital road diverts trucks around the city.",
+"sz": "环城公路让货车绕开市区。"
 },
 {
 "w": "orchestra",
@@ -35654,8 +35654,8 @@
 "i": "ˈɔːrdər",
 "gd": "n. 次序, 规则, 命令\nv. 命令, 定货\nv. 整理, 命令, 定购\nn. 顺序, 阶数",
 "x": "cet4,gaokao,ielts",
-"se": null,
-"sz": null
+"se": "Place your order before noon for same-day delivery.",
+"sz": "正午前下单可当日送达。"
 },
 {
 "w": "orderly",
@@ -35663,8 +35663,8 @@
 "i": "ˈɔːrdərliː",
 "gd": "adj. 有秩序的, 整齐的, 值班的\nn. 护理员, 清道夫, 传令兵, 勤务兵\nadv. 依次地, 顺序地",
 "x": "cet4,cet6,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "An orderly queue formed outside the bakery.",
+"sz": "面包店外排起了整齐的队伍。"
 },
 {
 "w": "ordinary",
@@ -35672,8 +35672,8 @@
 "i": "ˈɔːrdəˌnɛriː",
 "gd": "adj. 平常的, 普通的, 平凡的\nn. 平常的人(或事)",
 "x": "cet4,cet6,gaokao,ielts,kaoyan",
-"se": null,
-"sz": null
+"se": "The pottery was made for ordinary households.",
+"sz": "这些陶器是为普通家庭制作的。"
 },
 {
 "w": "ore",
@@ -35699,8 +35699,8 @@
 "i": "ɔːˈrɡænɪk",
 "gd": "adj. 器官的, 有机的, 组织的, 根本的",
 "x": "cet4,cet6,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The farm is certified organic and cow-friendly.",
+"sz": "这座农场通过了有机与人道认证。"
 },
 {
 "w": "organism",
@@ -35708,8 +35708,8 @@
 "i": "ˈɔːrɡəˌnɪzəm",
 "gd": "n. 生物, 有机体, 社会组织",
 "x": "cet4,cet6,gre,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "A tiny organism glows inside the cave pools.",
+"sz": "洞穴水潭里有一种会发光的微小生物。"
 },
 {
 "w": "organize",
@@ -35717,8 +35717,8 @@
 "i": "ˈɔːrɡəˌnaɪz",
 "gd": "v. 组织, 有机化, 给予生机\nv. 组织起来",
 "x": "cet4,cet6,kaoyan",
-"se": null,
-"sz": null
+"se": "Let me organize the photos by date.",
+"sz": "我来按日期整理照片。"
 },
 {
 "w": "organise",
@@ -35726,8 +35726,8 @@
 "i": null,
 "gd": "v. 组织, 有机化, 给予生机",
 "x": "cet4,gaokao",
-"se": null,
-"sz": null
+"se": "Volunteers organise the lantern festival each autumn.",
+"sz": "志愿者每年秋天组织灯笼节。"
 },
 {
 "w": "organization",
@@ -35735,8 +35735,8 @@
 "i": "ˌɔːrɡənəˈzeɪʃən",
 "gd": "n. 组织, 结构, 团体, 体制",
 "x": "cet4,cet6,gaokao,ielts,kaoyan",
-"se": null,
-"sz": null
+"se": "The international organization funds the vaccine drive.",
+"sz": "这家国际机构为疫苗接种提供资金。"
 },
 {
 "w": "organisation",
@@ -35744,8 +35744,8 @@
 "i": "ˌɔːrɡənɪˈzeɪʃən",
 "gd": "n. 组织, 团体, 体制, 编制",
 "x": "cet4",
-"se": null,
-"sz": null
+"se": "The wildlife organisation runs the island reserve.",
+"sz": "这家野生动物组织管理着岛上保护区。"
 },
 {
 "w": "organizational",
@@ -35753,8 +35753,8 @@
 "i": "ˌɔːrɡənəˈzeɪʃənəl",
 "gd": "adj. 组织的",
 "x": "cet4",
-"se": null,
-"sz": null
+"se": "She has strong organizational skills from years of event work.",
+"sz": "多年办会的经历让她练就了出色的组织能力。"
 },
 {
 "w": "organisational",
@@ -35762,8 +35762,8 @@
 "i": null,
 "gd": "adj. organise的变形",
 "x": "cet4",
-"se": null,
-"sz": null
+"se": "The merger required major organisational changes.",
+"sz": "合并需要大规模的组织调整。"
 },
 {
 "w": "orient",
@@ -35771,8 +35771,8 @@
 "i": "ˈɔːriːˌɛnt",
 "gd": "n. 东方, 东方诸国\nadj. 东方的\nv. 向东\nv. 使朝东, 使适应, 确定方向",
 "x": "cet4,cet6,gre,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The compass rose helps you orient the map to north.",
+"sz": "罗盘刻度帮你把地图对准正北。"
 },
 {
 "w": "orientation",
@@ -35780,8 +35780,8 @@
 "i": "ˌɔːriːɛˈnteɪʃən",
 "gd": "n. 定方位, 适应, 向东方\nn. 方向",
 "x": "cet4,cet6,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "New students attend an orientation morning in September.",
+"sz": "新生九月参加迎新说明会。"
 },
 {
 "w": "oriental",
@@ -35789,8 +35789,8 @@
 "i": "ˌɔːriːˈɛntəl",
 "gd": "n. 东方人, 亚洲人\nadj. 东方诸国的, 亚洲的, 东方的",
 "x": "cet4,cet6,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The pavilion mixes oriental and local building styles.",
+"sz": "这座亭子融合了东方与本地建筑风格。"
 },
 {
 "w": "origin",
@@ -35825,8 +35825,8 @@
 "i": "ərˈɪdʒəˌneɪt",
 "gd": "v. 创始, 发明, 发起\nv. 发源, 发生, 起航",
 "x": "cet4,cet6,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The dance is said to originate in fishing villages.",
+"sz": "据说这种舞蹈起源于渔村。"
 },
 {
 "w": "ornament",
@@ -35852,8 +35852,8 @@
 "i": "ˈɔːrfən",
 "gd": "n. 孤儿\nadj. 无双亲的, 孤儿的\nv. 使成孤儿",
 "x": "cet4,cet6,kaoyan",
-"se": null,
-"sz": null
+"se": "The storm left a foal an orphan.",
+"sz": "风暴让一匹小马成了孤儿。"
 },
 {
 "w": "orphanage",
@@ -35861,8 +35861,8 @@
 "i": "ˈɔːrfənədʒ",
 "gd": "n. 孤儿院, 孤儿身份",
 "x": "cet4",
-"se": null,
-"sz": null
+"se": "The old orphanage is now a music school.",
+"sz": "旧孤儿院现在成了一所音乐学校。"
 },
 {
 "w": "other",
@@ -36041,8 +36041,8 @@
 "i": "ˈaʊˌtpʊt",
 "gd": "n. 输出, 产品, 产量",
 "x": "cet4,cet6,gaokao,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The mine doubled its output after electrification.",
+"sz": "电气化后，矿山的产量翻了一番。"
 },
 {
 "w": "outset",
@@ -36059,8 +36059,8 @@
 "i": "ˈaʊˈtsaɪd",
 "gd": "n. 外面, 外表, 外界\nadj. 外面的, 外表的, 外界的\nadv. 外面, 外表, 外界",
 "x": "cet4,gaokao",
-"se": null,
-"sz": null
+"se": "Wait outside; the studio door opens at nine.",
+"sz": "在外面等，录音棚的门九点开。"
 },
 {
 "w": "outsider",
@@ -36068,8 +36068,8 @@
 "i": "aʊˈtsaɪdər",
 "gd": "n. 外人, 局外人, 非会员, 外行, 门外汉, 比赛中获胜可能性不大的选手",
 "x": "cet4",
-"se": null,
-"sz": null
+"se": "As an outsider, she saw patterns the locals missed.",
+"sz": "作为局外人，她看到了本地人忽略的规律。"
 },
 {
 "w": "outskirts",
@@ -36086,8 +36086,8 @@
 "i": "ˌaʊˈtstændɪŋ",
 "gd": "adj. 杰出的, 突出的, 未偿付的, 未决定的",
 "x": "cet4,cet6,gaokao,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The young cellist gave an outstanding debut.",
+"sz": "年轻的大提琴手完成了出色的首演。"
 },
 {
 "w": "outward",
@@ -36347,8 +36347,8 @@
 "i": "ˈɑːksədʒən",
 "gd": "n. 氧",
 "x": "cet4,gaokao,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "Divers check their oxygen twice before descending.",
+"sz": "潜水员下潜前要检查两遍氧气。"
 },
 {
 "w": "ozone",
@@ -36536,8 +36536,8 @@
 "i": "ˈpænɪk",
 "gd": "n. 恐慌, 惊慌\nadj. 惊慌的, 没有理由的, 恐慌的\nv. 使惊慌, 使狂热\nv. 惊慌",
 "x": "cet4,cet6,gaokao,gre,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "Do not panic; the ferry runs until midnight.",
+"sz": "别慌，渡轮开到午夜。"
 },
 {
 "w": "pants",
@@ -36599,8 +36599,8 @@
 "i": "ˈpærəˌɡræf",
 "gd": "n. 段落, 短评\nv. 将...分段, 分段落\nv. 写短讯",
 "x": "cet4,cet6,gaokao,kaoyan",
-"se": null,
-"sz": null
+"se": "The final paragraph sums up the whole report.",
+"sz": "最后一段总结了整份报告。"
 },
 {
 "w": "parallel",
@@ -36617,8 +36617,8 @@
 "i": "ˈpɑːrsəl",
 "gd": "n. 包裹, 部分, 片\nv. 分配, 打包\nadj. 部分的\nadv. 局部地",
 "x": "cet4,cet6,gaokao,ielts,kaoyan",
-"se": null,
-"sz": null
+"se": "A parcel arrived from the island bakery.",
+"sz": "一个包裹从岛上的面包房寄来。"
 },
 {
 "w": "pardon",
@@ -36626,8 +36626,8 @@
 "i": "ˈpɑːrdən",
 "gd": "n. 原谅, 赦免\nv. 宽恕, 原谅",
 "x": "cet4,gaokao",
-"se": null,
-"sz": null
+"se": "I beg your pardon; I did not see the step.",
+"sz": "请原谅，我没看见那级台阶。"
 },
 {
 "w": "parent",
@@ -36635,8 +36635,8 @@
 "i": "ˈpɛrənt",
 "gd": "n. 父母, 父母亲, 根源",
 "x": "cet4,gaokao,ielts",
-"se": null,
-"sz": null
+"se": "Every parent dreads the first phone call from school.",
+"sz": "每位家长都害怕接到学校的第一个电话。"
 },
 {
 "w": "parental",
@@ -36644,8 +36644,8 @@
 "i": "pərˈɛntəl",
 "gd": "adj. 父母亲的, 做双亲的, 作为渊源的",
 "x": "cet4,ielts",
-"se": null,
-"sz": null
+"se": "The ride has a height check and needs parental consent.",
+"sz": "这个游乐设施有身高检查，还需家长同意。"
 },
 {
 "w": "parenting",
@@ -36653,8 +36653,8 @@
 "i": "ˈpɛrəntɪŋ",
 "gd": "n. 父母对子女的养育",
 "x": "cet4",
-"se": null,
-"sz": null
+"se": "The course offers practical parenting tips for newborns.",
+"sz": "课程为新生儿父母提供实用的养育建议。"
 },
 {
 "w": "park",
@@ -36707,8 +36707,8 @@
 "i": "ˈpɑːrʃəl",
 "gd": "adj. 部分的, 偏袒的, 偏爱的\nn. 分音",
 "x": "cet4,cet6,gre,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "The bridge reopening was only a partial success.",
+"sz": "大桥重新通车只算部分成功。"
 },
 {
 "w": "partially",
@@ -36716,8 +36716,8 @@
 "i": "ˈpɑːrʃəliː",
 "gd": "adv. 部分地, 一部分地, 不公平地",
 "x": "cet4,cet6,toefl",
-"se": null,
-"sz": null
+"se": "The path is partially flooded after the storm.",
+"sz": "暴雨过后，小路部分被淹。"
 },
 {
 "w": "participate",
@@ -36725,8 +36725,8 @@
 "i": "pɑːˈrtɪsəˌpeɪt",
 "gd": "v. 参加, 分享, 参与, 带有\nv. 分享, 分担",
 "x": "cet4,cet6,gaokao,ielts,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "Whole streets participate in the lantern parade.",
+"sz": "整条街的住户都参加灯会游行。"
 },
 {
 "w": "participation",
@@ -36734,8 +36734,8 @@
 "i": "pɑːˌrtɪsəˈpeɪʃən",
 "gd": "n. 参与, 分享",
 "x": "cet4",
-"se": null,
-"sz": null
+"se": "Voter participation reached a thirty-year high.",
+"sz": "选民参与率创下三十年新高。"
 },
 {
 "w": "participant",
@@ -36743,8 +36743,8 @@
 "i": "pɑːˈrtɪsəpənt",
 "gd": "n. 参加者, 参与者\nadj. 有份的, 参加的, 参与的",
 "x": "cet4,cet6,kaoyan,toefl",
-"se": null,
-"sz": null
+"se": "Each participant received a hand-stitched badge.",
+"sz": "每位参与者都得到一枚手工缝制的徽章。"
 },
 {
 "w": "particle",
@@ -36761,8 +36761,8 @@
 "i": "pərˈtɪkjələr",
 "gd": "n. 一项(或条、点), 个别项目, 详细说明\nadj. 特别的, 独有的, 挑剔的, 详尽的",
 "x": "cet4,cet6,gaokao,gre,kaoyan",
-"se": null,
-"sz": null
+"se": "She is particular about the temperature of her tea.",
+"sz": "她对泡茶的水温特别讲究。"
 },
 {
 "w": "particularly",

@@ -48,8 +48,8 @@
    - **阶段三·全考试收尾**:cet6/kaoyan/ielts/toefl/gre 池放开(GamePrefs.EXAM_CHOICES 加短码即可,
      exams.json 已含全部标签,但新词只拉过 gk——需把 build_dict.py NEW_WORD_TAGS 放开重跑)、
      IPA 兜底源完善(新词现 339/424)、释义来源标记统计(gs 字段未落)。
-3. **例句后续批次 s05+**:1250/6710 已入库(s01–s05 各 250,组合词按字母序,ASSETS_VER=20261005g),
-   余 ~5460 词按批产出(assets/sentences/,每批 250,产完拷 App assets/sentences/
+3. **例句后续批次 s07+**:1500/6710 已入库(s01–s06 各 250,组合词按字母序,ASSETS_VER=20261005h),
+   余 ~5210 词按批产出(assets/sentences/,每批 250,产完拷 App assets/sentences/
    **连同 s0N.json 本体一起拷**——只拷 4 份主 JSON 会导致 enrich 漏例句)并递增 Repository.ASSETS_VER。
 4. **可选打磨(有想法再做)**:3989 条新释义抽检错别字;
    缺音标的 113 词人工补录(tools/ipa_missing.txt);若发新版可打 v1.0.1 tag + release。
