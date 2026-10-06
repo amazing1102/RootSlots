@@ -60,6 +60,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.cet4.rootslots.data.GamePrefs
+import com.cet4.rootslots.data.Repository
 import com.cet4.rootslots.ui.slots.SlotViewModel
 import com.cet4.rootslots.ui.theme.LocalAppColors
 import java.time.LocalDate
@@ -137,6 +138,49 @@ fun MineScreen(vm: SlotViewModel) {
                     Spacer(Modifier.height(4.dp))
                     Text("近 7 天复习量 · 达成率 = 未逾期生词占比",
                         color = c.textFaint, fontSize = 9.sp)
+                }
+            }
+        }
+
+        Spacer(Modifier.height(18.dp))
+        SectionLabel("战书战绩")
+        Spacer(Modifier.height(8.dp))
+        Card {
+            var stats by remember { mutableStateOf<Repository.DuelStats?>(null) }
+            LaunchedEffect(Unit) { stats = vm.duelStats() }
+            val s = stats
+            if (s == null || s.total == 0) {
+                Text(
+                    "还没有战书战绩 · 去「测验 → 战书」向好友下战书",
+                    color = c.textFaint, fontSize = 12.sp,
+                    modifier = Modifier.fillMaxWidth().padding(14.dp),
+                )
+            } else {
+                Row(Modifier.fillMaxWidth().padding(14.dp), verticalAlignment = Alignment.CenterVertically) {
+                    Column(Modifier.weight(1f), horizontalAlignment = Alignment.CenterHorizontally) {
+                        Text("${s.total}", color = c.text, fontSize = 20.sp, fontWeight = FontWeight.Black)
+                        Text("总场次", color = c.textFaint, fontSize = 10.sp)
+                    }
+                    Column(Modifier.weight(1f), horizontalAlignment = Alignment.CenterHorizontally) {
+                        val rate = if (s.total > 0) s.wins * 100 / s.total else 0
+                        Text("$rate%", color = c.accent, fontSize = 20.sp, fontWeight = FontWeight.Black)
+                        Text("胜率", color = c.textFaint, fontSize = 10.sp)
+                    }
+                    Column(Modifier.weight(1f), horizontalAlignment = Alignment.CenterHorizontally) {
+                        Text(
+                            "${s.wins}胜 ${s.draws}平 ${s.losses}负",
+                            color = c.textMid, fontSize = 13.sp, fontWeight = FontWeight.Bold,
+                        )
+                        Text("战绩明细", color = c.textFaint, fontSize = 10.sp)
+                    }
+                    Column(Modifier.weight(1f), horizontalAlignment = Alignment.CenterHorizontally) {
+                        Text(
+                            if (s.streak > 0) "🔥${s.streak}" else "—",
+                            color = if (s.streak > 0) c.accent else c.textFaint,
+                            fontSize = 20.sp, fontWeight = FontWeight.Black,
+                        )
+                        Text("当前连胜", color = c.textFaint, fontSize = 10.sp)
+                    }
                 }
             }
         }

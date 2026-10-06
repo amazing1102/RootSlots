@@ -53,4 +53,7 @@ interface DuelsDao {
 
     @Query("UPDATE duels SET opponent = :opponent, opp_score = :oppScore, opp_ms = :oppMs, status = :status WHERE id = :id")
     suspend fun applyReceipt(id: Long, opponent: String, oppScore: Int, oppMs: Long, status: String)
+
+    @Query("UPDATE duels SET my_score = :myScore, my_ms = :myMs WHERE id = :id")
+    suspend fun updateMyResult(id: Long, myScore: Int, myMs: Long)
 }

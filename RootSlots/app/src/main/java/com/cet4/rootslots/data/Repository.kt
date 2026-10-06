@@ -446,7 +446,7 @@ class Repository private constructor(context: Context) {
         prefs.addCoins(-code.bet)
         val e = DuelEntity(
             role = "challenger", codeId = code.id, opponent = "", bet = code.bet,
-            quizJson = code.questionsJson(),
+            quizJson = code.fullJson(),
             myScore = code.challengerScore, myMs = code.challengerMs,
             status = "sent", createdAt = System.currentTimeMillis(),
         )
@@ -470,7 +470,7 @@ class Repository private constructor(context: Context) {
         db.duelsDao().insert(
             DuelEntity(
                 role = "defender", codeId = c.id, opponent = c.from, bet = c.bet,
-                quizJson = c.questionsJson(),
+                quizJson = c.fullJson(),          // 全量:题目 + 对方基准(含幽灵序列)
                 status = "received", createdAt = System.currentTimeMillis(),
             ),
         )
@@ -498,5 +498,100 @@ class Repository private constructor(context: Context) {
     }
 
     suspend fun duels(): List<DuelEntity> = db.duelsDao().all()
+
+    // ---------------- M19b:应战答题 / 回执结算 / 战绩 ----------------
+
+    /** 一场战书在本端的结算结果(win = 1 胜 / 0 负 / -1 平;myMs 供回执重组) */
+    data class DuelOutcome(val win: Int, val coinDelta: Int, val myScore: Int, val oppScore: Int, val myMs: Long = 0L)
+
+    /** 导入码的类型判定(战书码与回执码同为 RS1 前缀,内容区分) */
+    sealed class DuelImport {
+        data class Ch(val c: ChallengeCodec.Challenge) : DuelImport()
+        data class Rc(val r: ChallengeCodec.Receipt) : DuelImport()
+        object None : DuelImport()
+    }
+
+    /** 自动识别粘贴内容:战书码(未导入过)/ 回执码(可结算)/ 无法识别 */
+    suspend fun parseAny(codeText: String): DuelImport {
+        val ch = ChallengeCodec.decodeChallenge(codeText)
+        if (ch != null) {
+            return if (db.duelsDao().byCodeId(ch.id) == null) DuelImport.Ch(ch) else DuelImport.None
+        }
+        val rc = ChallengeCodec.decodeReceipt(codeText) ?: return DuelImport.None
+        val d = db.duelsDao().byCodeId(rc.id) ?: return DuelImport.None
+        return if (d.role == "challenger" && d.status == "sent") DuelImport.Rc(rc) else DuelImport.None
+    }
+
+    /** 应战方开始作答:校验待作答状态,从落库全量 JSON 重组 Challenge(含幽灵序列) */
+    suspend fun startDefense(d: DuelEntity): ChallengeCodec.Challenge? {
+        if (d.role != "defender" || d.status != "received") return null
+        return ChallengeCodec.Challenge.fromFullJson(d.codeId, d.opponent, d.bet, d.quizJson)
+    }
+
+    /**
+     * 应战方答完:回填我方成绩、立即本端结算(胜 +2×bet / 平退 bet / 负不退,零和)、
+     * status → settled;返回结算结果与待回传的回执信息。
+     * oppScore/oppMs 在 challenge 里(战书码自带),落库供列表展示。
+     */
+    suspend fun finishDefense(d: DuelEntity, score: Int, ms: Long, opponentScore: Int, opponentMs: Long): DuelOutcome? {
+        if (d.role != "defender" || d.status != "received") return null
+        val win = judgeWin(score, opponentScore, ms, opponentMs)
+        val delta = when (win) {
+            1 -> d.bet * 2
+            -1 -> d.bet
+            else -> 0
+        }
+        if (delta > 0) prefs.addCoins(delta)
+        db.duelsDao().applyReceipt(d.id, d.opponent, opponentScore, opponentMs, "settled")
+        db.duelsDao().updateMyResult(d.id, score, ms)
+        db.duelsDao().updateStatus(d.id, "settled", System.currentTimeMillis())
+        return DuelOutcome(win, delta, score, opponentScore, ms)
+    }
+
+    /** 下战书方导入回执:回填对方成绩、结算划转、status → settled */
+    suspend fun settleWithReceipt(rc: ChallengeCodec.Receipt): DuelOutcome? {
+        val d = db.duelsDao().byCodeId(rc.id) ?: return null
+        if (d.role != "challenger" || d.status != "sent") return null
+        val win = judgeWin(d.myScore, rc.score, d.myMs, rc.ms)
+        val delta = when (win) {
+            1 -> d.bet * 2
+            -1 -> d.bet
+            else -> 0
+        }
+        if (delta > 0) prefs.addCoins(delta)
+        db.duelsDao().applyReceipt(d.id, rc.to, rc.score, rc.ms, "settled")
+        db.duelsDao().updateStatus(d.id, "settled", System.currentTimeMillis())
+        return DuelOutcome(win, delta, d.myScore, rc.score)
+    }
+
+    /** 胜负判定:先比分,平分比用时(短者胜),完全相同为平局(1 胜 / 0 负 / -1 平,UI 复用) */
+    fun judgeWin(myScore: Int, oppScore: Int, myMs: Long, oppMs: Long): Int = when {
+        myScore > oppScore -> 1
+        myScore < oppScore -> 0
+        myMs < oppMs -> 1
+        myMs > oppMs -> 0
+        else -> -1
+    }
+
+    /** 战书战绩:总场次/胜/平/负/当前连胜(按结算时间倒序连续胜) */
+    data class DuelStats(val total: Int, val wins: Int, val draws: Int, val losses: Int, val streak: Int)
+
+    suspend fun duelStats(): DuelStats {
+        var wins = 0; var draws = 0; var losses = 0
+        val settled = db.duelsDao().all()
+            .filter { it.status == "settled" && it.myScore >= 0 && it.oppScore >= 0 }
+            .sortedByDescending { it.settledAt ?: 0L }
+        for (d in settled) {
+            when (judgeWin(d.myScore, d.oppScore, d.myMs, d.oppMs)) {
+                1 -> wins++; 0 -> losses++; else -> draws++
+            }
+        }
+        var streak = 0
+        for (d in settled) {
+            val w = judgeWin(d.myScore, d.oppScore, d.myMs, d.oppMs)
+            if (w == 1) streak++ else break
+        }
+        return DuelStats(settled.size, wins, draws, losses, streak)
+    }
 }
 

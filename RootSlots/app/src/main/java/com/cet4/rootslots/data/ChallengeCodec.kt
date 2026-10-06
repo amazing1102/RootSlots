@@ -28,6 +28,8 @@ object ChallengeCodec {
         val questions: List<DuelQ>,
         val challengerScore: Int,
         val challengerMs: Long,
+        /** 下战书方每题对错序列("1010110"),驱动应战方幽灵进度条;旧码缺失时幽灵退化为总成绩线 */
+        val challengerSeq: String? = null,
     ) {
         /** q 数组原文,落库 duels.quiz_json 供应战方答题(M19b)使用 */
         fun questionsJson(): String {
@@ -42,19 +44,40 @@ object ChallengeCodec {
             return arr.toString()
         }
 
+        /** 全量落库格式:{q:[题目], my:{s,ms,seq}} —— my 段保留幽灵序列等基准数据 */
+        fun fullJson(): String {
+            val root = JSONObject()
+            val qArr = JSONArray(questionsJson())
+            root.put("q", qArr)
+            val my = JSONObject().put("s", challengerScore).put("ms", challengerMs)
+            if (challengerSeq != null) my.put("seq", challengerSeq)
+            root.put("my", my)
+            return root.toString()
+        }
+
+        /** 从落库全量 JSON 重组(实体提供 id/from/bet);兼容纯 q 数组旧格式(无幽灵) */
         companion object {
-            fun fromQuestionsJson(id: String, from: String, bet: Int, score: Int, ms: Long, quizJson: String): Challenge {
-                val arr = JSONArray(quizJson)
-                val qs = mutableListOf<DuelQ>()
-                for (i in 0 until arr.length()) {
-                    val o = arr.getJSONObject(i)
-                    val opts = mutableListOf<String>()
-                    val oa = o.getJSONArray("o")
-                    for (j in 0 until oa.length()) opts.add(oa.getString(j))
-                    qs.add(DuelQ(o.getString("k"), o.getString("w"), o.getString("g"),
-                        o.optString("m").ifBlank { null }, opts, o.getInt("a")))
-                }
-                return Challenge(id, from, bet, qs, score, ms)
+            fun fromFullJson(id: String, from: String, bet: Int, quizJson: String): Challenge {
+            val trimmed = quizJson.trim()
+            val isFull = trimmed.startsWith("{")
+            val root = if (isFull) JSONObject(trimmed) else null
+            val qNode: JSONArray = if (isFull) root!!.getJSONArray("q") else JSONArray(trimmed)
+            val my: JSONObject? = if (isFull) root!!.optJSONObject("my") else null
+            val qs = mutableListOf<DuelQ>()
+            for (i in 0 until qNode.length()) {
+                val o = qNode.getJSONObject(i)
+                val opts = mutableListOf<String>()
+                val oa = o.getJSONArray("o")
+                for (j in 0 until oa.length()) opts.add(oa.getString(j))
+                qs.add(DuelQ(o.getString("k"), o.getString("w"), o.getString("g"),
+                    o.optString("m").ifBlank { null }, opts, o.getInt("a")))
+            }
+            return Challenge(
+                id = id, from = from, bet = bet, questions = qs,
+                challengerScore = my?.optInt("s", -1) ?: -1,
+                challengerMs = my?.optLong("ms", 0L) ?: 0L,
+                challengerSeq = my?.optString("seq")?.ifBlank { null },
+            )
             }
         }
     }
@@ -78,7 +101,9 @@ object ChallengeCodec {
             arr.put(o)
         }
         root.put("q", arr)
-        root.put("my", JSONObject().put("s", c.challengerScore).put("ms", c.challengerMs))
+        val my = JSONObject().put("s", c.challengerScore).put("ms", c.challengerMs)
+        if (c.challengerSeq != null) my.put("seq", c.challengerSeq)
+        root.put("my", my)
         return pack(root.toString())
     }
 
@@ -97,7 +122,7 @@ object ChallengeCodec {
         }
         val my = root.getJSONObject("my")
         Challenge(root.getString("id"), root.getString("from"), root.getInt("bet"),
-            qs, my.getInt("s"), my.getLong("ms"))
+            qs, my.getInt("s"), my.getLong("ms"), my.optString("seq").ifBlank { null })
     }.getOrNull()
 
     fun encodeReceipt(r: Receipt): String = pack(

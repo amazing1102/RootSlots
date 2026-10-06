@@ -171,6 +171,13 @@ class SlotViewModel(app: Application) : AndroidViewModel(app) {
     suspend fun duels(): List<DuelEntity> = repo.duels()
     suspend fun voidDuel(d: DuelEntity): Boolean = repo.voidDuel(d)
     suspend fun expireStaleDuels(): Int = repo.expireStaleDuels()
+    suspend fun parseAny(text: String) = repo.parseAny(text)
+    suspend fun startDefense(d: DuelEntity) = repo.startDefense(d)
+    suspend fun finishDefense(d: DuelEntity, score: Int, ms: Long, oppScore: Int, oppMs: Long) =
+        repo.finishDefense(d, score, ms, oppScore, oppMs)
+    suspend fun settleWithReceipt(rc: ChallengeCodec.Receipt) = repo.settleWithReceipt(rc)
+    suspend fun duelStats() = repo.duelStats()
+    fun judgeWin(d: DuelEntity): Int = repo.judgeWin(d.myScore, d.oppScore, d.myMs, d.oppMs)
 
     /** 组一套测验题:从有释义的词池抽(音标题只取有音标的词),四模式 */
     fun buildQuiz(mode: String, count: Int): List<Q> = buildList {
