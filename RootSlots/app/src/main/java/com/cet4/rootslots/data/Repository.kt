@@ -42,7 +42,7 @@ class Repository private constructor(context: Context) {
         const val DAY_MS = 86_400_000L
 
         /** 词库资产补灌版本:gd/例句/考试标签/扩库新词更新时递增,触发一次 enrichIfNeeded 重跑 */
-        const val ASSETS_VER = "20261005h"
+        const val ASSETS_VER = "20261005i"
 
         /** 档位名:0=新学,1..9=节点档,10=已毕业 */
         fun stageLabel(stage: Int): String = when {
