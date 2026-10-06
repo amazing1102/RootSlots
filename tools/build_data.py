@@ -7,11 +7,30 @@
 import json, os, re, sys
 from collections import OrderedDict, defaultdict
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from roots_stage2 import NEW_ROOTS, NEW_PREFIXES, SURFACE_EXT
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ASSETS = os.path.join(ROOT, "assets")
 os.makedirs(ASSETS, exist_ok=True)
 
 LINK_VOWELS = "aeiou"
+
+# 自动拆词黑名单:形似可拆但语义不通的常见词(阶段二 100 词抽检沉淀)
+AUTO_BLACKLIST = {
+    "money", "honey", "render", "tender", "pony", "surrender", "silly",
+    "colonel", "astray", "distain", "coloration", "mortar", "summon",
+    "magnet", "reservior", "undermine", "aluminium", "aluminum",
+    "rendition", "restorative", "pretentious",
+}
+# 人工审校覆盖(第二道审):自动拆分结构合法但词源错误的词 → 指定正确 segs
+AUTO_ROOT_OVERRIDE = {
+    "imperial": [("R", "imperi", "imper"), ("S", "al", "al")],
+    "imperialism": [("R", "imperi", "imper"), ("S", "al", "al"), ("S", "ism", "ism")],
+    "imperialist": [("R", "imperi", "imper"), ("S", "al", "al"), ("S", "ist", "ist")],
+    "imperialist": [("R", "imperi", "imper"), ("S", "al", "al"), ("S", "ist", "ist")],
+    "imperially": [("R", "imperi", "imper"), ("S", "al", "al"), ("S", "ly", "ly")],
+}
 
 # ---------- 词表清洗 ----------
 WORD_FIX = {
@@ -418,7 +437,7 @@ EXTRA_SUFFIX = {
     "ior": "…的(比较级词尾)",
 }
 EXTRA_PREFIX = {}
-KILL_ROOT_SURFACE = {"tel", "later", "nom", "perm", "prev", "radio", "rare", "reli", "tim", "str"}
+KILL_ROOT_SURFACE = {"tel", "nom", "perm", "prev", "radio", "rare", "reli", "tim", "str"}
 
 # 从组合池排除(引擎硬凑、教学价值低,归入测验词池)
 EXCLUDE_COMBOS = {"deadly", "early", "openly"}
@@ -447,6 +466,13 @@ def build_lexicons(prefixes, suffixes, roots):
     for p in list(prefixes) + EXTRA_PREFIX_ENTRIES:
         for s in p["surfaces"]:
             P.setdefault(s, p["key"])
+    # 阶段二新前缀(进输出表 + P)
+    existing_p = {p["key"] for p in prefixes}
+    for key, surfaces, meaning in NEW_PREFIXES:
+        if key not in existing_p:
+            prefixes.append({"key": key, "surfaces": surfaces, "meaning": meaning, "examples": ""})
+        for s in surfaces:
+            P.setdefault(s, key)
     S, S_MEAN = {}, {}
     for s_ in suffixes:
         for sf in s_["surfaces"]:
@@ -465,6 +491,16 @@ def build_lexicons(prefixes, suffixes, roots):
             R[k][s] = True
     for k, vs in EXTRA_ROOT_VAR2.items():
         for s in vs:
+            R[k][s] = True
+    # 阶段二新词根(进输出表 + R)+ 既有根词面扩充
+    existing_r = {r["key"] for r in all_roots}
+    for key, surfaces, meaning in NEW_ROOTS:
+        if key not in existing_r:
+            all_roots.append({"key": key, "surfaces": surfaces, "meaning": meaning, "examples": ""})
+        for s in surfaces:
+            R[key][s] = True
+    for k, ext in SURFACE_EXT.items():
+        for s in ext:
             R[k][s] = True
     all_root_surfaces = {}
     for k, d in R.items():
@@ -535,6 +571,61 @@ def pattern_counts(pat):
     for t in p.split("+"):
         counts[t.strip()] = counts.get(t.strip(), 0) + 1
     return counts
+
+
+# ---------- 阶段二:无图谱新词的自动拆词器 ----------
+AUTO_MIN_ROOT = 4   # 词根词面最短长度(2-3 字根仅限人工图谱,防碰巧匹配)
+# 自动拆分不允许的尾缀:屈折/垃圾尾(短随机结尾极易与词根碰巧拼合,抽检沉淀)
+AUTO_SUFFIX_DENY = {"y", "s", "es", "ed", "ing", "er", "est", "en", "ly",
+                    "ide", "re", "us", "id", "our", "ee", "ic"}
+
+def auto_split(word, P, S, all_root_surfaces):
+    """无图谱词的保守拆分:P? + R(+连接元音) + S?S?
+    校验:整词覆盖、词根词面 ≥3、前后缀必须是已知词面;多候选取词根最长者。
+    返回 segs [(t,s,k)] 或 None。"""
+    if len(word) < 4 or word in AUTO_BLACKLIST:
+        return None
+    prefix_opts = [""] + sorted({p for p in P if p and word.startswith(p)}, key=len, reverse=True)
+    best = None
+    best_key = None
+    for p in prefix_opts:
+        rest = word[len(p):]
+        if len(rest) < AUTO_MIN_ROOT:
+            continue
+        suffix1_opts = [""] + sorted({s for s in S if s and s not in AUTO_SUFFIX_DENY and rest.endswith(s)}, key=len, reverse=True)
+        for s1 in suffix1_opts:
+            mid = rest[:len(rest) - len(s1)] if s1 else rest
+            if len(mid) < AUTO_MIN_ROOT:
+                continue
+            suffix2_opts = [""] + sorted({s for s in S if s and s not in AUTO_SUFFIX_DENY and s != s1 and mid.endswith(s)}, key=len, reverse=True)
+            for s2 in suffix2_opts:
+                core = mid[:len(mid) - len(s2)] if s2 else mid
+                if len(core) < AUTO_MIN_ROOT:
+                    continue
+                hit = all_root_surfaces.get(core)
+                if hit is None:
+                    continue
+                # 词根 key:优先与词面同名的
+                keys = sorted(hit)
+                key = core if core in keys else keys[0]
+                segs = []
+                if p:
+                    segs.append(("P", p, P[p]))
+                segs.append(("R", core, key))
+                if s2:
+                    segs.append(("S", s2, S.get(s2, s2)))
+                if s1:
+                    segs.append(("S", s1, S.get(s1, s1)))
+                if len(segs) < 2:
+                    continue
+                # 排序:优先词缀总覆盖(前后缀解释得越多越可信),其次段数少
+                affix = sum(len(x[1]) for x in segs if x[0] != "R")
+                root_len = max(len(x[1]) for x in segs if x[0] == "R")
+                s1_len = len(segs[-1][1]) if segs[-1][0] == "S" else 0
+                rank = (-affix, -s1_len, len(segs), -root_len)
+                if best is None or rank < best_key:
+                    best, best_key = segs, rank
+    return best
 
 def main():
     words = parse_words()
@@ -620,26 +711,12 @@ def main():
 
     fam_words = defaultdict(list)
     for c in combos: fam_words[c["family"]].append(c["w"])
-    families_out = [{"key": f["key"], "meaning": f["meaning"],
-                     "count": len(set(fam_words[f["key"]])),
-                     "words": sorted(set(fam_words[f["key"]]))}
-                    for f in families if f["key"] in fam_words]
 
     seen = set(); combos_d = []
     for c in combos:
         if c["w"] in seen: continue
         seen.add(c["w"]); combos_d.append(c)
 
-    # 补充后缀并入输出;组合用到的词根 key 缺失时用词族释义合成
-    fam_mean = {f["key"]: f["meaning"] for f in families}
-    skeys = {s_["key"] for s_ in suffixes}
-    for sf in sorted(set(S_MEAN) - skeys):
-        suffixes.append({"key": sf, "surfaces": [sf], "meaning": S_MEAN[sf], "examples": ""})
-    all_roots = roots + EXTRA_ROOTS
-    rkeys = {r["key"] for r in all_roots}
-    used_r = {sg["k"] for c in combos_d for sg in c["segs"] if sg["t"] == "R"}
-    for k in sorted(used_r - rkeys):
-        all_roots.append({"key": k, "surfaces": [k], "meaning": fam_mean.get(k, "词根"), "examples": ""})
 
     # 合并释义批文件 assets/glosses/*.json + 音标 assets/ipa.json(build_ipa.py 产物)
     import glob as _glob
@@ -679,19 +756,87 @@ def main():
     # 先追加扩库新词,再统一 enrich,保证新词同样获得 gd/x/例句
     for e in exam_words:
         words_out.append({
-            "w": e["w"], "g": e["g"], "i": e["i"],
+            "w": e["w"], "g": e["g"], "i": ipa_map.get(e["w"]) or e["i"],
             "gd": e["gd"], "x": union_tags(e["x"], lemma_tags.get(e["w"].lower())),
             "se": None, "sz": None,
         })
+    base_set = set(words)   # 源词表(6286):只有它们默认 cet4;扩库词只带自己的标签
     for x in words_out:
         w = x["w"]
-        x["gd"] = gd_map.get(w)
-        x["x"] = union_tags(ex_map.get(w, "cet4"), lemma_tags.get(w.lower()))
+        x["gd"] = gd_map.get(w) or x.get("gd")   # 扩库词自带 gd,不被空覆盖
+        default_tag = "cet4" if w in base_set else ""
+        x["x"] = union_tags(ex_map.get(w, default_tag), lemma_tags.get(w.lower()))
         s = sen_map.get(w)
         x["se"] = s[0] if s else None
         x["sz"] = s[1] if s else None
+        x["gs"] = 1 if gmap.get(w) else 0      # 释义来源标记(§5.3):1=自策 0=ECDICT
     n_gd = sum(1 for x in words_out if x["gd"])
     n_sen = sum(1 for x in words_out if x["se"])
+
+    # ---- 阶段二:无图谱词自动拆词 + 词族合成 ----
+    already = {c["w"] for c in combos_d}
+    auto_combos = []
+    for x in words_out:
+        w = x["w"]
+        if w in already or w in EXCLUDE_COMBOS or w[0].isupper():
+            continue
+        if not re.fullmatch(r"[a-z]+", w):
+            continue
+        segs = AUTO_ROOT_OVERRIDE.get(w) or auto_split(w, P, S, all_root_surfaces)
+        if not segs:
+            continue
+        fam = next((k for t, _s, k in segs if t == "R"), None)
+        if fam is None:
+            continue
+        got = pattern_counts("+".join(t for t, _s, _k in segs))
+        pat = "+".join(["P"] * got["P"] + ["R"] * got["R"] + ["S"] * got["S"])
+        auto_combos.append({"w": w, "family": fam, "map_pattern": "-",
+                            "pattern": pat, "match": "auto",
+                            "segs": [{"t": t, "s": s, "k": k} for t, s, k in segs]})
+    combos_d.extend(auto_combos)
+
+    # 词族输出 = 图谱族 + 自动拆词合成族(同 key 合并)
+    fam_mean = {f["key"]: f["meaning"] for f in families}
+    all_roots = roots + EXTRA_ROOTS + [
+        {"key": k, "surfaces": s, "meaning": m, "examples": ""} for k, s, m in NEW_ROOTS
+    ]
+    root_mean = {r["key"]: r["meaning"] for r in all_roots}
+    by_fam = defaultdict(set)
+    for c in combos_d:
+        by_fam[c["family"]].add(c["w"])
+    # 新根验收(§6):按族内全部例词(含图谱已有)计,≥3 才保留
+    new_root_keys = {k for k, _s, _m in NEW_ROOTS}
+    keep_new = {k for k in new_root_keys if len(by_fam.get(k, ())) >= 3}
+    dropped_roots = sorted(new_root_keys - keep_new)
+    combos_d = [c for c in combos_d
+                if not (c["match"] == "auto" and c["family"] in dropped_roots)]
+    by_fam = defaultdict(set)
+    for c in combos_d:
+        by_fam[c["family"]].add(c["w"])
+    families_out = []
+    for f in families:
+        if f["key"] in by_fam:
+            ws = sorted(by_fam[f["key"]])
+            families_out.append({"key": f["key"], "meaning": f["meaning"],
+                                 "count": len(ws), "words": ws})
+    for key in sorted(by_fam):
+        if key in fam_mean:
+            continue
+        families_out.append({"key": key, "meaning": root_mean.get(key, "词根"),
+                             "count": len(by_fam[key]), "words": sorted(by_fam[key])})
+    # 补充后缀并入输出;组合用到的词根 key(含自动拆词新引入)缺失时用词族释义合成
+    skeys = {s_["key"] for s_ in suffixes}
+    for sf in sorted(set(S_MEAN) - skeys):
+        suffixes.append({"key": sf, "surfaces": [sf], "meaning": S_MEAN[sf], "examples": ""})
+    rkeys = {r["key"] for r in all_roots}
+    used_r = {sg["k"] for c in combos_d for sg in c["segs"] if sg["t"] == "R"}
+    for k in sorted(used_r - rkeys):
+        all_roots.append({"key": k, "surfaces": [k], "meaning": fam_mean.get(k, "词根"), "examples": ""})
+    # 例词 <3 的新根不进入词根表(被组合引用的除外)
+    referenced = {sg["k"] for c in combos_d for sg in c["segs"] if sg["t"] == "R"}
+    keep_new |= (new_root_keys & referenced)
+    all_roots = [r for r in all_roots
+                 if not (r["key"] in new_root_keys and r["key"] not in keep_new)]
     print(f"多义项 gd: {n_gd}/{len(words_out)} | 例句: {n_sen}/{len(words_out)}")
     n_g = sum(1 for x in words_out if x["g"])
     n_i = sum(1 for x in words_out if x["i"])
@@ -705,8 +850,22 @@ def main():
     json.dump(combos_d, open(os.path.join(ASSETS, "combos.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 
     n_exact = sum(1 for c in combos_d if c["match"] == "exact")
-    print(f"组合词: {len(combos_d)} | 精确模式 {n_exact} | 宽松 {len(combos_d)-n_exact}")
-    print(f"词族输出: {len(families_out)} / {len(families)}")
+    n_auto = sum(1 for c in combos_d if c["match"] == "auto")
+    print(f"组合词: {len(combos_d)} | 精确 {n_exact} | 宽松 {len(combos_d)-n_exact-n_auto} | 自动 {n_auto}")
+    print(f"词族输出: {len(families_out)} / {len(families)}(含阶段二合成族 {len(families_out)-len(families)})")
+    print(f"阶段二新根保留 {len(keep_new)} | 剔除(例词<3) {len(dropped_roots)}: {dropped_roots}")
+    # 分考试覆盖率报告(§6.3)
+    exam_pools = defaultdict(set)
+    for x in words_out:
+        for t in (x.get("x") or "").split(","):
+            if t:
+                exam_pools[t].add(x["w"])
+    combo_ws = {c["w"] for c in combos_d}
+    for t in sorted(exam_pools):
+        pool = exam_pools[t]
+        cb = combo_ws & pool
+        print(f"  覆盖率[{t}]: {len(pool)} 词 | 组合词 {len(cb)} ({len(cb)/len(pool)*100:.1f}%)")
+    print(f"  覆盖率[全部]: {len(words_out)} 词 | 组合词 {len(combos_d)} ({len(combos_d)/len(words_out)*100:.1f}%)")
     if missing_words: print("图谱引用但词表缺失(跳过):", sorted(set(missing_words)))
     print(f"完全失败 {len(fail_all)}:", [(w, k) for w, k, _ in fail_all][:30])
     print(f"宽松匹配 {len(fail_exact)} (抽查用):")

@@ -50,6 +50,8 @@ interface WordsDao {
 
 @Dao
 interface MorphsDao {
+    @Query("DELETE FROM morphs")
+    suspend fun clear()
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(morphs: List<MorphEntity>)
 
@@ -65,6 +67,8 @@ interface MorphsDao {
 
 @Dao
 interface FamiliesDao {
+    @Query("DELETE FROM families")
+    suspend fun clear()
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(families: List<FamilyEntity>)
 
@@ -80,6 +84,8 @@ interface FamiliesDao {
 
 @Dao
 interface CombosDao {
+    @Query("DELETE FROM combos")
+    suspend fun clear()
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(combos: List<ComboEntity>)
 

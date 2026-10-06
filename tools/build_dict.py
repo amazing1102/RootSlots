@@ -19,14 +19,20 @@ import json
 import os
 import re
 import sqlite3
+import sys
 
 TOOLS = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(TOOLS)
 ASSETS = os.path.join(ROOT, "assets")
 DB = os.path.join(TOOLS, "stardict.db")
 
-# 阶段一目标考试:gaokao(新词来源)+ cet4(存量)。cet6 等留阶段三放开。
-NEW_WORD_TAGS = {"gk"}
+# 基准词表 = 源词表 md(而非 words.json 产物):words.json 是本管线输出,
+# 拿它当基准会让上一轮扩库词被当作「已有」而丢失(踩过:424 词凭空消失)。
+sys.path.insert(0, TOOLS)
+import build_data
+
+# 目标考试:全部 7 类(阶段三全量)。gk/cet4 已随阶段一入库,此处重跑自动去重。
+NEW_WORD_TAGS = {"gk", "cet4", "cet6", "ky", "ielts", "toefl", "gre"}
 TAG_MAP = {"gk": "gaokao", "cet4": "cet4", "cet6": "cet6",
            "ky": "kaoyan", "ielts": "ielts", "toefl": "toefl", "gre": "gre"}
 
@@ -85,7 +91,9 @@ def clean_ipa(phonetic: str) -> str | None:
 
 
 def main():
-    words = json.load(open(os.path.join(ASSETS, "words.json"), encoding="utf-8"))
+    words = [{"w": w} for w in build_data.parse_words()]
+    # ECDICT 错拼词条直接丢弃(源:目标考试标签拉取时带入)
+    typo_drop = {"reservior"}
     gloss_map = {}
     import glob
     for f in sorted(glob.glob(os.path.join(ASSETS, "glosses", "*.json"))):
@@ -96,15 +104,15 @@ def main():
 
     con = sqlite3.connect(DB)
     cur = con.cursor()
-    placeholders = ",".join(NEW_WORD_TAGS)
-    cur.execute(f"SELECT word, tag, exchange, phonetic, translation FROM stardict WHERE tag LIKE '%{placeholders}%'")
+    like = " OR ".join(f"tag LIKE '%{t}%'" for t in sorted(NEW_WORD_TAGS))
+    cur.execute(f"SELECT word, tag, exchange, phonetic, translation FROM stardict WHERE {like}")
     rows = cur.fetchall()
     con.close()
 
     # 第一遍:候选新词(先收集齐,屈折判定才能看到彼此)
     cands = []
     for w, tag, ex, ph, tr in rows:
-        if w.lower() in base:
+        if w.lower() in base or w.lower() in typo_drop:
             continue
         if " " in w or len(w) <= 1 or any(ch.isdigit() for ch in w):
             continue

@@ -543,6 +543,39 @@
    "examples": "halfway"
   },
   {
+   "key": "mal",
+   "surfaces": [
+    "mal"
+   ],
+   "meaning": "坏;错误",
+   "examples": ""
+  },
+  {
+   "key": "omni",
+   "surfaces": [
+    "omni"
+   ],
+   "meaning": "全;都",
+   "examples": ""
+  },
+  {
+   "key": "phil",
+   "surfaces": [
+    "phil",
+    "philo"
+   ],
+   "meaning": "爱",
+   "examples": ""
+  },
+  {
+   "key": "mono",
+   "surfaces": [
+    "mono"
+   ],
+   "meaning": "单一;独",
+   "examples": ""
+  },
+  {
    "key": "co",
    "surfaces": [
     "co"
@@ -3919,6 +3952,904 @@
    "examples": "discriminate, crime"
   },
   {
+   "key": "anim",
+   "surfaces": [
+    "anim"
+   ],
+   "meaning": "心神;生命",
+   "examples": ""
+  },
+  {
+   "key": "arbitr",
+   "surfaces": [
+    "arbitr"
+   ],
+   "meaning": "评判",
+   "examples": ""
+  },
+  {
+   "key": "carn",
+   "surfaces": [
+    "carn"
+   ],
+   "meaning": "肉",
+   "examples": ""
+  },
+  {
+   "key": "chron",
+   "surfaces": [
+    "chron"
+   ],
+   "meaning": "时间",
+   "examples": ""
+  },
+  {
+   "key": "custom",
+   "surfaces": [
+    "custom"
+   ],
+   "meaning": "习惯",
+   "examples": ""
+  },
+  {
+   "key": "femin",
+   "surfaces": [
+    "femin",
+    "feminin"
+   ],
+   "meaning": "女人",
+   "examples": ""
+  },
+  {
+   "key": "forest",
+   "surfaces": [
+    "forest"
+   ],
+   "meaning": "森林",
+   "examples": ""
+  },
+  {
+   "key": "gran",
+   "surfaces": [
+    "gran",
+    "grain"
+   ],
+   "meaning": "谷粒;颗粒",
+   "examples": ""
+  },
+  {
+   "key": "hydr",
+   "surfaces": [
+    "hydr"
+   ],
+   "meaning": "水",
+   "examples": ""
+  },
+  {
+   "key": "insul",
+   "surfaces": [
+    "insul",
+    "insulo"
+   ],
+   "meaning": "岛",
+   "examples": ""
+  },
+  {
+   "key": "later",
+   "surfaces": [
+    "later",
+    "latera"
+   ],
+   "meaning": "边",
+   "examples": ""
+  },
+  {
+   "key": "lingu",
+   "surfaces": [
+    "lingu"
+   ],
+   "meaning": "语言",
+   "examples": ""
+  },
+  {
+   "key": "lumin",
+   "surfaces": [
+    "lumin"
+   ],
+   "meaning": "光;照明",
+   "examples": ""
+  },
+  {
+   "key": "mort",
+   "surfaces": [
+    "mort"
+   ],
+   "meaning": "死",
+   "examples": ""
+  },
+  {
+   "key": "mount",
+   "surfaces": [
+    "mount",
+    "mont"
+   ],
+   "meaning": "山;登上",
+   "examples": ""
+  },
+  {
+   "key": "onym",
+   "surfaces": [
+    "onym",
+    "onyma"
+   ],
+   "meaning": "名",
+   "examples": ""
+  },
+  {
+   "key": "pass",
+   "surfaces": [
+    "pass",
+    "passi"
+   ],
+   "meaning": "通过",
+   "examples": ""
+  },
+  {
+   "key": "plac",
+   "surfaces": [
+    "plac",
+    "placat"
+   ],
+   "meaning": "抚慰;平静",
+   "examples": ""
+  },
+  {
+   "key": "semin",
+   "surfaces": [
+    "semin"
+   ],
+   "meaning": "种子",
+   "examples": ""
+  },
+  {
+   "key": "stell",
+   "surfaces": [
+    "stell",
+    "stella"
+   ],
+   "meaning": "星",
+   "examples": ""
+  },
+  {
+   "key": "strat",
+   "surfaces": [
+    "strat"
+   ],
+   "meaning": "层",
+   "examples": ""
+  },
+  {
+   "key": "tenu",
+   "surfaces": [
+    "tenu"
+   ],
+   "meaning": "薄;细",
+   "examples": ""
+  },
+  {
+   "key": "tut",
+   "surfaces": [
+    "tut",
+    "tuit"
+   ],
+   "meaning": "看护;教",
+   "examples": ""
+  },
+  {
+   "key": "verg",
+   "surfaces": [
+    "verg",
+    "verge"
+   ],
+   "meaning": "转向",
+   "examples": ""
+  },
+  {
+   "key": "vibr",
+   "surfaces": [
+    "vibr"
+   ],
+   "meaning": "摇动",
+   "examples": ""
+  },
+  {
+   "key": "line",
+   "surfaces": [
+    "line"
+   ],
+   "meaning": "线",
+   "examples": ""
+  },
+  {
+   "key": "mechan",
+   "surfaces": [
+    "mechan",
+    "mechi"
+   ],
+   "meaning": "机器",
+   "examples": ""
+  },
+  {
+   "key": "ponder",
+   "surfaces": [
+    "ponder",
+    "pond"
+   ],
+   "meaning": "权衡",
+   "examples": ""
+  },
+  {
+   "key": "chem",
+   "surfaces": [
+    "chem",
+    "chemi"
+   ],
+   "meaning": "化学",
+   "examples": ""
+  },
+  {
+   "key": "journ",
+   "surfaces": [
+    "journ",
+    "journi"
+   ],
+   "meaning": "日",
+   "examples": ""
+  },
+  {
+   "key": "congru",
+   "surfaces": [
+    "congru"
+   ],
+   "meaning": "一致",
+   "examples": ""
+  },
+  {
+   "key": "person",
+   "surfaces": [
+    "person"
+   ],
+   "meaning": "人",
+   "examples": ""
+  },
+  {
+   "key": "radi",
+   "surfaces": [
+    "radi",
+    "radio"
+   ],
+   "meaning": "射线;根",
+   "examples": ""
+  },
+  {
+   "key": "plant",
+   "surfaces": [
+    "plant",
+    "planta"
+   ],
+   "meaning": "种植",
+   "examples": ""
+  },
+  {
+   "key": "date",
+   "surfaces": [
+    "date"
+   ],
+   "meaning": "日期",
+   "examples": ""
+  },
+  {
+   "key": "range",
+   "surfaces": [
+    "range",
+    "rang"
+   ],
+   "meaning": "排列;秩",
+   "examples": ""
+  },
+  {
+   "key": "character",
+   "surfaces": [
+    "character",
+    "characteri"
+   ],
+   "meaning": "刻;特征",
+   "examples": ""
+  },
+  {
+   "key": "devi",
+   "surfaces": [
+    "devi"
+   ],
+   "meaning": "偏路",
+   "examples": ""
+  },
+  {
+   "key": "sight",
+   "surfaces": [
+    "sight"
+   ],
+   "meaning": "看见",
+   "examples": ""
+  },
+  {
+   "key": "fresh",
+   "surfaces": [
+    "fresh"
+   ],
+   "meaning": "新鲜",
+   "examples": ""
+  },
+  {
+   "key": "fruit",
+   "surfaces": [
+    "fruit",
+    "fruct"
+   ],
+   "meaning": "果实",
+   "examples": ""
+  },
+  {
+   "key": "industr",
+   "surfaces": [
+    "industr"
+   ],
+   "meaning": "勤勉",
+   "examples": ""
+  },
+  {
+   "key": "modern",
+   "surfaces": [
+    "modern"
+   ],
+   "meaning": "现代",
+   "examples": ""
+  },
+  {
+   "key": "moment",
+   "surfaces": [
+    "moment",
+    "momenti"
+   ],
+   "meaning": "时刻",
+   "examples": ""
+  },
+  {
+   "key": "satisfact",
+   "surfaces": [
+    "satisfact"
+   ],
+   "meaning": "满足",
+   "examples": ""
+  },
+  {
+   "key": "prec",
+   "surfaces": [
+    "prec"
+   ],
+   "meaning": "恳求;切断",
+   "examples": ""
+  },
+  {
+   "key": "trench",
+   "surfaces": [
+    "trench"
+   ],
+   "meaning": "切;挖",
+   "examples": ""
+  },
+  {
+   "key": "abol",
+   "surfaces": [
+    "abol"
+   ],
+   "meaning": "消灭",
+   "examples": ""
+  },
+  {
+   "key": "argu",
+   "surfaces": [
+    "argu"
+   ],
+   "meaning": "争论",
+   "examples": ""
+  },
+  {
+   "key": "balance",
+   "surfaces": [
+    "balance",
+    "balan"
+   ],
+   "meaning": "天平;平衡",
+   "examples": ""
+  },
+  {
+   "key": "come",
+   "surfaces": [
+    "come"
+   ],
+   "meaning": "来",
+   "examples": ""
+  },
+  {
+   "key": "charge",
+   "surfaces": [
+    "charge",
+    "charg"
+   ],
+   "meaning": "装载;收费",
+   "examples": ""
+  },
+  {
+   "key": "change",
+   "surfaces": [
+    "change",
+    "chang"
+   ],
+   "meaning": "交换;变",
+   "examples": ""
+  },
+  {
+   "key": "child",
+   "surfaces": [
+    "child"
+   ],
+   "meaning": "孩子",
+   "examples": ""
+  },
+  {
+   "key": "doubt",
+   "surfaces": [
+    "doubt"
+   ],
+   "meaning": "怀疑",
+   "examples": ""
+  },
+  {
+   "key": "load",
+   "surfaces": [
+    "load"
+   ],
+   "meaning": "装载",
+   "examples": ""
+  },
+  {
+   "key": "govern",
+   "surfaces": [
+    "govern",
+    "governi"
+   ],
+   "meaning": "领航;统治",
+   "examples": ""
+  },
+  {
+   "key": "harm",
+   "surfaces": [
+    "harm"
+   ],
+   "meaning": "伤害",
+   "examples": ""
+  },
+  {
+   "key": "take",
+   "surfaces": [
+    "take"
+   ],
+   "meaning": "拿",
+   "examples": ""
+  },
+  {
+   "key": "cast",
+   "surfaces": [
+    "cast"
+   ],
+   "meaning": "投",
+   "examples": ""
+  },
+  {
+   "key": "still",
+   "surfaces": [
+    "still"
+   ],
+   "meaning": "滴;静",
+   "examples": ""
+  },
+  {
+   "key": "past",
+   "surfaces": [
+    "past"
+   ],
+   "meaning": "放牧;过",
+   "examples": ""
+  },
+  {
+   "key": "rest",
+   "surfaces": [
+    "rest"
+   ],
+   "meaning": "停留;剩余",
+   "examples": ""
+  },
+  {
+   "key": "member",
+   "surfaces": [
+    "member",
+    "memberi"
+   ],
+   "meaning": "成员",
+   "examples": ""
+  },
+  {
+   "key": "legislat",
+   "surfaces": [
+    "legislat"
+   ],
+   "meaning": "立法",
+   "examples": ""
+  },
+  {
+   "key": "maxim",
+   "surfaces": [
+    "maxim",
+    "maxima"
+   ],
+   "meaning": "最大",
+   "examples": ""
+  },
+  {
+   "key": "necess",
+   "surfaces": [
+    "necess"
+   ],
+   "meaning": "必需",
+   "examples": ""
+  },
+  {
+   "key": "symbol",
+   "surfaces": [
+    "symbol"
+   ],
+   "meaning": "象征",
+   "examples": ""
+  },
+  {
+   "key": "warr",
+   "surfaces": [
+    "warr",
+    "war"
+   ],
+   "meaning": "担保;保护",
+   "examples": ""
+  },
+  {
+   "key": "join",
+   "surfaces": [
+    "join",
+    "joint"
+   ],
+   "meaning": "连接",
+   "examples": ""
+  },
+  {
+   "key": "sort",
+   "surfaces": [
+    "sort",
+    "sorti"
+   ],
+   "meaning": "种类;伴",
+   "examples": ""
+  },
+  {
+   "key": "cili",
+   "surfaces": [
+    "cili"
+   ],
+   "meaning": "睫毛;招引",
+   "examples": ""
+  },
+  {
+   "key": "cant",
+   "surfaces": [
+    "cant",
+    "cent"
+   ],
+   "meaning": "唱",
+   "examples": ""
+  },
+  {
+   "key": "nomin",
+   "surfaces": [
+    "nomin",
+    "nomen"
+   ],
+   "meaning": "名",
+   "examples": ""
+  },
+  {
+   "key": "empt",
+   "surfaces": [
+    "empt"
+   ],
+   "meaning": "买;取",
+   "examples": ""
+  },
+  {
+   "key": "hilar",
+   "surfaces": [
+    "hilar"
+   ],
+   "meaning": "欢",
+   "examples": ""
+  },
+  {
+   "key": "expedi",
+   "surfaces": [
+    "expedi"
+   ],
+   "meaning": "使成;便利",
+   "examples": ""
+  },
+  {
+   "key": "tric",
+   "surfaces": [
+    "tric"
+   ],
+   "meaning": "纠缠",
+   "examples": ""
+  },
+  {
+   "key": "fall",
+   "surfaces": [
+    "fall",
+    "fals"
+   ],
+   "meaning": "欺;错",
+   "examples": ""
+  },
+  {
+   "key": "fatu",
+   "surfaces": [
+    "fatu"
+   ],
+   "meaning": "愚",
+   "examples": ""
+  },
+  {
+   "key": "prud",
+   "surfaces": [
+    "prud"
+   ],
+   "meaning": "谨慎",
+   "examples": ""
+  },
+  {
+   "key": "timid",
+   "surfaces": [
+    "timid"
+   ],
+   "meaning": "怕",
+   "examples": ""
+  },
+  {
+   "key": "rever",
+   "surfaces": [
+    "rever"
+   ],
+   "meaning": "敬畏",
+   "examples": ""
+  },
+  {
+   "key": "lubric",
+   "surfaces": [
+    "lubric"
+   ],
+   "meaning": "滑",
+   "examples": ""
+  },
+  {
+   "key": "medit",
+   "surfaces": [
+    "medit"
+   ],
+   "meaning": "思考",
+   "examples": ""
+  },
+  {
+   "key": "parl",
+   "surfaces": [
+    "parl"
+   ],
+   "meaning": "说",
+   "examples": ""
+  },
+  {
+   "key": "piti",
+   "surfaces": [
+    "piti"
+   ],
+   "meaning": "怜悯",
+   "examples": ""
+  },
+  {
+   "key": "precipit",
+   "surfaces": [
+    "precipit"
+   ],
+   "meaning": "前头;投",
+   "examples": ""
+  },
+  {
+   "key": "greg",
+   "surfaces": [
+    "greg"
+   ],
+   "meaning": "群",
+   "examples": ""
+  },
+  {
+   "key": "decor",
+   "surfaces": [
+    "decor"
+   ],
+   "meaning": "装饰;礼",
+   "examples": ""
+  },
+  {
+   "key": "light",
+   "surfaces": [
+    "light"
+   ],
+   "meaning": "光",
+   "examples": ""
+  },
+  {
+   "key": "gust",
+   "surfaces": [
+    "gust"
+   ],
+   "meaning": "尝",
+   "examples": ""
+  },
+  {
+   "key": "hist",
+   "surfaces": [
+    "hist"
+   ],
+   "meaning": "历史",
+   "examples": ""
+  },
+  {
+   "key": "immun",
+   "surfaces": [
+    "immun"
+   ],
+   "meaning": "免疫",
+   "examples": ""
+  },
+  {
+   "key": "obedi",
+   "surfaces": [
+    "obedi"
+   ],
+   "meaning": "服从",
+   "examples": ""
+  },
+  {
+   "key": "odor",
+   "surfaces": [
+    "odor",
+    "odour"
+   ],
+   "meaning": "气味",
+   "examples": ""
+  },
+  {
+   "key": "pessim",
+   "surfaces": [
+    "pessim"
+   ],
+   "meaning": "最坏;悲观",
+   "examples": ""
+  },
+  {
+   "key": "flict",
+   "surfaces": [
+    "flict"
+   ],
+   "meaning": "打击",
+   "examples": ""
+  },
+  {
+   "key": "tail",
+   "surfaces": [
+    "tail",
+    "tailo"
+   ],
+   "meaning": "裁;尾",
+   "examples": ""
+  },
+  {
+   "key": "like",
+   "surfaces": [
+    "like"
+   ],
+   "meaning": "相像",
+   "examples": ""
+  },
+  {
+   "key": "haust",
+   "surfaces": [
+    "haust"
+   ],
+   "meaning": "抽;拉",
+   "examples": ""
+  },
+  {
+   "key": "favor",
+   "surfaces": [
+    "favor",
+    "fav",
+    "favour",
+    "favoura"
+   ],
+   "meaning": "恩宠",
+   "examples": ""
+  },
+  {
+   "key": "patr",
+   "surfaces": [
+    "patr",
+    "patro"
+   ],
+   "meaning": "父;祖国",
+   "examples": ""
+  },
+  {
+   "key": "cycle",
+   "surfaces": [
+    "cycl",
+    "cycle"
+   ],
+   "meaning": "圆环;轮",
+   "examples": ""
+  },
+  {
+   "key": "laps",
+   "surfaces": [
+    "laps",
+    "lapse"
+   ],
+   "meaning": "滑;落",
+   "examples": ""
+  },
+  {
+   "key": "vast",
+   "surfaces": [
+    "vast"
+   ],
+   "meaning": "荒;巨",
+   "examples": ""
+  },
+  {
+   "key": "sciss",
+   "surfaces": [
+    "sciss",
+    "scis"
+   ],
+   "meaning": "剪",
+   "examples": ""
+  },
+  {
    "key": "act",
    "surfaces": [
     "act"
@@ -3940,6 +4871,14 @@
     "alt"
    ],
    "meaning": "高",
+   "examples": ""
+  },
+  {
+   "key": "aud",
+   "surfaces": [
+    "aud"
+   ],
+   "meaning": "词根",
    "examples": ""
   },
   {
@@ -4143,19 +5082,19 @@
    "examples": ""
   },
   {
-   "key": "decor",
-   "surfaces": [
-    "decor"
-   ],
-   "meaning": "雅、装饰",
-   "examples": ""
-  },
-  {
    "key": "demn",
    "surfaces": [
     "demn"
    ],
    "meaning": "罚",
+   "examples": ""
+  },
+  {
+   "key": "dict",
+   "surfaces": [
+    "dict"
+   ],
+   "meaning": "词根",
    "examples": ""
   },
   {
@@ -4423,6 +5362,14 @@
    "examples": ""
   },
   {
+   "key": "loqu",
+   "surfaces": [
+    "loqu"
+   ],
+   "meaning": "词根",
+   "examples": ""
+  },
+  {
    "key": "lus",
    "surfaces": [
     "lus"
@@ -4684,6 +5631,14 @@
     "pol"
    ],
    "meaning": "城",
+   "examples": ""
+  },
+  {
+   "key": "post",
+   "surfaces": [
+    "post"
+   ],
+   "meaning": "词根",
    "examples": ""
   },
   {

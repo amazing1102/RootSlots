@@ -44,10 +44,15 @@ class GamePrefs(private val context: Context) {
         const val DAILY_GOAL_DEFAULT = 50
         const val EXAM_DEFAULT = "cet4"
 
-        /** 目标考试展示清单(阶段一放开 cet4/gaokao,其余池随词库扩展阶段逐步开放) */
+        /** 目标考试展示清单(词库扩展阶段三:7 类全放开) */
         val EXAM_CHOICES = listOf(
             "cet4" to "四级 CET-4",
+            "cet6" to "六级 CET-6",
             "gaokao" to "高考 GAOKAO",
+            "kaoyan" to "考研 KAOYAN",
+            "ielts" to "雅思 IELTS",
+            "toefl" to "托福 TOEFL",
+            "gre" to "GRE",
         )
     }
 

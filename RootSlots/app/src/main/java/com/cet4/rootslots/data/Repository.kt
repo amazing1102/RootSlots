@@ -42,7 +42,7 @@ class Repository private constructor(context: Context) {
         const val DAY_MS = 86_400_000L
 
         /** 词库资产补灌版本:gd/例句/考试标签/扩库新词更新时递增,触发一次 enrichIfNeeded 重跑 */
-        const val ASSETS_VER = "20261006a"
+        const val ASSETS_VER = "20261006c"
 
         /** 档位名:0=新学,1..9=节点档,10=已毕业 */
         fun stageLabel(stage: Int): String = when {
@@ -176,6 +176,12 @@ class Repository private constructor(context: Context) {
                 )
             }
             if (fresh.isNotEmpty()) db.wordsDao().insertIgnore(fresh)
+            // 结构表刷新:morphs/families/combos 为派生数据(不含用户数据),
+            // 拆词/词根/词族资产更新时清表重灌(阶段二/三的自动拆词由此进库)
+            db.morphsDao().clear()
+            db.familiesDao().clear()
+            db.combosDao().clear()
+            AppDatabase.fillStructTables(appContext)
             prefs.setAssetsVer(ASSETS_VER)
             android.util.Log.i("Enrich", "done: gd=${gd.size} sen=${sen.size} exams=${exams.size} newWords=${fresh.size}")
         } catch (e: Exception) {

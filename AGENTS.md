@@ -8,7 +8,7 @@ CET-4 构词学习项目:词根词缀资料 + 数据管线 + 「词根老虎机 
 ```
 D:\CET4\
 ├── cet_4_words.md                    # 源词表(6286 词,含粘连词/错拼已由管线清洗)
-├── cet4_roots_affixes.md             # 前缀64/后缀49/词根272 总表
+├── cet4_roots_affixes.md             # 前缀64/后缀49/词根272 总表(阶段二扩充见 tools/roots_stage2.py)
 ├── cet4_prefix_root_suffix_words.md  # 三段式 856 词
 ├── cet4_word_formation_map.md        # 组合图谱(族键有别名:cid2/bank2 等)
 ├── assets\                           # ★ 管线输出目录(build_data.py 的 ASSETS)
@@ -20,7 +20,9 @@ D:\CET4\
 ├── tools\
 │   ├── build_data.py                 # 数据管线:md → 4 份 JSON + 合并 glosses/gd/exams/例句/扩库词
 │   ├── build_gd.py                   # ECDICT→存量词多义项释义+考试标签(需 tools/stardict.db)
-│   ├── build_dict.py                 # 词库扩展合并管线:ECDICT gk 等新词入库(§4/§5 规则)
+│   ├── build_dict.py                 # 词库扩展合并管线:ECDICT 7 考试新词入库(§4/§5 规则)
+│   ├── roots_stage2.py               # 阶段二词根扩充数据(新根 107+词面扩充)
+│   ├── validate_batch.py             # 例句批文件校验器(键集/词在句中/查重)
 │   ├── verify_assets.py              # 校验器(拼接一致性+key 可解析,须 0 错误)
 │   └── shots\                        # 验收截图(不入库)
 └── RootSlots\                        # Android App(包名 com.cet4.rootslots)
@@ -38,7 +40,7 @@ D:\CET4\
 ## 技术栈与环境(本机路径)
 
 - AGP 8.5.2 / Gradle 8.7 / Kotlin 2.0.21 / Compose BOM 2024.09 / Room 2.6.1 + KSP;minSdk 26 / target 35
-- 完全离线单机:无网络权限、无后端;DataStore 存设置;Room 预填词库(当前 DB v7,词库超集 6710 词)
+- 完全离线单机:无网络权限、无后端;DataStore 存设置;Room 预填词库(当前 DB v7,词库超集 14653 词=7 考试并集)
 - Android SDK:`D:\33603\AppData\Local\Android\Sdk`(local.properties 已配)
 - JDK:**必须 17** `D:\Java\jdk-17.0.18`(本机默认 java 是 25,不能用;已写入 gradle.properties `org.gradle.java.home`)
 - Gradle:**用 `D:\gradle-8.7\bin\gradle.bat`,不要用 gradlew.bat**(wrapper jar 损坏)

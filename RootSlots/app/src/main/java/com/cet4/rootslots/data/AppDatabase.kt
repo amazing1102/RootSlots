@@ -71,6 +71,12 @@ abstract class AppDatabase : RoomDatabase() {
                 }
             )
 
+            fillStructTables(context)
+        }
+
+        /** 结构表(morphs/families/combos)从 assets 填充;首装预填与升级刷新共用 */
+        suspend fun fillStructTables(context: Context) {
+            val db = get(context)
             val morphs = JSONObject(readAsset(context, "morphs.json"))
             val morphRows = mutableListOf<MorphEntity>()
             for (type in listOf("prefixes", "roots", "suffixes")) {
