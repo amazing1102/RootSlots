@@ -22,7 +22,7 @@
 | M14 | 学习统计(2026-10-05,用户采纳双方案):**学习日历**——「我的」页月历热力图(格色 = 当日量÷当日目标,今天描边,底部本月共学/达标天数 + 🔥连续达标),历史存 DataStore daily_stats("yyyymmdd:count:goal" stringSet,零 DB 迁移),每次 spin 经 recordDailySpin() 累加;**生词本遗忘进度条**——每行 3dp 细条 = Repository.forgetProgress(stage/dueAt 算档位间隔消耗度,毕业 −1 显示满条金,到期红/过半金/新鲜绿),列表按紧迫度倒序(到期置顶、毕业与未排期垫底) |
 | M15 | 释义增强 + 例句(2026-10-05,词库扩展阶段一数据层):**ECDICT 接入**(tools/build_gd.py,sqlite 340 万词条,MIT)→ gd.json 多义项释义 6255/6286(词性归一 a.→adj.,滤 [化][医] 域噪音行,≤4 义项)+ exams.json 考试标签(词库扩展用);**例句** assets/sentences/s01.json 首批 250 组合词(用户追加批次顺延,同释义批模式);**DB v7 非破坏迁移**(首个真迁移,fallbackToDestructive 已移除):words 加 exam_tags/detail_gloss/sen_en/sen_zh 四列;**升级补灌** enrichIfNeeded(ASSETS_VER 闸门,老安装从 assets 补空字段,数据更新递增常量重跑);**UI**:详情页「释义」多义项(词性蓝色前缀)+「例句」卡(当前词高亮+中文+🔊整句朗读),复习页揭示后带例句;结果卡/列表仍用短释义 |
 | M16 | 词库扩展阶段一·架构贯通(2026-10-05,按 词库扩展-数据规格.md §9 实施):**合并管线 tools/build_dict.py**——ECDICT gk(高考)词拉取,§4 规则落地(屈折吸收 39 词标签并入原形/去词组/去单字符/大小写去重),§5 清洗(自策释义优先,ECDICT 首义项 ≤24 汉字,IPA phonetic 兜底 339/424);**超集 6710 词**(6286+424 新 gaokao 词,assets/words.json 1.3MB);**考试池过滤**(§8.2 清单):Repository 内存过滤 wordInPool(exam_tags 包裹式解析,无标签旧行按 cet4 兜底),randomCombo 抽词池(带缓存)/glossedWords 题池/图鉴族列表(count 按池内重计,空族隐藏)全过滤;**收藏/SRS/统计/详情页永不过滤**(详情页同族词用 familyWordListAll 全库口径);**目标考试 UI**:「我的-目标考试」多选 chips(阶段一放开 cet4/gaokao,EXAM_CHOICES 清单),空选兜底回 cet4;**升级补插**:enrichIfNeeded 兼职插新词行(INSERT IGNORE,只加行不动行,words.json 里库里缺的行就地补);**模拟器实测**:升级路径 newWords=424 插入、gaokao 单池转 3/3 词全带 gaokao 标签(1349 纯四级组合词被排除)、严格单池测验选项 4/4 在池、族覆盖 3/296↔3/352 双向刷新、收藏/SRS/角标全程不变;**顺手修复预填竞态**:onCreate 回调与 ensurePrefilled 双路径并发各灌一次导致自增主键表(morphs/combos)整体翻倍,已删 onCreate 预填留 ensurePrefilled 唯一路径 |
-| 数据 | **释义 6710/6710 全覆盖**(存量 glosses/c01–c19 + 新词 ECDICT 短释义)+ 音标 6512 词;组合词 2278(校验 0 错误);考试标签 gaokao 3643 / cet4 6387 |
+| 数据 | **释义 6710/6710 全覆盖**(存量 glosses/c01–c19 + 新词 ECDICT 短释义)+ **例句 6710/6710 全覆盖**(s01–s27 共 27 批,组合词+非组合词)+ 音标 6512 词;组合词 2278(校验 0 错误);考试标签 gaokao 3643 / cet4 6387 |
 
 ## 经济数值(M13 后,改玩法先看)
 
@@ -48,9 +48,8 @@
    - **阶段三·全考试收尾**:cet6/kaoyan/ielts/toefl/gre 池放开(GamePrefs.EXAM_CHOICES 加短码即可,
      exams.json 已含全部标签,但新词只拉过 gk——需把 build_dict.py NEW_WORD_TAGS 放开重跑)、
      IPA 兜底源完善(新词现 339/424)、释义来源标记统计(gs 字段未落)。
-3. **例句后续批次 s08+**:1750/6710 已入库(s01–s07 各 250,组合词按字母序,ASSETS_VER=20261005i),
-   余 ~4960 词按批产出(assets/sentences/,每批 250,产完拷 App assets/sentences/
-   **连同 s0N.json 本体一起拷**——只拷 4 份主 JSON 会导致 enrich 漏例句)并递增 Repository.ASSETS_VER。
+3. **~~例句批次~~ ✅ 2026-10-06 全量完成**:6710/6710 词全覆盖(s01–s09 组合词 2278,s10–s27 非组合词 4432,
+   每句程序化校验:键集/词在句中/查重/中文)。ASSETS_VER=20261006a。后续新增词条时按批追加即可。
 4. **可选打磨(有想法再做)**:3989 条新释义抽检错别字;
    缺音标的 113 词人工补录(tools/ipa_missing.txt);若发新版可打 v1.0.1 tag + release。
 
