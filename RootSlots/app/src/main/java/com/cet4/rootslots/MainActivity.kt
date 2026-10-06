@@ -28,6 +28,7 @@ import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.cet4.rootslots.ui.codex.CodexScreen
 import com.cet4.rootslots.ui.detail.DetailScreen
+import com.cet4.rootslots.ui.duel.DuelScreen
 import com.cet4.rootslots.ui.mine.MineScreen
 import com.cet4.rootslots.ui.nav.RootTab
 import com.cet4.rootslots.ui.nav.RootTabBar
@@ -55,6 +56,7 @@ class MainActivity : ComponentActivity() {
 private sealed class Overlay {
     data class Detail(val word: String) : Overlay()
     data object Review : Overlay()
+    data object Duel : Overlay()
 }
 
 @Composable
@@ -92,9 +94,11 @@ private fun AppNav(vm: SlotViewModel) {
                         onOpenWord = { overlay = Overlay.Detail(it) },
                     )
                     Overlay.Review -> ReviewScreen(vm = vm, onBack = { overlay = null })
+                    Overlay.Duel -> DuelScreen(vm = vm, onBack = { overlay = null })
                     null -> TabContent(vm, tab,
                         onOpenDetail = { overlay = Overlay.Detail(it) },
                         onStartReview = { overlay = Overlay.Review },
+                        onOpenDuel = { overlay = Overlay.Duel },
                     )
                 }
             }
@@ -117,6 +121,7 @@ private fun TabContent(
     tab: RootTab,
     onOpenDetail: (String) -> Unit,
     onStartReview: () -> Unit,
+    onOpenDuel: () -> Unit,
 ) {
     AnimatedContent(
         targetState = tab,
@@ -130,7 +135,7 @@ private fun TabContent(
             RootTab.Codex -> CodexScreen(vm = vm, onOpenWord = onOpenDetail)
             RootTab.Favorites -> FavoritesScreen(vm = vm, onOpenWord = onOpenDetail, onStartReview = onStartReview)
             RootTab.Mine -> MineScreen(vm = vm)
-            RootTab.Quiz -> QuizScreen(vm = vm)
+            RootTab.Quiz -> QuizScreen(vm = vm, onOpenDuel = onOpenDuel)
             RootTab.Slots -> SlotScreen(onOpenDetail = onOpenDetail, vm = vm)
         }
     }

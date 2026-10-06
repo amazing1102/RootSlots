@@ -63,9 +63,9 @@ import kotlin.random.Random
 private const val ROUND = 10
 private const val REWARD_PER_CORRECT = 2
 
-/** 测验 Tab:释义选词 / 听音选词 / 拼写补全,每轮 10 题,答对 +2 金币 */
+/** 测验 Tab:释义选词 / 听音选词 / 拼写补全,每轮 10 题,答对 +2 金币;顶部战书入口 */
 @Composable
-fun QuizScreen(vm: SlotViewModel) {
+fun QuizScreen(vm: SlotViewModel, onOpenDuel: () -> Unit) {
     val c = LocalAppColors.current
     var mode by remember { mutableStateOf<String?>(null) }
     var qs by remember { mutableStateOf<List<Q>>(emptyList()) }
@@ -75,7 +75,7 @@ fun QuizScreen(vm: SlotViewModel) {
     var finished by remember { mutableStateOf(false) }
 
     if (mode == null) {
-        MenuPane(vm) { m ->
+        MenuPane(vm, onOpenDuel) { m ->
             qs = vm.buildQuiz(m, ROUND)
             mode = m; idx = 0; picked = null; correctCount = 0; finished = false
         }
@@ -257,8 +257,9 @@ fun QuizScreen(vm: SlotViewModel) {
 }
 
 @Composable
-private fun MenuPane(vm: SlotViewModel, onStart: (String) -> Unit) {
+private fun MenuPane(vm: SlotViewModel, onOpenDuel: () -> Unit, onStart: (String) -> Unit) {
     val c = LocalAppColors.current
+    val ia = remember { MutableInteractionSource() }
     Column(
         Modifier
             .fillMaxSize()
@@ -271,7 +272,34 @@ private fun MenuPane(vm: SlotViewModel, onStart: (String) -> Unit) {
         Text("词 汇 测 验", color = c.accent, fontSize = 30.sp, fontWeight = FontWeight.Black)
         Spacer(Modifier.height(8.dp))
         Text("每轮 10 题 · 答对 +2 金币", color = c.textDim, fontSize = 13.sp)
-        Spacer(Modifier.height(26.dp))
+        Spacer(Modifier.height(18.dp))
+        // 战书入口(M19a):离线好友 PK
+        Row(
+            Modifier
+                .fillMaxWidth()
+                .pressScale(ia, pressedScale = 0.97f)
+                .clip(RoundedCornerShape(16.dp))
+                .background(c.chip)
+                .border(1.dp, c.accent, RoundedCornerShape(16.dp))
+                .clickable(interactionSource = ia, indication = LocalIndication.current, onClick = onOpenDuel)
+                .padding(horizontal = 14.dp, vertical = 12.dp),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Text("⚔", fontSize = 22.sp)
+            Spacer(Modifier.width(12.dp))
+            Column(Modifier.weight(1f)) {
+                Text("好友 PK · 战书", color = c.accent, fontSize = 17.sp, fontWeight = FontWeight.Black)
+                Spacer(Modifier.height(2.dp))
+                Text("离线异步对战:发码 → 同题应战 → 结算押注", color = c.textDim, fontSize = 12.sp)
+            }
+            Icon(
+                Icons.Filled.ChevronRight,
+                contentDescription = null,
+                tint = c.accent,
+                modifier = Modifier.size(20.dp),
+            )
+        }
+        Spacer(Modifier.height(14.dp))
         MenuCard("释义选词", "看中文释义,选出对应单词", Icons.Filled.Translate) { onStart("gloss") }
         Spacer(Modifier.height(12.dp))
         MenuCard("看音标选词", "看美式音标,选出对应单词", Icons.Filled.Abc) { onStart("ipa") }

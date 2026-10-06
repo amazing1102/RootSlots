@@ -36,6 +36,8 @@ class GamePrefs(private val context: Context) {
         val DAILY_STATS = stringSetPreferencesKey("daily_stats") // 历史日统计 "yyyymmdd:count:goal"
         val ASSETS_VER = stringPreferencesKey("assets_ver")  // 词库资产补灌版本闸门(Repository.ASSETS_VER)
         val EXAMS = stringSetPreferencesKey("exams")         // 目标考试集合(短码,并集生效)
+        val NICKNAME = stringPreferencesKey("nickname")      // 战书署名(用户自设,非账号)
+        const val NICKNAME_DEFAULT = "无名氏"
         const val ENERGY_MAX = 30
         const val REGEN_MS = 10_000L
         const val COINS_START = 200
@@ -165,5 +167,14 @@ class GamePrefs(private val context: Context) {
 
     suspend fun setExams(s: Set<String>) {
         context.gameStore.edit { it[EXAMS] = s.ifEmpty { setOf(EXAM_DEFAULT) } }
+    }
+
+    /** 战书署名(空/超长截断到 12 字) */
+    val nickname: Flow<String> = context.gameStore.data.map {
+        it[NICKNAME]?.takeIf { n -> n.isNotBlank() } ?: NICKNAME_DEFAULT
+    }
+
+    suspend fun setNickname(n: String) {
+        context.gameStore.edit { it[NICKNAME] = n.trim().take(12).ifBlank { NICKNAME_DEFAULT } }
     }
 }

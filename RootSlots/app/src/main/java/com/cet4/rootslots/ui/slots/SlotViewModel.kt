@@ -6,12 +6,15 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
+import com.cet4.rootslots.data.ChallengeCodec
 import com.cet4.rootslots.data.ComboEntity
 import com.cet4.rootslots.data.DailyStat
+import com.cet4.rootslots.data.DuelEntity
 import com.cet4.rootslots.data.GamePrefs
 import com.cet4.rootslots.data.Repository
 import com.cet4.rootslots.data.Q
 import com.cet4.rootslots.data.Seg
+import com.cet4.rootslots.data.WordEntity
 import com.cet4.rootslots.data.parseSegs
 import com.cet4.rootslots.tts.TtsHelper
 import kotlinx.coroutines.delay
@@ -154,6 +157,20 @@ class SlotViewModel(app: Application) : AndroidViewModel(app) {
     suspend fun weeklyReviews() = repo.weeklyReviews()
     suspend fun memoryAchievement() = repo.memoryAchievement()
     suspend fun addCoins(n: Int) = prefs.addCoins(n)
+
+    // ---- 好友 PK · 异步战书(M19a) ----
+    val nickname: StateFlow<String> =
+        prefs.nickname.stateIn(viewModelScope, SharingStarted.Eagerly, GamePrefs.NICKNAME_DEFAULT)
+    fun setNickname(n: String) { viewModelScope.launch { prefs.setNickname(n) } }
+    suspend fun duelCandidates(source: Repository.DuelSource, familyKey: String?): List<WordEntity> =
+        repo.duelWordCandidates(source, familyKey)
+    fun buildDuelQuestions(pool: List<WordEntity>): List<ChallengeCodec.DuelQ> = repo.buildDuelQuestions(pool)
+    suspend fun createDuel(code: ChallengeCodec.Challenge): DuelEntity? = repo.createDuel(code)
+    suspend fun parseChallenge(text: String): ChallengeCodec.Challenge? = repo.parseChallenge(text)
+    suspend fun acceptChallenge(c: ChallengeCodec.Challenge): Boolean = repo.acceptChallenge(c)
+    suspend fun duels(): List<DuelEntity> = repo.duels()
+    suspend fun voidDuel(d: DuelEntity): Boolean = repo.voidDuel(d)
+    suspend fun expireStaleDuels(): Int = repo.expireStaleDuels()
 
     /** 组一套测验题:从有释义的词池抽(音标题只取有音标的词),四模式 */
     fun buildQuiz(mode: String, count: Int): List<Q> = buildList {

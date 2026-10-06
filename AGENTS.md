@@ -29,9 +29,10 @@ D:\CET4\
     └── app\src\main\
         ├── assets\                   # ★ App assets:管线 4 份 JSON 拷贝到这里
         └── java\com\cet4\rootslots\
-            ├── data\                 # Repository.kt(含 ensurePrefilled)、GamePrefs(DataStore)、Room
+            ├── data\                 # Repository.kt(含 ensurePrefilled)、GamePrefs(DataStore)、Room、
+            │                         # Duels.kt(战书表 v8)、ChallengeCodec.kt(战书码 RS1 编解码)
             ├── tts\TtsHelper.kt
-            └── ui\{slots,detail,codex,mine,nav,quiz,review,theme}
+            └── ui\{slots,detail,codex,mine,nav,quiz,review,duel,theme}
 ```
 
 **双 assets 目录注意**:释义批文件放在 `D:\CET4\assets\glosses\`(管线侧),由 build_data.py
@@ -40,7 +41,8 @@ D:\CET4\
 ## 技术栈与环境(本机路径)
 
 - AGP 8.5.2 / Gradle 8.7 / Kotlin 2.0.21 / Compose BOM 2024.09 / Room 2.6.1 + KSP;minSdk 26 / target 35
-- 完全离线单机:无网络权限、无后端;DataStore 存设置;Room 预填词库(当前 DB v7,词库超集 14653 词=7 考试并集)
+- 完全离线单机:无网络权限、无后端;DataStore 存设置;Room 预填词库(当前 DB v8(v7+duels 战书表),词库超集 14653 词=7 考试并集)
+- 双模拟器验收:临时 AVD `DuelB`(同一 system-image android-35/default 克隆,`emulator -port 5556`),好友PK 互传码测试用
 - Android SDK:`D:\33603\AppData\Local\Android\Sdk`(local.properties 已配)
 - JDK:**必须 17** `D:\Java\jdk-17.0.18`(本机默认 java 是 25,不能用;已写入 gradle.properties `org.gradle.java.home`)
 - Gradle:**用 `D:\gradle-8.7\bin\gradle.bat`,不要用 gradlew.bat**(wrapper jar 损坏)

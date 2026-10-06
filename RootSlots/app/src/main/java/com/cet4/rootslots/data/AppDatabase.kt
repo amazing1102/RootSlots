@@ -9,8 +9,8 @@ import org.json.JSONArray
 import org.json.JSONObject
 
 @Database(
-    entities = [WordEntity::class, MorphEntity::class, FamilyEntity::class, ComboEntity::class, FavoriteEntity::class, SpinEntity::class, SrsEntity::class, ReviewLogEntity::class],
-    version = 7,
+    entities = [WordEntity::class, MorphEntity::class, FamilyEntity::class, ComboEntity::class, FavoriteEntity::class, SpinEntity::class, SrsEntity::class, ReviewLogEntity::class, DuelEntity::class],
+    version = 8,
     exportSchema = false,
 )
 abstract class AppDatabase : RoomDatabase() {
@@ -22,6 +22,7 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun spinsDao(): SpinsDao
     abstract fun srsDao(): SrsDao
     abstract fun reviewLogDao(): ReviewLogDao
+    abstract fun duelsDao(): DuelsDao
 
     companion object {
         @Volatile private var instance: AppDatabase? = null
@@ -33,7 +34,7 @@ abstract class AppDatabase : RoomDatabase() {
 
         private fun build(context: Context): AppDatabase {
             val db = Room.databaseBuilder(context, AppDatabase::class.java, "rootslots.db")
-                .addMigrations(MIGRATION_6_7)
+                .addMigrations(MIGRATION_6_7, MIGRATION_7_8)
                 .build()
             return db
             // 预填唯一入口是 Repository.ensurePrefilled()(带 Mutex、空库判定)。
@@ -48,6 +49,31 @@ abstract class AppDatabase : RoomDatabase() {
                 db.execSQL("ALTER TABLE words ADD COLUMN detail_gloss TEXT")
                 db.execSQL("ALTER TABLE words ADD COLUMN sen_en TEXT")
                 db.execSQL("ALTER TABLE words ADD COLUMN sen_zh TEXT")
+            }
+        }
+
+        /** v7 → v8:好友 PK 新增 duels 表(纯新增,不动旧表,收藏/SRS 无损) */
+        private val MIGRATION_7_8 = object : androidx.room.migration.Migration(7, 8) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL(
+                    """CREATE TABLE IF NOT EXISTS `duels` (
+                        `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+                        `role` TEXT NOT NULL,
+                        `code_id` TEXT NOT NULL,
+                        `opponent` TEXT NOT NULL,
+                        `bet` INTEGER NOT NULL,
+                        `quiz_json` TEXT NOT NULL,
+                        `my_score` INTEGER NOT NULL,
+                        `my_ms` INTEGER NOT NULL,
+                        `opp_score` INTEGER NOT NULL,
+                        `opp_ms` INTEGER NOT NULL,
+                        `status` TEXT NOT NULL,
+                        `created_at` INTEGER NOT NULL,
+                        `settled_at` INTEGER)""",
+                )
+                db.execSQL("CREATE INDEX IF NOT EXISTS `index_duels_code_id` ON `duels` (`code_id`)")
+                db.execSQL("CREATE INDEX IF NOT EXISTS `index_duels_status` ON `duels` (`status`)")
+                db.execSQL("CREATE INDEX IF NOT EXISTS `index_duels_created_at` ON `duels` (`created_at`)")
             }
         }
 
