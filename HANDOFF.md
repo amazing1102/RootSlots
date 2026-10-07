@@ -111,15 +111,26 @@ urllib 下载 GitHub 会失败,需 curl 手动下载,镜像清单在 SOURCES);�
 - 推送走本机代理(git 全局已配 127.0.0.1:7897,Clash 需开启);onnx 模型 60MB 超推荐值被警告,
   后续若频繁改动模型可考虑 Git LFS。
 
-## 发布(v1.0.0)
+## 发布(v1.0.1 现行 / v1.0.0 历史)
 
-- release 包:`RootSlots/app/build/outputs/apk/release/app-release.apk`(137MB,R8+资源收缩,版本 1.0.0/build 2);
+- **v1.0.1 已发布 ✅(2026-10-07)**:tag `v1.0.1`,release 含 `RootSlots-v1.0.1.apk`(138.8MB,
+  版本 1.0.1/build 3);release 页 https://github.com/amazing1102/RootSlots/releases/tag/v1.0.1
+- release 包:`RootSlots/app/build/outputs/apk/release/app-release.apk`(R8+资源收缩,含 zxing);
   构建命令:`cd /d/CET4/RootSlots && JAVA_HOME=D:/Java/jdk-17.0.18 /d/gradle-8.7/bin/gradle.bat assembleRelease`
+- 发版流程(无 gh CLI 时):git tag → push tag → GitHub API 建 release(POST /releases,payload 存
+  tools/shots/relpayload.json 样式)→ 上传 APK(POST uploads.github.com/.../assets?name=...,
+  139MB 走 Clash 代理约数分钟,curl -m 900 --retry 2);token 从
+  `printf "protocol=https\nhost=github.com\n\n" | git credential fill` 取(gho_ 开头,repo scope)
 - 签名:`RootSlots/release.keystore` + `RootSlots/keystore.properties`(均不入库,**备份这两个文件**,
-  密码在其中;丢了就无法出同签名更新);模拟器已验证 release 下 Piper/合成/播放全链路正常。
-- v1.0.0 新增:测验第四模式「看音标选词」+ 答后揭示单词释义;「我的」页复习统计卡
-  (近 7 天复习量柱状图 + 记忆曲线达成率环,数据来自 DB v6 review_logs 表,自启用起累积)。
-- R8 规则:app/proguard-rules.pro keep `com.k2fsa.sherpa.onnx.**`(JNI 按名反射,勿删)。
+  密码在其中;丢了就无法出同签名更新);模拟器已验证 release 下 Piper/合成/播放全链路正常,
+  v1.0.1 追加冒烟:release 版启动 + 战书生成页**二维码正常渲染**(zxing 过 R8)。
+- v1.0.1 新增:好友PK异步战书(战书码/二维码/幽灵进度/零和结算)+ 金币消费出口(宿敌对决/定向转轴/
+  机台改装)+ 词库 14653 词(7 考试池)+ 例句 6710 全覆盖 + 学习日历/遗忘进度条/目标考试多选。
+- v1.0.0(v1.0.0/build 2,137MB):测验第四模式「看音标选词」+ 复习统计卡(DB v6 review_logs)。
+- R8 规则:app/proguard-rules.pro keep `com.k2fsa.sherpa.onnx.**`(JNI 按名反射,勿删);
+  zxing 无反射路径,实测过 R8 无需额外 keep。
+- 仓库元数据:描述/homepage 指向最新 release,topics 20 个(含 cet4/cet6/gre/toefl/ielts/word-roots/
+  morphology/offline-first 等;GitHub 上限 20)。
 
 ## 新会话恢复步骤
 
