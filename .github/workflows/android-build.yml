@@ -16,22 +16,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up JDK 17
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v6
         with:
           distribution: temurin
           java-version: '17'
 
       - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
+        uses: android-actions/setup-android@v4
         with:
-          # 默认包列表含已下架的 "tools" 包会失败 → 显式声明所需组件(同时自动接受许可)
+          # 显式声明所需组件(v3 默认含已下架 tools 包会失败;v4 已修复,保留显式声明求确定性)
           packages: 'platform-tools platforms;android-35 build-tools;35.0.0'
 
       - name: Set up Gradle
-        uses: gradle/actions/setup-gradle@v4
+        uses: gradle/actions/setup-gradle@v6
         # 版本由 gradle/wrapper/gradle-wrapper.properties 决定(8.7);
         # 该 action 会校验 wrapper jar 完整性
 
@@ -46,7 +46,7 @@ jobs:
         run: ./gradlew assembleDebug --no-daemon --stacktrace
 
       - name: Upload APK artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: app-debug
           path: RootSlots/app/build/outputs/apk/debug/app-debug.apk
