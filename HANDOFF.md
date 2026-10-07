@@ -107,9 +107,17 @@ urllib 下载 GitHub 会失败,需 curl 手动下载,镜像清单在 SOURCES);�
 
 ## 仓库
 
-- 远程:**https://github.com/amazing1102/RootSlots.git**(main 已推送,2026-10-05);
+- 远程:**https://github.com/amazing1102/RootSlots.git**(main 已推送);
 - 推送走本机代理(git 全局已配 127.0.0.1:7897,Clash 需开启);onnx 模型 60MB 超推荐值被警告,
   后续若频繁改动模型可考虑 Git LFS。
+- **标准化基建(2026-10-07,社区健康度 42%→100%)**:CI(GitHub Actions 构建 debug APK,
+  徽章在 README;CI 环境按 `CI=true` 走官方 Maven 源——阿里云镜像海外不稳且缺 KSP)、
+  Issue 模板(bug/feature YAML 表单)、PR 模板、CONTRIBUTING / CODE_OF_CONDUCT / SECURITY /
+  CHANGELOG、dependabot(Kotlin/KSP/Room 大版本已设 ignore,需人工升级)、
+  .gitattributes(行尾 LF 统一);**gradle wrapper 已重建修复**(误提交的 gradlew.jar 已删,
+  CI 用 ./gradlew);本机构建命令不变(gradle.bat)。
+- 无用 API 权限:发版/改元数据用 `printf "protocol=https\nhost=github.com\n\n" | git credential fill`
+  取已存 token(gho_,repo scope);注意 topics 上限 20、上传大文件走 uploads.github.com。
 
 ## 发布(v1.0.1 现行 / v1.0.0 历史)
 
