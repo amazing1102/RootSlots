@@ -120,15 +120,37 @@ val LightColors = AppColors(
 
 val LocalAppColors = staticCompositionLocalOf { DarkColors }
 
+/**
+ * 机台皮肤(M18c):纯外观,只覆盖机台硬件 token(cabinet/滚筒纸面/墨色/灯泡),
+ * 不碰语义色与数值。鎏金 = 黄铜机壳+米金纸;霓虹 = 深夜紫机壳+暗滚筒+荧光青墨。
+ */
+fun applySkin(base: AppColors, skin: String, dark: Boolean): AppColors = when (skin) {
+    "gold" -> base.copy(
+        cabinet = if (dark) Color(0xFF3A2B0D) else Color(0xFFE3C069),
+        reelPaperHi = if (dark) Color(0xFFFDF3D0) else Color(0xFFFFF6D8),
+        reelPaperLo = if (dark) Color(0xFFE4CE8F) else Color(0xFFEFDFA9),
+        reelInk = if (dark) Color(0xFF3A2E12) else Color(0xFF3A2E12),
+        bulbDim = if (dark) Color(0xFF5C4A1A) else Color(0xFFC9AE60),
+    )
+    "neon" -> base.copy(
+        cabinet = Color(0xFF16121F),
+        reelPaperHi = Color(0xFF241F33),
+        reelPaperLo = Color(0xFF1B1726),
+        reelInk = Color(0xFF63F2D2),
+        bulbDim = Color(0xFF3A3050),
+    )
+    else -> base   // paper
+}
+
 /** 品牌字体:Bungee 招牌体(logo/SPIN);DSEG7 七段管数字体(金币/能量计数)。OFL,见 README */
 val FontBrand = FontFamily(Font(R.font.bungee_regular))
 val FontLed = FontFamily(Font(R.font.dseg7_classic_bold))
 
-/** themeMode:0 跟随系统 / 1 深色 / 2 浅色 */
+/** themeMode:0 跟随系统 / 1 深色 / 2 浅色;skin:机台皮肤(M18c,只换机台硬件 token) */
 @Composable
-fun RootSlotsTheme(themeMode: Int, content: @Composable () -> Unit) {
+fun RootSlotsTheme(themeMode: Int, skin: String = "paper", content: @Composable () -> Unit) {
     val dark = themeMode == 1 || (themeMode == 0 && isSystemInDarkTheme())
-    val c = if (dark) DarkColors else LightColors
+    val c = applySkin(if (dark) DarkColors else LightColors, skin, dark)
     val scheme = if (dark) {
         darkColorScheme(
             primary = c.accent, onPrimary = c.onAccent,

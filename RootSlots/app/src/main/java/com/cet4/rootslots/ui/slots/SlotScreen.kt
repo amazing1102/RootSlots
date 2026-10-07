@@ -3,6 +3,7 @@ package com.cet4.rootslots.ui.slots
 import android.view.HapticFeedbackConstants
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.LinearEasing
@@ -24,6 +25,7 @@ import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.LocalIndication
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.rememberScrollState
@@ -82,6 +84,7 @@ import kotlinx.coroutines.delay
 fun SlotScreen(
     onOpenDetail: (String) -> Unit = {},
     vm: SlotViewModel = viewModel(),
+    onOpenWish: () -> Unit = {},
 ) {
     val c = LocalAppColors.current
     Box(
@@ -92,7 +95,7 @@ fun SlotScreen(
         if (!vm.ready) {
             LoadingPane()
         } else {
-            GamePane(vm = vm, onOpenDetail = onOpenDetail)
+            GamePane(vm = vm, onOpenDetail = onOpenDetail, onOpenWish = onOpenWish)
         }
     }
 }
@@ -117,9 +120,11 @@ private fun LoadingPane() {
 private fun GamePane(
     vm: SlotViewModel,
     onOpenDetail: (String) -> Unit,
+    onOpenWish: () -> Unit,
 ) {
     val c = LocalAppColors.current
     val view = LocalView.current
+    val wish by vm.wish.collectAsState()
     Column(
         Modifier
             .fillMaxSize()
@@ -141,6 +146,21 @@ private fun GamePane(
                 color = c.accent,
             )
             Row(verticalAlignment = Alignment.CenterVertically) {
+                // 定向转轴许愿入口(M18b):未许愿 = 🎯 灰金;已许愿 = 金色高亮带族名
+                val ia = remember { MutableInteractionSource() }
+                Text(
+                    if (wish != null) "🎯$wish" else "🎯",
+                    color = if (wish != null) c.onAccent else c.textMid,
+                    fontSize = 13.sp,
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier
+                        .clip(RoundedCornerShape(14.dp))
+                        .background(if (wish != null) c.accent else c.cabinet)
+                        .border(1.dp, if (wish != null) c.accent else c.stroke, RoundedCornerShape(14.dp))
+                        .clickable(interactionSource = ia, indication = LocalIndication.current, onClick = onOpenWish)
+                        .padding(horizontal = 10.dp, vertical = 7.dp),
+                )
+                Spacer(Modifier.size(6.dp))
                 LedChip("🪙", "%04d".format(vm.coins), c.accent)
                 Spacer(Modifier.size(6.dp))
                 LedChip("⚡", "%02d".format(vm.energy), c.prefix)
@@ -149,13 +169,17 @@ private fun GamePane(
 
         Spacer(Modifier.height(16.dp))
 
-        // ---- 机柜:跑马灯泡带 + 动态段轴窗口 ----
+        // ---- 机柜:跑马灯泡带 + 动态段轴窗口(许愿激活时机柜描边转金色微光) ----
+        val wishGlow by animateColorAsState(
+            if (wish != null) c.accent else c.stroke,
+            tween(400), label = "wishGlow",
+        )
         Box(
             Modifier
                 .fillMaxWidth()
                 .clip(RoundedCornerShape(22.dp))
                 .background(c.cabinet)
-                .border(1.dp, c.stroke, RoundedCornerShape(22.dp))
+                .border(1.dp, wishGlow, RoundedCornerShape(22.dp))
                 .padding(horizontal = 10.dp, vertical = 10.dp)
         ) {
             Column(

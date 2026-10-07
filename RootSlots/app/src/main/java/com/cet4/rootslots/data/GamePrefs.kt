@@ -38,11 +38,26 @@ class GamePrefs(private val context: Context) {
         val EXAMS = stringSetPreferencesKey("exams")         // 目标考试集合(短码,并集生效)
         val NICKNAME = stringPreferencesKey("nickname")      // 战书署名(用户自设,非账号)
         val NEMESIS_DEFEATED = stringSetPreferencesKey("nemesis_defeated") // 降服勋章:"word:lapsesAtDefeat"
+        val WISH_FAMILY = stringPreferencesKey("wish_family")   // 定向转轴许愿的族 key(M18b)
+        val WISH_EXPIRE = longPreferencesKey("wish_expire")     // 许愿过期时间戳
+        val SKIN = stringPreferencesKey("skin")                 // 当前机台皮肤 id(M18c)
+        val SKINS_OWNED = stringSetPreferencesKey("skins_owned") // 已购皮肤 id 集合
         const val NICKNAME_DEFAULT = "无名氏"
 
         /** 宿敌判定:累计遗忘次数阈值;再临 = 降服后再忘 NEMESIS_REVISIT_GAP 次 */
         const val NEMESIS_LAPSE_MIN = 3
         const val NEMESIS_REVISIT_GAP = 3
+
+        /** 定向转轴(M18b):30 币许愿下一转必出选定族;24h 未用自动失效退币 */
+        const val WISH_COST = 30
+        const val WISH_TTL_MS = 24L * 3_600_000L
+
+        /** 机台改装(M18c):纯外观皮肤;纸面默认,鎏金 800 / 霓虹 2000 */
+        val SKIN_PAPER = "paper"
+        val SKIN_GOLD = "gold"
+        val SKIN_NEON = "neon"
+        val SKIN_PRICE = mapOf(SKIN_PAPER to 0, SKIN_GOLD to 800, SKIN_NEON to 2000)
+        val SKIN_LABEL = mapOf(SKIN_PAPER to "纸面", SKIN_GOLD to "鎏金", SKIN_NEON to "霓虹")
         const val ENERGY_MAX = 30
         const val REGEN_MS = 10_000L
         const val COINS_START = 200
@@ -188,5 +203,33 @@ class GamePrefs(private val context: Context) {
 
     suspend fun addDefeated(entry: String) {
         context.gameStore.edit { it[NEMESIS_DEFEATED] = (it[NEMESIS_DEFEATED] ?: emptySet()) + entry }
+    }
+
+    /** 定向转轴许愿的持久化(族 key + 过期戳;null = 无许愿) */
+    suspend fun wish(): Pair<String, Long>? = context.gameStore.data.map { p ->
+        val f = p[WISH_FAMILY] ?: return@map null
+        f to (p[WISH_EXPIRE] ?: 0L)
+    }.first()
+
+    suspend fun setWish(familyKey: String?, expireAt: Long = 0L) {
+        context.gameStore.edit { p ->
+            if (familyKey == null) {
+                p.remove(WISH_FAMILY); p.remove(WISH_EXPIRE)
+            } else {
+                p[WISH_FAMILY] = familyKey; p[WISH_EXPIRE] = expireAt
+            }
+        }
+    }
+
+    /** 机台皮肤(M18c):当前皮肤 + 已购集合 */
+    val skin: Flow<String> = context.gameStore.data.map { it[SKIN] ?: SKIN_PAPER }
+    val skinsOwned: Flow<Set<String>> = context.gameStore.data.map { it[SKINS_OWNED] ?: setOf(SKIN_PAPER) }
+
+    suspend fun setSkin(id: String) {
+        context.gameStore.edit { it[SKIN] = id }
+    }
+
+    suspend fun addSkinOwned(id: String) {
+        context.gameStore.edit { it[SKINS_OWNED] = (it[SKINS_OWNED] ?: emptySet()) + id }
     }
 }

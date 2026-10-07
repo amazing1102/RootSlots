@@ -63,6 +63,7 @@ import com.cet4.rootslots.data.GamePrefs
 import com.cet4.rootslots.data.Repository
 import com.cet4.rootslots.ui.slots.SlotViewModel
 import com.cet4.rootslots.ui.theme.LocalAppColors
+import kotlinx.coroutines.launch
 import java.time.LocalDate
 import kotlin.math.roundToInt
 
@@ -430,6 +431,72 @@ fun MineScreen(vm: SlotViewModel) {
                 TypeSwatch("前", c.prefix)
                 TypeSwatch("根", c.root)
                 TypeSwatch("缀", c.suffix)
+            }
+        }
+
+        // ---- 机台改装(M18c):纯外观皮肤,长线金币沉淀 ----
+        Spacer(Modifier.height(10.dp))
+        Card {
+            val skin by vm.skin.collectAsState()
+            val owned by vm.skinsOwned.collectAsState()
+            val scope = androidx.compose.runtime.rememberCoroutineScope()
+            Column(Modifier.fillMaxWidth().padding(12.dp)) {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Text("机台改装", color = c.text, fontSize = 14.sp, fontWeight = FontWeight.Bold)
+                    Spacer(Modifier.weight(1f))
+                    Text("滚筒 · 机柜外观", color = c.textFaint, fontSize = 11.sp)
+                }
+                Spacer(Modifier.height(8.dp))
+                listOf(
+                    GamePrefs.SKIN_PAPER to "🎴",
+                    GamePrefs.SKIN_GOLD to "🥇",
+                    GamePrefs.SKIN_NEON to "💜",
+                ).forEach { (id, icon) ->
+                    val isOwned = id in owned
+                    val isActive = skin == id
+                    val price = GamePrefs.SKIN_PRICE[id] ?: 0
+                    Row(
+                        Modifier
+                            .fillMaxWidth()
+                            .clip(RoundedCornerShape(10.dp))
+                            .background(if (isActive) c.chip else Color.Transparent)
+                            .border(
+                                1.dp,
+                                if (isActive) c.accent else c.stroke,
+                                RoundedCornerShape(10.dp),
+                            )
+                            .clickable {
+                                scope.launch {
+                                    when {
+                                        isActive -> Unit
+                                        isOwned -> vm.selectSkin(id)
+                                        vm.buySkin(id) -> Unit   // 购买即换上
+                                        else -> Unit             // 余额不足:静默不换(下方价格提示)
+                                    }
+                                }
+                            }
+                            .padding(horizontal = 12.dp, vertical = 9.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                    ) {
+                        Text(icon, fontSize = 18.sp)
+                        Spacer(Modifier.width(10.dp))
+                        Text(
+                            GamePrefs.SKIN_LABEL[id] ?: id,
+                            color = c.text, fontSize = 14.sp, fontWeight = FontWeight.Bold,
+                        )
+                        Spacer(Modifier.weight(1f))
+                        when {
+                            isActive -> Text("使用中", color = c.accent, fontSize = 12.sp, fontWeight = FontWeight.Bold)
+                            isOwned -> Text("已拥有 · 点击换上", color = c.textMid, fontSize = 11.sp)
+                            else -> Text("${price}🪙", color = c.textDim, fontSize = 12.sp)
+                        }
+                    }
+                    if (id != GamePrefs.SKIN_NEON) Spacer(Modifier.height(6.dp))
+                }
+                if (GamePrefs.SKIN_NEON !in owned) {
+                    Spacer(Modifier.height(6.dp))
+                    Text("余额 ${vm.coins}🪙 · 余额不足时购买不生效", color = c.textFaint, fontSize = 10.sp)
+                }
             }
         }
 

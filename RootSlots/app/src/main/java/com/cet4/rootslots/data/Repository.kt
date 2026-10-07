@@ -115,7 +115,51 @@ class Repository private constructor(context: Context) {
         CoroutineScope(SupervisorJob() + Dispatchers.Default).launch {
             prefs.exams.collect { _exams.value = it }
         }
+        // 恢复持久化的许愿(App 被杀后不丢;已过期的惰性退币)
+        CoroutineScope(SupervisorJob() + Dispatchers.Default).launch {
+            val w = prefs.wish()
+            if (w != null) {
+                _wish.value = w.first
+                wishExpire = w.second
+                refundExpiredWish()
+            }
+        }
     }
+
+    /** 许愿:30 币,下一转必出选定族;已有有效许愿时不可叠加 */
+    suspend fun makeWish(familyKey: String): Boolean {
+        refundExpiredWish()
+        if (_wish.value != null) return false
+        val coins = prefs.wallet.first().coins
+        if (coins < GamePrefs.WISH_COST) return false
+        prefs.addCoins(-GamePrefs.WISH_COST)
+        wishExpire = System.currentTimeMillis() + GamePrefs.WISH_TTL_MS
+        prefs.setWish(familyKey, wishExpire)
+        _wish.value = familyKey
+        return true
+    }
+
+    /** 过期许愿失效退币(惰性:makeWish/恢复时触发) */
+    suspend fun refundExpiredWish() {
+        val w = _wish.value ?: return
+        if (System.currentTimeMillis() > wishExpire) {
+            prefs.addCoins(GamePrefs.WISH_COST)
+            prefs.setWish(null)
+            _wish.value = null
+            android.util.Log.i("Wish", "expired, refunded ${GamePrefs.WISH_COST}")
+        }
+    }
+
+    /** 转轴落定后消费许愿(仅当转出的词确属许愿族) */
+    suspend fun consumeWishIfMatches(w: String, family: String) {
+        if (_wish.value != null && family == _wish.value) {
+            prefs.setWish(null)
+            _wish.value = null
+        }
+    }
+
+    /** 发起许愿时同步考试池内该族词数(选族页展示用) */
+    fun wishPoolSize(familyKey: String): Int = examPoolCombos().count { it.family == familyKey }
 
     /** 词是否落在当前目标考试并集内(无标签的旧行按 cet4 兜底) */
     fun wordInPool(e: WordEntity): Boolean {
@@ -248,10 +292,22 @@ class Repository private constructor(context: Context) {
         return poolCombos
     }
 
-    /** 随机抽组合词(限当前考试池),避免与上一词重复;词库未就绪/池空返回 null */
+    // ---- 定向转轴(M18b):30 币许愿下一转必出选定族,一次性不可叠加,24h 过期退币 ----
+
+    private val _wish = MutableStateFlow<String?>(null)
+    val wish: StateFlow<String?> = _wish
+    @Volatile private var wishExpire = 0L
+
+    /** 随机抽组合词(限当前考试池),避免与上一词重复;有许愿时优先从许愿族抽 */
     fun randomCombo(exclude: String? = null): ComboEntity? {
         val pool = examPoolCombos()
         if (pool.isEmpty()) return null
+        val wish = _wish.value
+        if (wish != null) {
+            val wishPool = pool.filter { it.family == wish && it.w != exclude }
+            if (wishPool.isNotEmpty()) return wishPool[rng.nextInt(wishPool.size)]
+            // 族池空(如许愿后切换考试池)→ 兜底普通抽取,许愿保留到下一转
+        }
         repeat(8) {
             val c = pool[rng.nextInt(pool.size)]
             if (c.w != exclude) return c

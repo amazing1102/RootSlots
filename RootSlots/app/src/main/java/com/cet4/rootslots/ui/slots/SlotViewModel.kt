@@ -20,6 +20,7 @@ import com.cet4.rootslots.tts.TtsHelper
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
@@ -83,6 +84,24 @@ class SlotViewModel(app: Application) : AndroidViewModel(app) {
     val themeMode: StateFlow<Int> = prefs.theme.stateIn(viewModelScope, SharingStarted.Eagerly, 0)
     val speechRate: StateFlow<Float> = prefs.speechRate.stateIn(viewModelScope, SharingStarted.Eagerly, GamePrefs.SPEECH_RATE_DEFAULT)
 
+    // 机台皮肤(M18c)
+    val skin: StateFlow<String> = prefs.skin.stateIn(viewModelScope, SharingStarted.Eagerly, GamePrefs.SKIN_PAPER)
+    val skinsOwned: StateFlow<Set<String>> = prefs.skinsOwned.stateIn(viewModelScope, SharingStarted.Eagerly, setOf(GamePrefs.SKIN_PAPER))
+
+    /** 购买皮肤:已拥有/余额不足返回 false */
+    suspend fun buySkin(id: String): Boolean {
+        if (id in prefs.skinsOwned.first()) return false
+        val price = GamePrefs.SKIN_PRICE[id] ?: return false
+        val coins = prefs.wallet.first().coins
+        if (coins < price) return false
+        prefs.addCoins(-price)
+        prefs.addSkinOwned(id)
+        prefs.setSkin(id)
+        return true
+    }
+
+    fun selectSkin(id: String) { viewModelScope.launch { prefs.setSkin(id) } }
+
     private var lastFamilyKey: String? = null
 
     init {
@@ -117,6 +136,11 @@ class SlotViewModel(app: Application) : AndroidViewModel(app) {
 
     /** 目标考试池(词库扩展):过滤老虎机/测验/图鉴出题范围 */
     val exams: StateFlow<Set<String>> = repo.exams
+
+    /** 定向转轴许愿(M18b):非 null = 下一转必出该族 */
+    val wish: StateFlow<String?> = repo.wish
+
+    suspend fun makeWish(familyKey: String): Boolean = repo.makeWish(familyKey)
 
     fun setExams(s: Set<String>) {
         viewModelScope.launch { prefs.setExams(s) }
@@ -245,6 +269,7 @@ class SlotViewModel(app: Application) : AndroidViewModel(app) {
         viewModelScope.launch {
             if (!prefs.tryConsumeEnergy()) return@launch
             val c = repo.randomCombo(current?.w) ?: return@launch   // 词库未就绪,不消耗能量
+            repo.consumeWishIfMatches(c.w, c.family)                // 许愿转:族内词已出,消费
 
             // 锈词判定(C):已收藏且到期未复习(未毕业)
             val srs = repo.srsOf(c.w)

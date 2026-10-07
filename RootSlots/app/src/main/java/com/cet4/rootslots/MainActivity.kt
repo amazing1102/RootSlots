@@ -45,7 +45,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             val vm: SlotViewModel = viewModel()
             val themeMode by vm.themeMode.collectAsState()
-            RootSlotsTheme(themeMode) {
+            val skin by vm.skin.collectAsState()
+            RootSlotsTheme(themeMode, skin) {
                 AppNav(vm)
             }
         }
@@ -58,6 +59,7 @@ private sealed class Overlay {
     data object Review : Overlay()
     data object Duel : Overlay()
     data class Nemesis(val word: String) : Overlay()
+    data object Wish : Overlay()
 }
 
 @Composable
@@ -96,6 +98,7 @@ private fun AppNav(vm: SlotViewModel) {
                     )
                     Overlay.Review -> ReviewScreen(vm = vm, onBack = { overlay = null })
                     Overlay.Duel -> DuelScreen(vm = vm, onBack = { overlay = null })
+                    Overlay.Wish -> com.cet4.rootslots.ui.slots.WishScreen(vm = vm, onBack = { overlay = null })
                     is Overlay.Nemesis -> {
                         // 宿敌从通缉令点入;加载期间显示空白(不能立即关推入页,
                         // 否则首帧 null 会把推入秒关,表现为"点击无反应")
@@ -116,6 +119,7 @@ private fun AppNav(vm: SlotViewModel) {
                         onStartReview = { overlay = Overlay.Review },
                         onOpenDuel = { overlay = Overlay.Duel },
                         onOpenNemesis = { overlay = Overlay.Nemesis(it) },
+                        onOpenWish = { overlay = Overlay.Wish },
                     )
                 }
             }
@@ -140,6 +144,7 @@ private fun TabContent(
     onStartReview: () -> Unit,
     onOpenDuel: () -> Unit,
     onOpenNemesis: (String) -> Unit,
+    onOpenWish: () -> Unit,
 ) {
     AnimatedContent(
         targetState = tab,
@@ -154,7 +159,7 @@ private fun TabContent(
             RootTab.Favorites -> FavoritesScreen(vm = vm, onOpenWord = onOpenDetail, onStartReview = onStartReview, onOpenNemesis = onOpenNemesis)
             RootTab.Mine -> MineScreen(vm = vm)
             RootTab.Quiz -> QuizScreen(vm = vm, onOpenDuel = onOpenDuel)
-            RootTab.Slots -> SlotScreen(onOpenDetail = onOpenDetail, vm = vm)
+            RootTab.Slots -> SlotScreen(onOpenDetail = onOpenDetail, vm = vm, onOpenWish = onOpenWish)
         }
     }
 }
