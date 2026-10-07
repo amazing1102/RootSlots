@@ -31,7 +31,7 @@ jobs:
           packages: 'platform-tools platforms;android-35 build-tools;35.0.0'
 
       - name: Set up Gradle
-        uses: gradle/actions/setup-gradle@v4
+        uses: gradle/actions/setup-gradle@v6
         # 版本由 gradle/wrapper/gradle-wrapper.properties 决定(8.7);
         # 该 action 会校验 wrapper jar 完整性
 
