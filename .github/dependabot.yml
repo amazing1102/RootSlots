@@ -29,6 +29,9 @@ updates:
       # androidx.core:新版常要求更高 compileSdk,人工升级
       - dependency-name: "androidx.core:*"
         update-types: ["version-update:semver-major", "version-update:semver-minor"]
+      # Compose 全家(BOM/icons/material3/…):必须与 Kotlin 编译器插件成套升级
+      - dependency-name: "androidx.compose:*"
+        update-types: ["version-update:semver-major", "version-update:semver-minor"]
 
   # GitHub Actions 版本维护
   - package-ecosystem: github-actions
