@@ -7,8 +7,11 @@
 ![Offline](https://img.shields.io/badge/offline-100%25-4CD487)
 ![Words](https://img.shields.io/badge/词库-14653%20词%20·%207%20考试池-F5B942)
 ![License](https://img.shields.io/badge/license-MIT-blue)
+[![CI](https://github.com/amazing1102/RootSlots/actions/workflows/android-build.yml/badge.svg)](https://github.com/amazing1102/RootSlots/actions/workflows/android-build.yml)
 
 **下载**:到 [Releases](https://github.com/amazing1102/RootSlots/releases) 页面下载最新 `RootSlots-v1.0.1.apk`,Android 8.0+ 直接安装。
+
+**文档**:[更新日志](CHANGELOG.md) · [贡献指南](CONTRIBUTING.md) · [开发约定/踩坑速查](AGENTS.md) · [进度与待办](HANDOFF.md) · [安全策略](SECURITY.md)
 
 ---
 
@@ -87,7 +90,7 @@ gradle assembleRelease
 ```
 
 - 工具链:Android Studio(AGP 8.5.2 / Gradle 8.7 / JDK 17),minSdk 26 / targetSdk 35
-- 完整的开发约定、踩坑速查见 [AGENTS.md](AGENTS.md),里程碑与交接快照见 [HANDOFF.md](HANDOFF.md)
+- 贡献流程见 [CONTRIBUTING.md](CONTRIBUTING.md);开发约定、踩坑速查见 [AGENTS.md](AGENTS.md);里程碑与交接快照见 [HANDOFF.md](HANDOFF.md)
 
 ## 📄 License
 

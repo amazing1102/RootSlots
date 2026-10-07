@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 📖 先读文档
+    url: https://github.com/amazing1102/RootSlots/blob/main/CONTRIBUTING.md
+    about: 构建方式、数据管线与提交流程见 CONTRIBUTING.md

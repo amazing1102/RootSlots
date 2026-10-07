@@ -1,0 +1,50 @@
+name: Android CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build debug APK
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Set up Gradle 8.7
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.7'
+
+      # gradle.properties 含本机 JDK 绝对路径(D:\Java\jdk-17.0.18),
+      # CI 上不存在 → 移除,改用 setup-java 提供的 JAVA_HOME
+      - name: Strip local-only Gradle config
+        working-directory: RootSlots
+        run: sed -i '/org.gradle.java.home/d' gradle.properties
+
+      - name: Build debug APK
+        working-directory: RootSlots
+        run: gradle assembleDebug --no-daemon --stacktrace
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-debug
+          path: RootSlots/app/build/outputs/apk/debug/app-debug.apk
+          retention-days: 14

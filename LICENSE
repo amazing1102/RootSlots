@@ -25,8 +25,12 @@ SOFTWARE.
 Third-party bundled assets keep their own licenses:
 
 - CMUdict (tools/cmudict.dict.cache) — BSD
+- ECDICT 释义与考试标签数据 (assets/gd.json, assets/exams.json,
+  assets/exam_words.json, assets/exam_lemma_tags.json) — MIT
 - sherpa-onnx (RootSlots/app/libs/) — Apache-2.0
 - Piper voice model en_US-amy (RootSlots/app/src/main/assets/tts/) — MIT
 - espeak-ng-data (RootSlots/app/src/main/assets/tts/espeak-ng-data/) — GPL-3.0
+- ZXing core (战书二维码生成/识别, Maven 依赖) — Apache-2.0
 - Bungee font (RootSlots/app/src/main/res/font/bungee_regular.ttf) — SIL Open Font License 1.1
 - DSEG7 Classic font (RootSlots/app/src/main/res/font/dseg7_classic_bold.ttf) — SIL Open Font License 1.1
+

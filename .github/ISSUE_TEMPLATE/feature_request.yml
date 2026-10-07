@@ -1,0 +1,31 @@
+name: 💡 功能建议
+description: 提出一个新功能或改进想法
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请先确认提案符合项目定位:**完全离线、无账号、无后端、无网络权限**。
+        (账号/云同步/排行榜/iOS 已明确不做;详见 README 与计划书。)
+  - type: textarea
+    id: problem
+    attributes:
+      label: 想解决的问题
+      description: 你在什么学习场景下觉得缺了什么?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 你的设想
+      description: 功能形态、入口位置、大致交互
+    validations:
+      required: true
+  - type: textarea
+    id: offline
+    attributes:
+      label: 离线可行性
+      description: 该功能能否在无网络、无账号的前提下实现?如不能,说明取舍
+    validations:
+      required: false

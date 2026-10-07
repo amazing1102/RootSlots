@@ -1,0 +1,48 @@
+name: 🐛 Bug 报告
+description: 报告一个问题(崩溃 / 显示异常 / 数据错误)
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈!RootSlots 是完全离线单机应用,请尽量补充设备与复现信息。
+  - type: input
+    id: version
+    attributes:
+      label: App 版本
+      description: 见「我的」页底部或 APK 文件名(如 v1.0.1)
+      placeholder: v1.0.1
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: 设备与系统
+      placeholder: 如 Pixel 6 / Android 15,或模拟器 API 35
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      description: 越具体越好(从哪个页面、点了什么、发生了什么)
+      placeholder: |
+        1. 进入「生词本」
+        2. 点击通缉令卡
+        3. …
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望行为 vs 实际行为
+    validations:
+      required: true
+  - type: textarea
+    id: extras
+    attributes:
+      label: 截图 / 日志(可选)
+      description: 截图直接拖进来即可;日志可用 `adb logcat -s AndroidRuntime` 抓取
+    validations:
+      required: false
