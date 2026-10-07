@@ -179,6 +179,16 @@ class SlotViewModel(app: Application) : AndroidViewModel(app) {
     suspend fun duelStats() = repo.duelStats()
     fun judgeWin(d: DuelEntity): Int = repo.judgeWin(d.myScore, d.oppScore, d.myMs, d.oppMs)
 
+    // ---- 宿敌对决(M18a,金币消费出口) ----
+    suspend fun nemeses() = repo.nemeses()
+    suspend fun nemesisOf(w: String) = repo.nemesisOf(w)
+    suspend fun isDefeatedBadge(w: String) = repo.isDefeatedBadge(w)
+    fun buildNemesisRounds(n: Repository.Nemesis) = repo.buildNemesisRounds(n)
+    fun nemesisTaunt(word: String, lapses: Int) = repo.nemesisTaunt(word, lapses)
+    suspend fun payNemesisFee(fee: Int) = repo.payNemesisFee(fee)
+    suspend fun defeatNemesis(n: Repository.Nemesis, fee: Int) = repo.defeatNemesis(n, fee)
+    suspend fun loseNemesis(n: Repository.Nemesis) = repo.loseNemesis(n)
+
     /** 组一套测验题:从有释义的词池抽(音标题只取有音标的词),四模式 */
     fun buildQuiz(mode: String, count: Int): List<Q> = buildList {
         val base = repo.glossedWords()

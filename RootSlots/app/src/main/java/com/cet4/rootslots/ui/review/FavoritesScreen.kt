@@ -7,6 +7,7 @@ import androidx.compose.animation.fadeIn
 import androidx.compose.animation.slideInVertically
 import androidx.compose.foundation.LocalIndication
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
@@ -53,22 +54,27 @@ import com.cet4.rootslots.ui.theme.LocalAppColors
 import com.cet4.rootslots.ui.theme.pressScale
 import kotlinx.coroutines.launch
 
-/** 生词本 Tab:收藏列表 + SRS 排期 + 进入复习(复习为全屏推入页) */
+/** 生词本 Tab:通缉令(宿敌)+ 收藏列表 + SRS 排期 + 进入复习(复习为全屏推入页) */
 @Composable
 fun FavoritesScreen(
     vm: SlotViewModel,
     onOpenWord: (String) -> Unit,
     onStartReview: () -> Unit,
+    onOpenNemesis: (String) -> Unit,
 ) {
     val c = LocalAppColors.current
     val scope = rememberCoroutineScope()
     var rows by remember { mutableStateOf<List<Repository.FavRow>>(emptyList()) }
     var dueCount by remember { mutableStateOf(0) }
+    var nemeses by remember { mutableStateOf<List<Repository.Nemesis>>(emptyList()) }
+    var badges by remember { mutableStateOf<Set<String>>(emptySet()) }
 
     fun reload() {
         scope.launch {
             rows = vm.favorites()
             dueCount = vm.dueCount()
+            nemeses = vm.nemeses()
+            badges = rows.map { it.w }.filter { vm.isDefeatedBadge(it) }.toSet()
         }
     }
     LaunchedEffect(Unit) { reload() }
@@ -85,6 +91,38 @@ fun FavoritesScreen(
             Text("生词本", color = c.accent, fontSize = 22.sp, fontWeight = FontWeight.Black)
             Spacer(Modifier.weight(1f))
             Text("${rows.size} 词", color = c.textDim, fontSize = 13.sp)
+        }
+
+        // ---- 通缉令(宿敌对决,M18a):最紧迫宿敌置顶 ----
+        nemeses.firstOrNull()?.let { n ->
+            Spacer(Modifier.height(10.dp))
+            val ia = remember { MutableInteractionSource() }
+            Row(
+                Modifier
+                    .fillMaxWidth()
+                    .pressScale(ia, pressedScale = 0.98f)
+                    .clip(RoundedCornerShape(12.dp))
+                    .background(c.surface)
+                    .border(1.5.dp, c.danger, RoundedCornerShape(12.dp))
+                    .clickable(interactionSource = ia, indication = LocalIndication.current) { onOpenNemesis(n.word) }
+                    .padding(horizontal = 12.dp, vertical = 10.dp),
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                Text("☠", fontSize = 22.sp)
+                Spacer(Modifier.width(10.dp))
+                Column(Modifier.weight(1f)) {
+                    Text(
+                        "通缉:${n.word}" + if (nemeses.size > 1) " 等 ${nemeses.size} 名宿敌" else "",
+                        color = c.danger, fontSize = 15.sp, fontWeight = FontWeight.Black,
+                    )
+                    Spacer(Modifier.height(2.dp))
+                    Text(vm.nemesisTaunt(n.word, n.lapses), color = c.textDim, fontSize = 11.sp, maxLines = 1)
+                }
+                Column(horizontalAlignment = Alignment.End) {
+                    Text("−${n.entryFee}🪙 入场", color = c.accent, fontSize = 11.sp, fontWeight = FontWeight.Bold)
+                    Text(if (n.revisit) "再临 · 筹码×2" else "悬赏 ${n.lapses} 级", color = c.textFaint, fontSize = 10.sp)
+                }
+            }
         }
 
         Spacer(Modifier.height(12.dp))
@@ -142,6 +180,10 @@ fun FavoritesScreen(
                     Column(Modifier.weight(1f)) {
                         Row(verticalAlignment = Alignment.CenterVertically) {
                             Text(r.w, color = c.suffix, fontSize = 16.sp, fontWeight = FontWeight.Bold)
+                            if (r.w in badges) {
+                                Spacer(Modifier.width(5.dp))
+                                Text("🏅", fontSize = 12.sp)
+                            }
                             r.ipa?.let {
                                 Spacer(Modifier.width(6.dp))
                                 Text("/$it/", color = c.textFaint, fontSize = 11.sp)

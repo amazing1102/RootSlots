@@ -37,7 +37,12 @@ class GamePrefs(private val context: Context) {
         val ASSETS_VER = stringPreferencesKey("assets_ver")  // 词库资产补灌版本闸门(Repository.ASSETS_VER)
         val EXAMS = stringSetPreferencesKey("exams")         // 目标考试集合(短码,并集生效)
         val NICKNAME = stringPreferencesKey("nickname")      // 战书署名(用户自设,非账号)
+        val NEMESIS_DEFEATED = stringSetPreferencesKey("nemesis_defeated") // 降服勋章:"word:lapsesAtDefeat"
         const val NICKNAME_DEFAULT = "无名氏"
+
+        /** 宿敌判定:累计遗忘次数阈值;再临 = 降服后再忘 NEMESIS_REVISIT_GAP 次 */
+        const val NEMESIS_LAPSE_MIN = 3
+        const val NEMESIS_REVISIT_GAP = 3
         const val ENERGY_MAX = 30
         const val REGEN_MS = 10_000L
         const val COINS_START = 200
@@ -176,5 +181,12 @@ class GamePrefs(private val context: Context) {
 
     suspend fun setNickname(n: String) {
         context.gameStore.edit { it[NICKNAME] = n.trim().take(12).ifBlank { NICKNAME_DEFAULT } }
+    }
+
+    /** 降服勋章集合("word:lapsesAtDefeat"),降服时追加,词再临不删(升级判断比 lapses) */
+    suspend fun defeatedSet(): Set<String> = context.gameStore.data.map { it[NEMESIS_DEFEATED] ?: emptySet() }.first()
+
+    suspend fun addDefeated(entry: String) {
+        context.gameStore.edit { it[NEMESIS_DEFEATED] = (it[NEMESIS_DEFEATED] ?: emptySet()) + entry }
     }
 }

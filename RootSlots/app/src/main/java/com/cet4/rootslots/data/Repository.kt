@@ -593,5 +593,154 @@ class Repository private constructor(context: Context) {
         }
         return DuelStats(settled.size, wins, draws, losses, streak)
     }
+
+    // ================= 金币消费出口 · 宿敌对决(M18a) =================
+
+    /** 一个宿敌:bounty=悬赏等级(累计遗忘次数);revisit=true 表示降服后卷土重来(筹码×2 多一局) */
+    data class Nemesis(
+        val word: String,
+        val gloss: String?,
+        val lapses: Int,
+        val revisit: Boolean,
+        val entryFee: Int,
+        val defeatedBadge: Boolean,   // 曾降服过(详情页勋章,即使已再临也保留)
+    )
+
+    /** 入场筹码:20 + 10×(悬赏−1),再临 ×2 */
+    fun nemesisFee(lapses: Int, revisit: Boolean): Int {
+        val base = 20 + 10 * ((lapses - 1).coerceAtLeast(0))
+        return if (revisit) base * 2 else base
+    }
+
+    /** 当前全部宿敌:lapses≥3 未毕业,且(未降服 或 降服后再忘 NEMESIS_REVISIT_GAP 次) */
+    suspend fun nemeses(): List<Nemesis> {
+        val defeated = prefs.defeatedSet()
+        val out = mutableListOf<Nemesis>()
+        for (s in db.srsDao().all()) {
+            if (s.lapses < GamePrefs.NEMESIS_LAPSE_MIN || s.stage >= STAGE_GRADUATED) continue
+            val badgeEntry = defeated.firstOrNull { it.startsWith("${s.w}:") }
+            val revisit = badgeEntry != null &&
+                s.lapses >= (badgeEntry.substringAfterLast(':').toIntOrNull() ?: 0) + GamePrefs.NEMESIS_REVISIT_GAP
+            if (badgeEntry != null && !revisit) continue   // 已降服且未再临 → 普通词
+            out += Nemesis(
+                word = s.w, gloss = words[s.w]?.g, lapses = s.lapses,
+                revisit = revisit, entryFee = nemesisFee(s.lapses, revisit),
+                defeatedBadge = badgeEntry != null,
+            )
+        }
+        return out.sortedByDescending { it.lapses }
+    }
+
+    suspend fun isDefeatedBadge(w: String): Boolean = prefs.defeatedSet().any { it.startsWith("$w:") }
+
+    /** 某词是否当前宿敌(详情页/生词本行标记) */
+    suspend fun nemesisOf(w: String): Nemesis? = nemeses().firstOrNull { it.word == w }
+
+    /**
+     * 组宿敌对决局(全围绕该词本身):释义 4 选 1 → 例句挖空(无例句/词形变化时退化为看词选释义)
+     * → 拼写补全;再临加一局听音选词。
+     */
+    fun buildNemesisRounds(n: Nemesis): List<NemesisRound> {
+        val gr = kotlin.random.Random(System.nanoTime())
+        val e = words[n.word] ?: return emptyList()
+        val letters = "abcdefghijklmnopqrstuvwxyz"
+        val distractorWords = glossedWords().map { it.w }.filter { it != n.word }.shuffled(gr)
+        val rounds = mutableListOf<NemesisRound>()
+
+        // 局1:释义 4 选 1(看释义选词)
+        val g = e.g ?: ""
+        if (g.isNotBlank() && distractorWords.size >= 3) {
+            val opts = (distractorWords.take(3) + n.word).shuffled(gr)
+            rounds += NemesisRound("gloss", g, "选出对应单词", opts, n.word)
+        }
+
+        // 局2:例句挖空(词面在句中才可挖;否则退化为看词选释义)
+        val sen = e.senEn
+        val clozeDone = if (!sen.isNullOrBlank()) {
+            val hit = sen.split(Regex("[^A-Za-z]+")).any { it.equals(n.word, ignoreCase = true) }
+            if (hit) {
+                val masked = Regex("\\b${Regex.escape(n.word)}\\b", RegexOption.IGNORE_CASE)
+                    .replace(sen, "_____")
+                if (masked != sen && distractorWords.size >= 3) {
+                    rounds += NemesisRound("cloze", masked, e.senZh ?: "", (distractorWords.take(3) + n.word).shuffled(gr), n.word)
+                    true
+                } else false
+            } else false
+        } else false
+        if (!clozeDone && g.isNotBlank()) {
+            // 看词选释义(4 个释义干扰项,取自同池其他词)
+            val gDistractors = glossedWords().mapNotNull { it.g }
+                .filter { it != g }.distinct().shuffled(gr).take(3)
+            if (gDistractors.size >= 3) {
+                rounds += NemesisRound("glossRev", n.word, "选出正确释义", (gDistractors + g).shuffled(gr), g)
+            }
+        }
+
+        // 局3:拼写补全(既有挖位算法)
+        val w = n.word
+        if (w.length >= 3) {
+            val k = (w.length / 4).coerceIn(1, 4)
+            val positions = (w.indices).shuffled(gr).take(k).toSortedSet()
+            val missing = positions.map { w[it] }.joinToString("")
+            val masked = w.mapIndexed { ci, ch -> if (ci in positions) '_' else ch }.joinToString("")
+            val opts = mutableSetOf(missing)
+            while (opts.size < 4) {
+                val mutated = missing.map { c -> if (gr.nextInt(3) == 0) letters[gr.nextInt(26)] else c }.joinToString("")
+                if (mutated != missing) opts.add(mutated)
+            }
+            rounds += NemesisRound("spell", masked, g, opts.toList().shuffled(gr), missing)
+        }
+
+        // 再临加一局:听音选词(模拟器无语音引擎时仍可看选项作答)
+        if (n.revisit && distractorWords.size >= 3) {
+            rounds += NemesisRound("sound", "🔊 听发音,选出宿敌", "", (distractorWords.take(3) + n.word).shuffled(gr), n.word)
+        }
+        return rounds
+    }
+
+    /** 对决一局(展示模型,本地结算,不入码) */
+    data class NemesisRound(
+        val kind: String,      // gloss / cloze / glossRev / spell / sound
+        val prompt: String,
+        val aux: String,
+        val options: List<String>,
+        val answer: String,
+    )
+
+    /** 发起对决:扣除入场筹码(余额不足返回 false) */
+    suspend fun payNemesisFee(fee: Int): Boolean {
+        val coins = prefs.wallet.first().coins
+        if (coins < fee) return false
+        prefs.addCoins(-fee)
+        return true
+    }
+
+    /** 降服:筹码翻倍返还 + 勋章 + SRS 升 3 档(封顶 30 天档,不买断毕业) */
+    suspend fun defeatNemesis(n: Nemesis, fee: Int) {
+        prefs.addCoins(fee * 2)
+        prefs.addDefeated("${n.word}:${n.lapses}")
+        val cur = db.srsDao().byWord(n.word) ?: return
+        if (cur.stage < STAGE_GRADUATED) {
+            val ns = (cur.stage + 3).coerceIn(1, STAGE_GRADUATED - 1)
+            db.srsDao().upsert(cur.copy(stage = ns, dueAt = System.currentTimeMillis() + NODE_MS[ns - 1]))
+        }
+    }
+
+    /** 对决败/弃战:词回 5 分钟档(它本来就需要),筹码已扣 */
+    suspend fun loseNemesis(n: Nemesis) {
+        val cur = db.srsDao().byWord(n.word) ?: return
+        db.srsDao().upsert(cur.copy(stage = 1, dueAt = System.currentTimeMillis() + NODE_MS[0]))
+    }
+
+    /** 嘲讽台词模板池(通缉令) */
+    fun nemesisTaunt(word: String, lapses: Int): String {
+        val pool = listOf(
+            "「%s」第 %d 次逃脱。这次我带上了例句。",
+            "你与「%s」已缠斗 %d 个回合,它还没输过。",
+            "「%s」又在生词本里嚣张,悬赏 %d 级。",
+        )
+        return pool[(word.hashCode().toLong() and 0x7fffffff).toInt() % pool.size]
+            .format(word, lapses, lapses)
+    }
 }
 

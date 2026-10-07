@@ -57,6 +57,7 @@ private sealed class Overlay {
     data class Detail(val word: String) : Overlay()
     data object Review : Overlay()
     data object Duel : Overlay()
+    data class Nemesis(val word: String) : Overlay()
 }
 
 @Composable
@@ -95,10 +96,26 @@ private fun AppNav(vm: SlotViewModel) {
                     )
                     Overlay.Review -> ReviewScreen(vm = vm, onBack = { overlay = null })
                     Overlay.Duel -> DuelScreen(vm = vm, onBack = { overlay = null })
+                    is Overlay.Nemesis -> {
+                        // 宿敌从通缉令点入;加载期间显示空白(不能立即关推入页,
+                        // 否则首帧 null 会把推入秒关,表现为"点击无反应")
+                        var n by remember(o.word) { mutableStateOf<com.cet4.rootslots.data.Repository.Nemesis?>(null) }
+                        var missing by remember(o.word) { mutableStateOf(false) }
+                        LaunchedEffect(o.word) {
+                            val loaded = vm.nemesisOf(o.word)
+                            if (loaded == null) missing = true else n = loaded
+                        }
+                        LaunchedEffect(missing) { if (missing) overlay = null }
+                        val nem = n
+                        if (nem != null) {
+                            com.cet4.rootslots.ui.duel.NemesisScreen(vm = vm, nemesis = nem, onBack = { overlay = null })
+                        }
+                    }
                     null -> TabContent(vm, tab,
                         onOpenDetail = { overlay = Overlay.Detail(it) },
                         onStartReview = { overlay = Overlay.Review },
                         onOpenDuel = { overlay = Overlay.Duel },
+                        onOpenNemesis = { overlay = Overlay.Nemesis(it) },
                     )
                 }
             }
@@ -122,6 +139,7 @@ private fun TabContent(
     onOpenDetail: (String) -> Unit,
     onStartReview: () -> Unit,
     onOpenDuel: () -> Unit,
+    onOpenNemesis: (String) -> Unit,
 ) {
     AnimatedContent(
         targetState = tab,
@@ -133,7 +151,7 @@ private fun TabContent(
     ) { t ->
         when (t) {
             RootTab.Codex -> CodexScreen(vm = vm, onOpenWord = onOpenDetail)
-            RootTab.Favorites -> FavoritesScreen(vm = vm, onOpenWord = onOpenDetail, onStartReview = onStartReview)
+            RootTab.Favorites -> FavoritesScreen(vm = vm, onOpenWord = onOpenDetail, onStartReview = onStartReview, onOpenNemesis = onOpenNemesis)
             RootTab.Mine -> MineScreen(vm = vm)
             RootTab.Quiz -> QuizScreen(vm = vm, onOpenDuel = onOpenDuel)
             RootTab.Slots -> SlotScreen(onOpenDetail = onOpenDetail, vm = vm)

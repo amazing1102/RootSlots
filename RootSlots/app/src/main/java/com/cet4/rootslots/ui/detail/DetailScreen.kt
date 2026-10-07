@@ -158,9 +158,11 @@ fun DetailScreen(
     var fav by remember(word) { mutableStateOf(false) }
     var srs by remember(word) { mutableStateOf<SrsEntity?>(null) }
     var shown by remember(word) { mutableStateOf(false) }
+    var badge by remember(word) { mutableStateOf(false) }
     LaunchedEffect(word) {
         fav = vm.isFavorite(word)
         srs = vm.srsOf(word)
+        badge = vm.isDefeatedBadge(word)
         shown = true
     }
 
@@ -230,7 +232,13 @@ fun DetailScreen(
             // ---- 整词模式(无构词拆解) ----
             AnimatedVisibility(visible = shown, enter = staggerEnter(0)) {
                 Column {
-                    Text(word, color = c.text, fontSize = 34.sp, fontWeight = FontWeight.Black)
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Text(word, color = c.text, fontSize = 34.sp, fontWeight = FontWeight.Black)
+                        if (badge) {
+                            Spacer(Modifier.width(8.dp))
+                            Text("🏅", fontSize = 22.sp)
+                        }
+                    }
                     vm.ipaOf(word)?.let {
                         Spacer(Modifier.height(2.dp))
                         Text("/$it/", color = c.textDim, fontSize = 15.sp)
