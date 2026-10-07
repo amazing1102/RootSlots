@@ -21,8 +21,8 @@ android {
         applicationId = "com.cet4.rootslots"
         minSdk = 26
         targetSdk = 35
-        versionCode = 2
-        versionName = "1.0.0"
+        versionCode = 3
+        versionName = "1.0.1"
         ndk {
             // 内置 sherpa-onnx 发音引擎:只保留真机(arm64)与模拟器(x86_64)两种 ABI,压 APK 体积
             abiFilters += listOf("arm64-v8a", "x86_64")
