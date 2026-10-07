@@ -426,15 +426,30 @@ class Repository private constructor(context: Context) {
 
     // ================= 好友 PK · 异步战书(方案 M19a) =================
 
-    /** 下战书来源:薄弱 = 生词本按遗忘进度倒序;族 = 指定词根族内;随机 = 当前考试池 */
-    enum class DuelSource { WEAK, FAMILY, RANDOM }
+    /** 下战书来源:薄弱 = 生词本按遗忘进度倒序;族 = 指定词根族内;随机 = 当前考试池;宿敌 = 当前宿敌词指名(M19c) */
+    enum class DuelSource { WEAK, FAMILY, RANDOM, NEMESIS }
 
     /**
      * 挑词候选(多返回,由 UI 截取 DUEL_QUESTIONS 个):只取有释义的词(释义题必需)。
-     * 薄弱序按 forgetProgress 倒序(最接近遗忘在前,毕业词垫底)。
+     * 薄弱序按 forgetProgress 倒序(最接近遗忘在前,毕业词垫底);
+     * 宿敌 = 当前宿敌词(≤7,不足用生词本薄弱词补齐——把你的宿敌发给朋友)。
      */
     suspend fun duelWordCandidates(source: DuelSource, familyKey: String?): List<WordEntity> {
         val pool: List<WordEntity> = when (source) {
+            DuelSource.NEMESIS -> {
+                val nem = nemeses().mapNotNull { words[it.word] }
+                if (nem.size >= DUEL_QUESTIONS) nem
+                else {
+                    val rest = mutableListOf<Pair<WordEntity, Float>>()
+                    for (f in db.favoritesDao().all()) {
+                        val e = words[f.w] ?: continue
+                        if (e.g.isNullOrBlank() || nem.any { it.w == e.w }) continue
+                        val p = db.srsDao().byWord(f.w)?.let { forgetProgress(it) } ?: -2f
+                        rest += e to p
+                    }
+                    nem + rest.sortedByDescending { it.second }.map { it.first }
+                }
+            }
             DuelSource.WEAK -> {
                 val favs = db.favoritesDao().all().map { it.w }.toSet()
                 val rows = mutableListOf<Pair<WordEntity, Float>>()

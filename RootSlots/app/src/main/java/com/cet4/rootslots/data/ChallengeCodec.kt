@@ -1,6 +1,17 @@
 package com.cet4.rootslots.data
 
+import android.graphics.Bitmap
+import android.graphics.Color
 import android.util.Base64
+import com.google.zxing.BarcodeFormat
+import com.google.zxing.BinaryBitmap
+import com.google.zxing.DecodeHintType
+import com.google.zxing.EncodeHintType
+import com.google.zxing.MultiFormatReader
+import com.google.zxing.RGBLuminanceSource
+import com.google.zxing.common.HybridBinarizer
+import com.google.zxing.qrcode.QRCodeWriter
+import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.ByteArrayOutputStream
@@ -179,4 +190,37 @@ object ChallengeCodec {
         inf.end()
         return buf.toString("UTF-8")
     }
+
+    // ---------------- 二维码(M19c):战书/回执码 ↔ QR 位图 ----------------
+
+    /** 文本码 → 二维码位图(白底静区,ECC-M;~650B 码约 61×61 模块,size 取边长像素) */
+    fun toQrBitmap(text: String, size: Int): Bitmap? = runCatching {
+        val hints = mapOf(
+            EncodeHintType.CHARACTER_SET to "UTF-8",
+            EncodeHintType.ERROR_CORRECTION to ErrorCorrectionLevel.M,
+            EncodeHintType.MARGIN to 2,
+        )
+        val matrix = QRCodeWriter().encode(text, BarcodeFormat.QR_CODE, size, size, hints)
+        val bmp = Bitmap.createBitmap(size, size, Bitmap.Config.RGB_565)
+        for (x in 0 until size) {
+            for (y in 0 until size) {
+                bmp.setPixel(x, y, if (matrix.get(x, y)) Color.BLACK else Color.WHITE)
+            }
+        }
+        bmp
+    }.getOrNull()
+
+    /** 相册图片 → 文本码(识别失败/不是战书码返回 null);小图先放大提高识别率 */
+    fun decodeQr(bmp: Bitmap): String? = runCatching {
+        val reader = MultiFormatReader()
+        val hints = mapOf(DecodeHintType.TRY_HARDER to true)
+        var bitmap = bmp
+        if (bitmap.width < 400) {
+            bitmap = Bitmap.createScaledBitmap(bitmap, bitmap.width * 3, bitmap.height * 3, true)
+        }
+        val pixels = IntArray(bitmap.width * bitmap.height)
+        bitmap.getPixels(pixels, 0, bitmap.width, 0, 0, bitmap.width, bitmap.height)
+        val source = RGBLuminanceSource(bitmap.width, bitmap.height, pixels)
+        reader.decode(BinaryBitmap(HybridBinarizer(source)), hints).text
+    }.getOrNull()
 }

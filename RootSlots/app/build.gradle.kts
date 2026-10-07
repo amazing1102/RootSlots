@@ -86,4 +86,6 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.6")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.6")
     implementation("androidx.datastore:datastore-preferences:1.1.1")
+    // 战书二维码(M19c):zxing 纯 Java core,仅生成/解码位图,无权限需求
+    implementation("com.google.zxing:core:3.5.3")
 }

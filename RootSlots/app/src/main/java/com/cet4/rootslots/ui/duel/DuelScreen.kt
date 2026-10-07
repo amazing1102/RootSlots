@@ -3,8 +3,10 @@ package com.cet4.rootslots.ui.duel
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
+import android.graphics.Bitmap
 import android.widget.Toast
 import androidx.activity.compose.BackHandler
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.LocalIndication
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -23,6 +25,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -46,6 +49,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.TextStyle
@@ -480,10 +485,14 @@ private fun CreatePane(
         }
         Spacer(Modifier.height(12.dp))
 
-        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+        FlowRow(
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp),
+        ) {
             SourceChip("生词本·薄弱", source == Repository.DuelSource.WEAK) { source = Repository.DuelSource.WEAK }
             SourceChip("指定词根族", source == Repository.DuelSource.FAMILY) { source = Repository.DuelSource.FAMILY }
             SourceChip("随机", source == Repository.DuelSource.RANDOM) { source = Repository.DuelSource.RANDOM }
+            SourceChip("⚔ 宿敌", source == Repository.DuelSource.NEMESIS) { source = Repository.DuelSource.NEMESIS }
         }
         Spacer(Modifier.height(8.dp))
         Text(
@@ -491,6 +500,7 @@ private fun CreatePane(
                 Repository.DuelSource.WEAK -> "把我生词本里最薄弱的 7 个词发给你——真的难。"
                 Repository.DuelSource.FAMILY -> "词根主题战:选一个词根族,族内随机抽 7 词。"
                 Repository.DuelSource.RANDOM -> "公平娱乐局:当前考试池随机 7 词。"
+                Repository.DuelSource.NEMESIS -> "宿敌指名战:把折磨你的宿敌词发给正被同一个词折磨的朋友。"
             },
             color = c.textDim, fontSize = 12.sp,
         )
@@ -804,12 +814,14 @@ private fun CodeResultPane(
     onDone: () -> Unit,
 ) {
     val c = LocalAppColors.current
-    val context = LocalContext.current
+    val context = androidx.compose.ui.platform.LocalContext.current
     val code = remember(challenge?.id, receipt?.id) {
         challenge?.let { ChallengeCodec.encodeChallenge(it) }
             ?: receipt?.let { ChallengeCodec.encodeReceipt(it) }
             ?: ""
     }
+    // 战书码可出二维码(M19c);回执码短,文本复制已足够
+    val qr = remember(code) { challenge?.let { ChallengeCodec.toQrBitmap(code, 560) } }
     Column(
         Modifier
             .fillMaxSize()
@@ -838,6 +850,26 @@ private fun CodeResultPane(
             )
         }
         Spacer(Modifier.height(14.dp))
+        qr?.let { bmp ->
+            androidx.compose.foundation.Image(
+                bitmap = bmp.asImageBitmap(),
+                contentDescription = "战书二维码",
+                modifier = Modifier
+                    .size(230.dp)
+                    .clip(RoundedCornerShape(12.dp))
+                    .border(1.dp, c.stroke, RoundedCornerShape(12.dp))
+                    .background(Color.White),
+            )
+            Spacer(Modifier.height(8.dp))
+            Text("好友在「打战书 → 从相册识别」扫这张图", color = c.textFaint, fontSize = 11.sp)
+            Spacer(Modifier.height(10.dp))
+            Button(
+                onClick = { saveQrToGallery(context, bmp) ; Toast.makeText(context, "二维码已存入相册", Toast.LENGTH_SHORT).show() },
+                modifier = Modifier.fillMaxWidth(),
+                colors = ButtonDefaults.buttonColors(containerColor = c.prefix, contentColor = c.bg),
+            ) { Text("保存二维码到相册", fontWeight = FontWeight.Black, fontSize = 14.sp) }
+            Spacer(Modifier.height(10.dp))
+        }
         Column(
             Modifier
                 .fillMaxWidth()
@@ -875,6 +907,22 @@ private fun CodeResultPane(
     }
 }
 
+/** 二维码存相册(API 29+ 走 MediaStore 无需权限;26-28 由 manifest 的 maxSdkVersion 权限覆盖) */
+private fun saveQrToGallery(context: Context, bmp: Bitmap) {
+    val name = "rootslots_duel_${System.currentTimeMillis()}"
+    val values = android.content.ContentValues().apply {
+        put(android.provider.MediaStore.Images.Media.DISPLAY_NAME, "$name.png")
+        put(android.provider.MediaStore.Images.Media.MIME_TYPE, "image/png")
+        if (android.os.Build.VERSION.SDK_INT >= 29) {
+            put(android.provider.MediaStore.Images.Media.RELATIVE_PATH, "Pictures/RootSlots")
+        }
+    }
+    val uri = context.contentResolver.insert(android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values) ?: return
+    context.contentResolver.openOutputStream(uri)?.use { out ->
+        bmp.compress(Bitmap.CompressFormat.PNG, 100, out)
+    }
+}
+
 // ---------------- 打战书(自动识别战书码 / 回执码) ----------------
 
 @Composable
@@ -891,9 +939,58 @@ private fun ImportPane(
 ) {
     val c = LocalAppColors.current
     val scope = rememberCoroutineScope()
-    var text by remember { mutableStateOf("") }
+    val context = androidx.compose.ui.platform.LocalContext.current
+    var codeText by remember { mutableStateOf("") }
     var err by remember { mutableStateOf<String?>(null) }
     val coins = vm.coins
+
+    fun parse(t: String) {
+        scope.launch {
+            when (val r = vm.parseAny(t)) {
+                is Repository.DuelImport.Ch -> { err = null; onImported(r.c); onSettled(null, null) }
+                is Repository.DuelImport.Rc -> {
+                    err = null
+                    val oc = vm.settleWithReceipt(r.r)
+                    if (oc == null) {
+                        err = "回执无法结算:战书状态已变化或不匹配"
+                        onSettled(null, null)
+                    } else {
+                        onImported(null)
+                        onSettled(r.r, oc)
+                        onToast(if (oc.win == 1) "胜利!+${oc.coinDelta}🪙" else "已结算")
+                        onChanged()
+                    }
+                }
+                Repository.DuelImport.None -> {
+                    onImported(null); onSettled(null, null)
+                    err = "无法识别:码可能被截断、不是战书码、已导入过,或战书状态已变化"
+                }
+            }
+        }
+    }
+
+    // 相册识别战书二维码(M19c):选图 → zxing 解码 → 自动解析
+    val pickImage = androidx.activity.compose.rememberLauncherForActivityResult(
+        androidx.activity.result.contract.ActivityResultContracts.GetContent(),
+    ) { uri ->
+        if (uri == null) return@rememberLauncherForActivityResult
+        scope.launch {
+            val decoded = kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.IO) {
+                runCatching {
+                    context.contentResolver.openInputStream(uri)?.use {
+                        android.graphics.BitmapFactory.decodeStream(it)
+                    }?.let { ChallengeCodec.decodeQr(it) }
+                }.getOrNull()
+            }
+            if (decoded != null) {
+                codeText = decoded
+                err = null
+                parse(decoded)
+            } else {
+                err = "二维码识别失败:图可能被压缩,改用复制粘贴文本码更稳"
+            }
+        }
+    }
 
     Column(
         Modifier
@@ -917,8 +1014,8 @@ private fun ImportPane(
         Text("把好友发来的战书码(应战)或回执码(结算)整段粘贴到下面", color = c.textDim, fontSize = 12.sp)
         Spacer(Modifier.height(8.dp))
         BasicTextField(
-            value = text,
-            onValueChange = { text = it; err = null },
+            value = codeText,
+            onValueChange = { codeText = it; err = null },
             textStyle = TextStyle(color = c.text, fontSize = 12.sp, fontFamily = FontFamily.Monospace, lineHeight = 16.sp),
             cursorBrush = SolidColor(c.accent),
             decorationBox = { inner ->
@@ -930,42 +1027,29 @@ private fun ImportPane(
                         .background(c.surfaceAlt)
                         .padding(10.dp),
                 ) {
-                    if (text.isEmpty()) Text("RS1.……", color = c.textFaint, fontSize = 12.sp, fontFamily = FontFamily.Monospace)
+                    if (codeText.isEmpty()) Text("RS1.…… 或点下方从相册识别二维码", color = c.textFaint, fontSize = 12.sp, fontFamily = FontFamily.Monospace)
                     inner()
                 }
             },
             modifier = Modifier.fillMaxWidth(),
         )
         Spacer(Modifier.height(10.dp))
-        Button(
-            onClick = {
-                scope.launch {
-                    when (val r = vm.parseAny(text)) {
-                        is Repository.DuelImport.Ch -> { err = null; onImported(r.c); onSettled(null, null) }
-                        is Repository.DuelImport.Rc -> {
-                            err = null
-                            val oc = vm.settleWithReceipt(r.r)
-                            if (oc == null) {
-                                err = "回执无法结算:战书状态已变化或不匹配"
-                                onSettled(null, null)
-                            } else {
-                                onImported(null)
-                                onSettled(r.r, oc)
-                                onToast(if (oc.win == 1) "胜利!+${oc.coinDelta}🪙" else "已结算")
-                                onChanged()
-                            }
-                        }
-                        Repository.DuelImport.None -> {
-                            onImported(null); onSettled(null, null)
-                            err = "无法识别:码可能被截断、不是战书码、已导入过,或战书状态已变化"
-                        }
-                    }
-                }
-            },
-            enabled = text.isNotBlank(),
-            modifier = Modifier.fillMaxWidth(),
-            colors = ButtonDefaults.buttonColors(containerColor = c.accent, contentColor = c.onAccent),
-        ) { Text("解析", fontWeight = FontWeight.Black) }
+        Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+            Button(
+                onClick = { parse(codeText) },
+                enabled = codeText.isNotBlank(),
+                modifier = Modifier.weight(1f),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = c.accent, contentColor = c.onAccent,
+                    disabledContainerColor = c.chip, disabledContentColor = c.textFaint,
+                ),
+            ) { Text("解析", fontWeight = FontWeight.Black) }
+            Button(
+                onClick = { pickImage.launch("image/*") },
+                modifier = Modifier.weight(1f),
+                colors = ButtonDefaults.buttonColors(containerColor = c.prefix, contentColor = c.bg),
+            ) { Text("📷 从相册识别", fontWeight = FontWeight.Black, fontSize = 13.sp, maxLines = 1) }
+        }
         err?.let {
             Spacer(Modifier.height(8.dp))
             Text(it, color = c.danger, fontSize = 13.sp)
