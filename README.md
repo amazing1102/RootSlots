@@ -34,9 +34,9 @@
 | 老虎机 | 深色主题 |
 |---|---|
 | ![老虎机](docs/screenshots/slots.png) | ![深色](docs/screenshots/dark.png) |
-| **单词详情**(IPA + 分段 + 记忆曲线) | **我的页**(复习统计 + 设置) |
+| **单词详情**(IPA + 例句 + 分段 + 记忆曲线) | **我的页**(统计 · 战书战绩 · 设置) |
 | ![详情](docs/screenshots/detail.png) | ![我的](docs/screenshots/mine.png) |
-| **看音标选词** | **词根图鉴** |
+| **词汇测验**(四模式 + 战书入口) | **词根图鉴**(族展开 + 搜索) |
 | ![测验](docs/screenshots/quiz.png) | ![图鉴](docs/screenshots/codex.png) |
 | **战书应战**(幽灵进度条) | **宿敌对决**(三局 Boss 战) |
 | ![战书](docs/screenshots/duel.png) | ![宿敌](docs/screenshots/nemesis.png) |
@@ -57,13 +57,14 @@
 ## 🏗️ 数据管线
 
 ```
-cet4 词表/词根词缀/组合图谱 (md)       ECDICT (340 万词条 sqlite)
-        │  tools/build_data.py              │ tools/build_gd.py   (多义项释义 + 考试标签)
-        │  (解析 + DFS拆分 + 自动拆词器)      │ tools/build_dict.py (7 考试新词合并去重)
-CMUdict ─ tools/build_ipa.py               │
-        ▼                                  ▼
-assets/{words, morphs, families, combos, ipa}.json   (+ glosses/ sentences/ 批文件)
-        │  首次启动幂等预填 · 升级按 ASSETS_VER 增量补灌
+cet4 词表/词根词缀/组合图谱 (md)         ECDICT (340 万词条 sqlite)
+        │  tools/build_data.py               │ tools/build_gd.py   (多义项释义 + 考试标签)
+        │  (解析 + DFS拆分 + 自动拆词器)       │ tools/build_dict.py (7 考试新词 + 屈折吸收)
+CMUdict ─ tools/build_ipa.py (美式 IPA)       │
+        ▼                                    ▼
+assets/{words, morphs, families, combos, ipa}.json
+     + gd / exams / exam_words / exam_lemma_tags.json(+ glosses/ sentences/ 批文件)
+        │  verify_assets.py 校验(须 0 错误)· 首次启动幂等预填 · 升级按 ASSETS_VER 增量补灌
         ▼
 Room (DB v8: words / morphs / families / combos / favorites / srs / review_logs / duels)
 ```
