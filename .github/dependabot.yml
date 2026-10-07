@@ -7,6 +7,19 @@ updates:
       interval: monthly
     open-pull-requests-limit: 3
     labels: ["dependencies"]
+    # 小版本/补丁合并成一个 PR,减少噪音
+    groups:
+      gradle-minor-patch:
+        update-types: ["minor", "patch"]
+    ignore:
+      # Kotlin 插件与 KSP 版本强绑定(KSP 2.0.21-1.0.25 ↔ Kotlin 2.0.21),
+      # AGP / Compose 编译器也需同步对齐——大版本升级必须人工做,勿自动提 PR
+      - dependency-name: "org.jetbrains.kotlin.android"
+        update-types: ["version-update:semver-major", "version-update:semver-minor"]
+      - dependency-name: "com.google.devtools.ksp"
+      # Room 升大版本涉及迁移策略复核,人工处理
+      - dependency-name: "androidx.room:*"
+        update-types: ["version-update:semver-major"]
 
   # GitHub Actions 版本维护
   - package-ecosystem: github-actions
@@ -14,3 +27,6 @@ updates:
     schedule:
       interval: monthly
     labels: ["dependencies", "ci"]
+    groups:
+      actions:
+        update-types: ["minor", "patch", "major"]
