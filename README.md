@@ -83,10 +83,10 @@ python tools/build_ipa.py && python tools/build_gd.py && python tools/build_dict
 cp assets/{words,morphs,families,combos}.json RootSlots/app/src/main/assets/
 
 # Debug 构建
-cd RootSlots && gradle assembleDebug    # 需 JDK 17,gradle.bat 见 AGENTS.md
+cd RootSlots && ./gradlew assembleDebug    # 需 JDK 17;Windows 本机亦可用 gradle.bat(见 AGENTS.md)
 
 # Release 构建(需自备签名:根目录放 keystore.properties + release.keystore)
-gradle assembleRelease
+./gradlew assembleRelease
 ```
 
 - 工具链:Android Studio(AGP 8.5.2 / Gradle 8.7 / JDK 17),minSdk 26 / targetSdk 35

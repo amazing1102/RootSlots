@@ -45,7 +45,8 @@ D:\CET4\
 - 双模拟器验收:临时 AVD `DuelB`(同一 system-image android-35/default 克隆,`emulator -port 5556`),好友PK 互传码测试用
 - Android SDK:`D:\33603\AppData\Local\Android\Sdk`(local.properties 已配)
 - JDK:**必须 17** `D:\Java\jdk-17.0.18`(本机默认 java 是 25,不能用;已写入 gradle.properties `org.gradle.java.home`)
-- Gradle:**用 `D:\gradle-8.7\bin\gradle.bat`,不要用 gradlew.bat**(wrapper jar 损坏)
+- Gradle:本机用 `D:\gradle-8.7\bin\gradle.bat`(免重复下载发行版);repo 内 gradlew wrapper
+  **已修复可用(2026-10-07 用 Gradle 8.7 重新生成,CI 走 ./gradlew)**,误提交的 gradlew.jar 已清理
 - 模拟器:AVD `RootSlots`(API 35),`ANDROID_AVD_HOME=D:\33603\.android\avd`
 - settings.gradle.kts 配了阿里云 Maven 镜像(google() 兜底)
 

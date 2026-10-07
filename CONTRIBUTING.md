@@ -27,8 +27,8 @@ python tools/build_ipa.py && python tools/build_gd.py && python tools/build_dict
   && python tools/build_data.py && python tools/verify_assets.py   # 校验器须 0 错误
 cp assets/{words,morphs,families,combos}.json RootSlots/app/src/main/assets/
 
-# 2. Android App(需 JDK 17;本机 Windows 用 gradle.bat,见 AGENTS.md)
-cd RootSlots && gradle assembleDebug
+# 2. Android App(需 JDK 17;wrapper 已修复,直接 ./gradlew;Windows 本机也可用 gradle.bat)
+cd RootSlots && ./gradlew assembleDebug
 ```
 
 CI 会在每次 push/PR 时自动构建 debug APK(.github/workflows/android-build.yml)。
